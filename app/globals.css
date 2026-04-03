@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #F6F4EF;
+  --color-ink: #0C0C0C;
+  --color-navy: #1A1A2E;
+  --color-gold: #E8C547;
+  --color-white: #FFFFFF;
+  --color-muted: #888580;
+  --color-border: #E2DED8;
+  --color-orange: #F97316;
+  --color-blue: #1A4A7A;
+
+  --font-anton: 'Anton', sans-serif;
+  --font-sans: 'Instrument Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dot grid background texture ── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(26,26,46,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Code card float animation ── */
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float-anim {
+  animation: cardFloat 4s ease-in-out infinite;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F6F4EF; }
+::-webkit-scrollbar-thumb { background: #1A1A2E; border-radius: 3px; }
+
+html {
+  scroll-behavior: smooth;
 }
