@@ -22,7 +22,7 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Engineering',
     summary:
-      'We\'re looking for a full stack engineer who thrives on building fast, clean, production-ready products. You\'ll work directly on client builds and internal Stackd ventures using our standard stack: Next.js, Supabase, Tailwind, and Stripe.',
+      'We\'re looking for a full stack engineer who thrives on building fast, clean, production-ready products. You\'ll work directly on client builds and internal VStacked ventures using our standard stack: Next.js, Supabase, Tailwind, and Stripe.',
     responsibilities: [
       'Build and ship client products from design to deployment',
       'Implement Supabase schemas, RLS policies, and server actions',
@@ -80,12 +80,12 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Design',
     summary:
-      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, Stackd\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
+      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, VStacked\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
     responsibilities: [
       'Design interfaces for web apps, marketing sites, and dashboards',
-      'Create and maintain Stackd\'s brand design system',
+      'Create and maintain VStacked\'s brand design system',
       'Produce Figma files ready for direct developer handoff',
-      'Design digital products for the Stackd store (prompt pack covers, course assets)',
+      'Design digital products for the VStacked store (prompt pack covers, course assets)',
       'Review implemented designs and flag deviations from spec',
     ],
     requirements: [
@@ -109,13 +109,13 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Strategy',
     summary:
-      'Stackd works with founders to validate, model, and launch new ventures. We\'re looking for a strategist who can run idea architecture sessions, produce business model documentation, and help founders stress-test their concepts before we build.',
+      'VStacked works with founders to validate, model, and launch new ventures. We\'re looking for a strategist who can run idea architecture sessions, produce business model documentation, and help founders stress-test their concepts before we build.',
     responsibilities: [
       'Lead 90-minute Strategy Sessions with Track B clients',
       'Produce business model documents, roadmaps, and positioning frameworks',
       'Facilitate concept validation — market sizing, competitive analysis, risk mapping',
       'Collaborate with the team on Founder Build Sprint scoping',
-      'Contribute to Stackd\'s internal venture pipeline and IP',
+      'Contribute to VStacked\'s internal venture pipeline and IP',
     ],
     requirements: [
       '3+ years in strategy, consulting, product management, or venture building',
@@ -142,7 +142,7 @@ const jobs: Job[] = [
     responsibilities: [
       'Onboard new clients and set clear expectations from day one',
       'Manage project timelines and communicate status updates proactively',
-      'Coordinate between clients and the Stackd build team',
+      'Coordinate between clients and the VStacked build team',
       'Handle post-delivery support requests and escalations',
       'Identify opportunities to expand client relationships into retainers or upgrades',
     ],
@@ -167,12 +167,12 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Growth',
     summary:
-      'Stackd needs a voice. We\'re building in public, selling AI services to business owners and founders, and launching a digital store. We need someone who can create content that educates, converts, and builds a community around what we\'re doing.',
+      'VStacked needs a voice. We\'re building in public, selling AI services to business owners and founders, and launching a digital store. We need someone who can create content that educates, converts, and builds a community around what we\'re doing.',
     responsibilities: [
-      'Own Stackd\'s content calendar across LinkedIn, X (Twitter), and TikTok',
+      'Own VStacked\'s content calendar across LinkedIn, X (Twitter), and TikTok',
       'Write educational content about AI tools, workflows, and business building',
       'Produce short-form video content (scripting + filming or coordination)',
-      'Write and send a weekly email newsletter to the Stackd list',
+      'Write and send a weekly email newsletter to the VStacked list',
       'Contribute copy for landing pages, product descriptions, and store listings',
     ],
     requirements: [
@@ -223,7 +223,7 @@ export default function CareersPage() {
                   Build the future of work with us.
                 </h1>
                 <p className="text-[#888580] text-xl leading-relaxed">
-                  Stackd Studio is a remote-first Build Lab & Venture Studio. We move fast, we care about craft, and we work on things that actually matter to business owners and founders.
+                  VStacked Labs is a remote-first Build Lab & Venture Studio. We move fast, we care about craft, and we work on things that actually matter to business owners and founders.
                 </p>
               </div>
               <div className="flex flex-col gap-5">
@@ -298,14 +298,14 @@ export default function CareersPage() {
               Don&apos;t see the right fit?
             </h2>
             <p className="text-[#888580] text-lg mb-8">
-              We&apos;re always open to hearing from talented people. Send us a note — tell us what you do and why you&apos;d be great at Stackd.
+              We&apos;re always open to hearing from talented people. Send us a note — tell us what you do and why you&apos;d be great at VStacked.
             </p>
-            <a
-              href="mailto:hello@stackdstudio.com?subject=Open Application — Stackd Studio"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
             >
               Send an Open Application
-            </a>
+            </Link>
           </div>
         </section>
       </main>
@@ -419,12 +419,12 @@ function JobCard({ job }: { job: Job }) {
               </div>
             )}
 
-            <a
-              href={`mailto:hello@stackdstudio.com?subject=Application — ${encodeURIComponent(job.title)}`}
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm mt-auto"
             >
               Apply for This Role
-            </a>
+            </Link>
           </div>
         </div>
       </div>

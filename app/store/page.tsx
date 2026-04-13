@@ -132,7 +132,7 @@ export default function StorePage() {
                 Prompts, templates, courses &amp; skills.
               </h1>
               <p className="text-[#888580] text-xl leading-relaxed">
-                Instant-download digital products built by Stackd Studio. Everything you need to add AI to your business or accelerate your build.
+                Instant-download digital products built by VStacked Labs. Everything you need to add AI to your business or accelerate your build.
               </p>
             </div>
           </div>

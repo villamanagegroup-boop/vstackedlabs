@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 const footerColumns = [
   {
@@ -17,24 +18,23 @@ const footerColumns = [
   {
     heading: 'Track A — Business',
     links: [
-      { label: 'AI Quick Setup', href: '/services#business-owners' },
-      { label: 'AI Business Build-Out', href: '/services#business-owners' },
-      { label: 'Micro Tool Build', href: '/services#business-owners' },
-      { label: 'AI Retainer', href: '/services#business-owners' },
+      { label: 'AI Quick Setup', href: '/services#track-a' },
+      { label: 'AI Business Build-Out', href: '/services#track-a' },
+      { label: 'Micro Tool Build', href: '/services#track-a' },
+      { label: 'AI Retainer', href: '/services#track-a' },
     ],
   },
   {
     heading: 'Track B — Founders',
     links: [
-      { label: 'Strategy Session', href: '/services#founders' },
-      { label: 'Founder Build Sprint', href: '/services#founders' },
-      { label: 'Venture Launch Package', href: '/services#founders' },
+      { label: 'Strategy Session', href: '/services#track-b' },
+      { label: 'Founder Build Sprint', href: '/services#track-b' },
+      { label: 'Venture Launch Package', href: '/services#track-b' },
     ],
   },
   {
     heading: 'Connect',
     links: [
-      { label: 'hello@stackdstudio.com', href: 'mailto:hello@stackdstudio.com' },
       { label: 'Twitter / X', href: '#' },
       { label: 'LinkedIn', href: '#' },
       { label: 'TikTok', href: '#' },
@@ -47,28 +47,27 @@ export default function Footer() {
     <footer className="bg-[#0C0C0C] text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
-        <div className="py-16 grid grid-cols-2 md:grid-cols-5 gap-10">
+        <div className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
           {/* Logo + tagline */}
           <div className="col-span-2 md:col-span-1">
             <Link
               href="/"
               className="flex items-center gap-2.5 mb-4 group"
-              aria-label="Stackd Studio home"
+              aria-label="VStacked Labs home"
             >
-              <div className="w-7 h-7 bg-[#E8C547] rounded flex items-center justify-center group-hover:bg-white transition-colors duration-200">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <rect x="1" y="1" width="5" height="5" fill="#0C0C0C" rx="0.5"/>
-                  <rect x="8" y="1" width="5" height="5" fill="#0C0C0C" rx="0.5"/>
-                  <rect x="1" y="8" width="5" height="5" fill="#0C0C0C" rx="0.5"/>
-                  <rect x="8" y="8" width="5" height="5" fill="#0C0C0C" rx="0.5"/>
-                </svg>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="VStacked Labs"
+                width={48}
+                height={48}
+                className="rounded-lg"
+              />
               <span className="font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
-                Stackd Studio
+                VStacked Labs
               </span>
             </Link>
             <p className="text-[#6B7280] text-sm leading-relaxed mb-3">
-              Build Lab &amp; Venture Studio
+              Build. Test. Launch.
             </p>
             <p className="text-[#4B4F55] text-xs">
               A Hicks Virtual Solutions company
@@ -106,7 +105,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#6B7280] text-sm">
-            © {new Date().getFullYear()} Stackd Studio LLC. All rights reserved.
+            © {new Date().getFullYear()} VStacked Labs LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-[#6B7280] hover:text-white text-sm transition-colors">

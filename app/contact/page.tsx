@@ -79,9 +79,9 @@ export default function ContactPage() {
 
                 {calendlyUrl ? (
                   <div
-                    className="calendly-inline-widget rounded-2xl overflow-hidden border border-[#E2DED8]"
+                    className="calendly-inline-widget rounded-2xl overflow-hidden border border-[#E2DED8] w-full"
                     data-url={calendlyUrl}
-                    style={{ minWidth: '320px', height: '660px' }}
+                    style={{ height: '660px' }}
                   />
                 ) : (
                   <div className="bg-white rounded-2xl border border-[#E2DED8] p-8 text-center">
@@ -107,16 +107,6 @@ export default function ContactPage() {
 
               {/* Contact info */}
               <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
-                <div>
-                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
-                  <a
-                    href="mailto:hello@stackdstudio.com"
-                    className="text-[#E8C547] font-semibold hover:text-white transition-colors text-lg"
-                  >
-                    hello@stackdstudio.com
-                  </a>
-                </div>
-
                 <div>
                   <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
                   <p className="text-white font-medium">Remote — United States</p>

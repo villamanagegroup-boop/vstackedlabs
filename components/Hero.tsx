@@ -101,7 +101,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#888580] text-lg leading-relaxed mb-10 max-w-[500px]"
             >
-              Stackd Studio helps business owners and founders design, build, and launch intelligent systems — powered by AI, craft, and strategic thinking.
+              VStacked Labs helps business owners and founders design, build, and launch intelligent systems — powered by AI, craft, and strategic thinking.
             </motion.p>
 
             <motion.div
@@ -164,18 +164,18 @@ export default function Hero() {
                 <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                 <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                 <span className="w-3 h-3 rounded-full bg-[#28C840]" />
-                <span className="ml-3 text-[#888580] text-xs font-mono">stackd-agent.ts</span>
+                <span className="ml-3 text-[#888580] text-xs font-mono">vstacked-agent.ts</span>
               </div>
 
               {/* Code */}
               <div className="font-mono text-sm leading-7">
-                <div className="text-[#888580]">{'// Stackd Studio — Build Lab'}</div>
+                <div className="text-[#888580]">{'// VStacked Labs — Build. Test. Launch.'}</div>
                 <div className="h-4" />
                 <div>
                   <span className="text-[#E8C547]">const</span>
                   <span className="text-white"> studio = </span>
                   <span className="text-[#E8C547]">new</span>
-                  <span className="text-[#4ADE80]"> StackdStudio</span>
+                  <span className="text-[#4ADE80]"> VStackedLabs</span>
                   <span className="text-white">{'({'}</span>
                 </div>
                 <div>
@@ -216,7 +216,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="text-[#E8C547] text-xs font-mono">→</span>
-                  <span className="text-[#E8C547] text-xs font-mono">USA · stackdstudio.com</span>
+                  <span className="text-[#E8C547] text-xs font-mono">USA · vstackedlabs.com</span>
                 </div>
               </div>
             </div>

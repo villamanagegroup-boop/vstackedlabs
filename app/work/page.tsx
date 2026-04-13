@@ -4,62 +4,160 @@ import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import {
+  MockupDanceStudio,
+  MockupIntakeAgent,
+  MockupFieldOS,
+  MockupClientPortal,
+  MockupBizDashboard,
+  MockupBusinessBrain,
+  MockupSalon,
+  MockupGym,
+  MockupCoaching,
+  MockupEcommerce,
+  MockupSports,
+} from '@/components/OurWork'
+
+type Track = 'All' | 'Track A' | 'Track B'
 
 const projects = [
   {
-    track: 'Track A',
-    client: 'Business Owner',
-    tags: ['Next.js', 'Supabase', 'Admin Portal', 'Tailwind CSS'],
-    title: 'Capital Core Dance Studio',
-    what: 'Full studio management platform with public website and admin dashboard',
-    outcome: 'Studio owner went from managing everything in spreadsheets to a fully automated booking and admin system. Saves ~5 hours/week.',
-    description:
-      'A full studio management platform with a public-facing website, admin dashboard, class scheduling, student roster, and Supabase-powered backend with row-level security. Built and deployed in under 4 weeks.',
-    status: 'Live',
-    link: '#',
-  },
-  {
-    track: 'Track A',
-    client: 'Business Owner',
-    tags: ['Claude API', 'Next.js', 'Automation', 'Supabase'],
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Claude API', 'Next.js', 'Automation'],
     title: 'Client Intake Agent',
-    what: 'AI-powered intake system that qualifies leads and auto-generates proposals',
-    outcome: 'Eliminated 3+ hours/day of manual lead qualification. Response time dropped from 24–48 hours to under 5 minutes.',
-    description:
-      'An AI-powered intake system that qualifies leads, matches them to the right service tier, auto-generates tailored proposals, and books discovery calls — 24/7, without any human involvement. Built on Claude and Next.js server actions.',
+    what: 'AI lead qualification and automated proposal generation',
+    description: 'Qualifies leads, matches them to the right service tier, auto-generates tailored proposals, and books discovery calls — 24/7, without any human involvement. Eliminated 3+ hours/day of manual admin work.',
+    url: 'intake.vstacked.app',
     status: 'Live',
-    link: '#',
+    mockup: MockupIntakeAgent,
   },
   {
-    track: 'Track B',
-    client: 'Founder',
-    tags: ['SaaS', 'Multi-tenant', 'Next.js', 'Supabase'],
-    title: 'FieldOS — Operations Platform',
-    what: 'Modular multi-tenant SaaS for small business owners and multi-venture operators',
-    outcome: 'MVP in development. Targeting Q3 2025 beta launch with 3 pilot business owners across different industries.',
-    description:
-      'A modular, multi-tenant SaaS operations platform with a universal core and industry-specific modules. Built for small business owners who run multiple ventures and need one place to manage them all.',
+    track: 'Track B' as Track,
+    trackColor: '#F97316',
+    trackTextColor: '#FDB975',
+    tags: ['Claude API', 'RAG', 'Next.js'],
+    title: 'Business Brain App',
+    what: 'AI knowledge base powered by your own business documents',
+    description: 'Answers business questions using the owner\'s own SOPs, reports, and documents. Built with RAG architecture on top of Claude — no more digging through folders or asking the team for information.',
+    url: 'brain.vstacked.app',
+    status: 'Live',
+    mockup: MockupBusinessBrain,
+  },
+  {
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Next.js', 'Supabase', 'Admin Portal'],
+    title: 'Dance Studio',
+    what: 'Full studio management with class scheduling and admin portal',
+    description: 'Public-facing website, admin dashboard, class scheduling, student roster, and Supabase-powered backend with row-level security. Studio owner went from spreadsheets to a fully automated system — saves ~5 hours/week.',
+    url: 'studio.app/admin/schedule',
+    status: 'Live',
+    mockup: MockupDanceStudio,
+  },
+  {
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Booking', 'Stripe', 'Supabase'],
+    title: 'Salon Booking System',
+    what: 'Online booking with staff scheduling and automated reminders',
+    description: 'Online booking with staff scheduling, automated confirmation and rebooking reminders, service menu management, and a client history dashboard — all branded to the salon experience.',
+    url: 'book.salon.app/schedule',
+    status: 'Live',
+    mockup: MockupSalon,
+  },
+  {
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['LMS', 'Stripe', 'Progress Tracking'],
+    title: 'Coaching Program Portal',
+    what: 'Gated curriculum with session scheduling and progress milestones',
+    description: 'Structured coaching portal with gated curriculum, session scheduling, progress milestone tracking, and a private client dashboard — giving coaches a professional delivery system without any custom dev overhead.',
+    url: 'coach.portal.app/program',
+    status: 'Live',
+    mockup: MockupCoaching,
+  },
+  {
+    track: 'Track B' as Track,
+    trackColor: '#F97316',
+    trackTextColor: '#FDB975',
+    tags: ['SaaS', 'Multi-tenant', 'Next.js'],
+    title: 'Operations Platform',
+    what: 'Multi-tenant SaaS for small business operators and founders',
+    description: 'Modular, multi-tenant SaaS with a universal core and industry-specific modules. Built for small business owners who run multiple ventures and need one place to manage them all. Currently in beta.',
+    url: 'ops.platform/dashboard',
     status: 'In Progress',
-    link: null,
+    mockup: MockupFieldOS,
   },
   {
-    track: 'Track A',
-    client: 'Business Owner',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    title: 'Stackd Studio Website',
-    what: 'Full marketing website for the Stackd Studio brand',
-    outcome: 'Flagship example of our design and development capabilities — the site you\'re on right now.',
-    description:
-      'The Stackd Studio marketing site — built entirely in-house using our own stack. Next.js 16 App Router, Tailwind CSS v4, Framer Motion, Anton typography, navy and gold design system.',
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Supabase', 'Auth', 'Next.js'],
+    title: 'Client Portal',
+    what: 'Quiz-gated membership portal with locked content and daily cards',
+    description: 'Quiz-gated membership portal with progress tracking, locked content modules, resource vaults, and daily card delivery — built for coaches and service businesses offering ongoing digital programs.',
+    url: 'portal.client.app/dashboard',
     status: 'Live',
-    link: '/',
+    mockup: MockupClientPortal,
+  },
+  {
+    track: 'Track B' as Track,
+    trackColor: '#F97316',
+    trackTextColor: '#FDB975',
+    tags: ['Analytics', 'Multi-view', 'Supabase'],
+    title: 'Business Ops Dashboard',
+    what: 'Centralized KPI and operations tracking for multi-revenue businesses',
+    description: 'Centralized hub with KPI tracking, task management, revenue charts, and team activity feeds. Purpose-built for small business owners running multiple revenue streams who need one clear view of everything.',
+    url: 'ops.dashboard/overview',
+    status: 'Live',
+    mockup: MockupBizDashboard,
+  },
+  {
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Memberships', 'Stripe', 'Next.js'],
+    title: 'Gym Membership Platform',
+    what: 'Membership tiers, class sign-ups, and check-in tracking',
+    description: 'Membership tiers, class sign-ups, check-in tracking, and automated renewal flows — giving gym owners a full operations view from one clean dashboard. Stripe-powered with email automation.',
+    url: 'members.gym.app/dashboard',
+    status: 'Live',
+    mockup: MockupGym,
+  },
+  {
+    track: 'Track B' as Track,
+    trackColor: '#F97316',
+    trackTextColor: '#FDB975',
+    tags: ['E-commerce', 'Stripe', 'Next.js'],
+    title: 'Digital Product Store',
+    what: 'Instant-download storefront with Stripe and automated delivery',
+    description: 'Instant-download storefront with product filtering, Stripe Checkout, and automated delivery via email. No marketplace fees, fully owned by the business — with an admin panel for managing products and orders.',
+    url: 'shop.brand.app/products',
+    status: 'Live',
+    mockup: MockupEcommerce,
+  },
+  {
+    track: 'Track A' as Track,
+    trackColor: '#1A4A7A',
+    trackTextColor: '#93C5FD',
+    tags: ['Registration', 'Supabase', 'Admin'],
+    title: 'Sports Program Registration',
+    what: 'Season registration, team rosters, and game schedule management',
+    description: 'Season registration, team roster management, game schedules, and payment collection — giving youth sports programs a professional digital presence without the complexity of off-the-shelf platforms.',
+    url: 'register.league.app/season',
+    status: 'Live',
+    mockup: MockupSports,
   },
 ]
 
-type Filter = 'All' | 'Track A' | 'Track B'
-
 export default function WorkPage() {
-  const [filter, setFilter] = useState<Filter>('All')
+  const [filter, setFilter] = useState<Track>('All')
 
   const filtered = filter === 'All' ? projects : projects.filter((p) => p.track === filter)
 
@@ -86,14 +184,14 @@ export default function WorkPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Filter tabs */}
-            <div className="flex gap-3 mb-12" role="tablist" aria-label="Filter projects by track">
-              {(['All', 'Track A', 'Track B'] as Filter[]).map((f) => (
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12" role="tablist" aria-label="Filter projects by track">
+              {(['All', 'Track A', 'Track B'] as Track[]).map((f) => (
                 <button
                   key={f}
                   role="tab"
                   aria-selected={filter === f}
                   onClick={() => setFilter(f)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  className={`px-4 sm:px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                     filter === f
                       ? 'bg-[#0C0C0C] text-white'
                       : 'bg-white border border-[#E2DED8] text-[#888580] hover:border-[#0C0C0C] hover:text-[#0C0C0C]'
@@ -105,83 +203,104 @@ export default function WorkPage() {
             </div>
 
             {/* Project cards */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {filtered.map((project) => (
-                <div
-                  key={project.title}
-                  className="bg-white rounded-2xl border border-[#E2DED8] overflow-hidden flex flex-col hover:border-[#0C0C0C]/30 transition-all duration-300 hover:-translate-y-1"
-                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
-                >
-                  {/* Card top — dark */}
-                  <div className="bg-[#0C0C0C] p-7 flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full ${
-                          project.track === 'Track A'
-                            ? 'bg-[#1A4A7A]/40 text-[#93C5FD]'
-                            : 'bg-[#F97316]/20 text-[#FDB975]'
-                        }`}
-                      >
-                        {project.track} — {project.client}
-                      </span>
-                      <span
-                        className={`text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full ${
-                          project.status === 'Live'
-                            ? 'bg-green-900/30 text-green-400'
-                            : 'bg-[#E8C547]/20 text-[#E8C547]'
-                        }`}
-                      >
-                        {project.status}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[#E8C547] text-xs font-semibold px-2.5 py-1 rounded-md border border-[#E8C547]/30"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h2 className="text-white text-2xl leading-tight">{project.title}</h2>
-                  </div>
-
-                  {/* Card bottom — light */}
-                  <div className="p-7 flex flex-col gap-5 flex-1">
-                    <div>
-                      <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">What we built</p>
-                      <p className="text-[#0C0C0C] text-sm font-medium">{project.what}</p>
-                    </div>
-
-                    <div>
-                      <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Outcome</p>
-                      <p className="text-[#0C0C0C] text-sm leading-relaxed">{project.outcome}</p>
-                    </div>
-
-                    <p className="text-[#888580] text-sm leading-relaxed flex-1">{project.description}</p>
-
-                    <div className="mt-auto">
-                      {project.link ? (
-                        <Link
-                          href={project.link}
-                          className="inline-flex items-center gap-2 text-[#0C0C0C] font-semibold text-sm hover:text-[#E8C547] transition-colors"
-                        >
-                          View Project
-                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                            <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((project, i) => {
+                const Mockup = project.mockup
+                return (
+                  <motion.div
+                    key={project.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
+                    className="bg-[#0C0C0C] rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-transform duration-300"
+                    style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.3)' }}
+                  >
+                    {/* Browser chrome + mockup */}
+                    <div className="relative">
+                      <div className="flex items-center gap-1.5 px-4 py-3 bg-[#1a1a1a] border-b border-white/5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                        <div className="ml-3 flex-1 bg-[#0f0f0f] rounded-md px-3 py-1 flex items-center gap-2">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <circle cx="5" cy="5" r="4" stroke="#444" strokeWidth="1"/>
+                            <path d="M3 5h4M5 3v4" stroke="#444" strokeWidth="1"/>
                           </svg>
-                        </Link>
-                      ) : (
-                        <span className="text-[#888580] text-sm">Coming soon</span>
-                      )}
+                          <span className="text-[#555] text-[10px] font-mono truncate">{project.url}</span>
+                        </div>
+                      </div>
+                      <div className="overflow-hidden">
+                        <Mockup />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#0C0C0C] to-transparent pointer-events-none" aria-hidden="true"/>
                     </div>
-                  </div>
-                </div>
-              ))}
+
+                    {/* Card body */}
+                    <div className="p-6 flex flex-col gap-3 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div
+                          className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full"
+                          style={{ background: project.trackColor + '25', color: project.trackTextColor }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.trackTextColor }} aria-hidden="true" />
+                          {project.track}
+                        </div>
+                        <span
+                          className={`text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full ${
+                            project.status === 'Live'
+                              ? 'bg-green-900/30 text-green-400'
+                              : 'bg-[#E8C547]/20 text-[#E8C547]'
+                          }`}
+                        >
+                          {project.status}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="text-[#E8C547] text-xs font-semibold px-2 py-0.5 rounded-md border border-[#E8C547]/30">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <h2 className="text-white text-lg leading-tight">{project.title}</h2>
+                      <p className="text-[#9CA3AF] text-xs font-semibold uppercase tracking-[0.08em]">{project.what}</p>
+                      <p className="text-[#6B7280] text-sm leading-relaxed flex-1">{project.description}</p>
+
+                      <Link
+                        href="/contact"
+                        className="text-[#E8C547] font-semibold text-sm hover:text-white transition-colors mt-2 inline-flex items-center gap-2 group-hover:gap-3 duration-200"
+                        aria-label={`Start a project like ${project.title}`}
+                      >
+                        Start My Project
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </motion.div>
+                )
+              })}
             </div>
+
+            {/* Privacy statement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mt-12 flex items-start gap-3 bg-white border border-[#E2DED8] rounded-2xl px-6 py-5"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0 mt-0.5" aria-hidden="true">
+                <path d="M9 1.5L2.25 4.5v5.25c0 4.125 2.925 7.988 6.75 8.25 3.825-.262 6.75-4.125 6.75-8.25V4.5L9 1.5z" stroke="#888580" strokeWidth="1.4" strokeLinejoin="round"/>
+                <path d="M6 9l2 2 4-4" stroke="#888580" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <p className="text-[#888580] text-sm leading-relaxed">
+                <span className="font-semibold text-[#0C0C0C]">We protect our clients&apos; privacy.</span>{' '}
+                The work shown above represents the types of systems we build. Out of respect for our clients, we do not publicly display their brand names, proprietary systems, or business data. All details are generalized to illustrate scope and capability.
+              </p>
+            </motion.div>
           </div>
         </section>
 

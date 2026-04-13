@@ -12,13 +12,13 @@ const tracks = [
     description:
       'Ready to add AI to what you already have? We set up your systems, automate your workflows, and build the tools that let you run like a team of ten.',
     services: [
-      'AI Quick Setup — Starting at $297',
-      'AI Business Build-Out — Starting at $797',
-      'Micro Tool Build — Starting at $500',
-      'AI Retainer — Contact Sales Team',
+      'AI Quick Setup',
+      'AI Business Build-Out',
+      'Micro Tool Build',
+      'AI Retainer',
     ],
     cta: 'See Business Owner Plans',
-    ctaHref: '/services#business-owners',
+    ctaHref: '/services#track-a',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <path d="M4 22V10a2 2 0 012-2h16a2 2 0 012 2v12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
@@ -36,12 +36,12 @@ const tracks = [
     description:
       'Have an idea you\'re ready to build? We help you architect the model, build the product, and launch the venture — from first conversation to first customer.',
     services: [
-      'Strategy Session — Starting at $297',
-      'Founder Build Sprint — Starting at $2,500',
-      'Venture Launch Package — Contact Sales Team',
+      'Strategy Session',
+      'Founder Build Sprint',
+      'Venture Launch Package',
     ],
     cta: 'See Founder Plans',
-    ctaHref: '/services#founders',
+    ctaHref: '/services#track-b',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <path d="M14 3L17 10H24L18.5 14.5L21 22L14 17.5L7 22L9.5 14.5L4 10H11L14 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>

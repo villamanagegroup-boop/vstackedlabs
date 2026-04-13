@@ -53,9 +53,7 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const mailtoHref = `mailto:hello@stackdstudio.com?subject=New Project Inquiry — ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
-    `Name: ${formData.name}\nEmail: ${formData.email}\nBudget: ${formData.budget}\n\nProject Description:\n${formData.description}`
-  )}`
+  const mailtoHref = `/contact?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&budget=${encodeURIComponent(formData.budget)}&description=${encodeURIComponent(formData.description)}`
 
   return (
     <section
@@ -189,19 +187,6 @@ export default function Contact() {
           >
             <div className="bg-[#FAFAFA] rounded-2xl p-8 border border-[#E5E5E5]">
               <div className="flex flex-col gap-6">
-                {/* Email */}
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#6B6B6B] mb-1">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:hello@stackdstudio.com"
-                    className="text-[#0A0A0A] font-semibold hover:text-[#7C3AED] transition-colors text-lg"
-                  >
-                    hello@stackdstudio.com
-                  </a>
-                </div>
-
                 {/* Response time */}
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#6B6B6B] mb-1">
@@ -227,7 +212,7 @@ export default function Contact() {
                       <a
                         key={social.label}
                         href={social.href}
-                        aria-label={`Follow Stackd Studio on ${social.label}`}
+                        aria-label={`Follow VStacked Labs on ${social.label}`}
                         className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#E5E5E5] text-[#6B6B6B] hover:text-[#7C3AED] hover:border-[#7C3AED] transition-all duration-200"
                       >
                         {social.icon}

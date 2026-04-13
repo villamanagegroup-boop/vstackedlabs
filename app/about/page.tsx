@@ -33,23 +33,6 @@ const stack = [
   { category: 'Deployment', items: ['Vercel (primary)', 'Custom domains', 'CI/CD via GitHub Actions'] },
 ]
 
-const portfolio = [
-  {
-    name: 'Capital Core Dance Studio',
-    type: 'Full Platform Build',
-    description: 'Studio management platform with admin dashboard, class scheduling, and public website.',
-  },
-  {
-    name: 'Stackd Studio Website',
-    type: 'Marketing Site',
-    description: 'The site you\'re on right now — built in-house as a flagship example of our design and development capabilities.',
-  },
-  {
-    name: 'FieldOS',
-    type: 'SaaS Platform (In Progress)',
-    description: 'A modular, multi-tenant operations platform for small business owners and multi-venture entrepreneurs.',
-  },
-]
 
 export default function AboutPage() {
   return (
@@ -59,7 +42,7 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="pt-32 pb-20 bg-white border-b border-[#E2DED8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                   About
@@ -68,7 +51,7 @@ export default function AboutPage() {
                   Build Lab. Venture Studio. Powered by AI.
                 </h1>
                 <p className="text-[#888580] text-xl leading-relaxed mb-8">
-                  Stackd Studio is a Build Lab &amp; Creative Venture Studio helping business owners and founders design, build, and launch intelligent systems — so they can operate smarter, move faster, and build something that lasts.
+                  VStacked Labs is a Build Lab &amp; Creative Venture Studio helping business owners and founders design, build, and launch intelligent systems — so they can operate smarter, move faster, and build something that lasts.
                 </p>
                 <p className="text-[#888580] text-lg leading-relaxed">
                   We work in two tracks: AI systems and tools for business owners, and strategy + venture builds for founders. Every project is grounded in craft, strategy, and a genuine belief that the right technology — built thoughtfully — changes businesses.
@@ -76,7 +59,7 @@ export default function AboutPage() {
               </div>
 
               {/* Founder card */}
-              <div className="bg-[#0C0C0C] rounded-2xl p-8 flex flex-col gap-5">
+              <div className="bg-[#0C0C0C] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-2xl bg-[#E8C547] flex items-center justify-center text-[#0C0C0C] text-2xl font-bold">
                     CH
@@ -90,7 +73,7 @@ export default function AboutPage() {
 
                 <div className="border-t border-white/10 pt-5">
                   <p className="text-[#9CA3AF] text-sm leading-relaxed mb-4">
-                    Chanel founded Stackd Studio under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
+                    Chanel founded VStacked Labs under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
                   </p>
                   <p className="text-[#9CA3AF] text-sm leading-relaxed">
                     With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.
@@ -98,12 +81,12 @@ export default function AboutPage() {
                 </div>
 
                 <div className="flex gap-3">
-                  <a
-                    href="mailto:hello@stackdstudio.com"
+                  <Link
+                    href="/contact"
                     className="flex-1 inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold py-2.5 px-4 rounded-lg text-sm transition-all duration-200"
                   >
-                    hello@stackdstudio.com
-                  </a>
+                    Get in Touch
+                  </Link>
                 </div>
               </div>
             </div>
@@ -179,43 +162,6 @@ export default function AboutPage() {
                   </ul>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* HVS Portfolio mention */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">The Portfolio</p>
-                <h2 className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1] mb-4">
-                  Part of the Hicks Virtual Solutions family
-                </h2>
-                <p className="text-[#888580] text-lg leading-relaxed mb-6">
-                  Stackd Studio is the Build Lab &amp; Venture Studio arm of Hicks Virtual Solutions (HVS) — a portfolio of digital products, services, and tools founded and operated by Chanel Hicks.
-                </p>
-                <p className="text-[#888580] text-lg leading-relaxed">
-                  Every build Stackd takes on feeds directly into the HVS portfolio — giving us real, live experience with the exact products we help clients build.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {portfolio.map((item) => (
-                  <div
-                    key={item.name}
-                    className="bg-[#F6F4EF] rounded-xl p-5 border border-[#E2DED8]"
-                  >
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <h3 className="text-base text-[#0C0C0C] leading-tight">{item.name}</h3>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.1em] bg-[#0C0C0C] text-[#E8C547] px-2 py-0.5 rounded shrink-0">
-                        {item.type}
-                      </span>
-                    </div>
-                    <p className="text-[#888580] text-sm leading-relaxed">{item.description}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>

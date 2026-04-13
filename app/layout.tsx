@@ -20,11 +20,11 @@ const instrumentSans = Instrument_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Stackd Studio — Build Lab & Venture Studio',
-  description: 'Stackd Studio helps business owners and founders design, build, and launch intelligent systems — powered by AI, craft, and strategic thinking.',
+  title: 'VStacked Labs — Build. Test. Launch.',
+  description: 'VStacked Labs helps business owners and founders design, build, and launch intelligent systems — powered by AI, craft, and strategic thinking.',
   keywords: ['AI development', 'venture studio', 'build lab', 'Next.js', 'Supabase', 'AI automation', 'founder'],
   openGraph: {
-    title: 'Stackd Studio — Build Lab & Venture Studio',
+    title: 'VStacked Labs — Build. Test. Launch.',
     description: 'Operate smarter. Move faster. Build something that lasts.',
     type: 'website',
   },

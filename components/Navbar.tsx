@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -23,6 +24,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   return (
     <>
       <header
@@ -41,18 +48,17 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex items-center gap-2.5 group"
-            aria-label="Stackd Studio home"
+            aria-label="VStacked Labs home"
           >
-            <div className="w-7 h-7 bg-[#0C0C0C] rounded flex items-center justify-center group-hover:bg-[#E8C547] transition-colors duration-200">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <rect x="1" y="1" width="5" height="5" fill="white" rx="0.5"/>
-                <rect x="8" y="1" width="5" height="5" fill="white" rx="0.5"/>
-                <rect x="1" y="8" width="5" height="5" fill="white" rx="0.5"/>
-                <rect x="8" y="8" width="5" height="5" fill="white" rx="0.5"/>
-              </svg>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="VStacked Labs"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
             <span className="text-[#0C0C0C] font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
-              Stackd Studio
+              VStacked Labs
             </span>
           </Link>
 
@@ -74,7 +80,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
-            aria-label="Book a free discovery call with Stackd Studio"
+            aria-label="Book a free discovery call with VStacked Labs"
           >
             Book a Call
           </Link>
@@ -115,26 +121,50 @@ export default function Navbar() {
         }`}
         aria-hidden={!menuOpen}
       >
-        <div className="h-16" aria-hidden="true" />
-        <nav className="flex-1 flex flex-col justify-center px-8" aria-label="Mobile navigation">
-          <ul className="flex flex-col gap-6" role="list">
+        {/* Drawer header */}
+        <div className="h-16 flex items-center justify-between px-4 border-b border-[#E2DED8]">
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2.5"
+            aria-label="VStacked Labs home"
+          >
+            <Image src="/logo.png" alt="VStacked Labs" width={36} height={36} className="rounded-lg" />
+            <span className="text-[#0C0C0C] font-semibold text-sm tracking-tight font-[family-name:var(--font-instrument-sans)]">
+              VStacked Labs
+            </span>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-[#E2DED8] transition-colors"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 4l12 12M16 4L4 16" stroke="#0C0C0C" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav className="flex-1 flex flex-col justify-center px-8 overflow-y-auto" aria-label="Mobile navigation">
+          <ul className="flex flex-col gap-5" role="list">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-[#0C0C0C] text-4xl font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors"
+                  className="text-[#0C0C0C] text-[clamp(28px,8vw,40px)] font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors block"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-10">
+          <div className="mt-8 mb-4">
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-lg font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-base font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
             >
               Book a Call
             </Link>

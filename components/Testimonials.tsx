@@ -27,6 +27,30 @@ const testimonials = [
     trackColor: '#1A4A7A',
     initials: 'JK',
   },
+  {
+    quote: "We had a broken signup flow that was losing leads every day. VStacked rebuilt our entire onboarding in under a week. Conversions went up 40% in the first month. I wish I had done this sooner.",
+    name: 'Alicia M.',
+    role: 'Owner, Wellness Studio',
+    track: 'Track A',
+    trackColor: '#1A4A7A',
+    initials: 'AM',
+  },
+  {
+    quote: "I needed a co-founder, not just a dev shop. VStacked understood the business side as well as the tech side. My SaaS went from a voice memo to a working prototype in three weeks.",
+    name: 'Devon S.',
+    role: 'Founder, B2B Software Startup',
+    track: 'Track B',
+    trackColor: '#F97316',
+    initials: 'DS',
+  },
+  {
+    quote: "I came to VStacked Labs with a spreadsheet and a prayer. They turned it into a fully automated client management system. My team went from drowning in admin to actually focused on the work that matters.",
+    name: 'Priya N.',
+    role: 'Owner, Creative Agency',
+    track: 'Track A',
+    trackColor: '#1A4A7A',
+    initials: 'PN',
+  },
 ]
 
 export default function Testimonials() {
@@ -42,7 +66,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-12"
         >
           <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
             What Clients Say
@@ -55,48 +79,46 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Cards — 2 col on tablet, 3 col on desktop */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-[#F6F4EF] rounded-2xl p-7 flex flex-col gap-5 border border-[#E2DED8] hover:border-[#0C0C0C]/20 transition-all duration-300"
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              className="bg-[#F6F4EF] rounded-2xl p-5 flex flex-col gap-4 border border-[#E2DED8] hover:border-[#0C0C0C]/20 transition-all duration-300"
             >
               {/* Quote mark */}
-              <div className="text-[#E8C547] text-5xl leading-none font-serif" aria-hidden="true">&ldquo;</div>
+              <div className="text-[#E8C547] text-4xl leading-none font-serif" aria-hidden="true">&ldquo;</div>
 
               {/* Quote */}
-              <p className="text-[#0C0C0C] text-base leading-relaxed flex-1">
+              <p className="text-[#0C0C0C] text-sm leading-relaxed flex-1">
                 {t.quote}
               </p>
 
               {/* Attribution */}
               <div className="flex items-center gap-3 pt-2 border-t border-[#E2DED8]">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0"
                   style={{ background: t.trackColor }}
                 >
                   {t.initials}
                 </div>
-                <div>
-                  <p className="text-[#0C0C0C] text-sm font-semibold">{t.name}</p>
-                  <p className="text-[#888580] text-xs">{t.role}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[#0C0C0C] text-xs font-semibold truncate">{t.name}</p>
+                  <p className="text-[#888580] text-[11px] truncate">{t.role}</p>
                 </div>
-                <div className="ml-auto">
-                  <span
-                    className="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-full"
-                    style={{
-                      background: t.trackColor === '#1A4A7A' ? '#EEF4FB' : '#FFF4ED',
-                      color: t.trackColor,
-                    }}
-                  >
-                    {t.track}
-                  </span>
-                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-full shrink-0"
+                  style={{
+                    background: t.trackColor === '#1A4A7A' ? '#EEF4FB' : '#FFF4ED',
+                    color: t.trackColor,
+                  }}
+                >
+                  {t.track}
+                </span>
               </div>
             </motion.div>
           ))}
