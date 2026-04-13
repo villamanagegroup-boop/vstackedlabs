@@ -93,11 +93,11 @@ export default function BusinessBrainPage() {
       <main className="bg-[#F6F4EF]">
 
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-[#1A1A2E]" aria-labelledby="bb-hero-heading">
+        <section className="pt-32 pb-20 bg-[#0C0C0C]" aria-labelledby="bb-hero-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#1A1A2E] mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A2E]" />
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
                 Business Brain
               </div>
               <h1 id="bb-hero-heading" className="text-[clamp(40px,6vw,72px)] text-white leading-[1.0] mb-5">
@@ -109,7 +109,7 @@ export default function BusinessBrainPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#1A1A2E] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                  className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                 >
                   Get Your Brain Built
                 </Link>
@@ -131,7 +131,7 @@ export default function BusinessBrainPage() {
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                 How It Works
               </p>
-              <h2 id="bb-hiw-heading" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="bb-hiw-heading" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 Four steps. One smart system.
               </h2>
             </div>
@@ -144,7 +144,7 @@ export default function BusinessBrainPage() {
                   <span className="text-[#E8C547] text-3xl font-[family-name:var(--font-anton)] leading-none">
                     {step.number}
                   </span>
-                  <h3 className="text-lg text-[#1A1A2E] leading-tight">{step.label}</h3>
+                  <h3 className="text-lg text-[#0C0C0C] leading-tight">{step.label}</h3>
                   <p className="text-[#888580] text-sm leading-relaxed">{step.description}</p>
                 </div>
               ))}
@@ -159,7 +159,7 @@ export default function BusinessBrainPage() {
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                 Industries We Serve
               </p>
-              <h2 id="bb-niches-heading" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="bb-niches-heading" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 Built for businesses with real operational complexity.
               </h2>
             </div>
@@ -169,7 +169,7 @@ export default function BusinessBrainPage() {
                   key={niche.industry}
                   className="bg-white rounded-2xl p-6 border border-[#E2DED8] flex flex-col gap-3"
                 >
-                  <h3 className="text-lg text-[#1A1A2E] leading-tight">{niche.industry}</h3>
+                  <h3 className="text-lg text-[#0C0C0C] leading-tight">{niche.industry}</h3>
                   <p className="text-[#888580] text-sm leading-relaxed">{niche.pain}</p>
                   <p className="text-[#1A4A7A] text-sm font-medium">{niche.solution}</p>
                 </div>
@@ -185,7 +185,7 @@ export default function BusinessBrainPage() {
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                 Pricing
               </p>
-              <h2 id="bb-pricing-heading" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="bb-pricing-heading" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 Simple, transparent pricing.
               </h2>
             </div>
@@ -195,20 +195,20 @@ export default function BusinessBrainPage() {
                   key={tier.name}
                   className={`relative bg-white rounded-2xl p-8 border flex flex-col gap-5 ${
                     tier.popular
-                      ? 'border-[#1A1A2E] shadow-[0_0_0_1px_#1A1A2E]'
+                      ? 'border-[#0C0C0C] shadow-[0_0_0_1px_#0C0C0C]'
                       : 'border-[#E2DED8]'
                   }`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3.5 left-8">
-                      <span className="bg-[#1A1A2E] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full">
+                      <span className="bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full">
                         Most Popular
                       </span>
                     </div>
                   )}
                   <div className={tier.popular ? 'mt-2' : ''}>
-                    <h3 className="text-2xl text-[#1A1A2E] leading-tight mb-1">{tier.name}</h3>
-                    <p className="text-3xl font-bold text-[#1A1A2E] mb-1 font-[family-name:var(--font-instrument-sans)]">
+                    <h3 className="text-2xl text-[#0C0C0C] leading-tight mb-1">{tier.name}</h3>
+                    <p className="text-3xl font-bold text-[#0C0C0C] mb-1 font-[family-name:var(--font-instrument-sans)]">
                       {tier.setup} <span className="text-base font-normal text-[#888580]">setup</span>
                     </p>
                     <p className="text-[#888580] text-sm">{tier.monthly}</p>
@@ -217,7 +217,7 @@ export default function BusinessBrainPage() {
                   <div className="flex-1" />
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+                    className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
                   >
                     Get Started
                   </Link>
@@ -230,15 +230,15 @@ export default function BusinessBrainPage() {
         {/* CTA */}
         <section className="py-16 bg-[#E8C547]" aria-labelledby="bb-cta-heading">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 id="bb-cta-heading" className="text-[clamp(28px,4vw,48px)] text-[#1A1A2E] leading-[1.1] mb-4">
+            <h2 id="bb-cta-heading" className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1] mb-4">
               Ready to build your Business Brain?
             </h2>
-            <p className="text-[#1A1A2E]/60 text-lg mb-8">
+            <p className="text-[#0C0C0C]/60 text-lg mb-8">
               Book a free call and we&apos;ll scope your system in 20 minutes.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#0d0d1e] text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#333333] text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
             >
               Get Your Brain Built
             </Link>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const CheckIcon = () => (
   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
-    <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#1A1A2E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#0C0C0C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
@@ -160,7 +160,7 @@ export default function ServicesPage() {
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                 Services
               </p>
-              <h1 className="text-[clamp(40px,6vw,72px)] text-[#1A1A2E] leading-[1.0] mb-6">
+              <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
                 Every tier is built to match your budget and scope.
               </h1>
               <p className="text-[#888580] text-xl leading-relaxed mb-8 max-w-2xl">
@@ -169,13 +169,13 @@ export default function ServicesPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#1A1A2E] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                  className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                 >
                   Book a Free Call
                 </Link>
                 <a
                   href="#track-a"
-                  className="inline-flex items-center gap-2 border-2 border-[#1A1A2E] text-[#1A1A2E] hover:bg-[#1A1A2E] hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 min-h-[44px]"
+                  className="inline-flex items-center gap-2 border-2 border-[#0C0C0C] text-[#0C0C0C] hover:bg-[#0C0C0C] hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 min-h-[44px]"
                 >
                   View Tiers
                 </a>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="mb-8">
-              <h2 id="business-owners" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="business-owners" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 AI setup, automation &amp; tools for your business
               </h2>
               <p className="text-[#888580] text-lg">
@@ -213,13 +213,13 @@ export default function ServicesPage() {
                   key={svc.tier}
                   className={`relative bg-white rounded-2xl p-8 border flex flex-col gap-5 ${
                     svc.popular
-                      ? 'border-[#1A1A2E] shadow-[0_0_0_1px_#1A1A2E]'
+                      ? 'border-[#0C0C0C] shadow-[0_0_0_1px_#0C0C0C]'
                       : 'border-[#E2DED8]'
                   }`}
                 >
                   {svc.popular && (
                     <div className="absolute -top-3.5 left-8">
-                      <span className="bg-[#1A1A2E] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full">
+                      <span className="bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full">
                         Most Popular
                       </span>
                     </div>
@@ -233,11 +233,11 @@ export default function ServicesPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl text-[#1A1A2E] leading-tight mb-1">{svc.name}</h3>
+                    <h3 className="text-2xl text-[#0C0C0C] leading-tight mb-1">{svc.name}</h3>
                     {svc.contactSales ? (
                       <p className="text-lg font-semibold text-[#1A4A7A] mb-1 font-[family-name:var(--font-instrument-sans)]">Contact Sales Team</p>
                     ) : (
-                      <p className="text-3xl font-bold text-[#1A1A2E] mb-1 font-[family-name:var(--font-instrument-sans)]">{svc.price}</p>
+                      <p className="text-3xl font-bold text-[#0C0C0C] mb-1 font-[family-name:var(--font-instrument-sans)]">{svc.price}</p>
                     )}
                     <p className="text-[#1A4A7A] text-xs font-medium">Best for: {svc.bestFor}</p>
                   </div>
@@ -246,7 +246,7 @@ export default function ServicesPage() {
 
                   <ul className="flex flex-col gap-2.5 flex-1" role="list">
                     {svc.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-[#1A1A2E]">
+                      <li key={item} className="flex items-start gap-2 text-sm text-[#0C0C0C]">
                         <CheckIcon />
                         {item}
                       </li>
@@ -255,7 +255,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+                    className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
                   >
                     {svc.contactSales ? 'Contact Sales Team' : 'Get Started'}
                   </Link>
@@ -280,7 +280,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="mb-8">
-              <h2 id="founders" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="founders" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 Strategy, sprints &amp; venture launches
               </h2>
               <p className="text-[#888580] text-lg">
@@ -307,7 +307,7 @@ export default function ServicesPage() {
                   )}
                   {svc.both && (
                     <div className="absolute -top-3.5 left-8">
-                      <span className="bg-[#1A1A2E] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
+                      <span className="bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
                         Both Tracks
                       </span>
                     </div>
@@ -321,11 +321,11 @@ export default function ServicesPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl text-[#1A1A2E] leading-tight mb-1">{svc.name}</h3>
+                    <h3 className="text-2xl text-[#0C0C0C] leading-tight mb-1">{svc.name}</h3>
                     {svc.contactSales ? (
                       <p className="text-lg font-semibold text-[#F97316] mb-1 font-[family-name:var(--font-instrument-sans)]">Contact Sales Team</p>
                     ) : (
-                      <p className="text-3xl font-bold text-[#1A1A2E] mb-1 font-[family-name:var(--font-instrument-sans)]">{svc.price}</p>
+                      <p className="text-3xl font-bold text-[#0C0C0C] mb-1 font-[family-name:var(--font-instrument-sans)]">{svc.price}</p>
                     )}
                     <p className="text-[#F97316] text-xs font-medium">Best for: {svc.bestFor}</p>
                   </div>
@@ -334,7 +334,7 @@ export default function ServicesPage() {
 
                   <ul className="flex flex-col gap-2.5 flex-1" role="list">
                     {svc.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-[#1A1A2E]">
+                      <li key={item} className="flex items-start gap-2 text-sm text-[#0C0C0C]">
                         <CheckIcon />
                         {item}
                       </li>
@@ -343,7 +343,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+                    className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
                   >
                     {svc.contactSales ? 'Contact Sales Team' : svc.tier === 'T5' ? 'Book a Session' : 'Start a Sprint'}
                   </Link>
@@ -358,7 +358,7 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Add-Ons</p>
-              <h2 id="addons-heading" className="text-[clamp(24px,3vw,36px)] text-[#1A1A2E] leading-tight mb-2">
+              <h2 id="addons-heading" className="text-[clamp(24px,3vw,36px)] text-[#0C0C0C] leading-tight mb-2">
                 Extend any package
               </h2>
               <p className="text-[#888580] text-lg">Available with any Track A or Track B service.</p>
@@ -371,7 +371,7 @@ export default function ServicesPage() {
                   className="bg-white rounded-2xl p-6 border border-[#E2DED8] flex flex-col gap-2"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-base text-[#1A1A2E] leading-tight">{addon.name}</h3>
+                    <h3 className="text-base text-[#0C0C0C] leading-tight">{addon.name}</h3>
                     <span className="text-[#E8C547] font-bold text-sm shrink-0 font-[family-name:var(--font-instrument-sans)]">
                       {addon.price}
                     </span>
@@ -384,7 +384,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="py-16 bg-[#1A1A2E]">
+        <section className="py-16 bg-[#0C0C0C]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-[clamp(28px,4vw,48px)] text-white leading-[1.1] mb-4">
               Not sure which tier fits?
@@ -394,7 +394,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#1A1A2E] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
             >
               Book a Free Call
             </Link>

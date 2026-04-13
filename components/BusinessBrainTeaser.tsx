@@ -9,14 +9,14 @@ const highlights = [
 
 export default function BusinessBrainTeaser() {
   return (
-    <section className="py-20 bg-[#1A1A2E]" aria-labelledby="bb-teaser-heading">
+    <section className="py-20 bg-[#0C0C0C]" aria-labelledby="bb-teaser-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left — copy */}
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#1A1A2E] mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A2E]" />
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
               New — Business Brain
             </div>
             <h2 id="bb-teaser-heading" className="text-[clamp(32px,4vw,52px)] text-white leading-[1.05] mb-5">
@@ -28,7 +28,7 @@ export default function BusinessBrainTeaser() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/business-brain"
-                className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#1A1A2E] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Learn More
               </Link>

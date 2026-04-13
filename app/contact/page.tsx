@@ -53,7 +53,7 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Contact</p>
-              <h1 className="text-[clamp(40px,6vw,72px)] text-[#1A1A2E] leading-[1.0] mb-6">
+              <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
                 Let&apos;s build something together.
               </h1>
               <p className="text-[#888580] text-xl leading-relaxed">
@@ -70,7 +70,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-8">
               {/* Calendly embed */}
               <div>
-                <h2 className="text-2xl text-[#1A1A2E] mb-2">Book a Free Discovery Call</h2>
+                <h2 className="text-2xl text-[#0C0C0C] mb-2">Book a Free Discovery Call</h2>
                 <p className="text-[#888580] text-sm mb-6">
                   20 minutes. No pitch, no pressure. Just a real conversation about what you&apos;re building.
                 </p>
@@ -89,13 +89,13 @@ export default function ContactPage() {
                         <path d="M3 9h18M8 2v4M16 2v4" stroke="#888580" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </div>
-                    <h3 className="text-lg text-[#1A1A2E] mb-2">Send Us a Message</h3>
+                    <h3 className="text-lg text-[#0C0C0C] mb-2">Send Us a Message</h3>
                     <p className="text-[#888580] text-sm mb-4">
                       Fill out the form below and we&apos;ll get back to you within 24 hours to set up a call.
                     </p>
                     <a
                       href="#send-message"
-                      className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 min-h-[44px]"
+                      className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 min-h-[44px]"
                     >
                       Send a Message
                     </a>
@@ -104,7 +104,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact info */}
-              <div className="bg-[#1A1A2E] rounded-2xl p-7 flex flex-col gap-5">
+              <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
                 <div>
                   <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
                   <a
@@ -136,7 +136,7 @@ export default function ContactPage() {
 
             {/* Right — Form */}
             <div id="send-message">
-              <h2 className="text-2xl text-[#1A1A2E] mb-2">Send a Message</h2>
+              <h2 className="text-2xl text-[#0C0C0C] mb-2">Send a Message</h2>
               <p className="text-[#888580] text-sm mb-8">
                 Tell us about your project, your timeline, and which track you&apos;re on. We&apos;ll respond within 24 hours.
               </p>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl text-[#1A1A2E] mb-2">Message sent!</h3>
+                  <h3 className="text-xl text-[#0C0C0C] mb-2">Message sent!</h3>
                   <p className="text-[#888580] text-sm">
                     We&apos;ll be in touch within 24 hours. In the meantime, feel free to book a discovery call above.
                   </p>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                 >
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-[#1A1A2E] mb-2">
+                      <label htmlFor="name" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
                         Full Name <span className="text-[#E8C547]" aria-hidden="true">*</span>
                       </label>
                       <input
@@ -172,11 +172,11 @@ export default function ContactPage() {
                         required
                         autoComplete="name"
                         placeholder="Jane Smith"
-                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#1A1A2E] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#1A1A2E] focus:border-transparent transition-all min-h-[44px] text-sm"
+                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-[#1A1A2E] mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
                         Email Address <span className="text-[#E8C547]" aria-hidden="true">*</span>
                       </label>
                       <input
@@ -186,19 +186,19 @@ export default function ContactPage() {
                         required
                         autoComplete="email"
                         placeholder="jane@company.com"
-                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#1A1A2E] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#1A1A2E] focus:border-transparent transition-all min-h-[44px] text-sm"
+                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="track" className="block text-sm font-semibold text-[#1A1A2E] mb-2">
+                    <label htmlFor="track" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
                       Which track are you on?
                     </label>
                     <select
                       id="track"
                       name="track"
-                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#1A1A2E] focus:outline-none focus:ring-2 focus:ring-[#1A1A2E] focus:border-transparent transition-all min-h-[44px] text-sm appearance-none"
+                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm appearance-none"
                     >
                       {trackOptions.map((opt) => (
                         <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-[#1A1A2E] mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
                       Tell us about your project <span className="text-[#E8C547]" aria-hidden="true">*</span>
                     </label>
                     <textarea
@@ -218,7 +218,7 @@ export default function ContactPage() {
                       required
                       rows={6}
                       placeholder="What are you trying to build? What have you already tried? What's your timeline and budget range? The more you share, the better we can prepare."
-                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#1A1A2E] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#1A1A2E] focus:border-transparent transition-all resize-none text-sm"
+                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all resize-none text-sm"
                     />
                   </div>
 
@@ -231,7 +231,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="bg-[#1A1A2E] hover:bg-[#E8C547] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#1A1A2E] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
+                    className="bg-[#0C0C0C] hover:bg-[#E8C547] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#0C0C0C] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
                   >
                     {status === 'loading' ? 'Sending...' : 'Send Message'}
                   </button>

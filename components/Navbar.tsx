@@ -43,7 +43,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group"
             aria-label="Stackd Studio home"
           >
-            <div className="w-7 h-7 bg-[#1A1A2E] rounded flex items-center justify-center group-hover:bg-[#E8C547] transition-colors duration-200">
+            <div className="w-7 h-7 bg-[#0C0C0C] rounded flex items-center justify-center group-hover:bg-[#E8C547] transition-colors duration-200">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <rect x="1" y="1" width="5" height="5" fill="white" rx="0.5"/>
                 <rect x="8" y="1" width="5" height="5" fill="white" rx="0.5"/>
@@ -51,7 +51,7 @@ export default function Navbar() {
                 <rect x="8" y="8" width="5" height="5" fill="white" rx="0.5"/>
               </svg>
             </div>
-            <span className="text-[#1A1A2E] font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
+            <span className="text-[#0C0C0C] font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
               Stackd Studio
             </span>
           </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[#888580] hover:text-[#1A1A2E] text-sm font-medium transition-colors duration-200"
+                  className="text-[#888580] hover:text-[#0C0C0C] text-sm font-medium transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
+            className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
             aria-label="Book a free discovery call with Stackd Studio"
           >
             Book a Call
@@ -89,17 +89,17 @@ export default function Navbar() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-5 h-0.5 bg-[#1A1A2E] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
                 menuOpen ? 'rotate-45 translate-y-[7px]' : ''
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#1A1A2E] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
                 menuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#1A1A2E] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
                 menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
               }`}
             />
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-[#1A1A2E] text-4xl font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors"
+                  className="text-[#0C0C0C] text-4xl font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center justify-center bg-[#1A1A2E] hover:bg-[#E8C547] text-white hover:text-[#1A1A2E] text-lg font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-lg font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
             >
               Book a Call
             </Link>
