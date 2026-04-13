@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { submitStoreSignup } from './actions'
+import { useToast } from '@/components/ToastProvider'
 
 const categories = ['All', 'Prompt Packs', 'Templates', 'Courses', 'Skills']
 
@@ -69,19 +70,20 @@ const products = [
 const hasStripe = Boolean(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 function StoreSignup() {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading'>('idle')
+  const { toast } = useToast()
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('loading')
     const formData = new FormData(e.currentTarget)
     const result = await submitStoreSignup(formData)
+    setStatus('idle')
     if (result.success) {
-      setStatus('success')
+      toast("You're on the list! We'll email you when the store goes live.", 'success')
+      ;(e.target as HTMLFormElement).reset()
     } else {
-      setStatus('error')
-      setErrorMsg(result.error)
+      toast(result.error, 'error')
     }
   }
 
@@ -95,19 +97,13 @@ function StoreSignup() {
           We&apos;ll send you a note when products are live — plus an early access discount.
         </p>
 
-        {status === 'success' ? (
-          <div className="max-w-md mx-auto bg-white/10 border border-white/20 rounded-2xl px-6 py-5">
-            <p className="text-white font-semibold mb-1">You&apos;re on the list.</p>
-            <p className="text-white/60 text-sm">We&apos;ll email you when the store goes live.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               name="email"
               placeholder="your@email.com"
               required
-              className="flex-1 bg-white/10 border border-white/20 text-white placeholder:text-white/40 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#E8C547] transition-colors min-h-[44px]"
+              className="flex-1 bg-white/10 border border-white/20 text-white placeholder:text-white/40 rounded-xl px-4 py-3 text-sm transition-colors min-h-[44px]"
             />
             <button
               type="submit"
@@ -117,11 +113,6 @@ function StoreSignup() {
               {status === 'loading' ? 'Saving...' : 'Notify Me'}
             </button>
           </form>
-        )}
-
-        {status === 'error' && (
-          <p className="text-red-400 text-sm mt-3">{errorMsg}</p>
-        )}
       </div>
     </section>
   )

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { submitLead } from './actions'
+import { useToast } from '@/components/ToastProvider'
 
 const trackOptions = [
   { value: '', label: 'Which track are you on?' },
@@ -15,9 +16,9 @@ const trackOptions = [
 const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading'>('idle')
   const formRef = useRef<HTMLFormElement>(null)
+  const { toast } = useToast()
 
   useEffect(() => {
     if (!calendlyUrl) return
@@ -36,11 +37,12 @@ export default function ContactPage() {
     const result = await submitLead(formData)
 
     if (result.success) {
-      setStatus('success')
+      setStatus('idle')
       formRef.current?.reset()
+      toast("Message sent! We'll be in touch within 24 hours.", 'success')
     } else {
-      setStatus('error')
-      setErrorMsg(result.error)
+      setStatus('idle')
+      toast(result.error, 'error')
     }
   }
 
@@ -141,106 +143,86 @@ export default function ContactPage() {
                 Tell us about your project, your timeline, and which track you&apos;re on. We&apos;ll respond within 24 hours.
               </p>
 
-              {status === 'success' ? (
-                <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl text-[#0C0C0C] mb-2">Message sent!</h3>
-                  <p className="text-[#888580] text-sm">
-                    We&apos;ll be in touch within 24 hours. In the meantime, feel free to book a discovery call above.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  ref={formRef}
-                  onSubmit={handleSubmit}
-                  className="flex flex-col gap-5"
-                  aria-label="Contact form"
-                >
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                        Full Name <span className="text-[#E8C547]" aria-hidden="true">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        autoComplete="name"
-                        placeholder="Jane Smith"
-                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                        Email Address <span className="text-[#E8C547]" aria-hidden="true">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        autoComplete="email"
-                        placeholder="jane@company.com"
-                        className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm"
-                      />
-                    </div>
-                  </div>
-
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-5"
+                aria-label="Contact form"
+              >
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="track" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                      Which track are you on?
+                    <label htmlFor="name" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
+                      Full Name <span className="text-[#E8C547]" aria-hidden="true">*</span>
                     </label>
-                    <select
-                      id="track"
-                      name="track"
-                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all min-h-[44px] text-sm appearance-none"
-                    >
-                      {trackOptions.map((opt) => (
-                        <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
-                          {opt.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                      Tell us about your project <span className="text-[#E8C547]" aria-hidden="true">*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
                       required
-                      rows={6}
-                      placeholder="What are you trying to build? What have you already tried? What's your timeline and budget range? The more you share, the better we can prepare."
-                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] focus:border-transparent transition-all resize-none text-sm"
+                      autoComplete="name"
+                      placeholder="Jane Smith"
+                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] transition-all min-h-[44px] text-sm"
                     />
                   </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
+                      Email Address <span className="text-[#E8C547]" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      autoComplete="email"
+                      placeholder="jane@company.com"
+                      className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] transition-all min-h-[44px] text-sm"
+                    />
+                  </div>
+                </div>
 
-                  {status === 'error' && (
-                    <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">
-                      {errorMsg}
-                    </div>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="bg-[#0C0C0C] hover:bg-[#E8C547] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#0C0C0C] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
+                <div>
+                  <label htmlFor="track" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
+                    Which track are you on?
+                  </label>
+                  <select
+                    id="track"
+                    name="track"
+                    className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] transition-all min-h-[44px] text-sm appearance-none"
                   >
-                    {status === 'loading' ? 'Sending...' : 'Send Message'}
-                  </button>
+                    {trackOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-                  <p className="text-[#888580] text-xs text-center">
-                    We respond within 24 hours. Your info is never shared or sold.
-                  </p>
-                </form>
-              )}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
+                    Tell us about your project <span className="text-[#E8C547]" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    placeholder="What are you trying to build? What have you already tried? What's your timeline and budget range? The more you share, the better we can prepare."
+                    className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] transition-all resize-none text-sm"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="bg-[#0C0C0C] hover:bg-[#E8C547] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#0C0C0C] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
+                >
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
+                </button>
+
+                <p className="text-[#888580] text-xs text-center">
+                  We respond within 24 hours. Your info is never shared or sold.
+                </p>
+              </form>
             </div>
           </div>
         </div>

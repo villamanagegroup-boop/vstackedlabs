@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Anton, Instrument_Sans } from 'next/font/google'
 import './globals.css'
+import ScrollProgress from '@/components/ScrollProgress'
+import CursorGlow from '@/components/CursorGlow'
+import ToastProvider from '@/components/ToastProvider'
 
 const anton = Anton({
   weight: '400',
@@ -35,7 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${anton.variable} ${instrumentSans.variable}`}>
       <body className="font-[family-name:var(--font-instrument-sans)] bg-[#F6F4EF] text-[#0C0C0C] antialiased">
-        {children}
+        <ScrollProgress />
+        <CursorGlow />
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </body>
     </html>
   )

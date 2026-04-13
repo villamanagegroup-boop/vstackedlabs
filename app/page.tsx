@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
+import TechStack from '@/components/TechStack'
 import Tracks from '@/components/Tracks'
 import HowItWorks from '@/components/HowItWorks'
 import BusinessBrainTeaser from '@/components/BusinessBrainTeaser'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Stats />
+        <TechStack />
         <Tracks />
         <HowItWorks />
         <BusinessBrainTeaser />
