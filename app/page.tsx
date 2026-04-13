@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import SocialProof from '@/components/SocialProof'
+import Stats from '@/components/Stats'
 import Tracks from '@/components/Tracks'
 import HowItWorks from '@/components/HowItWorks'
 import BusinessBrainTeaser from '@/components/BusinessBrainTeaser'
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <SocialProof />
+        <Stats />
         <Tracks />
         <HowItWorks />
         <BusinessBrainTeaser />

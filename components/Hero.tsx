@@ -1,7 +1,38 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+
+const cycleWords = ['Business Owners.', 'Founders.', 'Operators.', 'Builders.']
+
+function TypewriterWord() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % cycleWords.length)
+    }, 2400)
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <span className="relative inline-block">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -20, filter: 'blur(4px)' }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="inline-block text-[#E8C547]"
+        >
+          {cycleWords[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  )
+}
 
 export default function Hero() {
   return (
@@ -53,15 +84,15 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(44px,7vw,84px)] leading-[1.0] tracking-[0.01em] text-[#0C0C0C] mb-6"
+              className="text-[clamp(44px,7vw,84px)] leading-[1.05] tracking-[0.01em] text-[#0C0C0C] mb-6"
             >
               Operate Smarter.{' '}
               <br className="hidden sm:block" />
               Move Faster.{' '}
               <br className="hidden sm:block" />
-              <span className="text-[#E8C547]">Build Something</span>{' '}
+              Built for{' '}
               <br className="hidden sm:block" />
-              That Lasts.
+              <TypewriterWord />
             </motion.h1>
 
             <motion.p
