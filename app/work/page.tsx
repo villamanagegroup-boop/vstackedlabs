@@ -5,20 +5,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import {
-  MockupDanceStudio,
-  MockupIntakeAgent,
-  MockupFieldOS,
-  MockupClientPortal,
-  MockupBizDashboard,
-  MockupBusinessBrain,
-  MockupSalon,
-  MockupGym,
-  MockupCoaching,
-  MockupEcommerce,
-  MockupSports,
-} from '@/components/OurWork'
-
 type Track = 'All' | 'Track A' | 'Track B'
 
 const projects = [
@@ -32,7 +18,7 @@ const projects = [
     description: 'Qualifies leads, matches them to the right service tier, auto-generates tailored proposals, and books discovery calls — 24/7, without any human involvement. Eliminated 3+ hours/day of manual admin work.',
     url: 'intake.stackd.app',
     status: 'Live',
-    mockup: MockupIntakeAgent,
+    imageUrl: '/work/intake-agent.jpg',
   },
   {
     track: 'Track B' as Track,
@@ -44,19 +30,19 @@ const projects = [
     description: 'Answers business questions using the owner\'s own SOPs, reports, and documents. Built with RAG architecture on top of Claude — no more digging through folders or asking the team for information.',
     url: 'brain.stackd.app',
     status: 'Live',
-    mockup: MockupBusinessBrain,
+    imageUrl: '/work/business-brain.jpg',
   },
   {
     track: 'Track A' as Track,
     trackColor: '#1A4A7A',
     trackTextColor: '#93C5FD',
-    tags: ['Next.js', 'Supabase', 'Admin Portal'],
-    title: 'Dance Studio',
-    what: 'Full studio management with class scheduling and admin portal',
-    description: 'Public-facing website, admin dashboard, class scheduling, student roster, and Supabase-powered backend with row-level security. Studio owner went from spreadsheets to a fully automated system — saves ~5 hours/week.',
-    url: 'studio.app/admin/schedule',
+    tags: ['Claude API', 'Next.js', 'AI Audit'],
+    title: 'Client Audit Tool',
+    what: 'AI-powered business health scoring and gap analysis',
+    description: 'An AI-powered client audit platform that surfaces gaps, scores business health, and generates actionable reports — giving owners clarity in minutes instead of weeks.',
+    url: 'audit.stackd.app',
     status: 'Live',
-    mockup: MockupDanceStudio,
+    imageUrl: '/work/client-audit-tool.png',
   },
   {
     track: 'Track A' as Track,
@@ -68,7 +54,7 @@ const projects = [
     description: 'Online booking with staff scheduling, automated confirmation and rebooking reminders, service menu management, and a client history dashboard — all branded to the salon experience.',
     url: 'book.salon.app/schedule',
     status: 'Live',
-    mockup: MockupSalon,
+    imageUrl: '/work/salon-booking.jpg',
   },
   {
     track: 'Track A' as Track,
@@ -80,7 +66,7 @@ const projects = [
     description: 'Structured coaching portal with gated curriculum, session scheduling, progress milestone tracking, and a private client dashboard — giving coaches a professional delivery system without any custom dev overhead.',
     url: 'coach.portal.app/program',
     status: 'Live',
-    mockup: MockupCoaching,
+    imageUrl: '/work/coaching-portal.jpg',
   },
   {
     track: 'Track B' as Track,
@@ -92,7 +78,7 @@ const projects = [
     description: 'Modular, multi-tenant SaaS with a universal core and industry-specific modules. Built for small business owners who run multiple ventures and need one place to manage them all. Currently in beta.',
     url: 'ops.platform/dashboard',
     status: 'In Progress',
-    mockup: MockupFieldOS,
+    imageUrl: '/work/operations-platform.png',
   },
   {
     track: 'Track A' as Track,
@@ -104,7 +90,7 @@ const projects = [
     description: 'Quiz-gated membership portal with progress tracking, locked content modules, resource vaults, and daily card delivery — built for coaches and service businesses offering ongoing digital programs.',
     url: 'portal.client.app/dashboard',
     status: 'Live',
-    mockup: MockupClientPortal,
+    imageUrl: '/work/coaching-portal.jpg',
   },
   {
     track: 'Track B' as Track,
@@ -116,7 +102,7 @@ const projects = [
     description: 'Centralized hub with KPI tracking, task management, revenue charts, and team activity feeds. Purpose-built for small business owners running multiple revenue streams who need one clear view of everything.',
     url: 'ops.dashboard/overview',
     status: 'Live',
-    mockup: MockupBizDashboard,
+    imageUrl: '/work/operations-platform.png',
   },
   {
     track: 'Track A' as Track,
@@ -128,7 +114,7 @@ const projects = [
     description: 'Membership tiers, class sign-ups, check-in tracking, and automated renewal flows — giving gym owners a full operations view from one clean dashboard. Stripe-powered with email automation.',
     url: 'members.gym.app/dashboard',
     status: 'Live',
-    mockup: MockupGym,
+    imageUrl: '/work/coaching-portal.jpg',
   },
   {
     track: 'Track B' as Track,
@@ -140,7 +126,7 @@ const projects = [
     description: 'Instant-download storefront with product filtering, Stripe Checkout, and automated delivery via email. No marketplace fees, fully owned by the business — with an admin panel for managing products and orders.',
     url: 'shop.brand.app/products',
     status: 'Live',
-    mockup: MockupEcommerce,
+    imageUrl: '/work/client-audit-tool.png',
   },
   {
     track: 'Track A' as Track,
@@ -152,7 +138,7 @@ const projects = [
     description: 'Season registration, team roster management, game schedules, and payment collection — giving youth sports programs a professional digital presence without the complexity of off-the-shelf platforms.',
     url: 'register.league.app/season',
     status: 'Live',
-    mockup: MockupSports,
+    imageUrl: '/work/coaching-portal.jpg',
   },
 ]
 
@@ -205,7 +191,6 @@ export default function WorkPage() {
             {/* Project cards */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((project, i) => {
-                const Mockup = project.mockup
                 return (
                   <motion.div
                     key={project.title}
@@ -215,7 +200,7 @@ export default function WorkPage() {
                     className="bg-[#0C0C0C] rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-transform duration-300"
                     style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.3)' }}
                   >
-                    {/* Browser chrome + mockup */}
+                    {/* Browser chrome + image */}
                     <div className="relative">
                       <div className="flex items-center gap-1.5 px-4 py-3 bg-[#1a1a1a] border-b border-white/5">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
@@ -229,8 +214,13 @@ export default function WorkPage() {
                           <span className="text-[#555] text-[10px] font-mono truncate">{project.url}</span>
                         </div>
                       </div>
-                      <div className="overflow-hidden">
-                        <Mockup />
+                      <div className="overflow-hidden h-48">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={project.imageUrl}
+                          alt={project.title}
+                          className="w-full h-full object-cover object-top"
+                        />
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#0C0C0C] to-transparent pointer-events-none" aria-hidden="true"/>
                     </div>

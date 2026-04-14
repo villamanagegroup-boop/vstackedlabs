@@ -415,7 +415,7 @@ const homeProjects = [
     title: 'Client Intake Agent',
     description: 'An AI-powered intake system that qualifies leads, matches them to the right service tier, auto-generates proposals, and books discovery calls — 24/7.',
     url: 'intake.stackd.app',
-    mockup: MockupIntakeAgent,
+    imageUrl: '/work/intake-agent.jpg',
   },
   {
     track: 'Track B — Founder',
@@ -425,17 +425,17 @@ const homeProjects = [
     title: 'Business Brain App',
     description: 'An AI-powered knowledge app that answers business questions using your own SOPs, reports, and documents — no more digging through folders.',
     url: 'brain.stackd.app',
-    mockup: MockupBusinessBrain,
+    imageUrl: '/work/business-brain.jpg',
   },
   {
     track: 'Track A — Business Owner',
     trackColor: '#1A4A7A',
     trackTextColor: '#93C5FD',
-    tags: ['Next.js', 'Supabase', 'Admin Portal'],
-    title: 'Dance Studio',
-    description: 'A full studio management platform with a public website, admin dashboard, class scheduling, and Supabase backend with row-level security.',
-    url: 'studio.app/admin/schedule',
-    mockup: MockupDanceStudio,
+    tags: ['Claude API', 'Next.js', 'AI Audit'],
+    title: 'Client Audit Tool',
+    description: 'An AI-powered client audit platform that surfaces gaps, scores business health, and generates actionable reports — giving owners clarity in minutes.',
+    url: 'audit.stackd.app',
+    imageUrl: '/work/client-audit-tool.png',
   },
   {
     track: 'Track A — Business Owner',
@@ -445,7 +445,7 @@ const homeProjects = [
     title: 'Salon Booking System',
     description: 'Online booking with staff scheduling, automated confirmations, rebooking reminders, and a client history dashboard — all branded to the salon.',
     url: 'book.salon.app/schedule',
-    mockup: MockupSalon,
+    imageUrl: '/work/salon-booking.jpg',
   },
   {
     track: 'Track A — Business Owner',
@@ -455,7 +455,7 @@ const homeProjects = [
     title: 'Coaching Program Portal',
     description: 'A structured coaching portal with gated curriculum, session scheduling, progress milestones, and a private client dashboard for accountability.',
     url: 'coach.portal.app/program',
-    mockup: MockupCoaching,
+    imageUrl: '/work/coaching-portal.jpg',
   },
   {
     track: 'Track B — Founder',
@@ -465,7 +465,7 @@ const homeProjects = [
     title: 'Operations Platform',
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
     url: 'ops.platform/dashboard',
-    mockup: MockupFieldOS,
+    imageUrl: '/work/operations-platform.png',
   },
 ]
 
@@ -511,7 +511,6 @@ export default function OurWork() {
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {homeProjects.map((project, i) => {
-            const Mockup = project.mockup
             return (
               <motion.div
                 key={project.title}
@@ -536,8 +535,13 @@ export default function OurWork() {
                       <span className="text-[#555] text-[10px] font-mono truncate">{project.url}</span>
                     </div>
                   </div>
-                  <div className="overflow-hidden">
-                    <Mockup />
+                  <div className="overflow-hidden h-48">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0C0C0C] to-transparent pointer-events-none" aria-hidden="true"/>
                 </div>
