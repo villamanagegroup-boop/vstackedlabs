@@ -8,7 +8,6 @@ const footerColumns = [
     heading: 'Studio',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Our Work', href: '/work' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Careers', href: '/careers' },
       { label: 'Store', href: '/store' },

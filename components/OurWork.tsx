@@ -497,15 +497,6 @@ export default function OurWork() {
               <br className="hidden sm:block" /> Built with AI from day one.
             </h2>
           </div>
-          <Link
-            href="/work"
-            className="shrink-0 inline-flex items-center gap-2 border border-[#E2DED8] text-[#0C0C0C] hover:border-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200"
-          >
-            View All Work
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
         </motion.div>
 
         {/* Cards */}
