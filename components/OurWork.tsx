@@ -471,7 +471,7 @@ const homeProjects = [
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
     url: 'ops.platform/dashboard',
     imageUrl: '/work/operations-platform.png',
-    objectPosition: 'bottom',
+    objectPosition: '50% 65%',
   },
 ]
 
