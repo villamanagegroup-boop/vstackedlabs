@@ -117,8 +117,12 @@ export default function PricingPage() {
             <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
               Simple, transparent pricing.
             </h1>
-            <p className="text-[#888580] text-xl leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-[#888580] text-xl leading-relaxed max-w-2xl mx-auto mb-6">
               Seven tiers across two tracks. No retainer traps, no hidden fees, no surprises. Just the right tier for where you are right now.
+            </p>
+            <p className="text-[#888580] text-sm max-w-xl mx-auto mb-8 leading-relaxed">
+              <span className="font-semibold text-[#0C0C0C]">Base pricing starts at $297.</span>{' '}
+              Final project cost may vary depending on scope, complexity, and custom feature requirements. All pricing is confirmed before any work begins.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
