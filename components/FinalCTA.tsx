@@ -58,7 +58,7 @@ export default function FinalCTA() {
 
           {/* Quick trust line */}
           <p className="mt-8 text-white/40 text-sm">
-            vstackedlabs.com
+            stackdstudios.com
           </p>
         </motion.div>
       </div>

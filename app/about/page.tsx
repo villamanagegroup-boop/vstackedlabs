@@ -51,7 +51,7 @@ export default function AboutPage() {
                   Build Lab. Venture Studio. Powered by AI.
                 </h1>
                 <p className="text-[#888580] text-xl leading-relaxed mb-8">
-                  VStacked Labs is a Build Lab &amp; Creative Venture Studio helping business owners and founders design, build, and launch intelligent systems — so they can operate smarter, move faster, and build something that lasts.
+                  Stackd Studios AI is an AI-powered Build Lab &amp; Creative Venture Studio helping business owners and founders design, build, and launch intelligent systems — so they can operate smarter, move faster, and build something that lasts.
                 </p>
                 <p className="text-[#888580] text-lg leading-relaxed">
                   We work in two tracks: AI systems and tools for business owners, and strategy + venture builds for founders. Every project is grounded in craft, strategy, and a genuine belief that the right technology — built thoughtfully — changes businesses.
@@ -65,7 +65,7 @@ export default function AboutPage() {
                     CH
                   </div>
                   <div>
-                    <h2 className="text-white text-xl leading-tight">Chanel Hicks</h2>
+                    <h2 className="text-white text-xl leading-tight">Chanel Gray</h2>
                     <p className="text-[#E8C547] text-sm font-medium">Founder &amp; CEO</p>
                     <p className="text-[#888580] text-sm">United States</p>
                   </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
 
                 <div className="border-t border-white/10 pt-5">
                   <p className="text-[#9CA3AF] text-sm leading-relaxed mb-4">
-                    Chanel founded VStacked Labs under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
+                    Chanel founded Stackd Studios AI under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
                   </p>
                   <p className="text-[#9CA3AF] text-sm leading-relaxed">
                     With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.

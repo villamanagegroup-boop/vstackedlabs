@@ -414,7 +414,7 @@ const homeProjects = [
     tags: ['Claude API', 'Next.js', 'Automation'],
     title: 'Client Intake Agent',
     description: 'An AI-powered intake system that qualifies leads, matches them to the right service tier, auto-generates proposals, and books discovery calls — 24/7.',
-    url: 'intake.vstacked.app',
+    url: 'intake.stackd.app',
     mockup: MockupIntakeAgent,
   },
   {
@@ -424,7 +424,7 @@ const homeProjects = [
     tags: ['Claude API', 'RAG', 'Next.js'],
     title: 'Business Brain App',
     description: 'An AI-powered knowledge app that answers business questions using your own SOPs, reports, and documents — no more digging through folders.',
-    url: 'brain.vstacked.app',
+    url: 'brain.stackd.app',
     mockup: MockupBusinessBrain,
   },
   {

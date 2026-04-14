@@ -212,7 +212,7 @@ export default function Contact() {
                       <a
                         key={social.label}
                         href={social.href}
-                        aria-label={`Follow VStacked Labs on ${social.label}`}
+                        aria-label={`Follow Stackd Studios AI on ${social.label}`}
                         className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#E5E5E5] text-[#6B6B6B] hover:text-[#7C3AED] hover:border-[#7C3AED] transition-all duration-200"
                       >
                         {social.icon}

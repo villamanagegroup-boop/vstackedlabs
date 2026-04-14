@@ -56,7 +56,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
             </svg>
           </div>
           <span className="text-[#0C0C0C] font-semibold text-lg font-[family-name:var(--font-instrument-sans)]">
-            VStacked Admin
+            Stackd Studios AI Admin
           </span>
         </div>
 
@@ -80,7 +80,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@vstackedlabs.com"
+                placeholder="admin@stackdstudios.com"
                 className="w-full bg-[#F6F4EF] border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] text-sm min-h-[44px]"
               />
             </div>
@@ -147,7 +147,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
               </svg>
             </div>
             <span className="text-[#0C0C0C] font-semibold text-sm font-[family-name:var(--font-instrument-sans)]">
-              VStacked Admin
+              Stackd Studios AI Admin
             </span>
             <span className="text-[#E2DED8]" aria-hidden="true">·</span>
             <span className="text-[#888580] text-sm">Dashboard</span>

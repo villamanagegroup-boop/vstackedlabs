@@ -22,7 +22,7 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Engineering',
     summary:
-      'We\'re looking for a full stack engineer who thrives on building fast, clean, production-ready products. You\'ll work directly on client builds and internal VStacked ventures using our standard stack: Next.js, Supabase, Tailwind, and Stripe.',
+      'We\'re looking for a full stack engineer who thrives on building fast, clean, production-ready products. You\'ll work directly on client builds and internal Stackd Studios AI ventures using our standard stack: Next.js, Supabase, Tailwind, and Stripe.',
     responsibilities: [
       'Build and ship client products from design to deployment',
       'Implement Supabase schemas, RLS policies, and server actions',
@@ -80,12 +80,12 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Design',
     summary:
-      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, VStacked\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
+      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, Stackd Studios AI\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
     responsibilities: [
       'Design interfaces for web apps, marketing sites, and dashboards',
-      'Create and maintain VStacked\'s brand design system',
+      'Create and maintain Stackd Studios AI\'s brand design system',
       'Produce Figma files ready for direct developer handoff',
-      'Design digital products for the VStacked store (prompt pack covers, course assets)',
+      'Design digital products for the Stackd Studios AI store (prompt pack covers, course assets)',
       'Review implemented designs and flag deviations from spec',
     ],
     requirements: [
@@ -109,13 +109,13 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Strategy',
     summary:
-      'VStacked works with founders to validate, model, and launch new ventures. We\'re looking for a strategist who can run idea architecture sessions, produce business model documentation, and help founders stress-test their concepts before we build.',
+      'Stackd Studios AI works with founders to validate, model, and launch new ventures. We\'re looking for a strategist who can run idea architecture sessions, produce business model documentation, and help founders stress-test their concepts before we build.',
     responsibilities: [
       'Lead 90-minute Strategy Sessions with Track B clients',
       'Produce business model documents, roadmaps, and positioning frameworks',
       'Facilitate concept validation — market sizing, competitive analysis, risk mapping',
       'Collaborate with the team on Founder Build Sprint scoping',
-      'Contribute to VStacked\'s internal venture pipeline and IP',
+      'Contribute to Stackd Studios AI\'s internal venture pipeline and IP',
     ],
     requirements: [
       '3+ years in strategy, consulting, product management, or venture building',
@@ -142,7 +142,7 @@ const jobs: Job[] = [
     responsibilities: [
       'Onboard new clients and set clear expectations from day one',
       'Manage project timelines and communicate status updates proactively',
-      'Coordinate between clients and the VStacked build team',
+      'Coordinate between clients and the Stackd Studios AI build team',
       'Handle post-delivery support requests and escalations',
       'Identify opportunities to expand client relationships into retainers or upgrades',
     ],
@@ -167,12 +167,12 @@ const jobs: Job[] = [
     location: 'Remote — USA',
     track: 'Growth',
     summary:
-      'VStacked needs a voice. We\'re building in public, selling AI services to business owners and founders, and launching a digital store. We need someone who can create content that educates, converts, and builds a community around what we\'re doing.',
+      'Stackd Studios AI needs a voice. We\'re building in public, selling AI services to business owners and founders, and launching a digital store. We need someone who can create content that educates, converts, and builds a community around what we\'re doing.',
     responsibilities: [
-      'Own VStacked\'s content calendar across LinkedIn, X (Twitter), and TikTok',
+      'Own Stackd Studios AI\'s content calendar across LinkedIn, X (Twitter), and TikTok',
       'Write educational content about AI tools, workflows, and business building',
       'Produce short-form video content (scripting + filming or coordination)',
-      'Write and send a weekly email newsletter to the VStacked list',
+      'Write and send a weekly email newsletter to the Stackd Studios AI list',
       'Contribute copy for landing pages, product descriptions, and store listings',
     ],
     requirements: [
@@ -187,6 +187,93 @@ const jobs: Job[] = [
       'Email marketing experience (Resend, Mailchimp, ConvertKit)',
       'Background in agency, SaaS, or creator businesses',
       'Existing audience in the AI, business, or tech space',
+    ],
+  },
+  {
+    id: 'social-media-manager',
+    title: 'Social Media Manager',
+    type: 'Part-Time',
+    location: 'Remote — USA',
+    track: 'Growth',
+    summary:
+      'We need someone who lives on social media and knows how to build an engaged audience around AI, business, and tech. You\'ll own our day-to-day presence on LinkedIn, TikTok, Instagram, and X — turning our work into content that actually gets seen.',
+    responsibilities: [
+      'Plan and execute daily/weekly content across LinkedIn, TikTok, X, and Instagram',
+      'Repurpose builds, client wins, and behind-the-scenes moments into engaging posts',
+      'Grow followers and engagement through consistent, value-driven content',
+      'Monitor comments, DMs, and mentions — respond and build community',
+      'Track performance metrics and iterate on what works',
+    ],
+    requirements: [
+      'Proven track record growing social accounts in business, AI, or tech niches',
+      'Strong visual instincts — you know what stops the scroll',
+      'Comfortable writing sharp, concise copy for multiple platforms',
+      'Self-directed and consistent — you post without being reminded',
+      'Familiarity with scheduling tools (Buffer, Metricool, Later, etc.)',
+    ],
+    nice: [
+      'Short-form video creation and editing (CapCut, Premiere, etc.)',
+      'Experience with AI-generated content workflows',
+      'Existing following in the business or AI creator space',
+      'Graphic design chops (Canva, Figma)',
+    ],
+  },
+  {
+    id: 'creator-outreach-lead',
+    title: 'Creator & Outreach Partner',
+    type: 'Freelance',
+    location: 'Remote',
+    track: 'Growth',
+    summary:
+      'We\'re building a network of creators, influencers, and thought leaders who genuinely believe in AI-powered business tools. You\'ll identify, reach out to, and onboard partners who can amplify Stackd Studios AI\'s reach — from micro-influencers to podcasters to newsletter writers.',
+    responsibilities: [
+      'Research and identify creators, podcasters, and newsletters aligned with our audience',
+      'Craft and send personalized outreach pitches to potential partners',
+      'Manage ongoing relationships with active affiliates and creators',
+      'Coordinate content collaborations, shoutouts, and sponsored integrations',
+      'Track referral performance and provide partners with reporting',
+    ],
+    requirements: [
+      'Experience in influencer marketing, partnerships, or creator outreach',
+      'Excellent written communication — you write like a human, not a template',
+      'Strong organizational skills — you\'re tracking many conversations at once',
+      'Understanding of creator economics and what motivates partnerships',
+      'Comfortable negotiating terms and managing expectations',
+    ],
+    nice: [
+      'Existing relationships in the AI, SaaS, or business creator ecosystem',
+      'Experience with affiliate platforms (Impact, PartnerStack, etc.)',
+      'Background in B2B marketing or agency partnerships',
+      'Comfort with CRM tools (Notion, HubSpot, Airtable)',
+    ],
+  },
+  {
+    id: 'brand-affiliate-partner',
+    title: 'Brand Affiliate Partner',
+    type: 'Freelance',
+    location: 'Remote',
+    track: 'Growth',
+    summary:
+      'Love what we\'re building? Earn commission by promoting Stackd Studios AI to your audience. Whether you\'re a content creator, business coach, consultant, or community builder — if your audience includes business owners or founders, there\'s a fit here. No minimum follower count required.',
+    responsibilities: [
+      'Share Stackd Studios AI services, products, and content with your audience',
+      'Create authentic content (posts, videos, reviews, tutorials) showcasing our work',
+      'Drive qualified leads to our site using your unique affiliate link',
+      'Participate in launches, promotions, and affiliate-exclusive offers',
+      'Provide feedback on what your audience responds to',
+    ],
+    requirements: [
+      'Active presence on at least one platform (LinkedIn, TikTok, YouTube, Instagram, X, or email)',
+      'Audience that includes business owners, entrepreneurs, or founders',
+      'Genuine belief in AI tools and their impact on modern business',
+      'Ability to create content consistently — at least 2–4 posts/month',
+      'No prior affiliate experience required — we\'ll onboard you fully',
+    ],
+    nice: [
+      'Established newsletter, podcast, or YouTube channel',
+      'Experience as an affiliate for software or SaaS products',
+      'Community leadership (Facebook Groups, Slack communities, Discord)',
+      'Background in business consulting, coaching, or operations',
     ],
   },
 ]
@@ -223,7 +310,7 @@ export default function CareersPage() {
                   Build the future of work with us.
                 </h1>
                 <p className="text-[#888580] text-xl leading-relaxed">
-                  VStacked Labs is a remote-first Build Lab & Venture Studio. We move fast, we care about craft, and we work on things that actually matter to business owners and founders.
+                  Stackd Studios AI is a remote-first, AI-powered Build Lab & Venture Studio. We move fast, we care about craft, and we work on things that actually matter to business owners and founders.
                 </p>
               </div>
               <div className="flex flex-col gap-5">
@@ -291,6 +378,95 @@ export default function CareersPage() {
           </div>
         </section>
 
+        {/* Affiliate Program */}
+        <section className="py-20 bg-[#0C0C0C]" aria-labelledby="affiliate-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="max-w-2xl mb-14">
+              <p className="text-[#E8C547] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
+                Affiliate &amp; Creator Program
+              </p>
+              <h2
+                id="affiliate-heading"
+                className="text-[clamp(28px,4vw,52px)] text-white leading-[1.1] mb-5"
+              >
+                Get paid to spread the word.
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed">
+                We&apos;re building an affiliate network of creators, coaches, consultants, and community builders who believe in AI-powered business. If your audience includes founders or business owners, you belong here — and you&apos;ll earn commission for every client you send our way.
+              </p>
+            </div>
+
+            {/* How it works */}
+            <div className="grid sm:grid-cols-3 gap-6 mb-14">
+              {[
+                {
+                  step: '01',
+                  title: 'Apply or get approved',
+                  body: 'Fill out a quick application. We review your platform and audience fit — no minimum follower count required.',
+                },
+                {
+                  step: '02',
+                  title: 'Get your affiliate link',
+                  body: 'You\'ll receive a unique tracking link, affiliate kit, and access to our private partner channel.',
+                },
+                {
+                  step: '03',
+                  title: 'Earn on every referral',
+                  body: 'Every qualified lead or sale you drive earns you commission. We pay on time, every time.',
+                },
+              ].map((item) => (
+                <div key={item.step} className="bg-white/5 border border-white/10 rounded-2xl p-6">
+                  <span className="text-[#E8C547] text-xs font-bold font-[family-name:var(--font-instrument-sans)] mb-3 block">{item.step}</span>
+                  <h3 className="text-white text-base leading-tight mb-2">{item.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Who we want */}
+            <div className="mb-14">
+              <h3 className="text-white/40 text-xs font-semibold uppercase tracking-[0.12em] mb-6">Who thrives in this program</h3>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  'Content Creators',
+                  'TikTok / Reels Creators',
+                  'LinkedIn Thought Leaders',
+                  'YouTube Educators',
+                  'Podcast Hosts',
+                  'Newsletter Writers',
+                  'Business Coaches',
+                  'Marketing Consultants',
+                  'Community Builders',
+                  'AI Enthusiasts',
+                  'Agency Owners',
+                  'Startup Advisors',
+                ].map((label) => (
+                  <span
+                    key={label}
+                    className="text-sm font-medium text-white/70 border border-white/15 px-4 py-2 rounded-full"
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+              >
+                Apply to the Affiliate Program
+              </Link>
+              <p className="text-white/40 text-sm">
+                Or scroll down to see affiliate-specific open roles below.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* No fit CTA */}
         <section className="py-16 bg-white border-t border-[#E2DED8]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -298,7 +474,7 @@ export default function CareersPage() {
               Don&apos;t see the right fit?
             </h2>
             <p className="text-[#888580] text-lg mb-8">
-              We&apos;re always open to hearing from talented people. Send us a note — tell us what you do and why you&apos;d be great at VStacked.
+              We&apos;re always open to hearing from talented people. Send us a note — tell us what you do and why you&apos;d be great at Stackd Studios AI.
             </p>
             <Link
               href="/contact"

@@ -48,17 +48,17 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex items-center gap-2.5 group"
-            aria-label="VStacked Labs home"
+            aria-label="Stackd Studios AI home"
           >
             <Image
               src="/logo.png"
-              alt="VStacked Labs"
+              alt="Stackd Studios AI"
               width={40}
               height={40}
               className="rounded-lg"
             />
             <span className="text-[#0C0C0C] font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
-              VStacked Labs
+              Stackd Studios AI
             </span>
           </Link>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
-            aria-label="Book a free discovery call with VStacked Labs"
+            aria-label="Book a free discovery call with Stackd Studios AI"
           >
             Book a Call
           </Link>
@@ -127,11 +127,11 @@ export default function Navbar() {
             href="/"
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2.5"
-            aria-label="VStacked Labs home"
+            aria-label="Stackd Studios AI home"
           >
-            <Image src="/logo.png" alt="VStacked Labs" width={36} height={36} className="rounded-lg" />
+            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg" />
             <span className="text-[#0C0C0C] font-semibold text-sm tracking-tight font-[family-name:var(--font-instrument-sans)]">
-              VStacked Labs
+              Stackd Studios AI
             </span>
           </Link>
           <button

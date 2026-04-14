@@ -121,7 +121,7 @@ export default function ContactPage() {
                   <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
                     &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
                   </p>
-                  <p className="text-[#E8C547] text-sm font-medium mt-2">— Chanel Hicks, Founder &amp; CEO</p>
+                  <p className="text-[#E8C547] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
                 </div>
               </div>
             </div>

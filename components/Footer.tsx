@@ -53,17 +53,17 @@ export default function Footer() {
             <Link
               href="/"
               className="flex items-center gap-2.5 mb-4 group"
-              aria-label="VStacked Labs home"
+              aria-label="Stackd Studios AI home"
             >
               <Image
                 src="/logo.png"
-                alt="VStacked Labs"
+                alt="Stackd Studios AI"
                 width={48}
                 height={48}
                 className="rounded-lg"
               />
               <span className="font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
-                VStacked Labs
+                Stackd Studios AI
               </span>
             </Link>
             <p className="text-[#6B7280] text-sm leading-relaxed mb-3">
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#6B7280] text-sm">
-            © {new Date().getFullYear()} VStacked Labs LLC. All rights reserved.
+            © {new Date().getFullYear()} Stackd Studios AI LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-[#6B7280] hover:text-white text-sm transition-colors">

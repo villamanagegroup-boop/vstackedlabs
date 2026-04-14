@@ -28,7 +28,7 @@ const testimonials = [
     initials: 'JK',
   },
   {
-    quote: "We had a broken signup flow that was losing leads every day. VStacked rebuilt our entire onboarding in under a week. Conversions went up 40% in the first month. I wish I had done this sooner.",
+    quote: "We had a broken signup flow that was losing leads every day. Stackd Studios AI rebuilt our entire onboarding in under a week. Conversions went up 40% in the first month. I wish I had done this sooner.",
     name: 'Alicia M.',
     role: 'Owner, Wellness Studio',
     track: 'Track A',
@@ -36,7 +36,7 @@ const testimonials = [
     initials: 'AM',
   },
   {
-    quote: "I needed a co-founder, not just a dev shop. VStacked understood the business side as well as the tech side. My SaaS went from a voice memo to a working prototype in three weeks.",
+    quote: "I needed a co-founder, not just a dev shop. Stackd Studios AI understood the business side as well as the tech side. My SaaS went from a voice memo to a working prototype in three weeks.",
     name: 'Devon S.',
     role: 'Founder, B2B Software Startup',
     track: 'Track B',
@@ -44,7 +44,7 @@ const testimonials = [
     initials: 'DS',
   },
   {
-    quote: "I came to VStacked Labs with a spreadsheet and a prayer. They turned it into a fully automated client management system. My team went from drowning in admin to actually focused on the work that matters.",
+    quote: "I came to Stackd Studios AI with a spreadsheet and a prayer. They turned it into a fully automated client management system. My team went from drowning in admin to actually focused on the work that matters.",
     name: 'Priya N.',
     role: 'Owner, Creative Agency',
     track: 'Track A',
