@@ -416,6 +416,7 @@ const homeProjects = [
     description: 'An AI-powered intake system that qualifies leads, matches them to the right service tier, auto-generates proposals, and books discovery calls — 24/7.',
     url: 'intake.stackd.app',
     imageUrl: '/work/intake-agent.jpg',
+    objectPosition: 'center',
   },
   {
     track: 'Track B — Founder',
@@ -426,6 +427,7 @@ const homeProjects = [
     description: 'An AI-powered knowledge app that answers business questions using your own SOPs, reports, and documents — no more digging through folders.',
     url: 'brain.stackd.app',
     imageUrl: '/work/business-brain.jpg',
+    objectPosition: 'center',
   },
   {
     track: 'Track A — Business Owner',
@@ -435,7 +437,8 @@ const homeProjects = [
     title: 'Client Audit Tool',
     description: 'An AI-powered client audit platform that surfaces gaps, scores business health, and generates actionable reports — giving owners clarity in minutes.',
     url: 'audit.stackd.app',
-    imageUrl: '/work/client-audit-tool.png',
+    imageUrl: '/work/client-audit-tool.jpg',
+    objectPosition: 'top',
   },
   {
     track: 'Track A — Business Owner',
@@ -446,6 +449,7 @@ const homeProjects = [
     description: 'Online booking with staff scheduling, automated confirmations, rebooking reminders, and a client history dashboard — all branded to the salon.',
     url: 'book.salon.app/schedule',
     imageUrl: '/work/salon-booking.jpg',
+    objectPosition: 'center',
   },
   {
     track: 'Track A — Business Owner',
@@ -456,6 +460,7 @@ const homeProjects = [
     description: 'A structured coaching portal with gated curriculum, session scheduling, progress milestones, and a private client dashboard for accountability.',
     url: 'coach.portal.app/program',
     imageUrl: '/work/coaching-portal.jpg',
+    objectPosition: 'center',
   },
   {
     track: 'Track B — Founder',
@@ -466,6 +471,7 @@ const homeProjects = [
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
     url: 'ops.platform/dashboard',
     imageUrl: '/work/operations-platform.png',
+    objectPosition: 'center',
   },
 ]
 
@@ -531,7 +537,8 @@ export default function OurWork() {
                     <img
                       src={project.imageUrl}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: project.objectPosition }}
                     />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0C0C0C] to-transparent pointer-events-none" aria-hidden="true"/>
