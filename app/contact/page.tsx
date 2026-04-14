@@ -108,6 +108,13 @@ export default function ContactPage() {
               {/* Contact info */}
               <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
                 <div>
+                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
+                  <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#E8C547] font-medium hover:underline">
+                    Chanel@stackdstudiosai.com
+                  </a>
+                </div>
+
+                <div>
                   <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
                   <p className="text-white font-medium">Remote — United States</p>
                 </div>

@@ -74,6 +74,12 @@ export default function Footer() {
             <p className="text-[#4B4F55] text-xs mt-1">
               United States
             </p>
+            <a
+              href="mailto:Chanel@stackdstudiosai.com"
+              className="text-[#6B7280] hover:text-[#E8C547] text-xs mt-2 transition-colors duration-200 block"
+            >
+              Chanel@stackdstudiosai.com
+            </a>
           </div>
 
           {/* Footer columns */}
