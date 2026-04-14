@@ -95,30 +95,40 @@ export default function BusinessBrainPage() {
         {/* Hero */}
         <section className="pt-32 pb-20 bg-[#0C0C0C]" aria-labelledby="bb-hero-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
-                Business Brain
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
+                  Business Brain
+                </div>
+                <h1 id="bb-hero-heading" className="text-[clamp(40px,6vw,72px)] text-white leading-[1.0] mb-5">
+                  Your staff. Smarter. 24/7.
+                </h1>
+                <p className="text-white/60 text-xl leading-relaxed mb-8">
+                  We collect your operational docs and build a custom private AI your team can query around the clock — no training required.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                  >
+                    Get Your Brain Built
+                  </Link>
+                  <a
+                    href="#how-it-works"
+                    className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 min-h-[44px]"
+                  >
+                    See How It Works
+                  </a>
+                </div>
               </div>
-              <h1 id="bb-hero-heading" className="text-[clamp(40px,6vw,72px)] text-white leading-[1.0] mb-5">
-                Your staff. Smarter. 24/7.
-              </h1>
-              <p className="text-white/60 text-xl leading-relaxed mb-8 max-w-2xl">
-                We collect your operational docs and build a custom private AI your team can query around the clock — no training required.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
-                >
-                  Get Your Brain Built
-                </Link>
-                <a
-                  href="#how-it-works"
-                  className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 min-h-[44px]"
-                >
-                  See How It Works
-                </a>
+              <div className="relative hidden lg:block">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/business-brain/bb-mockup.jpg"
+                  alt="Business Brain AI chat interface on laptop"
+                  className="w-full rounded-2xl object-cover"
+                />
               </div>
             </div>
           </div>
@@ -149,6 +159,22 @@ export default function BusinessBrainPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Photo band */}
+        <section className="relative h-72 sm:h-96 overflow-hidden" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/business-brain/bb-employee.jpg"
+            alt="Restaurant employee using Business Brain on a tablet"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[#0C0C0C]/50" />
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <p className="text-white text-[clamp(20px,3vw,32px)] font-semibold text-center max-w-2xl leading-snug">
+              &ldquo;Just ask it.&rdquo; — the only training your staff needs.
+            </p>
           </div>
         </section>
 
