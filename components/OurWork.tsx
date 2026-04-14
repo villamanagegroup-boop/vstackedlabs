@@ -470,8 +470,8 @@ const homeProjects = [
     title: 'Operations Platform',
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
     url: 'ops.platform/dashboard',
-    imageUrl: '/work/operations-platform.png',
-    objectPosition: '50% 80%',
+    imageUrl: '/work/operations-platform.jpg',
+    objectPosition: 'center',
   },
 ]
 
