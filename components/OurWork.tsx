@@ -438,7 +438,7 @@ const homeProjects = [
     description: 'An AI-powered client audit platform that surfaces gaps, scores business health, and generates actionable reports — giving owners clarity in minutes.',
     url: 'audit.stackd.app',
     imageUrl: '/work/client-audit-tool.jpg',
-    objectPosition: 'top',
+    objectPosition: 'center',
   },
   {
     track: 'Track A — Business Owner',
@@ -471,7 +471,7 @@ const homeProjects = [
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
     url: 'ops.platform/dashboard',
     imageUrl: '/work/operations-platform.png',
-    objectPosition: 'center',
+    objectPosition: 'bottom',
   },
 ]
 
