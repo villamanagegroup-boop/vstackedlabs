@@ -4,6 +4,7 @@ import './globals.css'
 import ScrollProgress from '@/components/ScrollProgress'
 import CursorGlow from '@/components/CursorGlow'
 import ToastProvider from '@/components/ToastProvider'
+import { CartProvider } from '@/components/CartContext'
 
 const anton = Anton({
   weight: '400',
@@ -40,9 +41,11 @@ export default function RootLayout({
       <body className="font-[family-name:var(--font-instrument-sans)] bg-[#F6F4EF] text-[#0C0C0C] antialiased">
         <ScrollProgress />
         <CursorGlow />
-        <ToastProvider>
-          {children}
-        </ToastProvider>
+        <CartProvider>
+          <ToastProvider>
+            {children}
+          </ToastProvider>
+        </CartProvider>
       </body>
     </html>
   )

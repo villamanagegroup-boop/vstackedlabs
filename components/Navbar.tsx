@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useCart } from '@/components/CartContext'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { totalItems } = useCart()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -74,6 +76,24 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* Cart icon */}
+          <Link
+            href="/cart"
+            className="hidden md:flex items-center justify-center relative w-10 h-10 rounded-lg hover:bg-[#E2DED8] transition-colors"
+            aria-label={`Cart — ${totalItems} item${totalItems !== 1 ? 's' : ''}`}
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M2 2h2l2.5 10h9l1.5-7H6" stroke="#0C0C0C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="9" cy="16.5" r="1.5" fill="#0C0C0C"/>
+              <circle cx="14" cy="16.5" r="1.5" fill="#0C0C0C"/>
+            </svg>
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#E8C547] text-[#0C0C0C] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
+                {totalItems}
+              </span>
+            )}
+          </Link>
 
           {/* Desktop CTA */}
           <Link
@@ -159,13 +179,30 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 mb-4">
+          <div className="mt-8 mb-4 flex flex-col gap-3">
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
               className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-base font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
             >
               Book a Call
+            </Link>
+            <Link
+              href="/cart"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#0C0C0C] text-[#0C0C0C] text-base font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px] relative"
+            >
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M2 2h2l2.5 10h9l1.5-7H6" stroke="#0C0C0C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="9" cy="16.5" r="1.5" fill="#0C0C0C"/>
+                <circle cx="14" cy="16.5" r="1.5" fill="#0C0C0C"/>
+              </svg>
+              Cart
+              {totalItems > 0 && (
+                <span className="bg-[#E8C547] text-[#0C0C0C] text-xs font-bold px-2 py-0.5 rounded-full">
+                  {totalItems}
+                </span>
+              )}
             </Link>
           </div>
         </nav>

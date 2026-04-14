@@ -1,6 +1,9 @@
+'use client'
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { useCart } from '@/components/CartContext'
 
 const tiers = [
   {
@@ -8,11 +11,12 @@ const tiers = [
     track: 'A',
     name: 'AI Quick Setup',
     price: 'Starting at $297',
+    basePrice: 297,
+    priceId: 'price_1TMFIwAA0v91LtlWZZALgdWT',
     contactSales: false,
     turnaround: '3–5 days',
     bestFor: 'Business owners taking their first AI step',
     includes: ['Custom Claude prompt library', '1 workflow automation', 'Orientation call', 'Drive folder delivery'],
-    cta: 'Get Started',
     accentColor: '#1A4A7A',
     accentLight: '#EEF4FB',
   },
@@ -21,11 +25,12 @@ const tiers = [
     track: 'A',
     name: 'AI Business Build-Out',
     price: 'Starting at $797',
+    basePrice: 797,
+    priceId: 'price_1TMFIwAA0v91LtlWPwfPQ5PN',
     contactSales: false,
     turnaround: '1–2 weeks',
     bestFor: 'Business owners ready for a full AI system',
     includes: ['AI system across 3 workflows', '2 strategy calls', 'Prompt library + SOP docs', 'Drive folder delivery'],
-    cta: 'Get Started',
     accentColor: '#1A4A7A',
     accentLight: '#EEF4FB',
   },
@@ -34,11 +39,12 @@ const tiers = [
     track: 'A',
     name: 'Micro Tool Build',
     price: 'Starting at $500',
+    basePrice: 500,
+    priceId: 'price_1TMFIwAA0v91LtlWioDR0IWf',
     contactSales: false,
     turnaround: '1 week',
     bestFor: 'Businesses that need a specific tool built fast',
     includes: ['Single-function tool or app', 'Mobile responsive', 'Deployed in 1 week', 'Full handoff + docs'],
-    cta: 'Get Started',
     accentColor: '#1A4A7A',
     accentLight: '#EEF4FB',
   },
@@ -47,11 +53,12 @@ const tiers = [
     track: 'A',
     name: 'AI Retainer',
     price: '',
+    basePrice: null,
+    priceId: null,
     contactSales: true,
     turnaround: 'Ongoing',
     bestFor: 'Business owners who want consistent AI support',
     includes: ['Monthly workflow updates', '5–10 new prompts/month', 'Team training (async)', 'Priority email support'],
-    cta: 'Contact Sales Team',
     accentColor: '#1A4A7A',
     accentLight: '#EEF4FB',
     popular: true,
@@ -61,11 +68,12 @@ const tiers = [
     track: 'B',
     name: 'Strategy Session',
     price: 'Starting at $297',
+    basePrice: 297,
+    priceId: 'price_1TMFIwAA0v91LtlWtlKWad75',
     contactSales: false,
     turnaround: 'Book within 48 hours',
     bestFor: 'Founders with an idea to stress-test',
     includes: ['90-min architecture session', 'Business model document', 'Concept validation', 'Product roadmap'],
-    cta: 'Book a Session',
     accentColor: '#F97316',
     accentLight: '#FFF4ED',
   },
@@ -74,11 +82,12 @@ const tiers = [
     track: 'B',
     name: 'Founder Build Sprint',
     price: 'Starting at $2,500',
+    basePrice: 2500,
+    priceId: 'price_1TMFIwAA0v91LtlWBhJCdaDb',
     contactSales: false,
     turnaround: '2 weeks',
     bestFor: 'Founders ready to go from idea to working MVP',
     includes: ['Business model + brand', 'Working MVP built & deployed', 'Launch strategy', '30-day post-launch support'],
-    cta: 'Start a Sprint',
     accentColor: '#F97316',
     accentLight: '#FFF4ED',
     popular: true,
@@ -88,22 +97,17 @@ const tiers = [
     track: 'Both',
     name: 'Venture Launch Package',
     price: '',
+    basePrice: null,
+    priceId: null,
     contactSales: true,
     turnaround: '4–8 weeks',
     bestFor: 'Clients ready to build and launch a full venture',
     includes: ['Full strategy & business model', 'Complete tech stack build', 'Brand + product + launch', '1 month retainer included'],
-    cta: 'Contact Sales Team',
     accentColor: '#0C0C0C',
     accentLight: '#F6F4EF',
     flagship: true,
   },
 ]
-
-const CheckIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
-    <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#0C0C0C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
 
 export default function PricingPage() {
   return (
@@ -118,12 +122,19 @@ export default function PricingPage() {
               Simple, transparent pricing.
             </h1>
             <p className="text-[#888580] text-xl leading-relaxed max-w-2xl mx-auto mb-6">
-              Seven tiers across two tracks. No retainer traps, no hidden fees, no surprises. Just the right tier for where you are right now.
+              Seven tiers across two tracks. No retainer traps, no hidden fees, no surprises.
             </p>
-            <p className="text-[#888580] text-sm max-w-xl mx-auto mb-8 leading-relaxed">
-              <span className="font-semibold text-[#0C0C0C]">Base pricing starts at $297.</span>{' '}
-              Final project cost may vary depending on scope, complexity, and custom feature requirements. All pricing is confirmed before any work begins.
-            </p>
+            {/* Pricing note */}
+            <div className="inline-flex items-start gap-2.5 bg-[#E8C547]/10 border border-[#E8C547]/40 rounded-xl px-5 py-3.5 max-w-xl mx-auto mb-8 text-left">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="#E8C547" strokeWidth="1.5"/>
+                <path d="M8 5v3.5M8 10.5v.5" stroke="#E8C547" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              <p className="text-[#0C0C0C] text-sm leading-relaxed">
+                <span className="font-semibold">All prices shown are base rates.</span>{' '}
+                Final project cost is confirmed during your discovery session — you won&apos;t be charged until scope and pricing are agreed upon.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
@@ -230,7 +241,7 @@ export default function PricingPage() {
                       href="/contact"
                       className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold py-3.5 px-7 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                     >
-                      {tier.cta}
+                      Contact Sales Team
                     </Link>
                   </div>
                 </div>
@@ -253,7 +264,7 @@ export default function PricingPage() {
                 },
                 {
                   q: "What if I'm not sure which tier is right?",
-                  a: 'Book a free discovery call. We\'ll listen to what you need, ask the right questions, and recommend the right tier — or tell you honestly if we\'re not the right fit.',
+                  a: "Book a free discovery call. We'll listen to what you need, ask the right questions, and recommend the right tier — or tell you honestly if we're not the right fit.",
                 },
                 {
                   q: 'Can I upgrade from one tier to another?',
@@ -262,6 +273,10 @@ export default function PricingPage() {
                 {
                   q: 'What do turnaround times include?',
                   a: 'Turnaround is from signed agreement + deposit received to delivery. It does not include revision rounds, which are scoped per project.',
+                },
+                {
+                  q: 'Can I pay before the discovery session?',
+                  a: "Yes — if you already know which tier you want, you can reserve your spot at the base price. Final scope and any adjustments will be confirmed on your discovery call before work begins. Nothing additional is charged without your approval.",
                 },
               ].map((faq) => (
                 <div key={faq.q} className="border-b border-[#E2DED8] pb-6">
@@ -297,9 +312,17 @@ export default function PricingPage() {
 }
 
 function PricingCard({ tier }: { tier: typeof tiers[0] }) {
+  const { addItem, items } = useCart()
+  const inCart = tier.priceId ? items.some((i) => i.priceId === tier.priceId) : false
+
+  function handleAddToCart() {
+    if (!tier.priceId || !tier.basePrice) return
+    addItem({ priceId: tier.priceId, name: tier.name, price: tier.basePrice })
+  }
+
   return (
     <div
-      className={`relative bg-white rounded-2xl p-7 border flex flex-col gap-4 ${
+      className={`relative bg-white rounded-2xl p-6 border flex flex-col gap-4 ${
         tier.popular
           ? tier.accentColor === '#1A4A7A'
             ? 'border-[#1A4A7A] shadow-[0_0_0_1px_#1A4A7A]'
@@ -352,12 +375,34 @@ function PricingCard({ tier }: { tier: typeof tiers[0] }) {
         ))}
       </ul>
 
-      <Link
-        href="/contact"
-        className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm mt-2"
-      >
-        {tier.cta}
-      </Link>
+      {/* CTAs */}
+      <div className="flex flex-col gap-2 mt-2">
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+        >
+          {tier.contactSales ? 'Contact Sales Team' : 'Book a Discovery Call'}
+        </Link>
+
+        {!tier.contactSales && tier.priceId && (
+          <>
+            <button
+              onClick={handleAddToCart}
+              className={`inline-flex items-center justify-center font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm border ${
+                inCart
+                  ? 'bg-[#E8C547] text-[#0C0C0C] border-[#E8C547]'
+                  : 'bg-white text-[#0C0C0C] border-[#E2DED8] hover:border-[#0C0C0C]'
+              }`}
+              aria-label={inCart ? `${tier.name} added to cart` : `Reserve ${tier.name} at base price`}
+            >
+              {inCart ? '✓ Added to Cart' : `Reserve at $${tier.basePrice?.toLocaleString()}`}
+            </button>
+            <p className="text-[#888580] text-[10px] text-center leading-relaxed">
+              Base price — final cost confirmed after your session
+            </p>
+          </>
+        )}
+      </div>
     </div>
   )
 }
