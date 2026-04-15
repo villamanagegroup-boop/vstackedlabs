@@ -37,7 +37,7 @@ export default function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
@@ -69,7 +69,7 @@ export default function HowItWorks() {
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className="flex flex-col items-center text-center"
               >
@@ -97,7 +97,7 @@ export default function HowItWorks() {
               key={step.number}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex gap-6 relative"
             >

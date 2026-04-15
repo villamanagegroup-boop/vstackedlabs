@@ -64,7 +64,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
@@ -86,7 +86,7 @@ export default function Testimonials() {
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               className="bg-[#F6F4EF] rounded-2xl p-5 flex flex-col gap-4 border border-[#E2DED8] hover:border-[#0C0C0C]/20 transition-all duration-300"
             >

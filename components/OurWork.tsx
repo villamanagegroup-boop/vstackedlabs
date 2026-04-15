@@ -487,7 +487,7 @@ export default function OurWork() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12"
         >
@@ -513,7 +513,7 @@ export default function OurWork() {
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
                 whileHover={{ y: -6 }}
                 className="bg-[#0C0C0C] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 group"

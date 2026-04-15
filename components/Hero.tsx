@@ -223,12 +223,12 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator — hidden on short/mobile viewports to avoid overlap */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+          className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-1"
           aria-hidden="true"
         >
           <span className="text-[#888580] text-xs uppercase tracking-widest font-medium">Scroll</span>

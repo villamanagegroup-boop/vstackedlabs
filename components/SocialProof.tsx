@@ -14,7 +14,7 @@ export default function SocialProof() {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5 }}
       className="border-t border-b border-[#E2DED8] bg-white py-6"
       aria-label="Studio stats"

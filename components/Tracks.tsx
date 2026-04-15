@@ -62,7 +62,7 @@ export default function Tracks() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
@@ -87,7 +87,7 @@ export default function Tracks() {
               key={track.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="relative rounded-2xl border border-[#E2DED8] p-8 flex flex-col gap-6 bg-white overflow-hidden group hover:border-transparent transition-all duration-300"
               style={{
@@ -159,7 +159,7 @@ export default function Tracks() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-8 text-center"
         >

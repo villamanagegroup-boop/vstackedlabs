@@ -85,6 +85,13 @@ select:focus {
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 
+/* ─── Disable heavy animations on touch / low-motion devices ─── */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .orb-1, .orb-2 { animation: none !important; }
+  .code-card-float { animation: none !important; }
+  .scroll-bounce { animation: none !important; }
+}
+
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #F6F4EF; }

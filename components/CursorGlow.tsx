@@ -1,11 +1,18 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function CursorGlow() {
   const glowRef = useRef<HTMLDivElement>(null)
+  const [isTouch, setIsTouch] = useState(true)
 
   useEffect(() => {
+    // Only show on true pointer devices (not touch screens)
+    setIsTouch(window.matchMedia('(hover: none)').matches)
+  }, [])
+
+  useEffect(() => {
+    if (isTouch) return
     const el = glowRef.current
     if (!el) return
 
@@ -24,7 +31,9 @@ export default function CursorGlow() {
       window.removeEventListener('mousemove', move)
       cancelAnimationFrame(raf)
     }
-  }, [])
+  }, [isTouch])
+
+  if (isTouch) return null
 
   return (
     <div

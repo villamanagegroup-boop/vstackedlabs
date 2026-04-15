@@ -165,21 +165,21 @@ export default function Navbar() {
           </button>
         </div>
 
-        <nav className="flex-1 flex flex-col justify-center px-8 overflow-y-auto" aria-label="Mobile navigation">
-          <ul className="flex flex-col gap-5" role="list">
+        <nav className="flex-1 flex flex-col justify-start pt-8 px-8 overflow-y-auto" aria-label="Mobile navigation">
+          <ul className="flex flex-col gap-3" role="list">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-[#0C0C0C] text-[clamp(28px,8vw,40px)] font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors block"
+                  className="text-[#0C0C0C] text-[clamp(22px,6vw,34px)] font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors block leading-tight py-1"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-8 mb-4 flex flex-col gap-3">
+          <div className="mt-6 mb-4 flex flex-col gap-3">
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}

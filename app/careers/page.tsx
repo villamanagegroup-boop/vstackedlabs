@@ -14,7 +14,9 @@ type Job = {
   nice: string[]
 }
 
+// Sorted by type: Contract → Part-Time → Freelance
 const jobs: Job[] = [
+  // ── Contract ──────────────────────────────────
   {
     id: 'fullstack-engineer',
     title: 'Full Stack Engineer',
@@ -42,64 +44,6 @@ const jobs: Job[] = [
       'Framer Motion or animation experience',
       'Prior work at an agency or venture studio',
       'Comfort with Vercel deployments and edge functions',
-    ],
-  },
-  {
-    id: 'ai-prompt-engineer',
-    title: 'AI Prompt Engineer',
-    type: 'Freelance',
-    location: 'Remote — USA',
-    track: 'Engineering',
-    summary:
-      'We build custom AI prompt libraries and workflows for business owner clients. We need someone who understands how to design reliable, structured prompts using Claude — and can document and deliver them clearly to non-technical clients.',
-    responsibilities: [
-      'Build prompt libraries tailored to each client\'s business and voice',
-      'Design multi-step Claude workflows for intake, communication, and operations',
-      'Document prompt logic in plain language for client handoff',
-      'Test and iterate on prompts based on real-world client feedback',
-      'Collaborate with the team on AI system architecture for Track A clients',
-    ],
-    requirements: [
-      'Deep experience working with Claude or GPT-4 in production contexts',
-      'Ability to write clear, structured prompts with consistent output formatting',
-      'Strong written communication — you\'ll write prompts clients use daily',
-      'Understanding of business operations and workflows',
-      'Organized and detail-oriented — prompt libraries need to be airtight',
-    ],
-    nice: [
-      'Experience with Claude Projects and custom system prompts',
-      'Background in copywriting, operations, or business consulting',
-      'Familiarity with n8n, Zapier, or Make for workflow automation',
-      'Experience building AI tools for small business clients',
-    ],
-  },
-  {
-    id: 'ui-ux-designer',
-    title: 'UI/UX Designer',
-    type: 'Freelance',
-    location: 'Remote — USA',
-    track: 'Design',
-    summary:
-      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, Stackd Studios AI\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
-    responsibilities: [
-      'Design interfaces for web apps, marketing sites, and dashboards',
-      'Create and maintain Stackd Studios AI\'s brand design system',
-      'Produce Figma files ready for direct developer handoff',
-      'Design digital products for the Stackd Studios AI store (prompt pack covers, course assets)',
-      'Review implemented designs and flag deviations from spec',
-    ],
-    requirements: [
-      'Strong Figma proficiency — components, auto-layout, variables',
-      'Portfolio showing clean, production-quality UI work',
-      'Ability to work within an existing design system and extend it',
-      'Understanding of responsive design and mobile-first layouts',
-      'Experience designing for web apps, not just marketing pages',
-    ],
-    nice: [
-      'Motion design experience (Framer, After Effects)',
-      'Familiarity with Tailwind CSS utility patterns',
-      'Experience designing for SaaS or fintech products',
-      'Brand identity and typography chops',
     ],
   },
   {
@@ -131,6 +75,7 @@ const jobs: Job[] = [
       'Comfort with AI-assisted research and synthesis tools',
     ],
   },
+  // ── Part-Time ─────────────────────────────────
   {
     id: 'client-success-manager',
     title: 'Client Success Manager',
@@ -218,6 +163,65 @@ const jobs: Job[] = [
       'Graphic design chops (Canva, Figma)',
     ],
   },
+  // ── Freelance ─────────────────────────────────
+  {
+    id: 'ai-prompt-engineer',
+    title: 'AI Prompt Engineer',
+    type: 'Freelance',
+    location: 'Remote — USA',
+    track: 'Engineering',
+    summary:
+      'We build custom AI prompt libraries and workflows for business owner clients. We need someone who understands how to design reliable, structured prompts using Claude — and can document and deliver them clearly to non-technical clients.',
+    responsibilities: [
+      'Build prompt libraries tailored to each client\'s business and voice',
+      'Design multi-step Claude workflows for intake, communication, and operations',
+      'Document prompt logic in plain language for client handoff',
+      'Test and iterate on prompts based on real-world client feedback',
+      'Collaborate with the team on AI system architecture for Track A clients',
+    ],
+    requirements: [
+      'Deep experience working with Claude or GPT-4 in production contexts',
+      'Ability to write clear, structured prompts with consistent output formatting',
+      'Strong written communication — you\'ll write prompts clients use daily',
+      'Understanding of business operations and workflows',
+      'Organized and detail-oriented — prompt libraries need to be airtight',
+    ],
+    nice: [
+      'Experience with Claude Projects and custom system prompts',
+      'Background in copywriting, operations, or business consulting',
+      'Familiarity with n8n, Zapier, or Make for workflow automation',
+      'Experience building AI tools for small business clients',
+    ],
+  },
+  {
+    id: 'ui-ux-designer',
+    title: 'UI/UX Designer',
+    type: 'Freelance',
+    location: 'Remote — USA',
+    track: 'Design',
+    summary:
+      'We need a designer who can move fast and make things that look and feel premium. You\'ll work on client-facing products, Stackd Studios AI\'s own brand assets, and digital store products. Our aesthetic is clean, minimal, and structured — no generic templates.',
+    responsibilities: [
+      'Design interfaces for web apps, marketing sites, and dashboards',
+      'Create and maintain Stackd Studios AI\'s brand design system',
+      'Produce Figma files ready for direct developer handoff',
+      'Design digital products for the Stackd Studios AI store (prompt pack covers, course assets)',
+      'Review implemented designs and flag deviations from spec',
+    ],
+    requirements: [
+      'Strong Figma proficiency — components, auto-layout, variables',
+      'Portfolio showing clean, production-quality UI work',
+      'Ability to work within an existing design system and extend it',
+      'Understanding of responsive design and mobile-first layouts',
+      'Experience designing for web apps, not just marketing pages',
+    ],
+    nice: [
+      'Motion design experience (Framer, After Effects)',
+      'Familiarity with Tailwind CSS utility patterns',
+      'Experience designing for SaaS or fintech products',
+      'Brand identity and typography chops',
+    ],
+  },
   {
     id: 'creator-outreach-lead',
     title: 'Creator & Outreach Partner',
@@ -288,9 +292,9 @@ const trackColors: Record<Job['track'], { bg: string; text: string }> = {
 
 const typeColors: Record<Job['type'], { bg: string; text: string }> = {
   'Full-Time': { bg: '#0C0C0C', text: '#E8C547' },
-  'Part-Time': { bg: '#F6F4EF', text: '#888580' },
+  'Part-Time': { bg: '#FDF4FF', text: '#7C3AED' },
   Contract: { bg: '#1A4A7A', text: '#FFFFFF' },
-  Freelance: { bg: '#F6F4EF', text: '#888580' },
+  Freelance: { bg: '#F0FDF4', text: '#15803D' },
 }
 
 export default function CareersPage() {
@@ -299,17 +303,17 @@ export default function CareersPage() {
       <Navbar />
       <main className="bg-[#F6F4EF]">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-white border-b border-[#E2DED8]">
+        <section className="pt-32 pb-16 bg-[#E8C547]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-end">
               <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
+                <p className="text-[#0C0C0C]/60 text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                   Careers
                 </p>
                 <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
                   Build the future of work with us.
                 </h1>
-                <p className="text-[#888580] text-xl leading-relaxed">
+                <p className="text-[#0C0C0C]/70 text-xl leading-relaxed">
                   Stackd Studios AI is a remote-first, AI-powered Build Lab & Venture Studio. We move fast, we care about craft, and we work on things that actually matter to business owners and founders.
                 </p>
               </div>
@@ -320,10 +324,10 @@ export default function CareersPage() {
                   { value: 'Real', label: 'Work on live products with real clients' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
-                    <span className="text-2xl font-bold text-[#E8C547] font-[family-name:var(--font-instrument-sans)] w-16 shrink-0">
+                    <span className="text-2xl font-bold text-[#0C0C0C] font-[family-name:var(--font-instrument-sans)] w-16 shrink-0">
                       {item.value}
                     </span>
-                    <p className="text-[#888580] text-sm">{item.label}</p>
+                    <p className="text-[#0C0C0C]/60 text-sm">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -379,20 +383,20 @@ export default function CareersPage() {
         </section>
 
         {/* Affiliate Program */}
-        <section className="py-20 bg-[#0C0C0C]" aria-labelledby="affiliate-heading">
+        <section className="py-20 bg-[#E8C547]" aria-labelledby="affiliate-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="max-w-2xl mb-14">
-              <p className="text-[#E8C547] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
+              <p className="text-[#0C0C0C]/60 text-xs font-semibold uppercase tracking-[0.12em] mb-4">
                 Affiliate &amp; Creator Program
               </p>
               <h2
                 id="affiliate-heading"
-                className="text-[clamp(28px,4vw,52px)] text-white leading-[1.1] mb-5"
+                className="text-[clamp(28px,4vw,52px)] text-[#0C0C0C] leading-[1.1] mb-5"
               >
                 Get paid to spread the word.
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed">
+              <p className="text-[#0C0C0C]/70 text-lg leading-relaxed">
                 We&apos;re building an affiliate network of creators, coaches, consultants, and community builders who believe in AI-powered business. If your audience includes founders or business owners, you belong here — and you&apos;ll earn commission for every client you send our way.
               </p>
             </div>
@@ -416,17 +420,17 @@ export default function CareersPage() {
                   body: 'Every qualified lead or sale you drive earns you commission. We pay on time, every time.',
                 },
               ].map((item) => (
-                <div key={item.step} className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <span className="text-[#E8C547] text-xs font-bold font-[family-name:var(--font-instrument-sans)] mb-3 block">{item.step}</span>
-                  <h3 className="text-white text-base leading-tight mb-2">{item.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{item.body}</p>
+                <div key={item.step} className="bg-[#0C0C0C]/8 border border-[#0C0C0C]/15 rounded-2xl p-6">
+                  <span className="text-[#0C0C0C] text-xs font-bold font-[family-name:var(--font-instrument-sans)] mb-3 block">{item.step}</span>
+                  <h3 className="text-[#0C0C0C] text-base leading-tight mb-2">{item.title}</h3>
+                  <p className="text-[#0C0C0C]/60 text-sm leading-relaxed">{item.body}</p>
                 </div>
               ))}
             </div>
 
             {/* Who we want */}
             <div className="mb-14">
-              <h3 className="text-white/40 text-xs font-semibold uppercase tracking-[0.12em] mb-6">Who thrives in this program</h3>
+              <h3 className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-6">Who thrives in this program</h3>
               <div className="flex flex-wrap gap-3">
                 {[
                   'Content Creators',
@@ -444,7 +448,7 @@ export default function CareersPage() {
                 ].map((label) => (
                   <span
                     key={label}
-                    className="text-sm font-medium text-white/70 border border-white/15 px-4 py-2 rounded-full"
+                    className="text-sm font-medium text-[#0C0C0C]/80 border border-[#0C0C0C]/20 px-4 py-2 rounded-full"
                   >
                     {label}
                   </span>
@@ -456,11 +460,11 @@ export default function CareersPage() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#1A1A2E] text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Apply to the Affiliate Program
               </Link>
-              <p className="text-white/40 text-sm">
+              <p className="text-[#0C0C0C]/50 text-sm">
                 Or scroll down to see affiliate-specific open roles below.
               </p>
             </div>
