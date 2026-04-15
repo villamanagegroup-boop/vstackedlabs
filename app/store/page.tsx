@@ -17,6 +17,7 @@ const products = [
     description: 'A curated collection of 25 Claude prompts for business owners — intake automation, client communication, proposal drafting, weekly planning, and more.',
     price: 27,
     priceId: 'price_1TMF5vAA0v91LtlWk5ofjrtI',
+    available: true,
   },
   {
     name: 'Founder Strategy Toolkit',
@@ -24,6 +25,7 @@ const products = [
     description: 'Prompts for idea validation, business model development, competitive analysis, and investor-ready summaries. Built for founders in early-stage mode.',
     price: 37,
     priceId: 'price_1TMF5wAA0v91LtlWpIKZpARe',
+    available: false,
   },
   {
     name: 'Next.js + Supabase SaaS Starter',
@@ -31,6 +33,7 @@ const products = [
     description: 'Production-ready Next.js 16 App Router template with Supabase Auth, RLS policies, Stripe payments, and Resend email — all pre-configured.',
     price: 97,
     priceId: 'price_1TMF5wAA0v91LtlWRlT13Qz5',
+    available: false,
   },
   {
     name: 'AI Intake System Template',
@@ -38,6 +41,7 @@ const products = [
     description: 'A complete client intake system with lead capture form, qualification scoring, auto-response email, and Supabase backend. Deploy in under an hour.',
     price: 67,
     priceId: 'price_1TMF5xAA0v91LtlW8fcxslKH',
+    available: false,
   },
   {
     name: 'Build Your First AI Workflow',
@@ -45,6 +49,7 @@ const products = [
     description: 'A self-paced course walking business owners through building their first automated AI workflow using Claude and Zapier. No code required.',
     price: 97,
     priceId: 'price_1TMF5xAA0v91LtlWXE4NsJMG',
+    available: false,
   },
   {
     name: 'Prompt Engineering for Business',
@@ -52,6 +57,7 @@ const products = [
     description: 'Learn how to write prompts that actually work — for client communication, content creation, internal ops, and customer service. With exercises.',
     price: 67,
     priceId: 'price_1TMF5yAA0v91LtlWR4nHQQ7B',
+    available: false,
   },
   {
     name: 'Claude Skill: Proposal Writer',
@@ -59,6 +65,7 @@ const products = [
     description: 'A ready-to-import Claude skill that generates client-ready proposals from a simple intake form. Plug into your Claude Projects and go.',
     price: 19,
     priceId: 'price_1TMF5yAA0v91LtlWFwJK6KLf',
+    available: false,
   },
   {
     name: 'Claude Skill: Content Repurposer',
@@ -66,6 +73,7 @@ const products = [
     description: 'Turn one piece of content into 10. This Claude skill takes a single blog post or newsletter and repurposes it across email, social, and short-form.',
     price: 19,
     priceId: 'price_1TMF5yAA0v91LtlWubvCvCBZ',
+    available: false,
   },
 ]
 
@@ -141,6 +149,33 @@ function ProductCard({ product }: { product: typeof products[0] }) {
 
   function handleAdd() {
     addItem({ priceId: product.priceId, name: product.name, price: product.price })
+  }
+
+  if (!product.available) {
+    return (
+      <div className="bg-white rounded-2xl border border-[#E2DED8] flex flex-col overflow-hidden opacity-60">
+        <div className="bg-[#0C0C0C] h-32 flex items-center justify-center relative">
+          <div className="text-white/30 text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 border border-white/10 rounded-full">
+            {product.category}
+          </div>
+          <div className="absolute top-3 right-3 bg-white/10 text-white/60 text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full">
+            Coming Soon
+          </div>
+        </div>
+        <div className="p-5 flex flex-col gap-3 flex-1">
+          <h3 className="text-base text-[#0C0C0C] leading-tight">{product.name}</h3>
+          <p className="text-[#888580] text-sm leading-relaxed flex-1">{product.description}</p>
+          <div className="flex items-center justify-between pt-2 border-t border-[#E2DED8]">
+            <span className="text-xl font-bold text-[#0C0C0C] font-[family-name:var(--font-instrument-sans)]">
+              ${product.price}
+            </span>
+            <div className="px-4 py-2 rounded-lg text-sm font-semibold min-h-[44px] flex items-center bg-[#F6F4EF] text-[#888580]">
+              Coming Soon
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
