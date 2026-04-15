@@ -14,10 +14,12 @@ const navLinks = [
   { label: 'Store', href: '/store' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { totalItems } = useCart()
+
+  const barColor = darkHero && !scrolled ? 'bg-white' : 'bg-[#0C0C0C]'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -107,24 +109,24 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-md hover:bg-[#E2DED8] transition-colors"
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-md hover:bg-white/10 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
+              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
                 menuOpen ? 'rotate-45 translate-y-[7px]' : ''
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
+              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
                 menuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#0C0C0C] transition-all duration-300 ${
+              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
                 menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
               }`}
             />
@@ -145,13 +147,10 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5 flex-1 min-w-0"
+            className="flex items-center"
             aria-label="Stackd Studios AI home"
           >
-            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg shrink-0" />
-            <span className="text-[#0C0C0C] font-semibold text-sm tracking-tight font-[family-name:var(--font-instrument-sans)] truncate">
-              Stackd Studios AI
-            </span>
+            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg" />
           </Link>
           <button
             type="button"

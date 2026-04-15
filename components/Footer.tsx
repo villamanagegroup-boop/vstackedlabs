@@ -46,9 +46,9 @@ export default function Footer() {
     <footer className="bg-[#0C0C0C] text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
-        <div className="py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
+        <div className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
           {/* Logo + tagline */}
-          <div className="sm:col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link
               href="/"
               className="flex items-center gap-2.5 mb-4 group"

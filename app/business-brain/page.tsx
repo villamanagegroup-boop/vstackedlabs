@@ -105,7 +105,7 @@ const bbPricing = [
 export default function BusinessBrainPage() {
   return (
     <>
-      <Navbar />
+      <Navbar darkHero />
       <main className="bg-[#F6F4EF]">
 
         {/* Hero */}
