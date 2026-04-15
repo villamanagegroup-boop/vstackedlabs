@@ -145,11 +145,11 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5"
+            className="flex items-center gap-2.5 flex-1 min-w-0"
             aria-label="Stackd Studios AI home"
           >
-            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg" />
-            <span className="text-[#0C0C0C] font-semibold text-sm tracking-tight font-[family-name:var(--font-instrument-sans)]">
+            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg shrink-0" />
+            <span className="text-[#0C0C0C] font-semibold text-sm tracking-tight font-[family-name:var(--font-instrument-sans)] truncate">
               Stackd Studios AI
             </span>
           </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-[#E2DED8] transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-[#E2DED8] transition-colors shrink-0 ml-2"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M4 4l12 12M16 4L4 16" stroke="#0C0C0C" strokeWidth="1.5" strokeLinecap="round"/>
