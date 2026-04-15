@@ -61,12 +61,12 @@ export default function AboutPage() {
               {/* Founder card */}
               <div className="bg-[#0C0C0C] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-[#E8C547] flex items-center justify-center text-[#0C0C0C] text-2xl font-bold">
+                  <div className="w-16 h-16 rounded-2xl bg-[#FFD84D] flex items-center justify-center text-[#0C0C0C] text-2xl font-bold">
                     CH
                   </div>
                   <div>
                     <h2 className="text-white text-xl leading-tight">Chanel Gray</h2>
-                    <p className="text-[#E8C547] text-sm font-medium">Founder &amp; CEO</p>
+                    <p className="text-[#FFD84D] text-sm font-medium">Founder &amp; CEO</p>
                     <p className="text-[#888580] text-sm">United States</p>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 <div className="flex gap-3">
                   <Link
                     href="/contact"
-                    className="flex-1 inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold py-2.5 px-4 rounded-lg text-sm transition-all duration-200"
+                    className="flex-1 inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold py-2.5 px-4 rounded-lg text-sm transition-all duration-200"
                   >
                     Get in Touch
                   </Link>
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   className="bg-[#F6F4EF] rounded-2xl p-8 border border-[#E2DED8]"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[#E8C547] text-sm font-bold font-[family-name:var(--font-instrument-sans)]">0{i + 1}</span>
+                    <span className="text-[#FFD84D] text-sm font-bold font-[family-name:var(--font-instrument-sans)]">0{i + 1}</span>
                     <h3 className="text-xl text-[#0C0C0C] leading-tight">{value.title}</h3>
                   </div>
                   <p className="text-[#888580] text-base leading-relaxed">{value.description}</p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                   <ul className="flex flex-col gap-2" role="list">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-[#888580]">
-                        <span className="w-1 h-1 rounded-full bg-[#E8C547] shrink-0" aria-hidden="true" />
+                        <span className="w-1 h-1 rounded-full bg-[#FFD84D] shrink-0" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
@@ -178,7 +178,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Book a Free Call
               </Link>

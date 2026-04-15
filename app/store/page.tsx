@@ -89,7 +89,7 @@ function CartBar() {
         <span className="text-sm font-semibold">
           {totalItems} item{totalItems > 1 ? 's' : ''} in cart
         </span>
-        <span className="text-[#E8C547] font-bold">${totalPrice.toFixed(2)} → View Cart</span>
+        <span className="text-[#FFD84D] font-bold">${totalPrice.toFixed(2)} → View Cart</span>
       </Link>
     </div>
   )
@@ -133,7 +133,7 @@ function StoreSignup() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="bg-[#E8C547] hover:bg-[#d4b03d] disabled:opacity-60 text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] min-h-[44px] whitespace-nowrap"
+            className="bg-[#FFD84D] hover:bg-[#E8C030] disabled:opacity-60 text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] min-h-[44px] whitespace-nowrap"
           >
             {status === 'loading' ? 'Saving...' : 'Notify Me'}
           </button>
@@ -181,7 +181,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
   return (
     <div className="bg-white rounded-2xl border border-[#E2DED8] flex flex-col overflow-hidden">
       <div className="bg-[#0C0C0C] h-32 flex items-center justify-center">
-        <div className="text-[#E8C547] text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 border border-[#E8C547]/40 rounded-full">
+        <div className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 border border-[#FFD84D]/40 rounded-full">
           {product.category}
         </div>
       </div>
@@ -196,8 +196,8 @@ function ProductCard({ product }: { product: typeof products[0] }) {
             onClick={handleAdd}
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px] ${
               inCart
-                ? 'bg-[#E8C547] text-[#0C0C0C]'
-                : 'bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] hover:scale-[1.02]'
+                ? 'bg-[#FFD84D] text-[#0C0C0C]'
+                : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] hover:scale-[1.02]'
             }`}
             aria-label={inCart ? `${product.name} added to cart` : `Add ${product.name} to cart`}
           >

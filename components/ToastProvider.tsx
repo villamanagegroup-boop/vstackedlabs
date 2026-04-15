@@ -54,7 +54,7 @@ export default function ToastProvider({ children }: { children: React.ReactNode 
               {/* Icon */}
               <span className="shrink-0">
                 {t.type === 'success' ? (
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#E8C547]">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FFD84D]">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M2 6l3 3 5-5" stroke="#0C0C0C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>

@@ -125,10 +125,10 @@ export default function PricingPage() {
               Seven tiers across two tracks. No retainer traps, no hidden fees, no surprises.
             </p>
             {/* Pricing note */}
-            <div className="inline-flex items-start gap-2.5 bg-[#E8C547]/10 border border-[#E8C547]/40 rounded-xl px-5 py-3.5 max-w-xl mx-auto mb-8 text-left">
+            <div className="inline-flex items-start gap-2.5 bg-[#FFD84D]/10 border border-[#FFD84D]/40 rounded-xl px-5 py-3.5 max-w-xl mx-auto mb-8 text-left">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5" aria-hidden="true">
-                <circle cx="8" cy="8" r="6.5" stroke="#E8C547" strokeWidth="1.5"/>
-                <path d="M8 5v3.5M8 10.5v.5" stroke="#E8C547" strokeWidth="1.5" strokeLinecap="round"/>
+                <circle cx="8" cy="8" r="6.5" stroke="#FFD84D" strokeWidth="1.5"/>
+                <path d="M8 5v3.5M8 10.5v.5" stroke="#FFD84D" strokeWidth="1.5" strokeLinecap="round"/>
               </svg>
               <p className="text-[#0C0C0C] text-sm leading-relaxed">
                 <span className="font-semibold">All prices shown are base rates.</span>{' '}
@@ -138,7 +138,7 @@ export default function PricingPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center gap-2 bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Book a Free Call
               </Link>
@@ -215,12 +215,12 @@ export default function PricingPage() {
                   className="bg-[#0C0C0C] rounded-2xl p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center"
                 >
                   <div>
-                    <div className="inline-flex items-center gap-2 bg-[#E8C547]/20 text-[#E8C547] text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1.5 rounded-full mb-5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#E8C547]" />
+                    <div className="inline-flex items-center gap-2 bg-[#FFD84D]/20 text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1.5 rounded-full mb-5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD84D]" />
                       {tier.tier} — Both Tracks
                     </div>
                     <h2 className="text-[clamp(28px,3.5vw,44px)] text-white leading-tight mb-3">{tier.name}</h2>
-                    <p className="text-xl font-semibold text-[#E8C547] mb-3 font-[family-name:var(--font-instrument-sans)]">
+                    <p className="text-xl font-semibold text-[#FFD84D] mb-3 font-[family-name:var(--font-instrument-sans)]">
                       Contact Sales Team
                     </p>
                     <p className="text-white/60 text-sm mb-1">Turnaround: <span className="text-white font-medium">{tier.turnaround}</span></p>
@@ -231,7 +231,7 @@ export default function PricingPage() {
                       {tier.includes.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-white/80">
                           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
-                            <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#E8C547" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#FFD84D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           {item}
                         </li>
@@ -239,7 +239,7 @@ export default function PricingPage() {
                     </ul>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold py-3.5 px-7 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                      className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold py-3.5 px-7 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                     >
                       Contact Sales Team
                     </Link>
@@ -299,7 +299,7 @@ export default function PricingPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
             >
               Book a Free Call
             </Link>
@@ -379,7 +379,7 @@ function PricingCard({ tier }: { tier: typeof tiers[0] }) {
       <div className="flex flex-col gap-2 mt-2">
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+          className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
         >
           {tier.contactSales ? 'Contact Sales Team' : 'Book a Discovery Call'}
         </Link>
@@ -390,7 +390,7 @@ function PricingCard({ tier }: { tier: typeof tiers[0] }) {
               onClick={handleAddToCart}
               className={`inline-flex items-center justify-center font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm border ${
                 inCart
-                  ? 'bg-[#E8C547] text-[#0C0C0C] border-[#E8C547]'
+                  ? 'bg-[#FFD84D] text-[#0C0C0C] border-[#FFD84D]'
                   : 'bg-white text-[#0C0C0C] border-[#E2DED8] hover:border-[#0C0C0C]'
               }`}
               aria-label={inCart ? `${tier.name} added to cart` : `Reserve ${tier.name} at base price`}

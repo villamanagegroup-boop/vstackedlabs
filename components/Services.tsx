@@ -143,7 +143,7 @@ function ServiceCard({ svc, i, accentColor, accentLight }: {
     >
       {svc.popular && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
+          <span className="bg-[#0C0C0C] text-[#FFD84D] text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
             Most Popular
           </span>
         </div>
@@ -190,7 +190,7 @@ function ServiceCard({ svc, i, accentColor, accentLight }: {
       {/* CTA */}
       <Link
         href="/contact"
-        className="mt-2 inline-flex items-center justify-center font-semibold py-3 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C]"
+        className="mt-2 inline-flex items-center justify-center font-semibold py-3 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]"
       >
         {svc.cta}
       </Link>

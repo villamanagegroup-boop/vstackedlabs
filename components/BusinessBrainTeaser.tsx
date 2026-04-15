@@ -15,7 +15,7 @@ export default function BusinessBrainTeaser() {
 
           {/* Left — copy */}
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#FFD84D] text-[#0C0C0C] mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
               New — Business Brain
             </div>
@@ -28,7 +28,7 @@ export default function BusinessBrainTeaser() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/business-brain"
-                className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center gap-2 bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Learn More
               </Link>
@@ -52,13 +52,13 @@ export default function BusinessBrainTeaser() {
                 <p className="text-white/50 text-sm">{item.desc}</p>
               </div>
             ))}
-            <div className="col-span-2 bg-[#E8C547]/10 border border-[#E8C547]/20 rounded-2xl p-5 flex items-center justify-between gap-4">
+            <div className="col-span-2 bg-[#FFD84D]/10 border border-[#FFD84D]/20 rounded-2xl p-5 flex items-center justify-between gap-4">
               <p className="text-white/70 text-sm leading-snug">
                 Starting at <span className="text-white font-semibold">$500 setup</span> + <span className="text-white font-semibold">$149/mo</span>
               </p>
               <Link
                 href="/business-brain#pricing"
-                className="text-[#E8C547] text-sm font-semibold hover:underline shrink-0"
+                className="text-[#FFD84D] text-sm font-semibold hover:underline shrink-0"
               >
                 See pricing →
               </Link>

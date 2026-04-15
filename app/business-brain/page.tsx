@@ -97,7 +97,7 @@ export default function BusinessBrainPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#E8C547] text-[#0C0C0C] mb-6">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full bg-[#FFD84D] text-[#0C0C0C] mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" />
                   Business Brain
                 </div>
@@ -110,7 +110,7 @@ export default function BusinessBrainPage() {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                    className="inline-flex items-center gap-2 bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                   >
                     Get Your Brain Built
                   </Link>
@@ -151,7 +151,7 @@ export default function BusinessBrainPage() {
                   key={step.number}
                   className="bg-white rounded-2xl p-6 border border-[#E2DED8] flex flex-col gap-3"
                 >
-                  <span className="text-[#E8C547] text-3xl font-[family-name:var(--font-anton)] leading-none">
+                  <span className="text-[#FFD84D] text-3xl font-[family-name:var(--font-anton)] leading-none">
                     {step.number}
                   </span>
                   <h3 className="text-lg text-[#0C0C0C] leading-tight">{step.label}</h3>
@@ -227,7 +227,7 @@ export default function BusinessBrainPage() {
                 >
                   {tier.popular && (
                     <div className="absolute -top-3.5 left-8">
-                      <span className="bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold px-4 py-1 rounded-full">
+                      <span className="bg-[#0C0C0C] text-[#FFD84D] text-xs font-semibold px-4 py-1 rounded-full">
                         Most Popular
                       </span>
                     </div>
@@ -243,7 +243,7 @@ export default function BusinessBrainPage() {
                   <div className="flex-1" />
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+                    className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
                   >
                     Get Started
                   </Link>
@@ -254,7 +254,7 @@ export default function BusinessBrainPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#E8C547]" aria-labelledby="bb-cta-heading">
+        <section className="py-16 bg-[#FFD84D]" aria-labelledby="bb-cta-heading">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 id="bb-cta-heading" className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1] mb-4">
               Ready to build your Business Brain?

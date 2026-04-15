@@ -106,7 +106,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#0C0C0C] hover:bg-[#E8C547] disabled:opacity-60 text-white hover:text-[#0C0C0C] font-semibold py-3 rounded-xl transition-all duration-200 text-sm min-h-[44px]"
+              className="bg-[#0C0C0C] hover:bg-[#FFD84D] disabled:opacity-60 text-white hover:text-[#0C0C0C] font-semibold py-3 rounded-xl transition-all duration-200 text-sm min-h-[44px]"
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
@@ -208,7 +208,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
               {activeTab === 'products' && 'Store Products'}
             </h2>
             {activeTab === 'products' && (
-              <button className="bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200">
+              <button className="bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200">
                 + Add Product
               </button>
             )}

@@ -291,7 +291,7 @@ const trackColors: Record<Job['track'], { bg: string; text: string }> = {
 }
 
 const typeColors: Record<Job['type'], { bg: string; text: string }> = {
-  'Full-Time': { bg: '#0C0C0C', text: '#E8C547' },
+  'Full-Time': { bg: '#0C0C0C', text: '#FFD84D' },
   'Part-Time': { bg: '#FDF4FF', text: '#7C3AED' },
   Contract: { bg: '#1A4A7A', text: '#FFFFFF' },
   Freelance: { bg: '#F0FDF4', text: '#15803D' },
@@ -303,7 +303,7 @@ export default function CareersPage() {
       <Navbar />
       <main className="bg-[#F6F4EF]">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-[#E8C547]">
+        <section className="pt-32 pb-16 bg-[#FFD84D]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-end">
               <div>
@@ -383,7 +383,7 @@ export default function CareersPage() {
         </section>
 
         {/* Affiliate Program */}
-        <section className="py-20 bg-[#E8C547]" aria-labelledby="affiliate-heading">
+        <section className="py-20 bg-[#FFD84D]" aria-labelledby="affiliate-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="max-w-2xl mb-14">
@@ -482,7 +482,7 @@ export default function CareersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
             >
               Send an Open Application
             </Link>
@@ -557,7 +557,7 @@ function JobCard({ job }: { job: Job }) {
               <ul className="flex flex-col gap-2" role="list">
                 {job.responsibilities.map((r) => (
                   <li key={r} className="flex items-start gap-2.5 text-sm text-[#0C0C0C]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8C547] shrink-0 mt-1.5" aria-hidden="true" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD84D] shrink-0 mt-1.5" aria-hidden="true" />
                     {r}
                   </li>
                 ))}
@@ -601,7 +601,7 @@ function JobCard({ job }: { job: Job }) {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm mt-auto"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm mt-auto"
             >
               Apply for This Role
             </Link>

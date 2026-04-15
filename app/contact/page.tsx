@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </p>
                     <a
                       href="#send-message"
-                      className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 min-h-[44px]"
+                      className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 min-h-[44px]"
                     >
                       Send a Message
                     </a>
@@ -109,7 +109,7 @@ export default function ContactPage() {
               <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
                 <div>
                   <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
-                  <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#E8C547] font-medium hover:underline">
+                  <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#FFD84D] font-medium hover:underline">
                     Chanel@stackdstudiosai.com
                   </a>
                 </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
                     &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
                   </p>
-                  <p className="text-[#E8C547] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
+                  <p className="text-[#FFD84D] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                      Full Name <span className="text-[#E8C547]" aria-hidden="true">*</span>
+                      Full Name <span className="text-[#FFD84D]" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="text"
@@ -163,7 +163,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                      Email Address <span className="text-[#E8C547]" aria-hidden="true">*</span>
+                      Email Address <span className="text-[#FFD84D]" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="email"
@@ -196,7 +196,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                    Tell us about your project <span className="text-[#E8C547]" aria-hidden="true">*</span>
+                    Tell us about your project <span className="text-[#FFD84D]" aria-hidden="true">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -211,7 +211,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="bg-[#0C0C0C] hover:bg-[#E8C547] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#0C0C0C] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
+                  className="bg-[#0C0C0C] hover:bg-[#FFD84D] disabled:opacity-60 disabled:cursor-not-allowed text-white hover:text-[#0C0C0C] font-semibold py-3.5 px-8 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base w-full"
                 >
                   {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>

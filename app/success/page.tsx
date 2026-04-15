@@ -12,7 +12,7 @@ export default function SuccessPage() {
             {/* Icon */}
             <div className="w-20 h-20 bg-[#0C0C0C] rounded-full flex items-center justify-center mx-auto mb-8">
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M8 18l7 7 13-14" stroke="#E8C547" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 18l7 7 13-14" stroke="#FFD84D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
 
@@ -24,7 +24,7 @@ export default function SuccessPage() {
             </p>
             <p className="text-[#888580] text-sm mb-10">
               Didn&apos;t get an email? Reach out at{' '}
-              <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#0C0C0C] font-semibold hover:text-[#E8C547] transition-colors">
+              <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#0C0C0C] font-semibold hover:text-[#FFD84D] transition-colors">
                 Chanel@stackdstudiosai.com
               </a>
             </p>
@@ -32,7 +32,7 @@ export default function SuccessPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/store"
-                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Back to Store
               </Link>

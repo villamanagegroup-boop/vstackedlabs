@@ -65,7 +65,7 @@ function StatItem({ stat, index, active }: { stat: typeof stats[0]; index: numbe
 
   return (
     <div className="flex flex-col gap-2 text-center lg:text-left">
-      <div className="text-[clamp(48px,6vw,80px)] font-bold text-[#E8C547] leading-none font-[family-name:var(--font-instrument-sans)] tabular-nums">
+      <div className="text-[clamp(48px,6vw,80px)] font-bold text-[#FFD84D] leading-none font-[family-name:var(--font-instrument-sans)] tabular-nums">
         {count.toLocaleString()}{stat.suffix}
       </div>
       <div className="text-white text-lg leading-tight">{stat.label}</div>
@@ -86,7 +86,7 @@ export default function Stats() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-[#E8C547] text-xs font-semibold uppercase tracking-[0.12em] mb-3">
+          <p className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.12em] mb-3">
             By the Numbers
           </p>
           <h2 className="text-[clamp(28px,4vw,44px)] text-white leading-[1.1]">

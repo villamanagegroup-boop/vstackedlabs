@@ -33,7 +33,7 @@ export default function CartPage() {
                 <p className="text-[#888580] mb-6">Nothing here yet — head to the store to find something.</p>
                 <Link
                   href="/store"
-                  className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                  className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
                 >
                   Browse the Store
                 </Link>
@@ -47,9 +47,9 @@ export default function CartPage() {
                       {/* Icon */}
                       <div className="w-14 h-14 bg-[#0C0C0C] rounded-xl flex items-center justify-center shrink-0">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                          <path d="M4 4h14l-1.5 9H5.5L4 4z" stroke="#E8C547" strokeWidth="1.5" strokeLinejoin="round"/>
-                          <circle cx="8" cy="18" r="1.5" fill="#E8C547"/>
-                          <circle cx="15" cy="18" r="1.5" fill="#E8C547"/>
+                          <path d="M4 4h14l-1.5 9H5.5L4 4z" stroke="#FFD84D" strokeWidth="1.5" strokeLinejoin="round"/>
+                          <circle cx="8" cy="18" r="1.5" fill="#FFD84D"/>
+                          <circle cx="15" cy="18" r="1.5" fill="#FFD84D"/>
                         </svg>
                       </div>
 
@@ -119,13 +119,13 @@ export default function CartPage() {
 
                   <div className="border-t border-white/10 pt-4 flex justify-between">
                     <span className="text-white font-semibold">Total</span>
-                    <span className="text-[#E8C547] font-bold text-lg">${totalPrice.toFixed(2)}</span>
+                    <span className="text-[#FFD84D] font-bold text-lg">${totalPrice.toFixed(2)}</span>
                   </div>
 
                   <button
                     onClick={handleCheckout}
                     disabled={isPending}
-                    className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] disabled:opacity-60 text-[#0C0C0C] font-bold py-3.5 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
+                    className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] disabled:opacity-60 text-[#0C0C0C] font-bold py-3.5 px-6 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm"
                   >
                     {isPending ? 'Redirecting to Stripe...' : 'Checkout'}
                   </button>

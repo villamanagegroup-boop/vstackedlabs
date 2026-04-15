@@ -91,7 +91,7 @@ export default function Testimonials() {
               className="bg-[#F6F4EF] rounded-2xl p-5 flex flex-col gap-4 border border-[#E2DED8] hover:border-[#0C0C0C]/20 transition-all duration-300"
             >
               {/* Quote mark */}
-              <div className="text-[#E8C547] text-4xl leading-none font-serif" aria-hidden="true">&ldquo;</div>
+              <div className="text-[#FFD84D] text-4xl leading-none font-serif" aria-hidden="true">&ldquo;</div>
 
               {/* Quote */}
               <p className="text-[#0C0C0C] text-sm leading-relaxed flex-1">

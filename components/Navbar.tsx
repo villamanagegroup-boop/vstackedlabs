@@ -89,7 +89,7 @@ export default function Navbar() {
               <circle cx="14" cy="16.5" r="1.5" fill="#0C0C0C"/>
             </svg>
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#E8C547] text-[#0C0C0C] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#FFD84D] text-[#0C0C0C] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
                 {totalItems}
               </span>
             )}
@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
+            className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
             aria-label="Book a free discovery call with Stackd Studios AI"
           >
             Book a Call
@@ -172,7 +172,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-[#0C0C0C] text-[clamp(22px,6vw,34px)] font-[family-name:var(--font-anton)] hover:text-[#E8C547] transition-colors block leading-tight py-1"
+                  className="text-[#0C0C0C] text-[clamp(22px,6vw,34px)] font-[family-name:var(--font-anton)] hover:text-[#FFD84D] transition-colors block leading-tight py-1"
                 >
                   {link.label}
                 </Link>
@@ -183,7 +183,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C] text-base font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
+              className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] text-base font-semibold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px]"
             >
               Book a Call
             </Link>
@@ -199,7 +199,7 @@ export default function Navbar() {
               </svg>
               Cart
               {totalItems > 0 && (
-                <span className="bg-[#E8C547] text-[#0C0C0C] text-xs font-bold px-2 py-0.5 rounded-full">
+                <span className="bg-[#FFD84D] text-[#0C0C0C] text-xs font-bold px-2 py-0.5 rounded-full">
                   {totalItems}
                 </span>
               )}

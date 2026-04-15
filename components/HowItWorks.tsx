@@ -58,7 +58,7 @@ export default function HowItWorks() {
           <div
             className="absolute top-[28px] left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-[2px]"
             style={{
-              background: 'repeating-linear-gradient(90deg, #E8C547 0px, #E8C547 8px, transparent 8px, transparent 16px)',
+              background: 'repeating-linear-gradient(90deg, #FFD84D 0px, #FFD84D 8px, transparent 8px, transparent 16px)',
             }}
             aria-hidden="true"
           />
@@ -75,7 +75,7 @@ export default function HowItWorks() {
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-[#0C0C0C] text-base mb-6 z-10 relative font-[family-name:var(--font-instrument-sans)]"
-                  style={{ background: '#E8C547', border: '2px solid #0C0C0C' }}
+                  style={{ background: '#FFD84D', border: '2px solid #0C0C0C' }}
                 >
                   {step.number}
                 </div>
@@ -105,7 +105,7 @@ export default function HowItWorks() {
               <div className="flex flex-col items-center">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-[#0C0C0C] text-sm z-10 shrink-0 font-[family-name:var(--font-instrument-sans)]"
-                  style={{ background: '#E8C547', border: '2px solid #0C0C0C' }}
+                  style={{ background: '#FFD84D', border: '2px solid #0C0C0C' }}
                 >
                   {step.number}
                 </div>
@@ -113,7 +113,7 @@ export default function HowItWorks() {
                   <div
                     className="flex-1 w-[2px] mt-2"
                     style={{
-                      background: 'repeating-linear-gradient(180deg, #E8C547 0px, #E8C547 6px, transparent 6px, transparent 12px)',
+                      background: 'repeating-linear-gradient(180deg, #FFD84D 0px, #FFD84D 6px, transparent 6px, transparent 12px)',
                       minHeight: '48px',
                     }}
                     aria-hidden="true"

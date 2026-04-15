@@ -11,35 +11,35 @@ export function MockupDanceStudio() {
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="80" height="220" fill="#1a1a1a"/>
       {[30, 58, 86, 114, 142].map((y, i) => (
-        <rect key={i} x="12" y={y} width={i === 0 ? 56 : 44} height="10" rx="3" fill={i === 0 ? '#E8C547' : '#333'}/>
+        <rect key={i} x="12" y={y} width={i === 0 ? 56 : 44} height="10" rx="3" fill={i === 0 ? '#FFD84D' : '#333'}/>
       ))}
-      <rect x="12" y="10" width="56" height="14" rx="3" fill="#E8C547" opacity="0.15"/>
-      <rect x="16" y="13" width="30" height="8" rx="2" fill="#E8C547"/>
+      <rect x="12" y="10" width="56" height="14" rx="3" fill="#FFD84D" opacity="0.15"/>
+      <rect x="16" y="13" width="30" height="8" rx="2" fill="#FFD84D"/>
       <rect x="96" y="14" width="120" height="14" rx="3" fill="#2a2a2a"/>
-      <rect x="300" y="12" width="68" height="18" rx="6" fill="#E8C547"/>
+      <rect x="300" y="12" width="68" height="18" rx="6" fill="#FFD84D"/>
       {['M','T','W','T','F','S'].map((_, i) => (
         <rect key={i} x={96 + i * 50} y="40" width="44" height="12" rx="2" fill="#222"/>
       ))}
-      <rect x="96" y="58" width="44" height="32" rx="4" fill="#E8C547" opacity="0.9"/>
-      <rect x="96" y="58" width="44" height="8" rx="4" fill="#E8C547"/>
-      <rect x="96" y="66" width="44" height="24" rx="0" fill="#E8C547" opacity="0.2"/>
+      <rect x="96" y="58" width="44" height="32" rx="4" fill="#FFD84D" opacity="0.9"/>
+      <rect x="96" y="58" width="44" height="8" rx="4" fill="#FFD84D"/>
+      <rect x="96" y="66" width="44" height="24" rx="0" fill="#FFD84D" opacity="0.2"/>
       <rect x="146" y="72" width="44" height="18" rx="4" fill="#1A4A7A" opacity="0.8"/>
-      <rect x="196" y="58" width="44" height="44" rx="4" fill="#E8C547" opacity="0.5"/>
+      <rect x="196" y="58" width="44" height="44" rx="4" fill="#FFD84D" opacity="0.5"/>
       <rect x="246" y="64" width="44" height="26" rx="4" fill="#1A4A7A" opacity="0.6"/>
-      <rect x="296" y="58" width="44" height="18" rx="4" fill="#E8C547" opacity="0.3"/>
+      <rect x="296" y="58" width="44" height="18" rx="4" fill="#FFD84D" opacity="0.3"/>
       <rect x="96" y="104" width="44" height="22" rx="4" fill="#1A4A7A" opacity="0.5"/>
-      <rect x="146" y="104" width="44" height="38" rx="4" fill="#E8C547" opacity="0.7"/>
+      <rect x="146" y="104" width="44" height="38" rx="4" fill="#FFD84D" opacity="0.7"/>
       <rect x="196" y="110" width="44" height="18" rx="4" fill="#333"/>
-      <rect x="246" y="104" width="44" height="30" rx="4" fill="#E8C547" opacity="0.4"/>
+      <rect x="246" y="104" width="44" height="30" rx="4" fill="#FFD84D" opacity="0.4"/>
       <rect x="296" y="104" width="44" height="44" rx="4" fill="#1A4A7A" opacity="0.4"/>
       <rect x="96" y="165" width="88" height="42" rx="6" fill="#1a1a1a"/>
-      <rect x="108" y="173" width="40" height="8" rx="2" fill="#E8C547" opacity="0.6"/>
+      <rect x="108" y="173" width="40" height="8" rx="2" fill="#FFD84D" opacity="0.6"/>
       <rect x="108" y="186" width="60" height="6" rx="2" fill="#333"/>
       <rect x="196" y="165" width="88" height="42" rx="6" fill="#1a1a1a"/>
-      <rect x="208" y="173" width="40" height="8" rx="2" fill="#E8C547" opacity="0.6"/>
+      <rect x="208" y="173" width="40" height="8" rx="2" fill="#FFD84D" opacity="0.6"/>
       <rect x="208" y="186" width="60" height="6" rx="2" fill="#333"/>
       <rect x="296" y="165" width="88" height="42" rx="6" fill="#1a1a1a"/>
-      <rect x="308" y="173" width="40" height="8" rx="2" fill="#E8C547" opacity="0.6"/>
+      <rect x="308" y="173" width="40" height="8" rx="2" fill="#FFD84D" opacity="0.6"/>
       <rect x="308" y="186" width="60" height="6" rx="2" fill="#333"/>
     </svg>
   )
@@ -53,21 +53,21 @@ export function MockupIntakeAgent() {
       <rect x="8" y="10" width="100" height="10" rx="3" fill="#333"/>
       {[32, 64, 96, 128, 160, 192].map((y, i) => (
         <g key={i}>
-          <rect x="8" y={y} width="28" height="28" rx="14" fill={i % 2 === 0 ? '#E8C547' : '#1A4A7A'} opacity="0.8"/>
+          <rect x="8" y={y} width="28" height="28" rx="14" fill={i % 2 === 0 ? '#FFD84D' : '#1A4A7A'} opacity="0.8"/>
           <rect x="44" y={y + 4} width="80" height="8" rx="2" fill="#2a2a2a"/>
           <rect x="44" y={y + 16} width="56" height="6" rx="2" fill="#222"/>
         </g>
       ))}
-      <rect x="4" y="32" width="3" height="28" rx="2" fill="#E8C547"/>
+      <rect x="4" y="32" width="3" height="28" rx="2" fill="#FFD84D"/>
       <rect x="160" y="0" width="240" height="220" fill="#0f0f0f"/>
-      <rect x="168" y="10" width="28" height="28" rx="14" fill="#E8C547" opacity="0.8"/>
+      <rect x="168" y="10" width="28" height="28" rx="14" fill="#FFD84D" opacity="0.8"/>
       <rect x="204" y="14" width="80" height="8" rx="2" fill="#2a2a2a"/>
       <rect x="204" y="26" width="50" height="6" rx="2" fill="#222"/>
       <rect x="168" y="52" width="160" height="36" rx="8" fill="#1a1a1a"/>
       <rect x="176" y="60" width="120" height="6" rx="2" fill="#444"/>
       <rect x="176" y="72" width="90" height="6" rx="2" fill="#333"/>
-      <rect x="248" y="100" width="120" height="24" rx="8" fill="#E8C547" opacity="0.15"/>
-      <rect x="256" y="108" width="90" height="6" rx="2" fill="#E8C547" opacity="0.6"/>
+      <rect x="248" y="100" width="120" height="24" rx="8" fill="#FFD84D" opacity="0.15"/>
+      <rect x="256" y="108" width="90" height="6" rx="2" fill="#FFD84D" opacity="0.6"/>
       <rect x="168" y="136" width="180" height="48" rx="8" fill="#1a1a1a"/>
       <rect x="176" y="144" width="140" height="6" rx="2" fill="#444"/>
       <rect x="176" y="156" width="110" height="6" rx="2" fill="#333"/>
@@ -85,17 +85,17 @@ export function MockupFieldOS() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="36" fill="#141414"/>
-      <rect x="12" y="11" width="60" height="14" rx="3" fill="#E8C547" opacity="0.2"/>
-      <rect x="16" y="14" width="36" height="8" rx="2" fill="#E8C547"/>
+      <rect x="12" y="11" width="60" height="14" rx="3" fill="#FFD84D" opacity="0.2"/>
+      <rect x="16" y="14" width="36" height="8" rx="2" fill="#FFD84D"/>
       {['96','148','200','252'].map((x, i) => (
         <rect key={i} x={Number(x)} y="14" width="36" height="8" rx="2" fill={i === 0 ? '#2a2a2a' : '#1e1e1e'}/>
       ))}
-      <rect x="340" y="10" width="48" height="16" rx="6" fill="#E8C547"/>
+      <rect x="340" y="10" width="48" height="16" rx="6" fill="#FFD84D"/>
       {[0,1,2,3].map((i) => (
         <g key={i}>
           <rect x={8 + i * 97} y="44" width="90" height="52" rx="6" fill="#141414"/>
           <rect x={16 + i * 97} y="52" width={40 + i * 4} height="6" rx="2" fill="#333"/>
-          <rect x={16 + i * 97} y="64" width="50" height="14" rx="2" fill={i === 0 ? '#E8C547' : i === 1 ? '#1A4A7A' : i === 2 ? '#22c55e' : '#f97316'} opacity={i === 0 ? 1 : 0.7}/>
+          <rect x={16 + i * 97} y="64" width="50" height="14" rx="2" fill={i === 0 ? '#FFD84D' : i === 1 ? '#1A4A7A' : i === 2 ? '#22c55e' : '#f97316'} opacity={i === 0 ? 1 : 0.7}/>
           <rect x={16 + i * 97} y="84" width="60" height="6" rx="2" fill="#222"/>
         </g>
       ))}
@@ -103,14 +103,14 @@ export function MockupFieldOS() {
       <rect x="16" y="112" width="80" height="8" rx="2" fill="#2a2a2a"/>
       {[{ h: 40, x: 20 },{ h: 60, x: 50 },{ h: 30, x: 80 },{ h: 70, x: 110 },{ h: 50, x: 140 },{ h: 80, x: 170 },{ h: 45, x: 200 }].map((bar, i) => (
         <rect key={i} x={16 + bar.x} y={196 - bar.h} width="22" height={bar.h} rx="3"
-          fill={i === 5 ? '#E8C547' : '#1A4A7A'} opacity={i === 5 ? 0.9 : 0.4}/>
+          fill={i === 5 ? '#FFD84D' : '#1A4A7A'} opacity={i === 5 ? 0.9 : 0.4}/>
       ))}
       <line x1="16" y1="196" x2="250" y2="196" stroke="#333" strokeWidth="1"/>
       <rect x="266" y="104" width="126" height="108" rx="6" fill="#141414"/>
       <rect x="274" y="112" width="60" height="8" rx="2" fill="#2a2a2a"/>
       {[0,1,2,3,4].map((i) => (
         <g key={i}>
-          <rect x="274" y={128 + i * 18} width="8" height="8" rx="2" fill={i < 3 ? '#E8C547' : '#333'} opacity={i < 3 ? 0.8 : 1}/>
+          <rect x="274" y={128 + i * 18} width="8" height="8" rx="2" fill={i < 3 ? '#FFD84D' : '#333'} opacity={i < 3 ? 0.8 : 1}/>
           <rect x="288" y={130 + i * 18} width="80" height="6" rx="2" fill="#2a2a2a"/>
           <rect x="356" y={130 + i * 18} width="24" height="6" rx="2" fill={i < 3 ? '#22c55e' : '#333'} opacity="0.6"/>
         </g>
@@ -124,23 +124,23 @@ export function MockupClientPortal() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="40" fill="#141414"/>
-      <rect x="16" y="13" width="40" height="14" rx="3" fill="#E8C547"/>
+      <rect x="16" y="13" width="40" height="14" rx="3" fill="#FFD84D"/>
       <rect x="300" y="12" width="32" height="16" rx="8" fill="#1a1a1a"/>
-      <rect x="340" y="12" width="44" height="16" rx="8" fill="#E8C547"/>
+      <rect x="340" y="12" width="44" height="16" rx="8" fill="#FFD84D"/>
       <rect x="16" y="52" width="240" height="36" rx="8" fill="#1a1a1a"/>
       <rect x="28" y="62" width="80" height="8" rx="3" fill="#2a2a2a"/>
       <rect x="28" y="74" width="140" height="6" rx="2" fill="#222"/>
       <rect x="270" y="52" width="114" height="36" rx="8" fill="#1a1a1a"/>
       <rect x="280" y="62" width="50" height="6" rx="2" fill="#333"/>
       <rect x="280" y="72" width="90" height="6" rx="3" fill="#222"/>
-      <rect x="280" y="72" width="54" height="6" rx="3" fill="#E8C547" opacity="0.8"/>
+      <rect x="280" y="72" width="54" height="6" rx="3" fill="#FFD84D" opacity="0.8"/>
       {[0,1,2].map((i) => (
         <g key={i}>
           <rect x={16 + i * 126} y="100" width="118" height="80" rx="8" fill="#141414"/>
           <rect x={26 + i * 126} y="112" width="60" height="8" rx="3" fill="#2a2a2a"/>
           <rect x={26 + i * 126} y="126" width="90" height="5" rx="2" fill="#1e1e1e"/>
           <rect x={26 + i * 126} y="135" width="70" height="5" rx="2" fill="#1e1e1e"/>
-          <rect x={26 + i * 126} y="148" width="70" height="20" rx="6" fill={i === 0 ? '#E8C547' : '#1a1a1a'} opacity={i === 0 ? 1 : 0.8}/>
+          <rect x={26 + i * 126} y="148" width="70" height="20" rx="6" fill={i === 0 ? '#FFD84D' : '#1a1a1a'} opacity={i === 0 ? 1 : 0.8}/>
           <rect x={34 + i * 126} y="153" width="40" height="8" rx="2" fill={i === 0 ? '#0f0f0f' : '#333'}/>
         </g>
       ))}
@@ -157,17 +157,17 @@ export function MockupBizDashboard() {
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="64" height="220" fill="#141414"/>
       {[16, 44, 72, 100, 128, 156, 184].map((y, i) => (
-        <rect key={i} x="12" y={y} width="40" height="20" rx="4" fill={i === 0 ? '#E8C547' : '#1e1e1e'}/>
+        <rect key={i} x="12" y={y} width="40" height="20" rx="4" fill={i === 0 ? '#FFD84D' : '#1e1e1e'}/>
       ))}
       <rect x="64" y="0" width="336" height="32" fill="#1a1a1a"/>
       <rect x="76" y="10" width="100" height="12" rx="3" fill="#2a2a2a"/>
-      <rect x="344" y="8" width="44" height="16" rx="8" fill="#E8C547"/>
+      <rect x="344" y="8" width="44" height="16" rx="8" fill="#FFD84D"/>
       {[0,1,2,3].map((i) => (
         <g key={i}>
           <rect x={72 + i * 82} y="40" width="76" height="44" rx="6" fill="#141414"/>
           <rect x={80 + i * 82} y="48" width="44" height="6" rx="2" fill="#2a2a2a"/>
           <rect x={80 + i * 82} y="58" width="36" height="12" rx="2"
-            fill={i === 0 ? '#E8C547' : i === 1 ? '#22c55e' : i === 2 ? '#1A4A7A' : '#F97316'}
+            fill={i === 0 ? '#FFD84D' : i === 1 ? '#22c55e' : i === 2 ? '#1A4A7A' : '#F97316'}
             opacity="0.85"/>
           <rect x={80 + i * 82} y="74" width="52" height="5" rx="2" fill="#222"/>
         </g>
@@ -175,7 +175,7 @@ export function MockupBizDashboard() {
       <rect x="72" y="92" width="196" height="120" rx="6" fill="#141414"/>
       <rect x="82" y="100" width="70" height="8" rx="3" fill="#2a2a2a"/>
       <polyline points="82,200 102,185 122,190 142,170 162,175 182,155 202,160 222,140 242,148 252,200"
-        fill="#E8C547" fillOpacity="0.12" stroke="#E8C547" strokeWidth="1.5" strokeLinejoin="round"/>
+        fill="#FFD84D" fillOpacity="0.12" stroke="#FFD84D" strokeWidth="1.5" strokeLinejoin="round"/>
       <line x1="82" y1="200" x2="260" y2="200" stroke="#222" strokeWidth="1"/>
       <rect x="276" y="92" width="116" height="120" rx="6" fill="#141414"/>
       <rect x="284" y="100" width="60" height="8" rx="3" fill="#2a2a2a"/>
@@ -195,18 +195,18 @@ export function MockupBusinessBrain() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="44" fill="#141414"/>
-      <rect x="16" y="14" width="100" height="16" rx="4" fill="#E8C547" opacity="0.15"/>
-      <rect x="20" y="17" width="56" height="10" rx="3" fill="#E8C547"/>
+      <rect x="16" y="14" width="100" height="16" rx="4" fill="#FFD84D" opacity="0.15"/>
+      <rect x="20" y="17" width="56" height="10" rx="3" fill="#FFD84D"/>
       <rect x="310" y="12" width="70" height="20" rx="8" fill="#1a1a1a"/>
       <rect x="318" y="17" width="54" height="10" rx="3" fill="#333"/>
       <rect x="16" y="54" width="368" height="32" rx="8" fill="#1a1a1a"/>
       <rect x="28" y="64" width="180" height="12" rx="3" fill="#2a2a2a"/>
-      <rect x="360" y="60" width="16" height="20" rx="4" fill="#E8C547"/>
+      <rect x="360" y="60" width="16" height="20" rx="4" fill="#FFD84D"/>
       {[0,1,2].map((i) => (
         <g key={i}>
           <rect x={16 + i * 126} y="98" width="118" height="56" rx="8" fill="#141414"/>
           <rect x={24 + i * 126} y="108" width="16" height="16" rx="4"
-            fill={i === 0 ? '#E8C547' : i === 1 ? '#1A4A7A' : '#F97316'} opacity="0.8"/>
+            fill={i === 0 ? '#FFD84D' : i === 1 ? '#1A4A7A' : '#F97316'} opacity="0.8"/>
           <rect x={46 + i * 126} y="109" width="60" height="7" rx="2" fill="#2a2a2a"/>
           <rect x={24 + i * 126} y="130" width="96" height="5" rx="2" fill="#1e1e1e"/>
           <rect x={24 + i * 126} y="140" width="72" height="5" rx="2" fill="#1e1e1e"/>
@@ -216,9 +216,9 @@ export function MockupBusinessBrain() {
       <rect x="26" y="174" width="120" height="6" rx="2" fill="#333"/>
       <rect x="26" y="184" width="200" height="6" rx="2" fill="#2a2a2a"/>
       <rect x="26" y="194" width="160" height="6" rx="2" fill="#222"/>
-      <rect x="274" y="164" width="110" height="46" rx="8" fill="#E8C547" opacity="0.1"/>
-      <rect x="282" y="176" width="50" height="8" rx="2" fill="#E8C547" opacity="0.5"/>
-      <rect x="282" y="190" width="30" height="14" rx="3" fill="#E8C547" opacity="0.8"/>
+      <rect x="274" y="164" width="110" height="46" rx="8" fill="#FFD84D" opacity="0.1"/>
+      <rect x="282" y="176" width="50" height="8" rx="2" fill="#FFD84D" opacity="0.5"/>
+      <rect x="282" y="190" width="30" height="14" rx="3" fill="#FFD84D" opacity="0.8"/>
     </svg>
   )
 }
@@ -228,12 +228,12 @@ export function MockupSalon() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="40" fill="#141414"/>
-      <rect x="16" y="12" width="48" height="16" rx="3" fill="#E8C547"/>
+      <rect x="16" y="12" width="48" height="16" rx="3" fill="#FFD84D"/>
       <rect x="280" y="12" width="50" height="16" rx="6" fill="#1a1a1a"/>
-      <rect x="338" y="12" width="50" height="16" rx="6" fill="#E8C547"/>
+      <rect x="338" y="12" width="50" height="16" rx="6" fill="#FFD84D"/>
       {[0,1,2,3,4,5,6].map((i) => (
         <g key={i}>
-          <rect x={8 + i * 56} y="48" width="50" height="36" rx="6" fill={i === 2 ? '#E8C547' : '#141414'}/>
+          <rect x={8 + i * 56} y="48" width="50" height="36" rx="6" fill={i === 2 ? '#FFD84D' : '#141414'}/>
           <rect x={20 + i * 56} y="55" width="26" height="6" rx="2" fill={i === 2 ? '#0f0f0f' : '#2a2a2a'}/>
           <rect x={24 + i * 56} y="65" width="16" height="10" rx="2" fill={i === 2 ? '#0f0f0f' : '#333'} opacity={i === 2 ? 1 : 0.5}/>
         </g>
@@ -243,7 +243,7 @@ export function MockupSalon() {
           <rect x="8" y={94 + i * 25} width="36" height="18" rx="2" fill="#1a1a1a"/>
           <rect x="12" y={99 + i * 25} width="24" height="8" rx="2" fill="#333"/>
           <rect x="52" y={94 + i * 25} width="160" height="18" rx="6"
-            fill={i === 0 ? '#E8C547' : i === 2 ? '#1A4A7A' : '#141414'}
+            fill={i === 0 ? '#FFD84D' : i === 2 ? '#1A4A7A' : '#141414'}
             opacity={i === 0 || i === 2 ? 0.85 : 1}/>
           {(i === 0 || i === 2) && (
             <rect x="62" y={99 + i * 25} width="90" height="8" rx="2"
@@ -263,10 +263,10 @@ export function MockupGym() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="38" fill="#141414"/>
-      <rect x="14" y="12" width="44" height="14" rx="3" fill="#E8C547"/>
+      <rect x="14" y="12" width="44" height="14" rx="3" fill="#FFD84D"/>
       <rect x="200" y="12" width="120" height="14" rx="3" fill="#1e1e1e"/>
-      <rect x="336" y="10" width="52" height="18" rx="8" fill="#E8C547"/>
-      <rect x="14" y="46" width="172" height="80" rx="10" fill="#E8C547"/>
+      <rect x="336" y="10" width="52" height="18" rx="8" fill="#FFD84D"/>
+      <rect x="14" y="46" width="172" height="80" rx="10" fill="#FFD84D"/>
       <rect x="24" y="56" width="60" height="8" rx="2" fill="#0f0f0f" opacity="0.5"/>
       <rect x="24" y="70" width="100" height="16" rx="3" fill="#0f0f0f" opacity="0.7"/>
       <rect x="24" y="92" width="70" height="8" rx="2" fill="#0f0f0f" opacity="0.4"/>
@@ -276,7 +276,7 @@ export function MockupGym() {
       <rect x="206" y="56" width="80" height="8" rx="3" fill="#2a2a2a"/>
       {[0,1,2,3,4,5,6].map((i) => (
         <rect key={i} x={206 + i * 24} y="72" width="18" height={20 + i * 6} rx="3"
-          fill={i < 5 ? '#E8C547' : '#1e1e1e'} opacity={i < 5 ? 0.7 + i * 0.05 : 1}/>
+          fill={i < 5 ? '#FFD84D' : '#1e1e1e'} opacity={i < 5 ? 0.7 + i * 0.05 : 1}/>
       ))}
       <line x1="206" y1="118" x2="376" y2="118" stroke="#222" strokeWidth="1"/>
       <rect x="14" y="136" width="372" height="76" rx="10" fill="#141414"/>
@@ -284,7 +284,7 @@ export function MockupGym() {
       {[0,1,2,3].map((i) => (
         <g key={i}>
           <rect x={24 + i * 90} y="162" width="82" height="40" rx="6"
-            fill={i === 1 ? '#E8C547' : '#1a1a1a'} opacity={i === 1 ? 0.9 : 1}/>
+            fill={i === 1 ? '#FFD84D' : '#1a1a1a'} opacity={i === 1 ? 0.9 : 1}/>
           <rect x={32 + i * 90} y="170" width="50" height="6" rx="2"
             fill={i === 1 ? '#0f0f0f' : '#2a2a2a'}/>
           <rect x={32 + i * 90} y="180" width="36" height="6" rx="2"
@@ -302,35 +302,35 @@ export function MockupCoaching() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="72" height="220" fill="#141414"/>
-      <rect x="10" y="14" width="52" height="12" rx="3" fill="#E8C547" opacity="0.2"/>
-      <rect x="14" y="16" width="32" height="8" rx="2" fill="#E8C547"/>
+      <rect x="10" y="14" width="52" height="12" rx="3" fill="#FFD84D" opacity="0.2"/>
+      <rect x="14" y="16" width="32" height="8" rx="2" fill="#FFD84D"/>
       {[40, 66, 92, 118, 144, 170].map((y, i) => (
         <rect key={i} x="10" y={y} width={i === 0 ? 52 : 40} height="18" rx="4"
-          fill={i === 0 ? '#E8C547' : '#1e1e1e'}/>
+          fill={i === 0 ? '#FFD84D' : '#1e1e1e'}/>
       ))}
       <rect x="82" y="10" width="200" height="14" rx="4" fill="#2a2a2a"/>
       <rect x="82" y="30" width="300" height="8" rx="3" fill="#1e1e1e"/>
-      <rect x="82" y="30" width="190" height="8" rx="3" fill="#E8C547" opacity="0.5"/>
+      <rect x="82" y="30" width="190" height="8" rx="3" fill="#FFD84D" opacity="0.5"/>
       {[0,1,2,3].map((i) => (
         <g key={i}>
           <rect x="82" y={50 + i * 42} width="306" height="36" rx="8" fill="#141414"/>
           <rect x="92" y={58 + i * 42} width="20" height="20" rx="6"
-            fill={i < 2 ? '#E8C547' : '#1e1e1e'} opacity={i < 2 ? 0.85 : 1}/>
+            fill={i < 2 ? '#FFD84D' : '#1e1e1e'} opacity={i < 2 ? 0.85 : 1}/>
           {i < 2 && (
             <path d={`M${97} ${68 + i * 42} l4 4 6 -6`} stroke="#0f0f0f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           )}
           <rect x="120" y={60 + i * 42} width="120" height="7" rx="2" fill="#2a2a2a"/>
           <rect x="120" y={71 + i * 42} width="80" height="5" rx="2" fill="#1e1e1e"/>
           <rect x="330" y={58 + i * 42} width="48" height="20" rx="6"
-            fill={i < 2 ? '#22c55e' : i === 2 ? '#E8C547' : '#1e1e1e'}
+            fill={i < 2 ? '#22c55e' : i === 2 ? '#FFD84D' : '#1e1e1e'}
             opacity={i < 2 ? 0.7 : 0.9}/>
           <rect x="340" y={63 + i * 42} width="28" height="10" rx="2"
             fill={i < 2 ? '#0f0f0f' : '#333'} opacity="0.6"/>
         </g>
       ))}
-      <rect x="82" y="180" width="306" height="30" rx="8" fill="#E8C547" opacity="0.1"/>
-      <rect x="92" y="190" width="100" height="10" rx="3" fill="#E8C547" opacity="0.4"/>
-      <rect x="300" y="186" width="80" height="18" rx="6" fill="#E8C547" opacity="0.8"/>
+      <rect x="82" y="180" width="306" height="30" rx="8" fill="#FFD84D" opacity="0.1"/>
+      <rect x="92" y="190" width="100" height="10" rx="3" fill="#FFD84D" opacity="0.4"/>
+      <rect x="300" y="186" width="80" height="18" rx="6" fill="#FFD84D" opacity="0.8"/>
     </svg>
   )
 }
@@ -340,11 +340,11 @@ export function MockupEcommerce() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="36" fill="#141414"/>
-      <rect x="14" y="11" width="48" height="14" rx="3" fill="#E8C547"/>
+      <rect x="14" y="11" width="48" height="14" rx="3" fill="#FFD84D"/>
       <rect x="120" y="13" width="160" height="10" rx="3" fill="#1e1e1e"/>
       <rect x="340" y="10" width="22" height="16" rx="4" fill="#1a1a1a"/>
       <rect x="370" y="10" width="18" height="16" rx="4" fill="#1a1a1a"/>
-      <circle cx="381" cy="10" r="5" fill="#E8C547"/>
+      <circle cx="381" cy="10" r="5" fill="#FFD84D"/>
       <rect x="376" y="8" width="10" height="6" rx="2" fill="#0f0f0f"/>
       {[0,1,2,3,4,5].map((i) => {
         const col = i % 3
@@ -354,10 +354,10 @@ export function MockupEcommerce() {
             <rect x={8 + col * 128} y={44 + row * 88} width="120" height="80" rx="8" fill="#141414"/>
             <rect x={8 + col * 128} y={44 + row * 88} width="120" height="46" rx="8" fill="#1a1a1a"/>
             <rect x={18 + col * 128} y={54 + row * 88} width="32" height="28" rx="4"
-              fill={i % 3 === 0 ? '#E8C547' : i % 3 === 1 ? '#1A4A7A' : '#F97316'} opacity="0.3"/>
+              fill={i % 3 === 0 ? '#FFD84D' : i % 3 === 1 ? '#1A4A7A' : '#F97316'} opacity="0.3"/>
             <rect x={10 + col * 128} y={96 + row * 88} width="70" height="6" rx="2" fill="#2a2a2a"/>
-            <rect x={10 + col * 128} y={106 + row * 88} width="40" height="8" rx="2" fill="#E8C547" opacity="0.7"/>
-            <rect x={88 + col * 128} y={104 + row * 88} width="32" height="14" rx="5" fill="#E8C547"/>
+            <rect x={10 + col * 128} y={106 + row * 88} width="40" height="8" rx="2" fill="#FFD84D" opacity="0.7"/>
+            <rect x={88 + col * 128} y={104 + row * 88} width="32" height="14" rx="5" fill="#FFD84D"/>
           </g>
         )
       })}
@@ -370,19 +370,19 @@ export function MockupSports() {
     <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" aria-hidden="true">
       <rect width="400" height="220" fill="#0f0f0f"/>
       <rect width="400" height="40" fill="#141414"/>
-      <rect x="14" y="12" width="52" height="16" rx="3" fill="#E8C547"/>
+      <rect x="14" y="12" width="52" height="16" rx="3" fill="#FFD84D"/>
       <rect x="120" y="14" width="80" height="12" rx="3" fill="#1e1e1e"/>
       <rect x="210" y="14" width="80" height="12" rx="3" fill="#1e1e1e"/>
-      <rect x="316" y="10" width="70" height="20" rx="8" fill="#E8C547"/>
+      <rect x="316" y="10" width="70" height="20" rx="8" fill="#FFD84D"/>
       <rect x="14" y="48" width="372" height="32" rx="8" fill="#1A4A7A" opacity="0.4"/>
       <rect x="24" y="58" width="100" height="8" rx="3" fill="#93C5FD" opacity="0.6"/>
-      <rect x="320" y="54" width="56" height="20" rx="6" fill="#E8C547"/>
+      <rect x="320" y="54" width="56" height="20" rx="6" fill="#FFD84D"/>
       <rect x="14" y="90" width="180" height="122" rx="8" fill="#141414"/>
       <rect x="22" y="100" width="70" height="8" rx="3" fill="#2a2a2a"/>
       {[0,1,2,3,4].map((i) => (
         <g key={i}>
           <rect x="22" y={116 + i * 19} width="16" height="16" rx="8"
-            fill={['#E8C547','#1A4A7A','#F97316','#22c55e','#E8C547'][i]} opacity="0.75"/>
+            fill={['#FFD84D','#1A4A7A','#F97316','#22c55e','#FFD84D'][i]} opacity="0.75"/>
           <rect x="44" y={119 + i * 19} width="80" height="6" rx="2" fill="#2a2a2a"/>
           <rect x="44" y={128 + i * 19} width="50" height="4" rx="2" fill="#1e1e1e"/>
           <rect x="156" y={119 + i * 19} width="28" height="10" rx="4"
@@ -394,9 +394,9 @@ export function MockupSports() {
       {[0,1,2,3].map((i) => (
         <g key={i}>
           <rect x="212" y={116 + i * 24} width="164" height="18" rx="5"
-            fill={i === 0 ? '#E8C547' : '#1a1a1a'} opacity={i === 0 ? 0.15 : 1}/>
+            fill={i === 0 ? '#FFD84D' : '#1a1a1a'} opacity={i === 0 ? 0.15 : 1}/>
           <rect x="220" y={121 + i * 24} width="60" height="6" rx="2"
-            fill={i === 0 ? '#E8C547' : '#2a2a2a'} opacity={i === 0 ? 0.8 : 1}/>
+            fill={i === 0 ? '#FFD84D' : '#2a2a2a'} opacity={i === 0 ? 0.8 : 1}/>
           <rect x="340" y={121 + i * 24} width="28" height="6" rx="2" fill="#333"/>
         </g>
       ))}
@@ -555,7 +555,7 @@ export default function OurWork() {
 
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-[#E8C547] text-xs font-semibold px-2.5 py-1 rounded-md border border-[#E8C547]/30">
+                      <span key={tag} className="text-[#FFD84D] text-xs font-semibold px-2.5 py-1 rounded-md border border-[#FFD84D]/30">
                         {tag}
                       </span>
                     ))}
@@ -566,7 +566,7 @@ export default function OurWork() {
 
                   <Link
                     href="/contact"
-                    className="text-[#E8C547] font-semibold text-sm hover:text-white transition-colors mt-auto inline-flex items-center gap-2 group-hover:gap-3 duration-200"
+                    className="text-[#FFD84D] font-semibold text-sm hover:text-white transition-colors mt-auto inline-flex items-center gap-2 group-hover:gap-3 duration-200"
                     aria-label={`Start a project like ${project.title}`}
                   >
                     Start My Project

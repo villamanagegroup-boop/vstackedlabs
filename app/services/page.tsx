@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const GoldCheck = () => (
   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
-    <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#E8C547" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M2.5 7.5l3.5 3.5 6.5-7" stroke="#FFD84D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
@@ -61,8 +61,8 @@ const IconRocket = () => (
 
 const IconFlag = () => (
   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <path d="M4 3v16" stroke="#E8C547" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M4 4h12l-3 4.5 3 4.5H4" stroke="#E8C547" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M4 3v16" stroke="#FFD84D" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 4h12l-3 4.5 3 4.5H4" stroke="#FFD84D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
@@ -203,7 +203,7 @@ export default function ServicesPage() {
       <main>
 
         {/* ── Hero ────────────────────────────────────────────────────────── */}
-        <section className="bg-[#E8C547] pt-32 pb-20">
+        <section className="bg-[#FFD84D] pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -400,8 +400,8 @@ export default function ServicesPage() {
                         href="/contact"
                         className={`inline-flex items-center justify-center font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-sm mt-2 ${
                           svc.popular
-                            ? 'bg-[#1A4A7A] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C]'
-                            : 'bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C]'
+                            ? 'bg-[#1A4A7A] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]'
+                            : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]'
                         }`}
                       >
                         Get Started
@@ -453,7 +453,7 @@ export default function ServicesPage() {
                       svc.popular
                         ? 'border-[#F97316] shadow-[0_0_0_1px_rgba(249,115,22,0.15),0_4px_20px_rgba(0,0,0,0.08)]'
                         : svc.both
-                        ? 'border-[#E8C547] shadow-[0_0_0_1px_rgba(232,197,71,0.2),0_4px_20px_rgba(0,0,0,0.08)]'
+                        ? 'border-[#FFD84D] shadow-[0_0_0_1px_rgba(232,197,71,0.2),0_4px_20px_rgba(0,0,0,0.08)]'
                         : 'border-[#E2DED8] shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:border-[#0C0C0C]/20 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]'
                     }`}
                   >
@@ -461,7 +461,7 @@ export default function ServicesPage() {
                       <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#F97316]" aria-hidden="true"/>
                     )}
                     {svc.both && (
-                      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8C547]" aria-hidden="true"/>
+                      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#FFD84D]" aria-hidden="true"/>
                     )}
 
                     {/* Card header */}
@@ -477,7 +477,7 @@ export default function ServicesPage() {
                             </span>
                           )}
                           {svc.both && (
-                            <span className="bg-[#E8C547] text-[#0C0C0C] text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-[0.08em]">
+                            <span className="bg-[#FFD84D] text-[#0C0C0C] text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-[0.08em]">
                               Both Tracks
                             </span>
                           )}
@@ -513,8 +513,8 @@ export default function ServicesPage() {
                           svc.popular
                             ? 'bg-[#F97316] hover:bg-[#ea6c0a] text-white'
                             : svc.both
-                            ? 'bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C]'
-                            : 'bg-[#0C0C0C] hover:bg-[#E8C547] text-white hover:text-[#0C0C0C]'
+                            ? 'bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C]'
+                            : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]'
                         }`}
                       >
                         {svc.tier === 'T5' ? 'Book a Session' : svc.tier === 'T7' ? 'Let\'s Talk' : 'Start a Sprint'}
@@ -528,7 +528,7 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Add-Ons ─────────────────────────────────────────────────────── */}
-        <section className="bg-[#E8C547] py-20">
+        <section className="bg-[#FFD84D] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -579,7 +579,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
                 Book a Free Call
               </Link>

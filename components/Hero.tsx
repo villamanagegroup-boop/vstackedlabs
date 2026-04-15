@@ -25,7 +25,7 @@ function TypewriterWord() {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           exit={{ opacity: 0, y: -20, filter: 'blur(4px)' }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="inline-block text-[#E8C547]"
+          className="inline-block text-[#FFD84D]"
         >
           {cycleWords[index]}
         </motion.span>
@@ -58,7 +58,7 @@ export default function Hero() {
       <div
         className="orb-2 absolute bottom-[-5%] left-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, #E8C547 0%, transparent 70%)',
+          background: 'radial-gradient(circle, #FFD84D 0%, transparent 70%)',
           opacity: 0.18,
           filter: 'blur(80px)',
         }}
@@ -74,9 +74,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#0C0C0C] text-[#E8C547] text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full mb-6"
+              className="inline-flex items-center gap-2 bg-[#0C0C0C] text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full mb-6"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E8C547]" aria-hidden="true" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFD84D]" aria-hidden="true" />
               AI-Powered Build Lab &amp; Venture Studio
             </motion.div>
 
@@ -112,7 +112,7 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base"
+                className="inline-flex items-center gap-2 bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base"
               >
                 Book a Free Call
               </Link>
@@ -135,7 +135,7 @@ export default function Hero() {
                 {['CH', 'MR', 'TP'].map((init) => (
                   <div
                     key={init}
-                    className="w-8 h-8 rounded-full bg-[#0C0C0C] border-2 border-[#F6F4EF] flex items-center justify-center text-[#E8C547] text-[10px] font-bold"
+                    className="w-8 h-8 rounded-full bg-[#0C0C0C] border-2 border-[#F6F4EF] flex items-center justify-center text-[#FFD84D] text-[10px] font-bold"
                   >
                     {init}
                   </div>
@@ -172,9 +172,9 @@ export default function Hero() {
                 <div className="text-[#888580]">{'// Stackd Studios AI — Build. Test. Launch.'}</div>
                 <div className="h-4" />
                 <div>
-                  <span className="text-[#E8C547]">const</span>
+                  <span className="text-[#FFD84D]">const</span>
                   <span className="text-white"> studio = </span>
-                  <span className="text-[#E8C547]">new</span>
+                  <span className="text-[#FFD84D]">new</span>
                   <span className="text-[#4ADE80]"> StackdStudios</span>
                   <span className="text-white">{'({'}</span>
                 </div>
@@ -197,7 +197,7 @@ export default function Hero() {
                 <div className="text-white">{'}'});</div>
                 <div className="h-4" />
                 <div>
-                  <span className="text-[#E8C547]">await</span>
+                  <span className="text-[#FFD84D]">await</span>
                   <span className="text-white"> studio.</span>
                   <span className="text-[#4ADE80]">build</span>
                   <span className="text-white">(</span>
@@ -215,8 +215,8 @@ export default function Hero() {
                   <span className="text-[#888580] text-xs font-mono">Studio initialized. Ready to build.</span>
                 </div>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className="text-[#E8C547] text-xs font-mono">→</span>
-                  <span className="text-[#E8C547] text-xs font-mono">USA · stackdstudios.com</span>
+                  <span className="text-[#FFD84D] text-xs font-mono">→</span>
+                  <span className="text-[#FFD84D] text-xs font-mono">USA · stackdstudios.com</span>
                 </div>
               </div>
             </div>

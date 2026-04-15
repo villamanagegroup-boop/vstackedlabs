@@ -29,13 +29,13 @@ export default function FinalCTA() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#E8C547] text-xs font-semibold uppercase tracking-[0.12em] mb-5">
+          <p className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.12em] mb-5">
             Ready to Build?
           </p>
           <h2 className="text-[clamp(32px,5vw,64px)] text-white leading-[1.0] mb-5">
             Let&apos;s build something
             <br />
-            <span className="text-[#E8C547]">real, together.</span>
+            <span className="text-[#FFD84D]">real, together.</span>
           </h2>
           <p className="text-white/60 text-xl mb-10 max-w-xl mx-auto">
             Book a free 20-minute discovery call. No pitch, no pressure — just a conversation about what you&apos;re building.
@@ -44,7 +44,7 @@ export default function FinalCTA() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#E8C547] hover:bg-[#d4b03d] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px] shadow-lg"
+              className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px] shadow-lg"
             >
               Book a Free Call
             </Link>

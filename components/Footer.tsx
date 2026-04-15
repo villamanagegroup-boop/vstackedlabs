@@ -76,7 +76,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:Chanel@stackdstudiosai.com"
-              className="text-[#6B7280] hover:text-[#E8C547] text-xs mt-2 transition-colors duration-200 block"
+              className="text-[#6B7280] hover:text-[#FFD84D] text-xs mt-2 transition-colors duration-200 block"
             >
               Chanel@stackdstudiosai.com
             </a>
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[#9CA3AF] hover:text-[#E8C547] text-sm transition-colors duration-200"
+                      className="text-[#9CA3AF] hover:text-[#FFD84D] text-sm transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
