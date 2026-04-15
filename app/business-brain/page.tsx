@@ -1,6 +1,22 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Business Brain — Your Custom AI Knowledge Base',
+  description:
+    'Business Brain is your always-on AI assistant trained on your business. Ask questions, get answers, and make smarter decisions faster — powered by Stackd Studios AI.',
+  alternates: {
+    canonical: 'https://www.stackdstudiosai.com/business-brain',
+  },
+  openGraph: {
+    title: 'Business Brain — Your Custom AI Knowledge Base',
+    description:
+      'An always-on AI assistant trained on your business. Ask questions, get instant answers.',
+    url: 'https://www.stackdstudiosai.com/business-brain',
+  },
+}
 
 const bbSteps = [
   {

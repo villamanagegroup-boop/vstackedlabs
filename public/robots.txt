@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /api/
+Disallow: /products/
+
+Sitemap: https://www.stackdstudiosai.com/sitemap.xml

@@ -1,6 +1,22 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Careers at Stackd Studios AI — Remote AI Jobs',
+  description:
+    'Join Stackd Studios AI — a fully remote, AI-native build lab. We hire builders, designers, and operators who move fast and think differently.',
+  alternates: {
+    canonical: 'https://www.stackdstudiosai.com/careers',
+  },
+  openGraph: {
+    title: 'Careers at Stackd Studios AI — Remote AI Jobs',
+    description:
+      'Join a fully remote, AI-native build lab. Contract, part-time, and freelance roles available.',
+    url: 'https://www.stackdstudiosai.com/careers',
+  },
+}
 
 type Job = {
   id: string

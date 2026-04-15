@@ -1,6 +1,22 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'About Stackd Studios AI — Who We Are & What We Build',
+  description:
+    'Stackd Studios AI is an AI-powered build lab founded by Chanel Gray. We help business owners automate and founders launch — with AI systems built to last.',
+  alternates: {
+    canonical: 'https://www.stackdstudiosai.com/about',
+  },
+  openGraph: {
+    title: 'About Stackd Studios AI — Who We Are & What We Build',
+    description:
+      'Founded by Chanel Gray. We build AI systems for business owners and product founders — nationally, remotely.',
+    url: 'https://www.stackdstudiosai.com/about',
+  },
+}
 
 const values = [
   {
