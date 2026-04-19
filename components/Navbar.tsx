@@ -33,7 +33,17 @@ export default function Navbar({ darkHero = false, yellowHero = false }: { darkH
     : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    setScrolled(window.scrollY > 60)
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 60)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -69,6 +79,7 @@ export default function Navbar({ darkHero = false, yellowHero = false }: { darkH
               width={28}
               height={28}
               className="shrink-0"
+              priority
             />
             <span className={`font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)] transition-colors duration-300 ${textColor}`}>
               Stackd Studios AI

@@ -48,12 +48,7 @@ export default function AboutPage() {
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
         <section className="bg-[#FFD84D] pt-32 pb-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl pb-20"
-            >
+            <div className="max-w-3xl pb-20">
               <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-6">About</p>
               <h1 className="text-[clamp(40px,6vw,80px)] text-[#0C0C0C] leading-[1.0] mb-8">
                 Build Lab.<br />Venture Studio.<br />Powered by AI.
@@ -61,17 +56,13 @@ export default function AboutPage() {
               <p className="text-[#0C0C0C]/65 text-xl leading-relaxed max-w-2xl">
                 We help business owners automate what's slowing them down and help founders turn ideas into products — with AI systems built to last.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Founder strip — bleeds into dark */}
           <div className="bg-[#0C0C0C] mt-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
+              <div>
                 <div className="w-40 sm:w-48 h-56 sm:h-64 rounded-sm overflow-hidden mb-6">
                   <Image
                     src="/chanel-gray.jpg"
@@ -83,14 +74,9 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-white text-3xl leading-tight mb-1">Chanel Gray</h2>
                 <p className="text-[#FFD84D] text-sm font-medium uppercase tracking-[0.1em]">Founder &amp; CEO</p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col gap-6 pt-1"
-              >
+              <div className="flex flex-col gap-6 pt-1">
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
                   Chanel founded Stackd Studios AI under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
                 </p>
@@ -106,7 +92,7 @@ export default function AboutPage() {
                     <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

@@ -228,12 +228,7 @@ export default function ServicesContent() {
         {/* ── Hero ────────────────────────────────────────────────────────── */}
         <section className="bg-[#FFD84D] pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl mb-16"
-            >
+            <div className="max-w-2xl mb-16">
               <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-4">Services</p>
               <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-5">
                 Pick your track.<br className="hidden sm:block"/> We&apos;ll build the rest.
@@ -241,15 +236,10 @@ export default function ServicesContent() {
               <p className="text-[#0C0C0C]/65 text-base sm:text-xl leading-relaxed mb-10">
                 Two tracks. Every tier is scoped, defined, and built to deliver results — not just deliverables.
               </p>
-            </motion.div>
+            </div>
 
             {/* Track jump links */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-wrap gap-8 border-t border-[#0C0C0C]/15 pt-8"
-            >
+            <div className="flex flex-wrap gap-8 border-t border-[#0C0C0C]/15 pt-8">
               <a href="#track-a" className="group flex items-center gap-3">
                 <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1A4A7A]">Track A</span>
                 <span className="text-[#0C0C0C] font-semibold text-lg group-hover:underline underline-offset-4">Business Owners</span>
@@ -264,7 +254,7 @@ export default function ServicesContent() {
                   <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
 
