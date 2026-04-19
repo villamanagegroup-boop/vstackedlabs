@@ -37,7 +37,27 @@ export const metadata: Metadata = {
     'AI agency',
     'AI workflow automation',
     'book AI consultation',
+    'AI systems for entrepreneurs',
+    'automate business workflows',
+    'launch AI product',
+    'AI consulting',
+    'Chanel Gray',
+    'Stackd Studios',
+    'Hicks Virtual Solutions',
   ],
+  authors: [{ name: 'Chanel Gray', url: 'https://www.stackdstudiosai.com/about' }],
+  creator: 'Chanel Gray',
+  publisher: 'Stackd Studios AI',
+  alternates: {
+    canonical: 'https://www.stackdstudiosai.com',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.png',
+  },
   openGraph: {
     title: 'Stackd Studios AI — AI Build Lab & Venture Studio',
     description:
@@ -45,6 +65,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.stackdstudiosai.com',
     siteName: 'Stackd Studios AI',
+    locale: 'en_US',
     images: [
       {
         url: '/og-image.png',
@@ -72,6 +93,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  category: 'technology',
 }
 
 export default function RootLayout({
@@ -90,21 +112,64 @@ export default function RootLayout({
               '@graph': [
                 {
                   '@type': 'Organization',
+                  '@id': 'https://www.stackdstudiosai.com/#organization',
                   name: 'Stackd Studios AI',
+                  alternateName: 'Stackd Studios',
                   url: 'https://www.stackdstudiosai.com',
-                  logo: 'https://www.stackdstudiosai.com/logo.png',
+                  logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://www.stackdstudiosai.com/favicon.png',
+                    width: 512,
+                    height: 512,
+                  },
                   email: 'Chanel@stackdstudiosai.com',
-                  founder: { '@type': 'Person', name: 'Chanel Gray' },
+                  founder: {
+                    '@type': 'Person',
+                    name: 'Chanel Gray',
+                    jobTitle: 'Founder & CEO',
+                    worksFor: { '@id': 'https://www.stackdstudiosai.com/#organization' },
+                  },
+                  description: 'AI-powered build lab and venture studio helping business owners automate workflows and founders launch products.',
+                  knowsAbout: ['Artificial Intelligence', 'Workflow Automation', 'Product Development', 'Software Engineering', 'AI Consulting'],
+                  areaServed: 'United States',
+                  serviceType: ['AI Automation', 'Product Development', 'Venture Studio'],
                   sameAs: [],
                 },
                 {
                   '@type': 'WebSite',
+                  '@id': 'https://www.stackdstudiosai.com/#website',
                   url: 'https://www.stackdstudiosai.com',
                   name: 'Stackd Studios AI',
+                  publisher: { '@id': 'https://www.stackdstudiosai.com/#organization' },
                   potentialAction: {
                     '@type': 'SearchAction',
                     target: 'https://www.stackdstudiosai.com/?q={search_term_string}',
                     'query-input': 'required name=search_term_string',
+                  },
+                },
+                {
+                  '@type': 'ProfessionalService',
+                  '@id': 'https://www.stackdstudiosai.com/#service',
+                  name: 'Stackd Studios AI',
+                  url: 'https://www.stackdstudiosai.com',
+                  image: 'https://www.stackdstudiosai.com/og-image.png',
+                  priceRange: '$$',
+                  telephone: '',
+                  email: 'Chanel@stackdstudiosai.com',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressCountry: 'US',
+                  },
+                  openingHours: 'Mo-Fr 09:00-18:00',
+                  hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'AI Services',
+                    itemListElement: [
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automation Systems' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom AI Product Development' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Strategy Consulting' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Venture Studio Partnership' } },
+                    ],
                   },
                 },
               ],
