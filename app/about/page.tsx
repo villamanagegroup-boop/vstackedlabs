@@ -1,33 +1,23 @@
+'use client'
+
 import type { Metadata } from 'next'
+import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: 'About Stackd Studios AI — Who We Are & What We Build',
-  description:
-    'Stackd Studios AI is an AI-powered build lab founded by Chanel Gray. We help business owners automate and founders launch — with AI systems built to last.',
-  alternates: {
-    canonical: 'https://www.stackdstudiosai.com/about',
-  },
-  openGraph: {
-    title: 'About Stackd Studios AI — Who We Are & What We Build',
-    description:
-      'Founded by Chanel Gray. We build AI systems for business owners and product founders — nationally, remotely.',
-    url: 'https://www.stackdstudiosai.com/about',
-  },
-}
 
 const values = [
   {
     title: 'Craft over shortcuts',
     description:
-      'AI makes us faster — but it doesn\'t replace judgment. Every deliverable is reviewed, refined, and held to a standard we\'d put our name on.',
+      "AI makes us faster — but it doesn't replace judgment. Every deliverable is reviewed, refined, and held to a standard we'd put our name on.",
   },
   {
     title: 'Clarity over complexity',
     description:
-      'We don\'t build to impress. We build what works. Simple systems that your team can actually use, understand, and grow with.',
+      "We don't build to impress. We build what works. Simple systems that your team can actually use, understand, and grow with.",
   },
   {
     title: 'Strategy before code',
@@ -37,7 +27,7 @@ const values = [
   {
     title: 'Speed without chaos',
     description:
-      'Two-week sprints. Same-day proposals. AI-assisted builds. We move fast because we\'ve built the process to support it — not because we\'re cutting corners.',
+      "Two-week sprints. Same-day proposals. AI-assisted builds. We move fast because we've built the process to support it — not because we're cutting corners.",
   },
 ]
 
@@ -49,164 +39,214 @@ const stack = [
   { category: 'Deployment', items: ['Vercel (primary)', 'Custom domains', 'CI/CD via GitHub Actions'] },
 ]
 
-
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
-      <main className="bg-[#F6F4EF]">
-        {/* Hero */}
-        <section className="pt-32 pb-20 bg-white border-b border-[#E2DED8]">
+      <Navbar yellowHero />
+      <main>
+
+        {/* ── Hero ─────────────────────────────────────────────────────────── */}
+        <section className="bg-[#FFD84D] pt-32 pb-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
-                  About
-                </p>
-                <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
-                  Build Lab. Venture Studio. Powered by AI.
-                </h1>
-                <p className="text-[#888580] text-xl leading-relaxed mb-8">
-                  Stackd Studios AI is an AI-powered Build Lab &amp; Creative Venture Studio helping business owners and founders design, build, and launch intelligent systems — so they can operate smarter, move faster, and build something that lasts.
-                </p>
-                <p className="text-[#888580] text-lg leading-relaxed">
-                  We work in two tracks: AI systems and tools for business owners, and strategy + venture builds for founders. Every project is grounded in craft, strategy, and a genuine belief that the right technology — built thoughtfully — changes businesses.
-                </p>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl pb-20"
+            >
+              <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-6">About</p>
+              <h1 className="text-[clamp(40px,6vw,80px)] text-[#0C0C0C] leading-[1.0] mb-8">
+                Build Lab.<br />Venture Studio.<br />Powered by AI.
+              </h1>
+              <p className="text-[#0C0C0C]/65 text-xl leading-relaxed max-w-2xl">
+                We help business owners automate what's slowing them down and help founders turn ideas into products — with AI systems built to last.
+              </p>
+            </motion.div>
+          </div>
 
-              {/* Founder card */}
-              <div className="bg-[#0C0C0C] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-[#FFD84D] flex items-center justify-center text-[#0C0C0C] text-2xl font-bold">
-                    CH
-                  </div>
-                  <div>
-                    <h2 className="text-white text-xl leading-tight">Chanel Gray</h2>
-                    <p className="text-[#FFD84D] text-sm font-medium">Founder &amp; CEO</p>
-                    <p className="text-[#888580] text-sm">United States</p>
-                  </div>
+          {/* Founder strip — bleeds into dark */}
+          <div className="bg-[#0C0C0C] mt-0">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="w-40 sm:w-48 h-56 sm:h-64 rounded-sm overflow-hidden mb-6">
+                  <Image
+                    src="/chanel-gray.jpg"
+                    alt="Chanel Gray, Founder & CEO of Stackd Studios AI"
+                    width={192}
+                    height={256}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
+                <h2 className="text-white text-3xl leading-tight mb-1">Chanel Gray</h2>
+                <p className="text-[#FFD84D] text-sm font-medium uppercase tracking-[0.1em]">Founder &amp; CEO</p>
+              </motion.div>
 
-                <div className="border-t border-white/10 pt-5">
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed mb-4">
-                    Chanel founded Stackd Studios AI under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
-                  </p>
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed">
-                    With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <Link
-                    href="/contact"
-                    className="flex-1 inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-semibold py-2.5 px-4 rounded-lg text-sm transition-all duration-200"
-                  >
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col gap-6 pt-1"
+              >
+                <p className="text-[#9CA3AF] text-lg leading-relaxed">
+                  Chanel founded Stackd Studios AI under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
+                </p>
+                <p className="text-[#9CA3AF] text-lg leading-relaxed">
+                  With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-[#FFD84D] font-semibold text-sm w-fit hover:gap-3 transition-all duration-200"
+                >
+                  Get in Touch
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Mission */}
-        <section className="py-20">
+        {/* ── Mission ──────────────────────────────────────────────────────── */}
+        <section className="py-24 bg-[#F6F4EF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Mission</p>
-              <blockquote className="text-[clamp(22px,3vw,32px)] text-[#0C0C0C] leading-[1.3] font-[family-name:var(--font-instrument-sans)]">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid md:grid-cols-[160px_1fr] gap-10 items-start"
+            >
+              <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] pt-2">Mission</p>
+              <blockquote
+                className="text-[clamp(22px,3vw,36px)] text-[#0C0C0C] leading-[1.3] border-l-[3px] border-[#FFD84D] pl-8"
+              >
                 &ldquo;To design, build, and launch intelligent systems and ventures — giving business owners and founders the power to operate smarter, move faster, and build something that lasts, powered by AI, craft, and strategic thinking.&rdquo;
               </blockquote>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Values */}
-        <section className="py-20 bg-white">
+        {/* ── Values ───────────────────────────────────────────────────────── */}
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-4"
+            >
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">How We Work</p>
               <h2 className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1]">
                 The principles behind every build
               </h2>
-            </div>
+            </motion.div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="flex flex-col mt-2">
               {values.map((value, i) => (
-                <div
+                <motion.div
                   key={value.title}
-                  className="bg-[#F6F4EF] rounded-2xl p-8 border border-[#E2DED8]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="grid md:grid-cols-[80px_1fr_1fr] gap-x-10 gap-y-3 py-10 border-t border-[#E2DED8]"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[#FFD84D] text-sm font-bold font-[family-name:var(--font-instrument-sans)]">0{i + 1}</span>
-                    <h3 className="text-xl text-[#0C0C0C] leading-tight">{value.title}</h3>
-                  </div>
-                  <p className="text-[#888580] text-base leading-relaxed">{value.description}</p>
-                </div>
+                  <span className="text-[#FFD84D] text-4xl font-black leading-none select-none opacity-60">
+                    0{i + 1}
+                  </span>
+                  <h3 className="text-[clamp(18px,2vw,24px)] text-[#0C0C0C] leading-tight pt-1">
+                    {value.title}
+                  </h3>
+                  <p className="text-[#888580] text-base leading-relaxed pt-1">
+                    {value.description}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Tech Stack */}
-        <section className="py-20">
+        {/* ── Tech Stack ───────────────────────────────────────────────────── */}
+        <section className="py-24 bg-[#F6F4EF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-4"
+            >
               <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Tech Stack</p>
-              <h2 className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1] mb-4">
+              <h2 className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] leading-[1.1] mb-3">
                 We build on the best tools available.
               </h2>
               <p className="text-[#888580] text-lg max-w-xl">
-                Our stack is chosen for speed, reliability, and scale — the same tools powering some of the best products on the internet.
+                Chosen for speed, reliability, and scale — the same tools powering some of the best products on the internet.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {stack.map((group) => (
-                <div
+            <div className="flex flex-col mt-6">
+              {stack.map((group, i) => (
+                <motion.div
                   key={group.category}
-                  className="bg-white rounded-2xl p-6 border border-[#E2DED8]"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="grid md:grid-cols-[220px_1fr] gap-x-10 gap-y-2 py-7 border-t border-[#E2DED8] items-baseline"
                 >
-                  <h3 className="text-base text-[#0C0C0C] leading-tight mb-4">{group.category}</h3>
-                  <ul className="flex flex-col gap-2" role="list">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-[#888580]">
-                        <span className="w-1 h-1 rounded-full bg-[#FFD84D] shrink-0" aria-hidden="true" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <h3 className="text-[#0C0C0C] text-sm font-medium">{group.category}</h3>
+                  <p className="text-[#888580] text-sm leading-relaxed">
+                    {group.items.join(' · ')}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#0C0C0C]">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-[clamp(28px,4vw,48px)] text-white leading-[1.1] mb-4">
-              Want to work with us?
-            </h2>
-            <p className="text-white/60 text-lg mb-8">
-              Book a free discovery call and let&apos;s figure out what to build together.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
-              >
-                Book a Free Call
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
-              >
-                View Services
-              </Link>
-            </div>
+        {/* ── CTA ──────────────────────────────────────────────────────────── */}
+        <section className="py-24 bg-[#0C0C0C]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid md:grid-cols-2 gap-10 items-end"
+            >
+              <h2 className="text-[clamp(32px,5vw,64px)] text-white leading-[1.0]">
+                Want to work with us?
+              </h2>
+              <div className="flex flex-col gap-4 md:items-end">
+                <p className="text-white/50 text-lg md:text-right">
+                  Book a free discovery call and let&apos;s figure out what to build together.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
+                  >
+                    Book a Free Call
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center justify-center border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 min-h-[44px]"
+                  >
+                    View Services
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

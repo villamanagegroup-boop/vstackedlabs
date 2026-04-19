@@ -197,7 +197,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px] ${
               inCart
                 ? 'bg-[#FFD84D] text-[#0C0C0C]'
-                : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] hover:scale-[1.02]'
+                : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] hover:scale-[#0C0C0C] hover:scale-[1.02]'
             }`}
             aria-label={inCart ? `${product.name} added to cart` : `Add ${product.name} to cart`}
           >
@@ -218,17 +218,17 @@ export default function StoreContent() {
 
   return (
     <>
-      <Navbar />
+      <Navbar darkHero />
       <main className="bg-[#F6F4EF]">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-white border-b border-[#E2DED8]">
+        <section className="pt-32 pb-16 bg-[#0C0C0C]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Digital Store</p>
-              <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
+              <p className="text-white/40 text-xs font-semibold uppercase tracking-[0.12em] mb-4">Digital Store</p>
+              <h1 className="text-[clamp(40px,6vw,72px)] text-white leading-[1.0] mb-6">
                 Prompts, templates, courses &amp; skills.
               </h1>
-              <p className="text-[#888580] text-xl leading-relaxed">
+              <p className="text-white/55 text-xl leading-relaxed">
                 Instant-download digital products built by Stackd Studios AI. Everything you need to add AI to your business or accelerate your build.
               </p>
             </div>

@@ -43,7 +43,7 @@ export default function CartPage() {
                 {/* Item list */}
                 <div className="lg:col-span-2 flex flex-col gap-4">
                   {items.map((item) => (
-                    <div key={item.priceId} className="bg-white rounded-2xl border border-[#E2DED8] p-5 flex items-center gap-4">
+                    <div key={item.priceId} className="bg-white rounded-2xl border border-[#E2DED8] p-4 sm:p-5 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4">
                       {/* Icon */}
                       <div className="w-14 h-14 bg-[#0C0C0C] rounded-xl flex items-center justify-center shrink-0">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -63,7 +63,7 @@ export default function CartPage() {
                       <div className="flex items-center gap-2 shrink-0">
                         <button
                           onClick={() => updateQuantity(item.priceId, item.quantity - 1)}
-                          className="w-8 h-8 rounded-lg border border-[#E2DED8] flex items-center justify-center text-[#0C0C0C] hover:bg-[#F6F4EF] transition-colors"
+                          className="w-11 h-11 rounded-lg border border-[#E2DED8] flex items-center justify-center text-[#0C0C0C] hover:bg-[#F6F4EF] transition-colors"
                           aria-label="Decrease quantity"
                         >
                           −
@@ -71,7 +71,7 @@ export default function CartPage() {
                         <span className="w-6 text-center text-sm font-semibold">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.priceId, item.quantity + 1)}
-                          className="w-8 h-8 rounded-lg border border-[#E2DED8] flex items-center justify-center text-[#0C0C0C] hover:bg-[#F6F4EF] transition-colors"
+                          className="w-11 h-11 rounded-lg border border-[#E2DED8] flex items-center justify-center text-[#0C0C0C] hover:bg-[#F6F4EF] transition-colors"
                           aria-label="Increase quantity"
                         >
                           +

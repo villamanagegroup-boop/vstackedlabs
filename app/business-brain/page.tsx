@@ -205,15 +205,15 @@ export default function BusinessBrainPage() {
                 Built for businesses with real operational complexity.
               </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex flex-col divide-y divide-[#E2DED8]">
               {bbNiches.map((niche) => (
                 <div
                   key={niche.industry}
-                  className="bg-white rounded-2xl p-6 border border-[#E2DED8] flex flex-col gap-3"
+                  className="grid md:grid-cols-[200px_1fr_1fr] gap-x-10 gap-y-2 py-7"
                 >
-                  <h3 className="text-lg text-[#0C0C0C] leading-tight">{niche.industry}</h3>
+                  <h3 className="text-[#0C0C0C] text-base">{niche.industry}</h3>
                   <p className="text-[#888580] text-sm leading-relaxed">{niche.pain}</p>
-                  <p className="text-[#1A4A7A] text-sm font-medium">{niche.solution}</p>
+                  <p className="text-[#1A4A7A] text-sm leading-relaxed">{niche.solution}</p>
                 </div>
               ))}
             </div>

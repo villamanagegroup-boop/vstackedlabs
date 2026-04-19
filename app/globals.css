@@ -95,4 +95,5 @@ select:focus {
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #F6F4EF; }
-::-webkit-scrollbar-thumb { background: #0C0C0C; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #FFD84D; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E8C030; }

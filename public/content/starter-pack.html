@@ -22,7 +22,7 @@
 body{font-family:var(--font-sans);font-size:14px;line-height:1.6;background:var(--bg);color:var(--text)}
 
 /* ── Topbar ── */
-.topbar{background:#111;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:52px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100;gap:16px}
+.topbar{background:#000;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:52px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:200;gap:16px}
 .topbar-logo{height:26px;width:auto;object-fit:contain;flex-shrink:0}
 .logo{font-weight:700;font-size:13px;color:var(--y);letter-spacing:.03em;flex-shrink:0}.logo em{font-style:normal}
 .topbar-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap;overflow:hidden}
@@ -31,41 +31,45 @@ body{font-family:var(--font-sans);font-size:14px;line-height:1.6;background:var(
 .export-btn{font-family:var(--font-mono);font-size:11px;background:var(--y);color:#111;border:none;padding:7px 16px;cursor:pointer;font-weight:600;border-radius:8px;transition:opacity .15s;flex-shrink:0;white-space:nowrap}
 .export-btn:hover{opacity:.85}
 
-/* ── Layout ── */
-.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 52px)}
+/* ── Hamburger (mobile only) ── */
+.hamburger-btn{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.hamburger-btn span{display:block;width:20px;height:1.5px;background:var(--y);border-radius:2px;transition:all .2s}
 
-/* ── Sidebar ── */
-.sidebar{background:var(--y);padding:24px 0;border-right:1.5px solid #111;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto}
-.sb-section{padding:0 18px 20px;border-bottom:1px solid rgba(0,0,0,.12);margin-bottom:20px}
-.sb-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:rgba(0,0,0,.4);display:block;margin-bottom:14px;text-transform:uppercase}
-.sb-stat{display:flex;align-items:baseline;gap:6px;margin-bottom:8px}
-.sb-n{font-size:24px;font-weight:700;color:#111;line-height:1;letter-spacing:-.02em}
-.sb-l{font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,.45)}
-.sb-navlabel{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(0,0,0,.38);display:block;padding:4px 18px;margin-top:4px}
-.sb-link{display:flex;align-items:center;gap:8px;padding:7px 18px;font-size:12px;color:rgba(0,0,0,.6);text-decoration:none;cursor:pointer;border:none;background:none;width:100%;text-align:left;font-family:var(--font-sans);transition:color .15s,background .15s;border-radius:0}
-.sb-link:hover{color:#111;background:rgba(0,0,0,.07)}
-.sb-link.on{color:#111;font-weight:600;background:rgba(0,0,0,.06)}
-.sb-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.45}
-.sb-link.on .sb-dot{opacity:1}
-.sb-ct{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,.3)}
+/* ── Mobile Drawer ── */
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;backdrop-filter:blur(2px)}
+.drawer-overlay.open{display:block}
+.mobile-drawer{position:fixed;top:0;right:-280px;width:280px;height:100%;background:#000;z-index:400;transition:right .28s cubic-bezier(.4,0,.2,1);border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;padding:0}
+.mobile-drawer.open{right:0}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:52px;border-bottom:1px solid rgba(255,255,255,.08)}
+.drawer-brand{font-family:var(--font-mono);font-size:11px;color:var(--y);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.drawer-close{background:none;border:none;color:rgba(255,255,255,.5);font-size:20px;cursor:pointer;line-height:1;padding:4px;transition:color .15s}
+.drawer-close:hover{color:#fff}
+.drawer-nav{display:flex;flex-direction:column;padding:12px 0;flex:1}
+.drawer-link{font-family:var(--font-sans);font-size:14px;font-weight:500;color:rgba(255,255,255,.6);background:none;border:none;padding:12px 24px;cursor:pointer;text-align:left;transition:color .15s,background .15s;border-left:2px solid transparent}
+.drawer-link:hover{color:#fff;background:rgba(255,255,255,.05);border-left-color:var(--y)}
+.drawer-footer{padding:20px 24px;border-top:1px solid rgba(255,255,255,.06)}
+.drawer-cta{display:block;background:var(--y);color:#111;font-weight:600;font-size:13px;padding:11px 16px;border-radius:8px;text-align:center;border:none;cursor:pointer;width:100%;transition:opacity .15s}
+.drawer-cta:hover{opacity:.88}
 
 /* ── Content ── */
 .content{background:var(--bg)}
 
 /* ── Hero ── */
-.hero{background:#111;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero{background:#000;padding:48px 40px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
 .hero-inner{position:relative;z-index:2}
-.hero-flex{display:flex;align-items:stretch;gap:40px;justify-content:space-between}
+.hero-flex{display:flex;align-items:center;gap:48px;justify-content:space-between}
 .hero-text{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
-.hero-logo-wrap{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:320px}
-.hero-logo-img{width:100%;max-width:280px;height:auto;object-fit:contain;opacity:.92}
+.hero-logo-wrap{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:360px;margin-right:12%}
+.hero-logo-img{width:100%;max-width:340px;height:auto;object-fit:contain}
 .hero-logo-text{font-size:28px;font-weight:700;color:var(--y);letter-spacing:.03em}
 .hero-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--y);display:flex;align-items:center;gap:8px;margin-bottom:16px;opacity:.85}
 .hero-tag::before{content:'';display:inline-block;width:20px;height:1px;background:var(--y)}
 .hero-h1{font-size:30px;font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:12px}
 .hero-h1 em{font-style:normal;color:var(--y)}
-.hero-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin-bottom:28px}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin-bottom:14px}
+.hero-always{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;max-width:460px;margin-bottom:24px;border-left:2px solid var(--y);padding-left:12px;font-style:italic}
+.hero-always strong{color:var(--y);font-style:normal}
 .chips{display:flex;gap:6px;flex-wrap:wrap}
 .chip{font-family:var(--font-mono);font-size:11px;padding:4px 12px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.35);border-radius:20px}
 .chip.y{border-color:rgba(232,197,71,.35);color:var(--y)}
@@ -119,6 +123,12 @@ body{font-family:var(--font-sans);font-size:14px;line-height:1.6;background:var(
 .ptip{font-size:12px;color:var(--text3);border-top:1px solid var(--border);padding-top:10px;line-height:1.65}
 .ptip strong{color:var(--text2);font-weight:500}
 
+/* ── Expand buttons ── */
+.expand-all-btn{font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--y);background:rgba(255,229,102,.1);border:1px solid rgba(255,229,102,.25);padding:5px 12px;cursor:pointer;border-radius:6px;white-space:nowrap;transition:all .15s;flex-shrink:0;opacity:.85}
+.expand-all-btn:hover{opacity:1;background:rgba(255,229,102,.18)}
+.expand-sec-btn{font-family:var(--font-mono);font-size:11px;color:var(--text3);background:none;border:1px solid var(--border);padding:3px 10px;cursor:pointer;border-radius:5px;margin-left:8px;transition:all .15s;white-space:nowrap}
+.expand-sec-btn:hover{color:var(--text);border-color:var(--border2);background:var(--bg2)}
+
 /* ── Upsell ── */
 .upsell{background:#111;padding:40px 36px}
 .upsell-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--y);display:block;margin-bottom:14px;opacity:.8}
@@ -133,19 +143,87 @@ body{font-family:var(--font-sans);font-size:14px;line-height:1.6;background:var(
 .cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:13px;background:var(--y);color:#111;padding:12px 24px;text-decoration:none;font-weight:600;border:none;cursor:pointer;border-radius:8px;transition:opacity .15s;letter-spacing:-.01em}
 .cta:hover{opacity:.9}
 
-/* ── Expand buttons ── */
-.expand-all-btn{font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--y);background:rgba(255,229,102,.1);border:1px solid rgba(255,229,102,.25);padding:5px 12px;cursor:pointer;border-radius:6px;white-space:nowrap;transition:all .15s;flex-shrink:0;opacity:.85}
-.expand-all-btn:hover{opacity:1;background:rgba(255,229,102,.18)}
-.expand-sec-btn{font-family:var(--font-mono);font-size:11px;color:var(--text3);background:none;border:1px solid var(--border);padding:3px 10px;cursor:pointer;border-radius:5px;margin-left:8px;transition:all .15s;white-space:nowrap}
-.expand-sec-btn:hover{color:var(--text);border-color:var(--border2);background:var(--bg2)}
-
 /* ── Footer ── */
 .foot{background:#0d0d0d;padding:20px 36px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
 .foot-l{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.2);line-height:2}
 .foot-r{font-size:16px;font-weight:700;color:rgba(255,255,255,.05);letter-spacing:.05em}
+
+/* ── Mobile ── */
+@media(max-width:768px){
+  /* Topbar */
+  .topbar{padding:0 14px;gap:8px}
+  .topbar-nav{display:none}
+  .export-btn{font-size:10px;padding:6px 12px}
+  .hamburger-btn{display:flex}
+
+  /* Hero */
+  .hero{padding:28px 18px}
+  .hero-flex{flex-direction:column;gap:20px}
+  .hero-logo-wrap{display:none}
+  .hero-h1{font-size:22px}
+  .hero-sub{font-size:13px;margin-bottom:18px}
+
+  /* Sections */
+  .section{padding:20px 16px}
+  .sec-intro{padding-left:0;margin-top:8px}
+  .sec-head{flex-wrap:wrap;gap:6px}
+  .expand-sec-btn{margin-left:0}
+
+  /* How grid */
+  .how-grid{grid-template-columns:1fr}
+
+  /* Prompt items */
+  .ptrig{padding:11px 12px;gap:8px}
+  .pid{font-size:9px;padding:2px 6px}
+  .ptyp{display:none}
+  .pname{font-size:12px}
+  .ppinner{padding:14px 12px}
+  .pcode{font-size:11px;padding:12px 44px 12px 12px}
+  .cpbtn{font-size:10px;padding:4px 8px;top:8px;right:8px}
+
+  /* Upsell */
+  .upsell{padding:28px 16px}
+  .ugrid{grid-template-columns:1fr 1fr}
+  .upsell-h{font-size:18px}
+
+  /* Footer */
+  .foot{flex-direction:column;gap:8px;padding:16px;text-align:center}
+  .foot-r{display:none}
+}
+
+@media(max-width:420px){
+  .ugrid{grid-template-columns:1fr}
+  .chips{gap:4px}
+  .chip{font-size:10px;padding:3px 9px}
+}
 </style>
 
+<!-- Mobile drawer overlay -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<!-- Mobile slide-out nav -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <span class="drawer-brand">// menu</span>
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="drawer-nav">
+    <button class="drawer-link" onclick="drawerNav('s0')">Getting Started</button>
+    <button class="drawer-link" onclick="drawerNav('s1')">01 · Intake</button>
+    <button class="drawer-link" onclick="drawerNav('s2')">02 · Communication</button>
+    <button class="drawer-link" onclick="drawerNav('s3')">03 · Proposals</button>
+    <button class="drawer-link" onclick="drawerNav('s4')">04 · Planning</button>
+    <button class="drawer-link" onclick="drawerNav('s5')">05 · Operations</button>
+  </nav>
+  <div class="drawer-footer">
+    <button class="drawer-cta" onclick="openLink('https://stackdstudiosai.com/store')">Visit the Store →</button>
+  </div>
+</div>
+
 <div class="topbar">
+  <button class="hamburger-btn" onclick="openDrawer()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
   <nav class="topbar-nav">
     <button class="topbar-link" onclick="scrollToSection('s0')">Getting Started</button>
     <button class="topbar-link" onclick="scrollToSection('s1')">Intake</button>
@@ -158,175 +236,164 @@ body{font-family:var(--font-sans);font-size:14px;line-height:1.6;background:var(
   <button class="export-btn" onclick="window.print()">Export PDF</button>
 </div>
 
-<div class="layout">
-  <aside class="sidebar">
-    <div class="sb-section">
-      <span class="sb-label">// product</span>
-      <div class="sb-stat"><span class="sb-n">25</span><span class="sb-l">prompts</span></div>
-      <div class="sb-stat"><span class="sb-n">5</span><span class="sb-l">categories</span></div>
-      <div class="sb-stat"><span class="sb-n">$27</span><span class="sb-l">one-time</span></div>
-    </div>
-    <div>
-      <span class="sb-navlabel">// contents</span>
-      <button class="sb-link on" data-target="s0" onclick="scrollToSection('s0')"><span class="sb-dot"></span>Getting started</button>
-      <span class="sb-navlabel" style="margin-top:8px">// categories</span>
-      <button class="sb-link" data-target="s1" onclick="scrollToSection('s1')"><span class="sb-dot"></span>01 · Intake<span class="sb-ct">05</span></button>
-      <button class="sb-link" data-target="s2" onclick="scrollToSection('s2')"><span class="sb-dot"></span>02 · Communication<span class="sb-ct">05</span></button>
-      <button class="sb-link" data-target="s3" onclick="scrollToSection('s3')"><span class="sb-dot"></span>03 · Proposals<span class="sb-ct">05</span></button>
-      <button class="sb-link" data-target="s4" onclick="scrollToSection('s4')"><span class="sb-dot"></span>04 · Planning<span class="sb-ct">05</span></button>
-      <button class="sb-link" data-target="s5" onclick="scrollToSection('s5')"><span class="sb-dot"></span>05 · Operations<span class="sb-ct">05</span></button>
-    </div>
-  </aside>
+<div class="content">
 
-  <div class="content">
-
-    <div class="hero">
-      <div class="hero-grid"></div>
-      <div class="hero-inner hero-flex">
-        <div class="hero-text">
-          <div class="hero-tag">Digital Product &middot; Business Owners</div>
-          <h1 class="hero-h1">Business Owner<br/><em>AI Starter Pack</em></h1>
-          <p class="hero-sub">25 production-ready Claude prompts. Click any prompt to expand it, copy with one click, fill in the variables, and deploy immediately.</p>
-          <div class="chips">
-            <span class="chip y">25 prompts</span>
-            <button class="chip chip-link" onclick="scrollToSection('s1')">Intake</button>
-            <button class="chip chip-link" onclick="scrollToSection('s2')">Communication</button>
-            <button class="chip chip-link" onclick="scrollToSection('s3')">Proposals</button>
-            <button class="chip chip-link" onclick="scrollToSection('s4')">Planning</button>
-            <button class="chip chip-link" onclick="scrollToSection('s5')">Operations</button>
-          </div>
-        </div>
-        <div class="hero-logo-wrap">
-          <img src="https://www.stackdstudiosai.com/logo.png" alt="Stackd Studios AI" class="hero-logo-img" onerror="this.parentElement.innerHTML='<span class=hero-logo-text>Stackd Studios AI</span>'">
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner hero-flex">
+      <div class="hero-text">
+        <div class="hero-tag">Digital Product &middot; Business Owners</div>
+        <h1 class="hero-h1">Business Owner<br/><em>AI Starter Pack</em></h1>
+        <p class="hero-sub">25 production-ready Claude prompts. Click any prompt to expand it, copy with one click, fill in the variables, and deploy immediately.</p>
+        <p class="hero-always">This is a <strong>living product</strong> — as long as you have this link, you have access to every future update, new prompt, and improvement. Always free. Always current.</p>
+        <div class="chips">
+          <span class="chip y">Free</span>
+          <span class="chip y">25 prompts</span>
+          <button class="chip chip-link" onclick="scrollToSection('s1')">Intake</button>
+          <button class="chip chip-link" onclick="scrollToSection('s2')">Communication</button>
+          <button class="chip chip-link" onclick="scrollToSection('s3')">Proposals</button>
+          <button class="chip chip-link" onclick="scrollToSection('s4')">Planning</button>
+          <button class="chip chip-link" onclick="scrollToSection('s5')">Operations</button>
         </div>
       </div>
-    </div>
-
-    <div class="section" id="s0">
-      <div class="sec-head"><div class="sec-num">→</div><h2 class="sec-title">Getting started</h2></div>
-      <p class="sec-intro">Each prompt is engineered for immediate use. Expand any card below, copy the prompt, replace <code style="font-family:var(--font-mono);font-size:11px;color:#185FA5;background:#EBF3FF;padding:1px 5px;border-radius:3px">[variables]</code> with your details, paste into claude.ai.</p>
-      <div class="how-grid">
-        <div class="how-card"><div class="how-step">Step 01</div><div class="how-t">Open your AI of choice</div><div class="how-d">Go to claude.ai, ChatGPT, or any AI tool you use. Free tiers work great — Pro unlocks longer context for complex prompts.</div></div>
-        <div class="how-card"><div class="how-step">Step 02</div><div class="how-t">Expand and copy</div><div class="how-d">Click any prompt card to expand it. Hit copy — full text goes to clipboard.</div></div>
-        <div class="how-card"><div class="how-step">Step 03</div><div class="how-t">Fill variables</div><div class="how-d">Replace all <span style="font-family:var(--font-mono);font-size:11px;color:#185FA5">[brackets]</span> with your business specifics. More detail = better output.</div></div>
-        <div class="how-card"><div class="how-step">Step 04</div><div class="how-t">Iterate</div><div class="how-d">Send follow-up instructions — shorten, adjust tone, go deeper. Claude refines on request.</div></div>
+      <div class="hero-logo-wrap">
+        <img src="/stackd-laptop-mockup.png" alt="Stackd Studios AI" class="hero-logo-img" onerror="this.parentElement.innerHTML='<span class=hero-logo-text>Stackd Studios AI</span>'">
       </div>
     </div>
-
-    <div class="section" id="s1">
-      <div class="sec-head"><div class="sec-num">01</div><h2 class="sec-title">Intake automation</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s1" onclick="expandSection('s1',this)">Expand all</button></div>
-      <p class="sec-intro">Systematize lead qualification, intake forms, auto-responses, and discovery calls. Replace hours of manual intake work with repeatable AI-generated outputs.</p>
-      <div class="plist">
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#01</span><span class="ptyp">Lead qualification</span><span class="pname">New lead qualifier — 5 intake questions</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">You are an intake assistant for <span class="ph">[your business name]</span>, a <span class="ph">[type of business]</span>. When a potential client reaches out, ask them 5 questions to determine fit, understand budget, and clarify timeline. Tone: warm but efficient. Our ideal client is <span class="ph">[describe in 1–2 sentences]</span>. Generate the 5 intake questions now.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Paste output directly into Typeform, Notion form, or your website contact page.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#02</span><span class="ptyp">Auto-response</span><span class="pname">First-touch auto-reply email</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a warm, professional auto-reply for new inquiries to <span class="ph">[business name]</span>. (1) Confirm receipt, (2) set response time expectations <span class="ph">[X hours/days]</span>, (3) briefly state what we do, (4) share a booking link <span class="ph">[Calendly URL]</span>. Under 120 words. Tone: <span class="ph">[friendly & professional / bold & direct / warm & personal]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Drop into Gmail canned responses, HoneyBook, or your CRM auto-reply configuration.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#03</span><span class="ptyp">Disqualification</span><span class="pname">Graceful "not a fit" response</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a kind but clear email to a prospect who is not a fit for <span class="ph">[business name]</span> right now. Reason: <span class="ph">[budget too low / wrong service type / outside scope]</span>. Decline without burning the relationship, wish them well, and optionally redirect to <span class="ph">[a resource, referral, or lower-tier option]</span>. Under 100 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Redirect to your lowest-ticket offer or a referral partner — keeps the relationship warm for future re-engagement.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#04</span><span class="ptyp">Form builder</span><span class="pname">Full client intake form</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a client intake form for <span class="ph">[business name]</span> that collects: contact info, project or service details, budget range, timeline, referral source, and special notes. Format as labeled questions with field types (short text, dropdown, paragraph). Our services: <span class="ph">[list 2–3 services]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Build directly from this output in Typeform, JotForm, or Notion — copy, paste, publish.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#05</span><span class="ptyp">Discovery call</span><span class="pname">15-minute discovery call script</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a 15-minute discovery call script for <span class="ph">[business name]</span>: (1) warm intro + agenda (2 min), (2) 4 key questions about their situation (6 min), (3) brief solution overview (4 min), (4) next steps + close (3 min). Main offer: <span class="ph">[describe primary service]</span>. Call goal: <span class="ph">[book project / qualify for proposal / enroll]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Print before every call. Update iteratively as you identify which questions drive the best conversations.</p></div></div></div>
-      </div>
-    </div>
-
-    <div class="section" id="s2">
-      <div class="sec-head"><div class="sec-num bl">02</div><h2 class="sec-title">Client communication</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s2" onclick="expandSection('s2',this)">Expand all</button></div>
-      <p class="sec-intro">Eliminate friction in difficult client emails. Follow-ups, scope enforcement, payment collection, status updates, and issue management — handled in under 60 seconds.</p>
-      <div class="plist">
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#06</span><span class="ptyp">Follow-up</span><span class="pname">The checking-in follow-up</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a short, warm follow-up to a client I have not heard from in <span class="ph">[X days/weeks]</span>. Context: <span class="ph">[describe where the project or conversation left off]</span>. Should feel human, not robotic. Check in, offer help, leave one clear next step. Under 80 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use when:</strong> A client goes quiet mid-project. Re-opens the conversation naturally without applying pressure.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#07</span><span class="ptyp">Scope creep</span><span class="pname">Addressing scope creep professionally</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a professional, firm but kind email to a client requesting work outside our original scope. Original scope: <span class="ph">[describe what was agreed]</span>. New requests: <span class="ph">[describe the additions]</span>. Acknowledge their needs, redirect to the original agreement, and offer to quote the additional work separately. Tone: respectful, not defensive.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Always reference the original contract or SOW in this email. Documentation is your leverage.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#08</span><span class="ptyp">Collections</span><span class="pname">Late payment reminder — 3-stage sequence</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write 3 versions of a payment reminder for invoice #<span class="ph">[number]</span> totaling <span class="ph">[$amount]</span>, due <span class="ph">[date]</span>, for <span class="ph">[client name]</span>. Version 1: friendly nudge (3 days late). Version 2: firm and direct (10 days late). Version 3: final notice with late fee warning (21 days late). Under 100 words each.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Save all 3 as email templates with calendar reminders — remove this from your mental load entirely.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#09</span><span class="ptyp">Status update</span><span class="pname">Weekly project status update</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a short client-facing project update. Project: <span class="ph">[name]</span>. Completed this week: <span class="ph">[2–3 items]</span>. Next steps: <span class="ph">[1–2 items]</span>. Blockers or items needed from client: <span class="ph">[list or "none"]</span>. Scannable with bullet points. Close with a clear ask if needed. Professional but conversational.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Consistent updates prevent client anxiety — and anxious clients cause scope creep. Send even when progress feels small.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#10</span><span class="ptyp">Issue management</span><span class="pname">Delivering bad news or delays</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write an honest, professional email about a delay or issue. Situation: <span class="ph">[describe what happened]</span>. New timeline: <span class="ph">[date or range]</span>. Take responsibility without over-apologizing. Briefly explain what happened. Give confidence the situation is resolved. Under 150 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Lead with the new timeline, not the apology. Clients want to know what happens next.</p></div></div></div>
-      </div>
-    </div>
-
-    <div class="section" id="s3">
-      <div class="sec-head"><div class="sec-num or">03</div><h2 class="sec-title">Proposal drafting</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s3" onclick="expandSection('s3',this)">Expand all</button></div>
-      <p class="sec-intro">Compress proposal turnaround from hours to minutes. Full proposals, SOWs, value-framed pricing, and follow-up sequences engineered to convert.</p>
-      <div class="plist">
-        <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#11</span><span class="ptyp">Full proposal</span><span class="pname">Complete service proposal draft</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a professional proposal for: Client: <span class="ph">[name]</span>. What they need: <span class="ph">[describe project/service]</span>. What I'm offering: <span class="ph">[deliverables + timeline]</span>. Investment: <span class="ph">[price or range]</span>. Include: overview, what's included, what's not included, timeline, investment, next steps. Tone: confident and credible, not salesy.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Paste into HoneyBook, PandaDoc, or Notion for a client-ready proposal.</p></div></div></div>
-
-        <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#12</span><span class="ptyp">Pricing</span><span class="pname">Value-framed pricing — no apology</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a confident pricing explanation for my proposal. Service: <span class="ph">[describe]</span>. Price: <span class="ph">[$X]</span>. Value the client receives: <span class="ph">[outcomes/results]</span>. Frame around value and results, not hours or tasks. Do not apologize for the price. 2–3 short paragraphs.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Clients buy outcomes, not line items. This section alone reduces price objections significantly.</p></div></div></div>
-
-        <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#13</span><span class="ptyp">Legal / SOW</span><span class="pname">Statement of work (SOW)</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a statement of work for: Client: <span class="ph">[name]</span>. Project: <span class="ph">[title]</span>. Deliverables: <span class="ph">[list each]</span>. Timeline: <span class="ph">[start to end date]</span>. Revisions: <span class="ph">[X rounds]</span>. Out of scope: <span class="ph">[list exclusions]</span>. Numbered sections, plain language, legally intentional.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Critical:</strong> The out-of-scope section prevents 80% of scope creep conversations. Never omit it.</p></div></div></div>
-
-        <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#14</span><span class="ptyp">Follow-up</span><span class="pname">3-email post-proposal follow-up</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a 3-email follow-up sequence for a prospect who received a proposal but has not responded. Email 1 (Day 3): gentle check-in. Email 2 (Day 7): add value, address a likely objection. Email 3 (Day 14): final nudge with soft urgency around availability. Proposal was for <span class="ph">[service]</span> at <span class="ph">[$price]</span>. Under 90 words each.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Data:</strong> Most proposal conversions happen on follow-up 2 or 3. Automate this and remove it from your mental load.</p></div></div></div>
-
-        <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#15</span><span class="ptyp">Objection handling</span><span class="pname">Responding to "can you lower your price?"</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">A client asked me to lower my price from <span class="ph">[$X]</span>. They said: <span class="ph">[quote or paraphrase]</span>. Write a confident response that holds the price while offering a structured alternative — either reduced scope or a payment plan. Do not discount without reducing scope. Tone: understanding but firm.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Offer to reduce scope before reducing price — protects your rate and sets the right precedent.</p></div></div></div>
-      </div>
-    </div>
-
-    <div class="section" id="s4">
-      <div class="sec-head"><div class="sec-num">04</div><h2 class="sec-title">Weekly planning</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s4" onclick="expandSection('s4',this)">Expand all</button></div>
-      <p class="sec-intro">Deploy Claude as a dedicated strategic thinking partner. Weekly kickoffs, prioritization, end-of-week reviews, decision frameworks, and revenue modeling — consistently and in minutes.</p>
-      <div class="plist">
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#16</span><span class="ptyp">Weekly kickoff</span><span class="pname">Monday morning planning session</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Help me plan my week. Top 3 priorities: <span class="ph">[list]</span>. Carryover tasks: <span class="ph">[list]</span>. Scheduled commitments: <span class="ph">[meetings, deadlines]</span>. Energy level: <span class="ph">[high / medium / low]</span>. Create a realistic daily plan Mon–Fri. Flag anything overloaded or unrealistic.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run every Monday. 3 minutes of structured planning eliminates hours of reactive spinning throughout the week.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#17</span><span class="ptyp">Prioritization</span><span class="pname">What should I work on right now?</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">I'm a business owner with too many items on my plate. Full task list: <span class="ph">[dump everything here]</span>. Current biggest bottleneck or goal: <span class="ph">[describe]</span>. Rank by business impact and urgency. Give me the top 3 to execute first with reasoning. Flag what to delegate, delete, or defer.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use when:</strong> Overwhelmed by volume. Claude excels at surfacing the highest-leverage action in a noisy list.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#18</span><span class="ptyp">Weekly review</span><span class="pname">End-of-week reflection + next week setup</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">End-of-week review. Accomplished: <span class="ph">[list]</span>. Did not complete: <span class="ph">[list]</span>. What felt draining: <span class="ph">[note]</span>. What felt energizing: <span class="ph">[note]</span>. Identify one behavioral pattern to address and set 3 clear priorities for next week. Be direct and concise.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run on Friday, not Monday. The pattern recognition compounds over weeks — your most underrated business tool.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#19</span><span class="ptyp">Decision framework</span><span class="pname">Structured business decision analysis</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">I'm deciding between: Option A: <span class="ph">[describe]</span> and Option B: <span class="ph">[describe]</span>. Context: <span class="ph">[current situation, goals, constraints]</span>. Analyze trade-offs across: short-term revenue, long-term positioning, time cost, execution risk, and goal alignment. Provide a direct recommendation with reasoning. Do not hedge.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use before:</strong> Any decision you have been sitting on for more than 3 days. The framework surfaces the obvious answer.</p></div></div></div>
-
-        <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#20</span><span class="ptyp">Revenue modeling</span><span class="pname">Monthly revenue goal breakdown</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Monthly revenue target: <span class="ph">[$X]</span>. Current offers and prices: <span class="ph">[list each with price]</span>. Generate 3 distinct offer combinations that reach this target. Identify: which path requires the fewest transactions, which is most realistic at 10–20% conversion, and which has the highest margin efficiency.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run at the start of each month. Seeing the math eliminates emotional friction around revenue goals.</p></div></div></div>
-      </div>
-    </div>
-
-    <div class="section" id="s5">
-      <div class="sec-head"><div class="sec-num bl">05</div><h2 class="sec-title">Operations & SOPs</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s5" onclick="expandSection('s5',this)">Expand all</button></div>
-      <p class="sec-intro">Build operational infrastructure. Process documentation, role specs, client onboarding systems, policy drafting, and quarterly audits — the foundation that makes delegation possible.</p>
-      <div class="plist">
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#21</span><span class="ptyp">Process documentation</span><span class="pname">Standard operating procedure (SOP)</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a step-by-step SOP for: <span class="ph">[process — e.g. client onboarding, complaint handling, order fulfillment]</span>. Business: <span class="ph">[name]</span>. Executing role: <span class="ph">[role title]</span>. Include: purpose, required tools, numbered steps, common failure points to avoid, and a completion checklist.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Priority:</strong> Document your top 3–5 recurring processes first. That is where delegation and automation become possible.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#22</span><span class="ptyp">Talent acquisition</span><span class="pname">Job or contractor description</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a contractor or job description for: Role: <span class="ph">[title]</span>. Business: <span class="ph">[name]</span>. Weekly responsibilities: <span class="ph">[3–5 tasks]</span>. Required skills: <span class="ph">[list]</span>. Hours per week: <span class="ph">[X]</span>. Compensation: <span class="ph">[rate or range]</span>. Include a "definition of success at 90 days" section. Tone: founder-direct, not corporate HR.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Post on:</strong> LinkedIn, Contra, or Toptal — selection depends on role type and contractor vs. employee status.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#23</span><span class="ptyp">Client onboarding</span><span class="pname">New client onboarding checklist</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a new client onboarding checklist for <span class="ph">[business name]</span>, service: <span class="ph">[describe]</span>. Cover four phases: pre-start (contract, payment, intake form), Day 1 (welcome email, portal access, intro call), Week 1 (kickoff, deliverable timeline), and ongoing cadence. Format as checklist with owner labels (Me / Client).<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Impact:</strong> Structured onboarding reduces client anxiety and eliminates 80% of scope creep before it begins.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#24</span><span class="ptyp">Policy drafting</span><span class="pname">Business policies — refunds, revisions, late fees</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Draft professional business policies for <span class="ph">[business name]</span> covering: (1) Refund policy, (2) Revision rounds and process, (3) Late payment fees and timeline, (4) Project pause and cancellation terms. Plain language, firm tone. 3–5 sentences per section. These will be embedded in proposals and contracts.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Embed in every proposal before signature. Ambiguity is the primary driver of client disputes.</p></div></div></div>
-
-        <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#25</span><span class="ptyp">Operational audit</span><span class="pname">Quarterly operations audit</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Audit my business operations. Monthly revenue: <span class="ph">[$X]</span>. Active clients: <span class="ph">[#]</span>. Highest time-cost tasks: <span class="ph">[list]</span>. Manual processes that could be automated: <span class="ph">[list]</span>. Processes not yet documented: <span class="ph">[list]</span>. Identify the top 3 operational gaps and produce a prioritized action plan with timelines. Be direct.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run quarterly. Recurring gaps across audits are your highest-cost inefficiencies — fix those first.</p></div></div></div>
-      </div>
-    </div>
-
-    <div class="upsell">
-      <span class="upsell-tag">// stackd studios ai · store</span>
-      <h2 class="upsell-h">Ready to go deeper with <em>AI?</em></h2>
-      <p class="upsell-sub">These 25 prompts are your entry point. Stackd Studios AI builds complete AI-powered operating systems for business owners and founders.</p>
-      <div class="ugrid">
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Founder Strategy Toolkit</div><div class="ucard-price">$37.00</div></a>
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">AI Intake System Template</div><div class="ucard-price">$67.00</div></a>
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Prompt Engineering for Business</div><div class="ucard-price">$67.00</div></a>
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Build Your First AI Workflow</div><div class="ucard-price">$97.00</div></a>
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Claude Skill: Proposal Writer</div><div class="ucard-price">$19.00</div></a>
-        <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Next.js + Supabase SaaS Starter</div><div class="ucard-price">$97.00</div></a>
-      </div>
-      <button class="cta" onclick="openLink('https://stackdstudiosai.com/contact')">Book a free discovery call →</button>
-    </div>
-
-    <div class="foot">
-      <div class="foot-l">stackdstudiosai.com · A Hicks Virtual Solutions Company<br/>© 2026 Stackd Studios AI LLC · Personal use license</div>
-      <div class="foot-r">STACKD.</div>
-    </div>
-
   </div>
+
+  <div class="section" id="s0">
+    <div class="sec-head"><div class="sec-num">→</div><h2 class="sec-title">Getting started</h2></div>
+    <p class="sec-intro">Each prompt is engineered for immediate use. Expand any card below, copy the prompt, replace <code style="font-family:var(--font-mono);font-size:11px;color:#185FA5;background:#EBF3FF;padding:1px 5px;border-radius:3px">[variables]</code> with your details, paste into claude.ai.</p>
+    <div class="how-grid">
+      <div class="how-card"><div class="how-step">Step 01</div><div class="how-t">Open your AI of choice</div><div class="how-d">Go to claude.ai, ChatGPT, or any AI tool you use. Free tiers work great — Pro unlocks longer context for complex prompts.</div></div>
+      <div class="how-card"><div class="how-step">Step 02</div><div class="how-t">Expand and copy</div><div class="how-d">Click any prompt card to expand it. Hit copy — full text goes to clipboard.</div></div>
+      <div class="how-card"><div class="how-step">Step 03</div><div class="how-t">Fill variables</div><div class="how-d">Replace all <span style="font-family:var(--font-mono);font-size:11px;color:#185FA5">[brackets]</span> with your business specifics. More detail = better output.</div></div>
+      <div class="how-card"><div class="how-step">Step 04</div><div class="how-t">Iterate</div><div class="how-d">Send follow-up instructions — shorten, adjust tone, go deeper. Claude refines on request.</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="s1">
+    <div class="sec-head"><div class="sec-num">01</div><h2 class="sec-title">Intake automation</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s1" onclick="expandSection('s1',this)">Expand all</button></div>
+    <p class="sec-intro">Systematize lead qualification, intake forms, auto-responses, and discovery calls. Replace hours of manual intake work with repeatable AI-generated outputs.</p>
+    <div class="plist">
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#01</span><span class="ptyp">Lead qualification</span><span class="pname">New lead qualifier — 5 intake questions</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">You are an intake assistant for <span class="ph">[your business name]</span>, a <span class="ph">[type of business]</span>. When a potential client reaches out, ask them 5 questions to determine fit, understand budget, and clarify timeline. Tone: warm but efficient. Our ideal client is <span class="ph">[describe in 1–2 sentences]</span>. Generate the 5 intake questions now.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Paste output directly into Typeform, Notion form, or your website contact page.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#02</span><span class="ptyp">Auto-response</span><span class="pname">First-touch auto-reply email</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a warm, professional auto-reply for new inquiries to <span class="ph">[business name]</span>. (1) Confirm receipt, (2) set response time expectations <span class="ph">[X hours/days]</span>, (3) briefly state what we do, (4) share a booking link <span class="ph">[Calendly URL]</span>. Under 120 words. Tone: <span class="ph">[friendly & professional / bold & direct / warm & personal]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Drop into Gmail canned responses, HoneyBook, or your CRM auto-reply configuration.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#03</span><span class="ptyp">Disqualification</span><span class="pname">Graceful "not a fit" response</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a kind but clear email to a prospect who is not a fit for <span class="ph">[business name]</span> right now. Reason: <span class="ph">[budget too low / wrong service type / outside scope]</span>. Decline without burning the relationship, wish them well, and optionally redirect to <span class="ph">[a resource, referral, or lower-tier option]</span>. Under 100 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Redirect to your lowest-ticket offer or a referral partner — keeps the relationship warm for future re-engagement.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#04</span><span class="ptyp">Form builder</span><span class="pname">Full client intake form</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a client intake form for <span class="ph">[business name]</span> that collects: contact info, project or service details, budget range, timeline, referral source, and special notes. Format as labeled questions with field types (short text, dropdown, paragraph). Our services: <span class="ph">[list 2–3 services]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Build directly from this output in Typeform, JotForm, or Notion — copy, paste, publish.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#05</span><span class="ptyp">Discovery call</span><span class="pname">15-minute discovery call script</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a 15-minute discovery call script for <span class="ph">[business name]</span>: (1) warm intro + agenda (2 min), (2) 4 key questions about their situation (6 min), (3) brief solution overview (4 min), (4) next steps + close (3 min). Main offer: <span class="ph">[describe primary service]</span>. Call goal: <span class="ph">[book project / qualify for proposal / enroll]</span>.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Print before every call. Update iteratively as you identify which questions drive the best conversations.</p></div></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="s2">
+    <div class="sec-head"><div class="sec-num bl">02</div><h2 class="sec-title">Client communication</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s2" onclick="expandSection('s2',this)">Expand all</button></div>
+    <p class="sec-intro">Eliminate friction in difficult client emails. Follow-ups, scope enforcement, payment collection, status updates, and issue management — handled in under 60 seconds.</p>
+    <div class="plist">
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#06</span><span class="ptyp">Follow-up</span><span class="pname">The checking-in follow-up</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a short, warm follow-up to a client I have not heard from in <span class="ph">[X days/weeks]</span>. Context: <span class="ph">[describe where the project or conversation left off]</span>. Should feel human, not robotic. Check in, offer help, leave one clear next step. Under 80 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use when:</strong> A client goes quiet mid-project. Re-opens the conversation naturally without applying pressure.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#07</span><span class="ptyp">Scope creep</span><span class="pname">Addressing scope creep professionally</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a professional, firm but kind email to a client requesting work outside our original scope. Original scope: <span class="ph">[describe what was agreed]</span>. New requests: <span class="ph">[describe the additions]</span>. Acknowledge their needs, redirect to the original agreement, and offer to quote the additional work separately. Tone: respectful, not defensive.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Always reference the original contract or SOW in this email. Documentation is your leverage.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#08</span><span class="ptyp">Collections</span><span class="pname">Late payment reminder — 3-stage sequence</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write 3 versions of a payment reminder for invoice #<span class="ph">[number]</span> totaling <span class="ph">[$amount]</span>, due <span class="ph">[date]</span>, for <span class="ph">[client name]</span>. Version 1: friendly nudge (3 days late). Version 2: firm and direct (10 days late). Version 3: final notice with late fee warning (21 days late). Under 100 words each.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Save all 3 as email templates with calendar reminders — remove this from your mental load entirely.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#09</span><span class="ptyp">Status update</span><span class="pname">Weekly project status update</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a short client-facing project update. Project: <span class="ph">[name]</span>. Completed this week: <span class="ph">[2–3 items]</span>. Next steps: <span class="ph">[1–2 items]</span>. Blockers or items needed from client: <span class="ph">[list or "none"]</span>. Scannable with bullet points. Close with a clear ask if needed. Professional but conversational.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Note:</strong> Consistent updates prevent client anxiety — and anxious clients cause scope creep. Send even when progress feels small.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#10</span><span class="ptyp">Issue management</span><span class="pname">Delivering bad news or delays</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write an honest, professional email about a delay or issue. Situation: <span class="ph">[describe what happened]</span>. New timeline: <span class="ph">[date or range]</span>. Take responsibility without over-apologizing. Briefly explain what happened. Give confidence the situation is resolved. Under 150 words.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Lead with the new timeline, not the apology. Clients want to know what happens next.</p></div></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="s3">
+    <div class="sec-head"><div class="sec-num or">03</div><h2 class="sec-title">Proposal drafting</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s3" onclick="expandSection('s3',this)">Expand all</button></div>
+    <p class="sec-intro">Compress proposal turnaround from hours to minutes. Full proposals, SOWs, value-framed pricing, and follow-up sequences engineered to convert.</p>
+    <div class="plist">
+      <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#11</span><span class="ptyp">Full proposal</span><span class="pname">Complete service proposal draft</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a professional proposal for: Client: <span class="ph">[name]</span>. What they need: <span class="ph">[describe project/service]</span>. What I'm offering: <span class="ph">[deliverables + timeline]</span>. Investment: <span class="ph">[price or range]</span>. Include: overview, what's included, what's not included, timeline, investment, next steps. Tone: confident and credible, not salesy.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Paste into HoneyBook, PandaDoc, or Notion for a client-ready proposal.</p></div></div></div>
+
+      <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#12</span><span class="ptyp">Pricing</span><span class="pname">Value-framed pricing — no apology</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a confident pricing explanation for my proposal. Service: <span class="ph">[describe]</span>. Price: <span class="ph">[$X]</span>. Value the client receives: <span class="ph">[outcomes/results]</span>. Frame around value and results, not hours or tasks. Do not apologize for the price. 2–3 short paragraphs.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Clients buy outcomes, not line items. This section alone reduces price objections significantly.</p></div></div></div>
+
+      <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#13</span><span class="ptyp">Legal / SOW</span><span class="pname">Statement of work (SOW)</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a statement of work for: Client: <span class="ph">[name]</span>. Project: <span class="ph">[title]</span>. Deliverables: <span class="ph">[list each]</span>. Timeline: <span class="ph">[start to end date]</span>. Revisions: <span class="ph">[X rounds]</span>. Out of scope: <span class="ph">[list exclusions]</span>. Numbered sections, plain language, legally intentional.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Critical:</strong> The out-of-scope section prevents 80% of scope creep conversations. Never omit it.</p></div></div></div>
+
+      <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#14</span><span class="ptyp">Follow-up</span><span class="pname">3-email post-proposal follow-up</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a 3-email follow-up sequence for a prospect who received a proposal but has not responded. Email 1 (Day 3): gentle check-in. Email 2 (Day 7): add value, address a likely objection. Email 3 (Day 14): final nudge with soft urgency around availability. Proposal was for <span class="ph">[service]</span> at <span class="ph">[$price]</span>. Under 90 words each.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Data:</strong> Most proposal conversions happen on follow-up 2 or 3. Automate this and remove it from your mental load.</p></div></div></div>
+
+      <div class="pitem or"><button class="ptrig" onclick="tog(this)"><span class="pid">#15</span><span class="ptyp">Objection handling</span><span class="pname">Responding to "can you lower your price?"</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">A client asked me to lower my price from <span class="ph">[$X]</span>. They said: <span class="ph">[quote or paraphrase]</span>. Write a confident response that holds the price while offering a structured alternative — either reduced scope or a payment plan. Do not discount without reducing scope. Tone: understanding but firm.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Principle:</strong> Offer to reduce scope before reducing price — protects your rate and sets the right precedent.</p></div></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="s4">
+    <div class="sec-head"><div class="sec-num">04</div><h2 class="sec-title">Weekly planning</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s4" onclick="expandSection('s4',this)">Expand all</button></div>
+    <p class="sec-intro">Deploy Claude as a dedicated strategic thinking partner. Weekly kickoffs, prioritization, end-of-week reviews, decision frameworks, and revenue modeling — consistently and in minutes.</p>
+    <div class="plist">
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#16</span><span class="ptyp">Weekly kickoff</span><span class="pname">Monday morning planning session</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Help me plan my week. Top 3 priorities: <span class="ph">[list]</span>. Carryover tasks: <span class="ph">[list]</span>. Scheduled commitments: <span class="ph">[meetings, deadlines]</span>. Energy level: <span class="ph">[high / medium / low]</span>. Create a realistic daily plan Mon–Fri. Flag anything overloaded or unrealistic.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run every Monday. 3 minutes of structured planning eliminates hours of reactive spinning throughout the week.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#17</span><span class="ptyp">Prioritization</span><span class="pname">What should I work on right now?</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">I'm a business owner with too many items on my plate. Full task list: <span class="ph">[dump everything here]</span>. Current biggest bottleneck or goal: <span class="ph">[describe]</span>. Rank by business impact and urgency. Give me the top 3 to execute first with reasoning. Flag what to delegate, delete, or defer.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use when:</strong> Overwhelmed by volume. Claude excels at surfacing the highest-leverage action in a noisy list.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#18</span><span class="ptyp">Weekly review</span><span class="pname">End-of-week reflection + next week setup</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">End-of-week review. Accomplished: <span class="ph">[list]</span>. Did not complete: <span class="ph">[list]</span>. What felt draining: <span class="ph">[note]</span>. What felt energizing: <span class="ph">[note]</span>. Identify one behavioral pattern to address and set 3 clear priorities for next week. Be direct and concise.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run on Friday, not Monday. The pattern recognition compounds over weeks — your most underrated business tool.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#19</span><span class="ptyp">Decision framework</span><span class="pname">Structured business decision analysis</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">I'm deciding between: Option A: <span class="ph">[describe]</span> and Option B: <span class="ph">[describe]</span>. Context: <span class="ph">[current situation, goals, constraints]</span>. Analyze trade-offs across: short-term revenue, long-term positioning, time cost, execution risk, and goal alignment. Provide a direct recommendation with reasoning. Do not hedge.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Use before:</strong> Any decision you have been sitting on for more than 3 days. The framework surfaces the obvious answer.</p></div></div></div>
+
+      <div class="pitem"><button class="ptrig" onclick="tog(this)"><span class="pid">#20</span><span class="ptyp">Revenue modeling</span><span class="pname">Monthly revenue goal breakdown</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Monthly revenue target: <span class="ph">[$X]</span>. Current offers and prices: <span class="ph">[list each with price]</span>. Generate 3 distinct offer combinations that reach this target. Identify: which path requires the fewest transactions, which is most realistic at 10–20% conversion, and which has the highest margin efficiency.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run at the start of each month. Seeing the math eliminates emotional friction around revenue goals.</p></div></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="s5">
+    <div class="sec-head"><div class="sec-num bl">05</div><h2 class="sec-title">Operations & SOPs</h2><span class="sec-meta">5 prompts</span><button class="expand-sec-btn" data-section="s5" onclick="expandSection('s5',this)">Expand all</button></div>
+    <p class="sec-intro">Build operational infrastructure. Process documentation, role specs, client onboarding systems, policy drafting, and quarterly audits — the foundation that makes delegation possible.</p>
+    <div class="plist">
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#21</span><span class="ptyp">Process documentation</span><span class="pname">Standard operating procedure (SOP)</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a step-by-step SOP for: <span class="ph">[process — e.g. client onboarding, complaint handling, order fulfillment]</span>. Business: <span class="ph">[name]</span>. Executing role: <span class="ph">[role title]</span>. Include: purpose, required tools, numbered steps, common failure points to avoid, and a completion checklist.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Priority:</strong> Document your top 3–5 recurring processes first. That is where delegation and automation become possible.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#22</span><span class="ptyp">Talent acquisition</span><span class="pname">Job or contractor description</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Write a contractor or job description for: Role: <span class="ph">[title]</span>. Business: <span class="ph">[name]</span>. Weekly responsibilities: <span class="ph">[3–5 tasks]</span>. Required skills: <span class="ph">[list]</span>. Hours per week: <span class="ph">[X]</span>. Compensation: <span class="ph">[rate or range]</span>. Include a "definition of success at 90 days" section. Tone: founder-direct, not corporate HR.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Post on:</strong> LinkedIn, Contra, or Toptal — selection depends on role type and contractor vs. employee status.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#23</span><span class="ptyp">Client onboarding</span><span class="pname">New client onboarding checklist</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Create a new client onboarding checklist for <span class="ph">[business name]</span>, service: <span class="ph">[describe]</span>. Cover four phases: pre-start (contract, payment, intake form), Day 1 (welcome email, portal access, intro call), Week 1 (kickoff, deliverable timeline), and ongoing cadence. Format as checklist with owner labels (Me / Client).<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Impact:</strong> Structured onboarding reduces client anxiety and eliminates 80% of scope creep before it begins.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#24</span><span class="ptyp">Policy drafting</span><span class="pname">Business policies — refunds, revisions, late fees</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Draft professional business policies for <span class="ph">[business name]</span> covering: (1) Refund policy, (2) Revision rounds and process, (3) Late payment fees and timeline, (4) Project pause and cancellation terms. Plain language, firm tone. 3–5 sentences per section. These will be embedded in proposals and contracts.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Deploy:</strong> Embed in every proposal before signature. Ambiguity is the primary driver of client disputes.</p></div></div></div>
+
+      <div class="pitem bl"><button class="ptrig" onclick="tog(this)"><span class="pid">#25</span><span class="ptyp">Operational audit</span><span class="pname">Quarterly operations audit</span><span class="pchev">&#9654;</span></button><div class="ppanel"><div class="ppinner"><div class="pcode-wrap"><div class="pcode">Audit my business operations. Monthly revenue: <span class="ph">[$X]</span>. Active clients: <span class="ph">[#]</span>. Highest time-cost tasks: <span class="ph">[list]</span>. Manual processes that could be automated: <span class="ph">[list]</span>. Processes not yet documented: <span class="ph">[list]</span>. Identify the top 3 operational gaps and produce a prioritized action plan with timelines. Be direct.<button class="cpbtn" onclick="cp(this)">Copy</button></div></div><p class="ptip"><strong>Cadence:</strong> Run quarterly. Recurring gaps across audits are your highest-cost inefficiencies — fix those first.</p></div></div></div>
+    </div>
+  </div>
+
+  <div class="upsell">
+    <span class="upsell-tag">// stackd studios ai · store</span>
+    <h2 class="upsell-h">Ready to go deeper with <em>AI?</em></h2>
+    <p class="upsell-sub">These 25 prompts are your entry point. Stackd Studios AI builds complete AI-powered operating systems for business owners and founders.</p>
+    <div class="ugrid">
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Founder Strategy Toolkit</div><div class="ucard-price">$37.00</div></a>
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">AI Intake System Template</div><div class="ucard-price">$67.00</div></a>
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Prompt Engineering for Business</div><div class="ucard-price">$67.00</div></a>
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Build Your First AI Workflow</div><div class="ucard-price">$97.00</div></a>
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Claude Skill: Proposal Writer</div><div class="ucard-price">$19.00</div></a>
+      <a class="ucard" href="https://stackdstudiosai.com/store"><div class="ucard-name">Next.js + Supabase SaaS Starter</div><div class="ucard-price">$97.00</div></a>
+    </div>
+    <button class="cta" onclick="openLink('https://stackdstudiosai.com/contact')">Book a free discovery call →</button>
+  </div>
+
+  <div class="foot">
+    <div class="foot-l">stackdstudiosai.com · A Hicks Virtual Solutions Company<br/>© 2026 Stackd Studios AI LLC · Personal use license</div>
+    <div class="foot-r">STACKD.</div>
+  </div>
+
 </div>
 
 <script>
+function openDrawer(){
+  document.getElementById('mobileDrawer').classList.add('open');
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function drawerNav(id){
+  closeDrawer();
+  setTimeout(()=>scrollToSection(id),200);
+}
+
 function tog(btn){
   const item=btn.closest('.pitem');
   item.classList.toggle('open');
-  // update active sidebar link
-  const sectionEl=item.closest('.section');
-  if(sectionEl){
-    document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('on'));
-    const match=document.querySelector('.sb-link[data-target="'+sectionEl.id+'"]');
-    if(match)match.classList.add('on');
-  }
 }
 function cp(btn){
   const box=btn.closest('.pcode');
@@ -344,9 +411,6 @@ function cp(btn){
 function scrollToSection(id){
   const el=document.getElementById(id);
   if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-  document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('on'));
-  const match=document.querySelector('.sb-link[data-target="'+id+'"]');
-  if(match)match.classList.add('on');
 }
 function openLink(url){
   window.open(url,'_blank','noopener,noreferrer');
@@ -366,7 +430,6 @@ function expandAll(btn) {
   const allOpen = [...allItems].every(i => i.classList.contains('open'));
   allItems.forEach(item => allOpen ? item.classList.remove('open') : item.classList.add('open'));
   btn.textContent = allOpen ? 'Expand all' : 'Collapse all';
-  // sync section buttons
   document.querySelectorAll('.expand-sec-btn').forEach(b => {
     const sectionId = b.dataset.section;
     const section = document.getElementById(sectionId);

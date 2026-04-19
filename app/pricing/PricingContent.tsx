@@ -175,15 +175,15 @@ export default function PricingContent() {
         </section>
 
         {/* Pricing grid */}
-        <section className="py-16">
+        <section className="py-16 bg-[#FFD84D]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* T1–T4 */}
             <div className="mb-14">
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#1A4A7A]">Track A — Business Owners</span>
-                <div className="flex-1 h-px bg-[#E2DED8]" aria-hidden="true" />
+                <div className="flex-1 h-px bg-[#0C0C0C]/15" aria-hidden="true" />
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 {tiers.filter(t => t.track === 'A').map((tier) => (
                   <PricingCard key={tier.tier} tier={tier} />
                 ))}
@@ -194,7 +194,7 @@ export default function PricingContent() {
             <div className="mb-14">
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#F97316]">Track B — Founders</span>
-                <div className="flex-1 h-px bg-[#E2DED8]" aria-hidden="true" />
+                <div className="flex-1 h-px bg-[#0C0C0C]/15" aria-hidden="true" />
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 {tiers.filter(t => t.track === 'B').map((tier) => (
@@ -207,7 +207,7 @@ export default function PricingContent() {
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0C0C0C]">Both Tracks</span>
-                <div className="flex-1 h-px bg-[#E2DED8]" aria-hidden="true" />
+                <div className="flex-1 h-px bg-[#0C0C0C]" aria-hidden="true" />
               </div>
               {tiers.filter(t => t.track === 'Both').map((tier) => (
                 <div

@@ -7,10 +7,11 @@ import { submitLead } from './actions'
 import { useToast } from '@/components/ToastProvider'
 
 const trackOptions = [
-  { value: '', label: 'Which track are you on?' },
+  { value: '', label: 'What is this regarding?' },
   { value: 'Track A — Business Owner', label: 'Track A — Business Owner' },
   { value: 'Track B — Founder', label: 'Track B — Founder' },
   { value: 'Both / Not sure', label: 'Both / Not sure yet' },
+  { value: 'Other', label: 'Other' },
 ]
 
 const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL
@@ -66,7 +67,7 @@ export default function ContactContent() {
         </section>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
 
             {/* Left — Calendly + Info */}
             <div className="flex flex-col gap-8">

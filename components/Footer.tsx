@@ -46,7 +46,7 @@ export default function Footer() {
     <footer className="bg-[#0C0C0C] text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
-        <div className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
+        <div className="pt-12 md:pt-16 pb-4 md:pb-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 md:gap-10">
           {/* Logo + tagline */}
           <div className="col-span-2 md:col-span-1">
             <Link
@@ -54,13 +54,6 @@ export default function Footer() {
               className="flex items-center gap-2.5 mb-4 group"
               aria-label="Stackd Studios AI home"
             >
-              <Image
-                src="/logo.png"
-                alt="Stackd Studios AI"
-                width={48}
-                height={48}
-                className="rounded-lg"
-              />
               <span className="font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
                 Stackd Studios AI
               </span>
@@ -85,7 +78,7 @@ export default function Footer() {
           {/* Footer columns */}
           {footerColumns.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-white text-xs font-semibold uppercase tracking-[0.1em] mb-5 font-[family-name:var(--font-instrument-sans)]">
+              <h3 className="text-white text-xs font-normal uppercase tracking-[0.1em] mb-5 font-[family-name:var(--font-instrument-sans)]">
                 {col.heading}
               </h3>
               <ul className="flex flex-col gap-3" role="list">
@@ -102,22 +95,34 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
+          {/* Logo image — fills remaining space */}
+          <div className="col-span-2 sm:col-span-1 md:col-span-1 flex items-start justify-center -mt-12">
+            <div className="relative w-full min-h-[280px]">
+              <Image
+                src="/stackd-logo-white.png"
+                alt="Stackd Studios AI"
+                fill
+                className="object-contain object-center"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Divider */}
         <div className="border-t border-white/10" />
 
         {/* Bottom row */}
-        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p className="text-[#6B7280] text-sm">
             © {new Date().getFullYear()} Stackd Studios AI LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-[#6B7280] hover:text-white text-sm transition-colors">
+            <Link href="/privacy" className="text-[#6B7280] hover:text-white text-sm transition-colors">
               Privacy Policy
             </Link>
             <span className="text-[#374151]" aria-hidden="true">·</span>
-            <Link href="#" className="text-[#6B7280] hover:text-white text-sm transition-colors">
+            <Link href="/terms" className="text-[#6B7280] hover:text-white text-sm transition-colors">
               Terms of Service
             </Link>
           </div>

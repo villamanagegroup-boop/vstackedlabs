@@ -1,8 +1,18 @@
+'use client'
+
+import { useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { useCart } from '@/components/CartContext'
 
 export default function SuccessPage() {
+  const { clearCart } = useCart()
+
+  useEffect(() => {
+    clearCart()
+  }, [])
+
   return (
     <>
       <Navbar />

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
 import TechStack from '@/components/TechStack'
-import Tracks from '@/components/Tracks'
+import TracksHome from '@/components/TracksHome'
 import HowItWorks from '@/components/HowItWorks'
 import BusinessBrainTeaser from '@/components/BusinessBrainTeaser'
 import OurWork from '@/components/OurWork'
@@ -34,7 +34,7 @@ export default function HomePage() {
         <Hero />
         <Stats />
         <TechStack />
-        <Tracks />
+        <TracksHome />
         <HowItWorks />
         <BusinessBrainTeaser />
         <OurWork />

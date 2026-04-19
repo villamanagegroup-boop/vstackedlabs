@@ -14,12 +14,23 @@ const navLinks = [
   { label: 'Store', href: '/store' },
 ]
 
-export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
+export default function Navbar({ darkHero = false, yellowHero = false }: { darkHero?: boolean; yellowHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { totalItems } = useCart()
 
-  const barColor = darkHero && !scrolled ? 'bg-white' : 'bg-[#0C0C0C]'
+  const isDark = darkHero && !scrolled
+  const isYellow = yellowHero && !scrolled
+  const barColor = isDark ? 'bg-white' : 'bg-[#0C0C0C]'
+
+  const logoIcon = isDark ? '/stackd-icon-dark.png' : isYellow ? '/stackd-icon-yellow.png' : '/stackd-icon-light.png'
+  const textColor = isDark ? 'text-white' : 'text-[#0C0C0C]'
+  const linkColor = isDark ? 'text-white/70 hover:text-white' : 'text-[#888580] hover:text-[#0C0C0C]'
+  const cartColor = isDark ? 'white' : '#0C0C0C'
+  const cartHover = isDark ? 'hover:bg-white/10' : 'hover:bg-[#E2DED8]'
+  const ctaClass = isDark
+    ? 'bg-[#FFD84D] text-[#0C0C0C] hover:bg-[#E8C030]'
+    : 'bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C]'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -27,7 +38,6 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -50,17 +60,17 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 group"
+            className="flex items-center gap-2 group"
             aria-label="Stackd Studios AI home"
           >
             <Image
-              src="/logo.png"
-              alt="Stackd Studios AI"
-              width={40}
-              height={40}
-              className="rounded-lg"
+              src={logoIcon}
+              alt=""
+              width={28}
+              height={28}
+              className="shrink-0"
             />
-            <span className="text-[#0C0C0C] font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)]">
+            <span className={`font-semibold text-base tracking-tight font-[family-name:var(--font-instrument-sans)] transition-colors duration-300 ${textColor}`}>
               Stackd Studios AI
             </span>
           </Link>
@@ -71,7 +81,7 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[#888580] hover:text-[#0C0C0C] text-sm font-medium transition-colors duration-200"
+                  className={`text-sm font-medium transition-colors duration-200 ${linkColor}`}
                 >
                   {link.label}
                 </Link>
@@ -82,13 +92,13 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
           {/* Cart icon */}
           <Link
             href="/cart"
-            className="hidden md:flex items-center justify-center relative w-10 h-10 rounded-lg hover:bg-[#E2DED8] transition-colors"
+            className={`hidden md:flex items-center justify-center relative w-10 h-10 rounded-lg transition-colors ${cartHover}`}
             aria-label={`Cart — ${totalItems} item${totalItems !== 1 ? 's' : ''}`}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M2 2h2l2.5 10h9l1.5-7H6" stroke="#0C0C0C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="9" cy="16.5" r="1.5" fill="#0C0C0C"/>
-              <circle cx="14" cy="16.5" r="1.5" fill="#0C0C0C"/>
+              <path d="M2 2h2l2.5 10h9l1.5-7H6" stroke={cartColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="9" cy="16.5" r="1.5" fill={cartColor}/>
+              <circle cx="14" cy="16.5" r="1.5" fill={cartColor}/>
             </svg>
             {totalItems > 0 && (
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#FFD84D] text-[#0C0C0C] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
@@ -100,7 +110,7 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
           {/* Desktop CTA */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
+            className={`hidden md:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02] ${ctaClass}`}
             aria-label="Book a free discovery call with Stackd Studios AI"
           >
             Book a Call
@@ -115,21 +125,9 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
-            <span
-              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
-                menuOpen ? 'rotate-45 translate-y-[7px]' : ''
-              }`}
-            />
-            <span
-              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
-                menuOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${
-                menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
-              }`}
-            />
+            <span className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
           </button>
         </nav>
       </header>
@@ -142,15 +140,18 @@ export default function Navbar({ darkHero = false }: { darkHero?: boolean }) {
         }`}
         aria-hidden={!menuOpen}
       >
-        {/* Drawer header */}
+        {/* Drawer header — text only */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-[#E2DED8]">
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center"
+            className="flex items-center gap-2"
             aria-label="Stackd Studios AI home"
           >
-            <Image src="/logo.png" alt="Stackd Studios AI" width={36} height={36} className="rounded-lg" />
+            <Image src="/stackd-icon-light.png" alt="" width={26} height={26} className="shrink-0" />
+            <span className="font-semibold text-base text-[#0C0C0C] tracking-tight font-[family-name:var(--font-instrument-sans)]">
+              Stackd Studios AI
+            </span>
           </Link>
           <button
             type="button"
