@@ -78,7 +78,7 @@ export default function AboutPage() {
 
               <div className="flex flex-col gap-6 pt-1">
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
-                  Chanel founded Stackd Studios AI under Hicks Virtual Solutions LLC with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
+                  Chanel founded Stackd Studios AI with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
                 </p>
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
                   With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.

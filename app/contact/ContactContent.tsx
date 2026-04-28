@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { submitLead } from './actions'
@@ -52,16 +53,29 @@ export default function ContactContent() {
       <Navbar />
       <main className="bg-[#F6F4EF]">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-white border-b border-[#E2DED8]">
+        <section className="pt-32 pb-16 bg-white border-b border-[#E2DED8] overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Contact</p>
-              <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
-                Let&apos;s build something together.
-              </h1>
-              <p className="text-[#888580] text-xl leading-relaxed">
-                Book a free 20-minute discovery call or send us a message below. We respond within 24 hours.
-              </p>
+            <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+              <div className="max-w-3xl">
+                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">Contact</p>
+                <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-6">
+                  Let&apos;s build something together.
+                </h1>
+                <p className="text-[#888580] text-xl leading-relaxed">
+                  Book a free 20-minute discovery call or send us a message below. We respond within 24 hours.
+                </p>
+              </div>
+
+              <div className="relative w-[200px] h-[298px] lg:w-[280px] lg:h-[418px] mx-auto lg:mx-0 shrink-0" aria-hidden="true">
+                <Image
+                  src="/stacka-couch.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 280px, 200px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
@@ -228,14 +229,30 @@ export default function ServicesContent() {
         {/* ── Hero ────────────────────────────────────────────────────────── */}
         <section className="bg-[#FFD84D] pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-16">
-              <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-4">Services</p>
-              <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-5">
-                Pick your track.<br className="hidden sm:block"/> We&apos;ll build the rest.
-              </h1>
-              <p className="text-[#0C0C0C]/65 text-base sm:text-xl leading-relaxed mb-10">
-                Two tracks. Every tier is scoped, defined, and built to deliver results — not just deliverables.
-              </p>
+            <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-16">
+              <div className="max-w-2xl">
+                <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-4">Services</p>
+                <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-5">
+                  Pick your track.<br className="hidden sm:block"/> We&apos;ll build the rest.
+                </h1>
+                <p className="text-[#0C0C0C]/65 text-base sm:text-xl leading-relaxed mb-10">
+                  Two tracks. Every tier is scoped, defined, and built to deliver results — not just deliverables.
+                </p>
+              </div>
+
+              <div
+                className="relative w-[220px] h-[328px] lg:w-[300px] lg:h-[447px] mx-auto lg:mx-0 shrink-0 rounded-3xl overflow-hidden border-2 border-[#0C0C0C]/10 shadow-[0_20px_50px_rgba(12,12,12,0.18)]"
+                aria-hidden="true"
+              >
+                <Image
+                  src="/stacka-laptop.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 300px, 220px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Track jump links */}

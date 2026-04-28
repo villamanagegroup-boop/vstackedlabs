@@ -126,7 +126,7 @@ export default function Footer() {
               Terms of Service
             </Link>
             <span className="text-[#374151]" aria-hidden="true">·</span>
-            <Link href="/sitemap.xml" className="text-[#6B7280] hover:text-white text-sm transition-colors">
+            <Link href="/sitemap" className="text-[#6B7280] hover:text-white text-sm transition-colors">
               Sitemap
             </Link>
           </div>
