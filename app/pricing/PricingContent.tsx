@@ -250,13 +250,34 @@ export default function PricingContent() {
           </div>
         </section>
 
+        {/* Self-Serve / Digital Products */}
+        <section className="py-16 bg-[#F6F4EF]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white border border-[#E2DED8] rounded-2xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+              <div>
+                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-2">Self-Serve</p>
+                <h3 className="text-2xl text-[#0C0C0C] leading-tight mb-2">Want to start without a call?</h3>
+                <p className="text-[#888580] text-sm leading-relaxed max-w-2xl">
+                  Grab an instant-download starter pack, template, course, or Claude skill — no booking, no scoping, just download and go.
+                </p>
+              </div>
+              <Link
+                href="/store"
+                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] whitespace-nowrap"
+              >
+                Browse the Store
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ strip */}
         <section className="py-16 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-[clamp(24px,3.5vw,40px)] text-[#0C0C0C] leading-tight mb-10 text-center">
               Common questions
             </h2>
-            <div className="flex flex-col gap-6">
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-6">
               {[
                 {
                   q: 'Do you offer payment plans?',
@@ -277,6 +298,34 @@ export default function PricingContent() {
                 {
                   q: 'Can I pay before the discovery session?',
                   a: "Yes — if you already know which tier you want, you can reserve your spot at the base price. Final scope and any adjustments will be confirmed on your discovery call before work begins. Nothing additional is charged without your approval.",
+                },
+                {
+                  q: 'How do we get started?',
+                  a: "Book a free 20-minute discovery call from our contact page. After the call you'll get a written scope and quote — once the deposit clears, work starts.",
+                },
+                {
+                  q: 'Who owns the work after it ships?',
+                  a: 'You do. Once final payment clears, the deliverables, code, and assets are yours. We only retain the right to reference our work in our portfolio.',
+                },
+                {
+                  q: 'Do you work with clients outside the US?',
+                  a: 'Yes. We work remotely with clients globally — invoicing in USD and scheduling calls in your timezone where possible.',
+                },
+                {
+                  q: 'Do you sign NDAs?',
+                  a: "Yes — mutual NDAs are standard for any project where confidentiality matters. We'll sign yours or send ours before scoping.",
+                },
+                {
+                  q: 'What about ongoing support after launch?',
+                  a: "Most clients move into a monthly retainer for iteration, new features, and quick-turn updates. We'll talk through what fits on your discovery call.",
+                },
+                {
+                  q: 'How do digital products and starter packs work?',
+                  a: "Buy from the store and you'll get instant access by email. They're self-serve starter packs, templates, courses, and Claude skills — no scheduling or scoping required.",
+                },
+                {
+                  q: 'Do you only work in certain industries?',
+                  a: "We've gone deep in behavioral health, dance studios, real estate, staffing, gov contracting, nonprofits, field services, and creator businesses — but the underlying systems work anywhere there's documentation, follow-up, or content to automate.",
                 },
               ].map((faq) => (
                 <div key={faq.q} className="border-b border-[#E2DED8] pb-6">

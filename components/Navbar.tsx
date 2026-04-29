@@ -7,6 +7,7 @@ import { useCart } from '@/components/CartContext'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Business Brain', href: '/business-brain' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },

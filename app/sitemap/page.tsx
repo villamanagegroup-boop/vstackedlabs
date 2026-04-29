@@ -17,6 +17,7 @@ const groups = [
     pages: [
       { label: 'Home', href: '/' },
       { label: 'Services', href: '/services' },
+      { label: 'Industries', href: '/industries' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Store', href: '/store' },
     ],

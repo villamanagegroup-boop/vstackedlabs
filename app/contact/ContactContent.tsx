@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -15,21 +15,10 @@ const trackOptions = [
   { value: 'Other', label: 'Other' },
 ]
 
-const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL
-
 export default function ContactContent() {
   const [status, setStatus] = useState<'idle' | 'loading'>('idle')
   const formRef = useRef<HTMLFormElement>(null)
   const { toast } = useToast()
-
-  useEffect(() => {
-    if (!calendlyUrl) return
-    const script = document.createElement('script')
-    script.src = 'https://assets.calendly.com/assets/external/widget.js'
-    script.async = true
-    document.body.appendChild(script)
-    return () => { document.body.removeChild(script) }
-  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -62,7 +51,7 @@ export default function ContactContent() {
                   Let&apos;s build something together.
                 </h1>
                 <p className="text-[#888580] text-xl leading-relaxed">
-                  Book a free 20-minute discovery call or send us a message below. We respond within 24 hours.
+                  Send us a message and we&apos;ll respond within 24 hours.
                 </p>
               </div>
 
@@ -83,68 +72,30 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
 
-            {/* Left — Calendly + Info */}
-            <div className="flex flex-col gap-8">
-              {/* Calendly embed */}
+            {/* Left — Contact info */}
+            <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5 self-start">
               <div>
-                <h2 className="text-2xl text-[#0C0C0C] mb-2">Book a Free Discovery Call</h2>
-                <p className="text-[#888580] text-sm mb-6">
-                  20 minutes. No pitch, no pressure. Just a real conversation about what you&apos;re building.
-                </p>
-
-                {calendlyUrl ? (
-                  <div
-                    className="calendly-inline-widget rounded-2xl overflow-hidden border border-[#E2DED8] w-full"
-                    data-url={calendlyUrl}
-                    style={{ height: '660px' }}
-                  />
-                ) : (
-                  <div className="bg-white rounded-2xl border border-[#E2DED8] p-8 text-center">
-                    <div className="w-12 h-12 bg-[#F6F4EF] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="#888580" strokeWidth="1.5"/>
-                        <path d="M3 9h18M8 2v4M16 2v4" stroke="#888580" strokeWidth="1.5" strokeLinecap="round"/>
-                      </svg>
-                    </div>
-                    <h3 className="text-lg text-[#0C0C0C] mb-2">Send Us a Message</h3>
-                    <p className="text-[#888580] text-sm mb-4">
-                      Fill out the form below and we&apos;ll get back to you within 24 hours to set up a call.
-                    </p>
-                    <a
-                      href="#send-message"
-                      className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 min-h-[44px]"
-                    >
-                      Send a Message
-                    </a>
-                  </div>
-                )}
+                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
+                <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#FFD84D] font-medium hover:underline">
+                  Chanel@stackdstudiosai.com
+                </a>
               </div>
 
-              {/* Contact info */}
-              <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
-                <div>
-                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
-                  <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#FFD84D] font-medium hover:underline">
-                    Chanel@stackdstudiosai.com
-                  </a>
-                </div>
+              <div>
+                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
+                <p className="text-white font-medium">Remote — United States</p>
+              </div>
 
-                <div>
-                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
-                  <p className="text-white font-medium">Remote — United States</p>
-                </div>
+              <div>
+                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Response Time</p>
+                <p className="text-white font-medium">Within 24 hours</p>
+              </div>
 
-                <div>
-                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Response Time</p>
-                  <p className="text-white font-medium">Within 24 hours</p>
-                </div>
-
-                <div className="border-t border-white/10 pt-4">
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
-                    &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
-                  </p>
-                  <p className="text-[#FFD84D] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
-                </div>
+              <div className="border-t border-white/10 pt-4">
+                <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
+                  &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
+                </p>
+                <p className="text-[#FFD84D] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
               </div>
             </div>
 

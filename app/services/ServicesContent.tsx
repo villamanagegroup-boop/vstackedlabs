@@ -325,6 +325,45 @@ export default function ServicesContent() {
           </div>
         </section>
 
+        {/* ── Self-Serve / Digital Products ──────────────────────────────── */}
+        <section className="bg-white py-24 border-t-4 border-[#E2DED8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-[#F6F4EF] border border-[#E2DED8] rounded-3xl p-8 md:p-12 grid md:grid-cols-[1fr_auto] gap-8 items-center"
+            >
+              <div>
+                <p className="text-[#0C0C0C]/50 text-[10px] font-bold uppercase tracking-[0.15em] mb-3">Self-Serve</p>
+                <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight mb-3">
+                  Skip the call. Grab a starter pack.
+                </h2>
+                <p className="text-[#888580] text-base leading-relaxed max-w-2xl mb-5">
+                  Instant-download digital products built by Stackd Studios — starter packs, templates, courses, and Claude skills. Self-serve, no scoping required.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['Starter Packs', 'Templates', 'Courses', 'Claude Skills'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-white border border-[#E2DED8] text-[#0C0C0C] text-sm px-3.5 py-1.5 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/store"
+                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] whitespace-nowrap"
+              >
+                Browse the Store
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* ── Add-Ons ─────────────────────────────────────────────────────── */}
         <section className="bg-[#FFD84D] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
