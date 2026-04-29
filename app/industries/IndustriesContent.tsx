@@ -9,8 +9,6 @@ import Footer from '@/components/Footer'
 const industries = [
   {
     id: 'behavioral-health',
-    emoji: '🧠',
-    image: '/stacka-clinical.png',
     name: 'Behavioral Health & Mental Health',
     tagline: 'AI that speaks clinical.',
     description:
@@ -32,7 +30,6 @@ const industries = [
   },
   {
     id: 'dance-performing-arts',
-    emoji: '🩰',
     name: 'Dance & Performing Arts Studios',
     tagline: 'Less admin. More art.',
     description:
@@ -54,7 +51,6 @@ const industries = [
   },
   {
     id: 'real-estate',
-    emoji: '🏢',
     name: 'Real Estate & Property Capital',
     tagline: 'Deal flow, automated.',
     description:
@@ -76,7 +72,6 @@ const industries = [
   },
   {
     id: 'staffing-family-services',
-    emoji: '👨‍👩‍👧',
     name: 'Staffing & Family Services',
     tagline: 'Match faster. Place smarter.',
     description:
@@ -98,7 +93,6 @@ const industries = [
   },
   {
     id: 'government-public-sector',
-    emoji: '🏛️',
     name: 'Government & Public Sector',
     tagline: 'Compliant. Efficient. Modern.',
     description:
@@ -120,7 +114,6 @@ const industries = [
   },
   {
     id: 'nonprofits',
-    emoji: '🤝',
     name: 'Nonprofits & Community Development',
     tagline: 'More mission. Less overhead.',
     description:
@@ -142,7 +135,6 @@ const industries = [
   },
   {
     id: 'small-business',
-    emoji: '⚡',
     name: 'Small Business Operations',
     tagline: 'Run leaner. Grow faster.',
     description:
@@ -164,7 +156,6 @@ const industries = [
   },
   {
     id: 'field-services',
-    emoji: '🔧',
     name: 'Field Services & Trades',
     tagline: 'AI for businesses that move.',
     description:
@@ -186,7 +177,6 @@ const industries = [
   },
   {
     id: 'creators-digital-media',
-    emoji: '🎬',
     name: 'Creators & Digital Media',
     tagline: 'Create more. Burn out less.',
     description:

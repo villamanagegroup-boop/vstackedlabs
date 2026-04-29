@@ -52,7 +52,7 @@ export default function AiToolkitFunnelContent() {
                   </span>
                 </h1>
                 <p className="text-[#0C0C0C] text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-medium">
-                  50+ free and low-cost AI tools, organized by what you actually
+                  30+ free and low-cost AI tools, organized by what you actually
                   need to get done. We curated, tested, and ranked them so you
                   don&apos;t have to. <strong>Yours forever, updated quarterly.</strong>
                 </p>
@@ -189,7 +189,7 @@ export default function AiToolkitFunnelContent() {
                   id="inside-h"
                   className="text-[clamp(36px,5vw,64px)] leading-[1.0] uppercase"
                 >
-                  50+ tools.
+                  30+ tools.
                   <br />
                   <span className="text-[#FFD84D]">Six categories.</span>
                   <br />
@@ -210,7 +210,7 @@ export default function AiToolkitFunnelContent() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14"
             >
               {[
-                { stat: '50+', label: 'AI tools curated' },
+                { stat: '30+', label: 'AI tools curated' },
                 { stat: '6', label: 'Categories of work' },
                 { stat: 'Q', label: 'Updated quarterly' },
                 { stat: '$0', label: 'To get started' },

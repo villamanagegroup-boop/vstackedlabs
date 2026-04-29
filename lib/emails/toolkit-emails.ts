@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const FROM = 'Stackd Studio <hello@stackdstudiosai.com>'
+const FROM = 'Stackd Studios AI <chanel@stackdstudiosai.com>'
 const SITE_URL =
   process.env.NEXT_PUBLIC_TOOLKIT_BASE_URL ??
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -92,10 +92,10 @@ function renderEmail({
           <!-- Footer -->
           <tr>
             <td style="padding:24px 8px 8px;">
-              <p style="margin:0 0 6px;font-size:12px;color:#888580;">© 2026 Stackd Studio · A Hicks Virtual Solutions Company</p>
+              <p style="margin:0 0 6px;font-size:12px;color:#888580;">© 2026 Stackd Studios AI · A Hicks Virtual Solutions Company</p>
               <p style="margin:0;font-size:12px;color:#888580;">
                 You received this because you requested The Small Business AI Toolkit.
-                <a href="${SITE_URL}" style="color:#F5C518;text-decoration:none;">Visit Stackd Studio</a>.
+                <a href="${SITE_URL}" style="color:#F5C518;text-decoration:none;">Visit Stackd Studios AI</a>.
               </p>
             </td>
           </tr>

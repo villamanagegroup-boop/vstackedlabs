@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'The Small Business AI Toolkit — Free Resource',
   description:
-    '50+ free and low-cost AI tools for small businesses, organized by use case. Updated quarterly. Yours forever.',
+    '30+ free and low-cost AI tools for small businesses, organized by use case. Updated quarterly. Yours forever.',
   robots: {
     index: true,
     follow: true,

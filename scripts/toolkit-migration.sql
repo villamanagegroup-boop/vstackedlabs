@@ -1,5 +1,5 @@
 -- =====================================================================
--- Stackd Studio — The Small Business AI Toolkit (free lead magnet)
+-- Stackd Studios AI — The Small Business AI Toolkit (free lead magnet)
 -- Run this once in the Supabase SQL editor.
 -- =====================================================================
 

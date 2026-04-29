@@ -298,7 +298,7 @@ const CATEGORIES: Category[] = [
       {
         name: 'Leena AI',
         blurb:
-          "Internal HR helpdesk that answers employee questions about benefits, PTO, and policies 24/7. Cuts HR ticket volume meaningfully in companies with 50+ employees.",
+          "Internal HR helpdesk that answers employee questions about benefits, PTO, and policies 24/7. Cuts HR ticket volume meaningfully in companies with 30+ employees.",
         pricing: 'paid',
         url: 'https://leena.ai',
       },
@@ -387,7 +387,7 @@ export default function ToolkitContent({ firstName }: { firstName?: string }) {
                   fontWeight: 500,
                 }}
               >
-                50+ tools organized by use case. Updated quarterly. Your link always reflects the
+                30+ tools organized by use case. Updated quarterly. Your link always reflects the
                 latest version — bookmark it once and you&apos;re set.
               </p>
               <div

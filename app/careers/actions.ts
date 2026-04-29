@@ -17,7 +17,7 @@ export async function submitApplication(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: 'Stackd Studios <noreply@stackdstudiosai.com>',
+      from: 'Stackd Studios AI <chanel@stackdstudiosai.com>',
       to: 'Chanel@stackdstudiosai.com',
       replyTo: email,
       subject: `New Application: ${role} — ${name}`,

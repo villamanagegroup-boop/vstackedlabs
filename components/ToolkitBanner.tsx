@@ -35,7 +35,7 @@ export default function ToolkitBanner({
                 Get the AI toolkit, free.
               </h3>
               <p className="text-[#0C0C0C] text-base md:text-lg leading-relaxed max-w-xl">
-                50+ tools curated for small business. One email, permanent
+                30+ tools curated for small business. One email, permanent
                 access, quarterly updates.
               </p>
             </div>
@@ -70,7 +70,7 @@ export default function ToolkitBanner({
                 The AI toolkit for <span className="text-[#FFD84D]">small business.</span>
               </h3>
               <p className="text-white/75 text-base md:text-lg leading-relaxed max-w-xl">
-                50+ tools curated, ranked, and updated quarterly. Yours free —
+                30+ tools curated, ranked, and updated quarterly. Yours free —
                 permanent access link.
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function ToolkitBanner({
               Free AI toolkit, built for owners.
             </h3>
             <p className="text-[#0C0C0C] text-base md:text-lg leading-relaxed max-w-xl font-medium">
-              50+ tools organized by use case. Permanent access link. Updated
+              30+ tools organized by use case. Permanent access link. Updated
               quarterly. We pick what works.
             </p>
           </div>

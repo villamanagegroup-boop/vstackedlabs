@@ -82,7 +82,7 @@ export async function sendAccessEmail({
 </html>`
 
   const { error } = await resend.emails.send({
-    from: 'Stackd Studios AI <noreply@stackdstudiosai.com>',
+    from: 'Stackd Studios AI <chanel@stackdstudiosai.com>',
     to,
     subject: `Your access link is ready — ${product_name}`,
     html,

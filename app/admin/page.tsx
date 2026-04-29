@@ -80,7 +80,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@stackdstudios.com"
+                placeholder="chanel@stackdstudiosai.com"
                 className="w-full bg-[#F6F4EF] border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] focus:outline-none focus:ring-2 focus:ring-[#0C0C0C] text-sm min-h-[44px]"
               />
             </div>

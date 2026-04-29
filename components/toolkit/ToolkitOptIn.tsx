@@ -104,7 +104,7 @@ export default function ToolkitOptIn() {
                 </h1>
 
                 <p className="text-[#0C0C0C] text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-medium">
-                  50+ free and low-cost AI tools, organized by what you actually
+                  30+ free and low-cost AI tools, organized by what you actually
                   need to get done. <strong>Updated quarterly. Yours forever.</strong>
                 </p>
 
@@ -335,7 +335,7 @@ function SuccessCard({
       </p>
       <p className="text-[#3F3F3F] text-xs mt-4">
         Didn&apos;t see it? Check spam — and add{' '}
-        <strong>hello@stackdstudiosai.com</strong> to your contacts.
+        <strong>chanel@stackdstudiosai.com</strong> to your contacts.
       </p>
     </div>
   )

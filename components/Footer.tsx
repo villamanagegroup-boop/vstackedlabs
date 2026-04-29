@@ -35,9 +35,9 @@ const footerColumns = [
   {
     heading: 'Connect',
     links: [
-      { label: 'Twitter / X', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'TikTok', href: '#' },
+      { label: 'Instagram', href: 'https://www.instagram.com/stackdstudiosai' },
+      { label: 'TikTok', href: 'https://www.tiktok.com/@stackdstudiosai' },
+      { label: 'X', href: 'https://x.com/stackdstudiosai' },
     ],
   },
 ]
@@ -83,16 +83,22 @@ export default function Footer() {
                 {col.heading}
               </h3>
               <ul className="flex flex-col gap-3" role="list">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-[#9CA3AF] hover:text-[#FFD84D] text-sm transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const isExternal = link.href.startsWith('http')
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-[#9CA3AF] hover:text-[#FFD84D] text-sm transition-colors duration-200"
+                        {...(isExternal
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}

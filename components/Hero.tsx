@@ -216,7 +216,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="text-[#FFD84D] text-xs font-mono">→</span>
-                  <span className="text-[#FFD84D] text-xs font-mono">USA · stackdstudios.com</span>
+                  <span className="text-[#FFD84D] text-xs font-mono">USA · stackdstudiosai.com</span>
                 </div>
               </div>
             </div>

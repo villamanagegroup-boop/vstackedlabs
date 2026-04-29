@@ -396,11 +396,11 @@ export default function ServicesContent() {
                   The AI toolkit for <span className="text-[#FFD84D]">small business.</span>
                 </h3>
                 <p className="text-white/75 text-base md:text-lg leading-relaxed mb-5 flex-grow">
-                  50+ tools curated, ranked, and updated quarterly. Yours free —
+                  30+ tools curated, ranked, and updated quarterly. Yours free —
                   permanent access link, no credit card.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['50+ tools', '6 categories', 'Updated quarterly', 'Free'].map((tag) => (
+                  {['30+ tools', '6 categories', 'Updated quarterly', 'Free'].map((tag) => (
                     <span
                       key={tag}
                       className="bg-white/10 border border-white/15 text-white text-xs px-3 py-1 rounded-full"

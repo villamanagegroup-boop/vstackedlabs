@@ -18,7 +18,7 @@ export async function submitAffiliateApplication(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: 'Stackd Studios <noreply@stackdstudiosai.com>',
+      from: 'Stackd Studios AI <chanel@stackdstudiosai.com>',
       to: 'Chanel@stackdstudiosai.com',
       replyTo: email,
       subject: `Affiliate Application — ${name}`,
