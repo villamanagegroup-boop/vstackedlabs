@@ -81,17 +81,37 @@ export default function AboutPage() {
                   Chanel founded Stackd Studios AI with a clear mission: give business owners and founders access to the same AI-powered infrastructure that big companies take for granted — without the enterprise price tag or the bloat.
                 </p>
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
-                  With a background in product development, systems design, and AI implementation, Chanel leads every project with a bias toward clarity, craft, and results.
+                  With a background in product development, systems design, and AI implementation, she leads every project with a bias toward clarity, craft, and results — the same way she runs her own businesses.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-[#FFD84D] font-semibold text-sm w-fit hover:gap-3 transition-all duration-200"
-                >
-                  Get in Touch
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Link>
+                <p className="text-[#9CA3AF] text-lg leading-relaxed">
+                  Her clinical background — three psychology degrees and QMHP supervision credentials — informs how Stackd builds for behavioral health, education, and family services. Outside Stackd, she owns and operates Capital Core Dance Studio in Midlothian, VA; runs ELC, a nanny and household placement firm; and built FieldOS, a multi-tenant operations platform for field service businesses.
+                </p>
+                <p className="text-[#9CA3AF] text-lg leading-relaxed">
+                  Stackd Studios AI is part of Hicks Virtual Solutions LLC, the portfolio company she founded to build and operate ventures, tools, and client systems firsthand. Every system Stackd ships has been pressure-tested in a live business first — usually one of her own.
+                </p>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-3 items-center pt-2">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-[#FFD84D] font-semibold text-sm hover:gap-3 transition-all duration-200"
+                  >
+                    Get in Touch
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Link>
+                  <a
+                    href="https://chanel.stackdstudiosai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#EC4899] hover:text-[#F472B6] font-semibold text-sm hover:gap-3 transition-all duration-200"
+                  >
+                    Meet Chanel · chanel.stackdstudiosai.com
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
