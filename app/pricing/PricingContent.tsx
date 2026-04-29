@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { useCart } from '@/components/CartContext'
+import ToolkitBanner from '@/components/ToolkitBanner'
 
 const tiers = [
   {
@@ -354,6 +355,8 @@ export default function PricingContent() {
             </Link>
           </div>
         </section>
+
+        <ToolkitBanner variant="dark" />
       </main>
       <Footer />
     </>

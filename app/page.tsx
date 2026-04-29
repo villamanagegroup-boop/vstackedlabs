@@ -25,6 +25,7 @@ import OurWork from '@/components/OurWork'
 import Testimonials from '@/components/Testimonials'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import ToolkitBanner from '@/components/ToolkitBanner'
 
 export default function HomePage() {
   return (
@@ -35,6 +36,7 @@ export default function HomePage() {
         <Stats />
         <TechStack />
         <TracksHome />
+        <ToolkitBanner variant="yellow" />
         <HowItWorks />
         <BusinessBrainTeaser />
         <OurWork />

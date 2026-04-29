@@ -88,7 +88,7 @@ export default function Navbar({ darkHero = false, yellowHero = false }: { darkH
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8" role="list">
+          <ul className="hidden md:flex items-center gap-7" role="list">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -99,6 +99,20 @@ export default function Navbar({ darkHero = false, yellowHero = false }: { darkH
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/ai-toolkit"
+                className={`text-sm font-bold inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-200 ${
+                  isDark
+                    ? 'bg-[#FFD84D] text-[#0C0C0C] hover:bg-white'
+                    : 'bg-[#FFD84D] text-[#0C0C0C] hover:bg-white border border-[#0C0C0C]'
+                }`}
+                aria-label="Get the free AI toolkit"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" aria-hidden="true" />
+                Free Toolkit
+              </Link>
+            </li>
           </ul>
 
           {/* Cart icon */}
@@ -192,6 +206,14 @@ export default function Navbar({ darkHero = false, yellowHero = false }: { darkH
             ))}
           </ul>
           <div className="mt-6 mb-4 flex flex-col gap-3">
+            <Link
+              href="/ai-toolkit"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] text-base font-bold px-8 py-4 rounded-xl transition-all duration-200 w-full min-h-[44px] border-2 border-[#0C0C0C]"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0C0C0C]" aria-hidden="true" />
+              Get the Free AI Toolkit
+            </Link>
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}

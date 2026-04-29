@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/pricing`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/business-brain`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/store`,          lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${base}/ai-toolkit`,     lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/free/toolkit`,   lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/about`,          lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/careers`,        lastModified: now, changeFrequency: 'weekly',  priority: 0.6 },
     { url: `${base}/privacy`,        lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },

@@ -20,6 +20,7 @@ const groups = [
       { label: 'Industries', href: '/industries' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Store', href: '/store' },
+      { label: 'Free AI Toolkit', href: '/ai-toolkit' },
     ],
   },
   {

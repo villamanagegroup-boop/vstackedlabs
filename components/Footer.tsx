@@ -11,6 +11,7 @@ const footerColumns = [
       { label: 'Pricing', href: '/pricing' },
       { label: 'Careers', href: '/careers' },
       { label: 'Store', href: '/store' },
+      { label: 'Free AI Toolkit', href: '/ai-toolkit' },
       { label: 'Contact', href: '/contact' },
     ],
   },

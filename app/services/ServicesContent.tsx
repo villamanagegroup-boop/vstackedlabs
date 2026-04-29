@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import ToolkitBanner from '@/components/ToolkitBanner'
 
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -401,6 +402,8 @@ export default function ServicesContent() {
             </div>
           </div>
         </section>
+
+        <ToolkitBanner variant="cream" />
 
         {/* ── Bottom CTA ──────────────────────────────────────────────────── */}
         <section className="py-20 bg-[#0C0C0C]">
