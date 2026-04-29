@@ -1,6 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 type Status =
   | { kind: 'idle' }
@@ -18,7 +21,6 @@ export default function ToolkitOptIn() {
 
   const isLoading = status.kind === 'loading'
   const showSuccess = status.kind === 'created' || status.kind === 'existing'
-  const isDev = process.env.NODE_ENV !== 'production'
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -72,229 +74,186 @@ export default function ToolkitOptIn() {
   }
 
   return (
-    <main
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '64px 20px',
-      }}
-    >
-      <div style={{ maxWidth: 720, width: '100%' }}>
-        {/* Badge */}
-        <div
-          style={{
-            display: 'inline-block',
-            fontFamily: 'var(--font-dm-sans), sans-serif',
-            fontSize: 12,
-            fontWeight: 500,
-            color: '#F5C518',
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            background: 'rgba(245, 197, 24, 0.08)',
-            border: '1px solid rgba(245, 197, 24, 0.25)',
-            padding: '6px 12px',
-            borderRadius: 999,
-            marginBottom: 28,
-          }}
-        >
-          Free Resource · Stackd Studio
-        </div>
-
-        {/* Headline */}
-        <h1
-          style={{
-            fontFamily: 'var(--font-syne), sans-serif',
-            fontWeight: 800,
-            fontSize: 'clamp(40px, 6vw, 72px)',
-            lineHeight: 1.02,
-            letterSpacing: '-0.02em',
-            margin: '0 0 20px',
-            color: '#F5F0E8',
-          }}
-        >
-          The small business AI toolkit
-        </h1>
-
-        {/* Subhead */}
-        <p
-          style={{
-            fontSize: 18,
-            lineHeight: 1.6,
-            color: '#F5F0E8',
-            opacity: 0.78,
-            margin: '0 0 36px',
-            maxWidth: 600,
-          }}
-        >
-          50+ free and low-cost AI tools, organized by what you actually need to get done.
-          Updated quarterly. Yours forever.
-        </p>
-
-        {/* Trust bullets */}
-        <ul
-          style={{
-            listStyle: 'none',
-            padding: 0,
-            margin: '0 0 40px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 12,
-          }}
-        >
-          {[
-            'Organized by use case — not alphabetical noise',
-            'Free and low-cost tools only',
-            'Permanent access link — updates land automatically',
-          ].map((bullet) => (
-            <li
-              key={bullet}
-              style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: 12,
-                fontSize: 15,
-                color: '#F5F0E8',
-                lineHeight: 1.5,
-              }}
-            >
-              <CheckIcon />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Form / success */}
-        {showSuccess ? (
-          <SuccessCard message={status.message} variant={status.kind} />
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            aria-label="AI Toolkit opt-in"
+    <>
+      <Navbar yellowHero />
+      <main>
+        {/* Hero / form */}
+        <section className="relative pt-32 pb-20 md:pb-28 bg-[#FFD84D] overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="absolute -top-32 -right-40 w-[640px] h-[640px] rounded-full pointer-events-none"
             style={{
-              background: '#111111',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-              borderRadius: 12,
-              padding: 24,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
+              background: 'radial-gradient(circle, rgba(12,12,12,0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
             }}
-          >
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr',
-                gap: 12,
-              }}
-            >
-              <Field
-                id="first_name"
-                name="first_name"
-                label="First name"
-                placeholder="Jane"
-                value={firstName}
-                onChange={setFirstName}
-                autoComplete="given-name"
-                required
-              />
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                label="Email address"
-                placeholder="jane@company.com"
-                value={email}
-                onChange={setEmail}
-                autoComplete="email"
-                required
-              />
+          />
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+              {/* Left — copy */}
+              <div>
+                <div className="inline-flex items-center gap-2 bg-[#0C0C0C] text-[#FFD84D] text-[11px] font-semibold uppercase tracking-[0.16em] px-3 py-1.5 rounded-full mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFD84D]" aria-hidden="true" />
+                  Free Resource · Stackd Studios AI
+                </div>
+
+                <h1 className="text-[clamp(40px,6.5vw,84px)] text-[#0C0C0C] leading-[0.95] mb-5 uppercase">
+                  The small business
+                  <br />
+                  AI toolkit.
+                </h1>
+
+                <p className="text-[#0C0C0C] text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-medium">
+                  50+ free and low-cost AI tools, organized by what you actually
+                  need to get done. <strong>Updated quarterly. Yours forever.</strong>
+                </p>
+
+                {/* Trust bullets */}
+                <ul className="flex flex-col gap-3 mb-8" role="list">
+                  {[
+                    'Organized by use case — not alphabetical noise',
+                    'Free and low-cost tools only',
+                    'Permanent access link — updates land automatically',
+                  ].map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-start gap-3 text-[#0C0C0C] text-base font-medium"
+                    >
+                      <CheckPill />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right — form */}
+              <div>
+                {showSuccess ? (
+                  <SuccessCard message={status.message} variant={status.kind as 'created' | 'existing'} />
+                ) : (
+                  <form
+                    onSubmit={handleSubmit}
+                    noValidate
+                    aria-label="AI Toolkit opt-in"
+                    className="bg-white border-2 border-[#0C0C0C] rounded-2xl p-7 md:p-8 flex flex-col gap-4 shadow-[0_8px_0_rgba(12,12,12,0.18)]"
+                  >
+                    <div className="flex items-center gap-3 mb-1">
+                      <Image
+                        src="/stackd-toolkit-logo.png"
+                        alt=""
+                        width={48}
+                        height={48}
+                        className="shrink-0"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <p className="text-[#0C0C0C] text-xs font-semibold uppercase tracking-[0.14em] mb-0.5">
+                          Get your free access
+                        </p>
+                        <p className="text-2xl text-[#0C0C0C] font-[family-name:var(--font-anton)] uppercase leading-tight">
+                          Send me the toolkit
+                        </p>
+                      </div>
+                    </div>
+
+                    <Field
+                      id="first_name"
+                      name="first_name"
+                      label="First name"
+                      placeholder="Jane"
+                      value={firstName}
+                      onChange={setFirstName}
+                      autoComplete="given-name"
+                      required
+                    />
+                    <Field
+                      id="email"
+                      name="email"
+                      type="email"
+                      label="Email address"
+                      placeholder="jane@company.com"
+                      value={email}
+                      onChange={setEmail}
+                      autoComplete="email"
+                      required
+                    />
+
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="mt-2 inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] hover:text-[#0C0C0C] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-7 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.01] min-h-[48px] border-2 border-[#0C0C0C]"
+                    >
+                      {isLoading ? 'Sending…' : 'Send me the toolkit →'}
+                    </button>
+
+                    {status.kind === 'error' && (
+                      <p
+                        role="alert"
+                        className="text-[#B91C1C] text-sm font-medium m-0"
+                      >
+                        {status.message}
+                      </p>
+                    )}
+
+                    <p className="text-[#3F3F3F] text-xs text-center mt-1 leading-relaxed">
+                      No spam. One welcome email plus quarterly updates. Unsubscribe anytime.
+                    </p>
+                  </form>
+                )}
+              </div>
             </div>
+          </div>
+        </section>
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              style={{
-                marginTop: 6,
-                background: '#F5C518',
-                color: '#0A0A0A',
-                border: 'none',
-                borderRadius: 8,
-                padding: '14px 18px',
-                fontFamily: 'var(--font-dm-sans), sans-serif',
-                fontSize: 15,
-                fontWeight: 700,
-                cursor: isLoading ? 'not-allowed' : 'pointer',
-                opacity: isLoading ? 0.7 : 1,
-                transition: 'transform 0.15s ease, opacity 0.15s ease',
-              }}
-              onMouseDown={(e) => {
-                if (!isLoading) e.currentTarget.style.transform = 'scale(0.98)'
-              }}
-              onMouseUp={(e) => {
-                e.currentTarget.style.transform = 'scale(1)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)'
-              }}
-            >
-              {isLoading ? 'Sending…' : 'Send me the toolkit →'}
-            </button>
-
-            {status.kind === 'error' && (
-              <p
-                role="alert"
-                style={{
-                  margin: 0,
-                  fontSize: 13,
-                  color: '#FF8A8A',
-                }}
-              >
-                {status.message}
-              </p>
-            )}
-
-            <p
-              style={{
-                margin: '6px 0 0',
-                fontSize: 12,
-                color: '#888580',
-                lineHeight: 1.5,
-              }}
-            >
-              No spam. One welcome email plus quarterly toolkit updates. Unsubscribe anytime.
+        {/* Reassurance / what you get — cream */}
+        <section className="bg-[#F6F4EF] py-16 md:py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-[#0C0C0C] text-xs font-semibold uppercase tracking-[0.16em] mb-4">
+              // What lands in your inbox
             </p>
-          </form>
-        )}
+            <h2 className="text-[clamp(28px,4vw,48px)] text-[#0C0C0C] uppercase leading-[1.05] mb-10">
+              One email. <span className="text-[#888580]">One permanent link.</span>
+              <br />
+              Quarterly updates after that.
+            </h2>
 
-        {isDev && (
-          <a
-            href="/free/toolkit/access?preview=1"
-            style={{
-              marginTop: 24,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              fontSize: 12,
-              fontFamily: 'var(--font-dm-sans), sans-serif',
-              fontWeight: 500,
-              color: '#F5C518',
-              textDecoration: 'none',
-              border: '1px dashed rgba(245, 197, 24, 0.4)',
-              borderRadius: 6,
-              padding: '8px 12px',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-            }}
-          >
-            <span aria-hidden="true">⚙</span>
-            Dev · Preview toolkit (no email)
-          </a>
-        )}
-      </div>
-    </main>
+            <div className="grid md:grid-cols-3 gap-5 text-left">
+              {[
+                {
+                  step: '01',
+                  title: 'Welcome email',
+                  body: "Lands in seconds with your unique access link.",
+                },
+                {
+                  step: '02',
+                  title: 'Bookmark the link',
+                  body: 'It never expires — every visit shows the latest toolkit.',
+                },
+                {
+                  step: '03',
+                  title: 'Quarterly refresh',
+                  body: 'New tools added, weak ones removed. Your link reflects it instantly.',
+                },
+              ].map((s) => (
+                <div
+                  key={s.step}
+                  className="bg-white border border-[#E2DED8] rounded-2xl p-6 relative"
+                >
+                  <div className="absolute -top-4 -left-2 bg-[#FFD84D] text-[#0C0C0C] font-[family-name:var(--font-anton)] uppercase text-xl px-3 py-1 rounded-md border border-[#0C0C0C]">
+                    {s.step}
+                  </div>
+                  <h3 className="text-xl text-[#0C0C0C] mt-3 mb-2 uppercase leading-tight">
+                    {s.title}
+                  </h3>
+                  <p className="text-[#3F3F3F] text-sm leading-relaxed">{s.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   )
 }
 
@@ -319,21 +278,11 @@ function Field({
   required?: boolean
   autoComplete?: string
 }) {
-  const [focused, setFocused] = useState(false)
   return (
     <div>
       <label
         htmlFor={id}
-        style={{
-          display: 'block',
-          fontFamily: 'var(--font-dm-sans), sans-serif',
-          fontSize: 12,
-          fontWeight: 500,
-          color: '#888580',
-          textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          marginBottom: 8,
-        }}
+        className="block text-[11px] font-semibold text-[#0C0C0C] uppercase tracking-[0.12em] mb-2"
       >
         {label}
       </label>
@@ -346,21 +295,7 @@ function Field({
         value={value}
         autoComplete={autoComplete}
         onChange={(e) => onChange(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        style={{
-          width: '100%',
-          background: '#1A1A1A',
-          color: '#F5F0E8',
-          border: focused ? '2px solid #F5C518' : '1px solid rgba(255,255,255,0.08)',
-          borderRadius: 8,
-          padding: focused ? '11px 13px' : '12px 14px',
-          fontFamily: 'var(--font-dm-sans), sans-serif',
-          fontSize: 15,
-          outline: 'none',
-          transition: 'border 0.15s ease',
-          boxSizing: 'border-box',
-        }}
+        className="w-full bg-[#F6F4EF] border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] placeholder:text-[#888580] text-base outline-none focus:border-[#0C0C0C] focus:bg-white transition-colors min-h-[48px]"
       />
     </div>
   )
@@ -377,69 +312,45 @@ function SuccessCard({
     <div
       role="status"
       aria-live="polite"
-      style={{
-        background: '#111111',
-        border: '1px solid rgba(245, 197, 24, 0.25)',
-        borderRadius: 12,
-        padding: 28,
-      }}
+      className="bg-white border-2 border-[#0C0C0C] rounded-2xl p-7 md:p-8 shadow-[0_8px_0_rgba(12,12,12,0.18)]"
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-        <div
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: 999,
-            background: 'rgba(78, 204, 127, 0.15)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 12.5L10 17.5L19 7.5" stroke="#4ECC7F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <div className="flex items-center gap-3 mb-3">
+        <div className="w-12 h-12 rounded-full bg-[#FFD84D] border border-[#0C0C0C] flex items-center justify-center shrink-0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 12.5L10 17.5L19 7.5"
+              stroke="#0C0C0C"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
-        <h2
-          style={{
-            margin: 0,
-            fontFamily: 'var(--font-syne), sans-serif',
-            fontSize: 22,
-            fontWeight: 700,
-            color: '#F5F0E8',
-            lineHeight: 1.2,
-          }}
-        >
-          {variant === 'existing' ? 'Welcome back.' : 'You’re in.'}
+        <h2 className="text-3xl text-[#0C0C0C] uppercase font-[family-name:var(--font-anton)] leading-tight">
+          {variant === 'existing' ? 'Welcome back' : "You're in"}
         </h2>
       </div>
-      <p style={{ margin: 0, fontSize: 15, color: '#F5F0E8', opacity: 0.85, lineHeight: 1.6 }}>
+      <p className="text-[#0C0C0C] text-base md:text-lg leading-relaxed">
         {message}
+      </p>
+      <p className="text-[#3F3F3F] text-xs mt-4">
+        Didn&apos;t see it? Check spam — and add{' '}
+        <strong>hello@stackdstudiosai.com</strong> to your contacts.
       </p>
     </div>
   )
 }
 
-function CheckIcon() {
+function CheckPill() {
   return (
     <span
       aria-hidden="true"
-      style={{
-        flexShrink: 0,
-        width: 20,
-        height: 20,
-        borderRadius: 999,
-        background: 'rgba(245, 197, 24, 0.12)',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 2,
-      }}
+      className="inline-flex w-6 h-6 rounded-full bg-[#0C0C0C] items-center justify-center shrink-0 mt-0.5"
     >
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
         <path
           d="M5 12.5L10 17.5L19 7.5"
-          stroke="#F5C518"
+          stroke="#FFD84D"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
