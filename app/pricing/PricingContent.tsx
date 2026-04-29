@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { useCart } from '@/components/CartContext'
-import ToolkitBanner from '@/components/ToolkitBanner'
 
 const tiers = [
   {
@@ -251,23 +250,79 @@ export default function PricingContent() {
           </div>
         </section>
 
-        {/* Self-Serve / Digital Products */}
-        <section className="py-16 bg-[#F6F4EF]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border border-[#E2DED8] rounded-2xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
-              <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-2">Self-Serve</p>
-                <h3 className="text-2xl text-[#0C0C0C] leading-tight mb-2">Want to start without a call?</h3>
-                <p className="text-[#888580] text-sm leading-relaxed max-w-2xl">
-                  Grab an instant-download starter pack, template, course, or Claude skill — no booking, no scoping, just download and go.
+        {/* Other ways to start (Self-Serve + Free Resource) */}
+        <section className="bg-[#F6F4EF] py-20 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-[#0C0C0C]/60 text-[10px] font-bold uppercase tracking-[0.15em] mb-3">
+                // Other ways to start
+              </p>
+              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight">
+                Not ready for a custom build?
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              {/* Self-Serve card */}
+              <div className="bg-[#0C0C0C] rounded-2xl p-8 md:p-10 flex flex-col text-white">
+                <p className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.16em] mb-3">
+                  // Self-Serve
                 </p>
+                <h3 className="text-[clamp(26px,3.6vw,40px)] uppercase leading-[1.0] mb-3">
+                  Skip the call. Grab a <span className="text-[#FFD84D]">starter pack.</span>
+                </h3>
+                <p className="text-white/75 text-base md:text-lg leading-relaxed mb-5 flex-grow">
+                  Instant-download digital products built by Stackd Studios — starter
+                  packs, templates, courses, and Claude skills. Self-serve, no scoping
+                  required.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Starter Packs', 'Templates', 'Courses', 'Claude Skills'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-white/10 border border-white/15 text-white text-xs px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href="/store"
+                  className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-white text-[#0C0C0C] font-bold px-7 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[48px] self-start"
+                >
+                  Browse the Store →
+                </Link>
               </div>
-              <Link
-                href="/store"
-                className="inline-flex items-center justify-center bg-[#0C0C0C] hover:bg-[#FFD84D] text-white hover:text-[#0C0C0C] font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] whitespace-nowrap"
-              >
-                Browse the Store
-              </Link>
+
+              {/* Free Resource card */}
+              <div className="bg-[#0C0C0C] rounded-2xl p-8 md:p-10 flex flex-col text-white">
+                <p className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.16em] mb-3">
+                  // Free Resource
+                </p>
+                <h3 className="text-[clamp(26px,3.6vw,40px)] uppercase leading-[1.0] mb-3">
+                  The AI toolkit for <span className="text-[#FFD84D]">small business.</span>
+                </h3>
+                <p className="text-white/75 text-base md:text-lg leading-relaxed mb-5 flex-grow">
+                  50+ tools curated, ranked, and updated quarterly. Yours free —
+                  permanent access link, no credit card.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['50+ tools', '6 categories', 'Updated quarterly', 'Free'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-white/10 border border-white/15 text-white text-xs px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href="/ai-toolkit"
+                  className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-white text-[#0C0C0C] font-bold px-7 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[48px] self-start"
+                >
+                  Get the toolkit →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -356,7 +411,6 @@ export default function PricingContent() {
           </div>
         </section>
 
-        <ToolkitBanner variant="dark" />
       </main>
       <Footer />
     </>

@@ -263,6 +263,51 @@ export default function StoreContent() {
           </div>
         </section>
 
+        {/* Free Resource — AI Toolkit */}
+        <section className="bg-[#F6F4EF] py-20 md:py-24 border-t border-[#E2DED8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-[#0C0C0C]/60 text-[10px] font-bold uppercase tracking-[0.15em] mb-3">
+                // Free Resource
+              </p>
+              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight">
+                Or grab the free AI toolkit.
+              </h2>
+            </div>
+
+            <div className="bg-[#0C0C0C] rounded-2xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center text-white">
+              <div>
+                <p className="text-[#FFD84D] text-xs font-semibold uppercase tracking-[0.16em] mb-3">
+                  // Free Resource
+                </p>
+                <h3 className="text-[clamp(26px,3.6vw,40px)] uppercase leading-[1.0] mb-3">
+                  The AI toolkit for <span className="text-[#FFD84D]">small business.</span>
+                </h3>
+                <p className="text-white/75 text-base md:text-lg leading-relaxed mb-4 max-w-2xl">
+                  50+ tools curated, ranked, and updated quarterly. Yours free —
+                  permanent access link, no credit card.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['50+ tools', '6 categories', 'Updated quarterly', 'Free'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-white/10 border border-white/15 text-white text-xs px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/ai-toolkit"
+                className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-white text-[#0C0C0C] font-bold px-7 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[48px] whitespace-nowrap"
+              >
+                Get the toolkit →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <CartBar />
         <StoreSignup />
       </main>

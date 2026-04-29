@@ -72,30 +72,64 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
 
-            {/* Left — Contact info */}
-            <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5 self-start">
+            {/* Left — Intro + Contact info */}
+            <div className="flex flex-col gap-6 self-start">
               <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
-                <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#FFD84D] font-medium hover:underline">
-                  Chanel@stackdstudiosai.com
-                </a>
-              </div>
-
-              <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
-                <p className="text-white font-medium">Remote — United States</p>
-              </div>
-
-              <div>
-                <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Response Time</p>
-                <p className="text-white font-medium">Within 24 hours</p>
-              </div>
-
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
-                  &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
+                <h2 className="text-2xl text-[#0C0C0C] mb-2">Talk to us directly</h2>
+                <p className="text-[#888580] text-sm mb-8 leading-relaxed">
+                  Whether you have a budget figured out or just an early idea, we&apos;ll
+                  meet you where you are. No sales pressure, no scripted intake — just
+                  a real conversation about what you&apos;re trying to build.
                 </p>
-                <p className="text-[#FFD84D] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
+              </div>
+
+              <ul className="flex flex-col gap-3" role="list">
+                {[
+                  { title: 'No-pitch discovery calls', body: 'Free 20-minute conversation. We listen, you decide.' },
+                  { title: 'Replies within 24 hours', body: 'Always. Even on weekends, you usually hear back the same day.' },
+                  { title: 'Honest about fit', body: "If we're not the right team for what you're building, we'll tell you that and point you somewhere better." },
+                ].map((item) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex w-6 h-6 rounded-full bg-[#FFD84D] items-center justify-center shrink-0 mt-0.5"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12.5L10 17.5L19 7.5" stroke="#0C0C0C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="text-[#0C0C0C] text-sm font-semibold leading-tight mb-0.5">{item.title}</p>
+                      <p className="text-[#888580] text-sm leading-relaxed">{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-[#0C0C0C] rounded-2xl p-7 flex flex-col gap-5">
+                <div>
+                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Email</p>
+                  <a href="mailto:Chanel@stackdstudiosai.com" className="text-[#FFD84D] font-medium hover:underline">
+                    Chanel@stackdstudiosai.com
+                  </a>
+                </div>
+
+                <div>
+                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
+                  <p className="text-white font-medium">Remote — United States</p>
+                </div>
+
+                <div>
+                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Response Time</p>
+                  <p className="text-white font-medium">Within 24 hours</p>
+                </div>
+
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-[#9CA3AF] text-sm leading-relaxed italic">
+                    &ldquo;Every project starts with a conversation. No pressure, no commitment — just clarity.&rdquo;
+                  </p>
+                  <p className="text-[#FFD84D] text-sm font-medium mt-2">— Chanel Gray, Founder &amp; CEO</p>
+                </div>
               </div>
             </div>
 
