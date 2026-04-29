@@ -84,7 +84,7 @@ export default function AboutPage() {
                   With a background in product development, systems design, and AI implementation, she leads every project with a bias toward clarity, craft, and results — the same way she runs her own businesses.
                 </p>
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
-                  Her clinical background — three psychology degrees and QMHP supervision credentials — informs how Stackd builds for behavioral health, education, and family services. Outside Stackd, she owns and operates Capital Core Dance Studio in Midlothian, VA; runs ELC, a nanny and household placement firm; and built FieldOS, a multi-tenant operations platform for field service businesses.
+                  Her clinical background — three psychology degrees and QMHP supervision credentials — informs how Stackd builds for behavioral health, education, and family services. Outside Stackd, she built FieldOS, a multi-tenant operations platform for field service businesses.
                 </p>
                 <p className="text-[#9CA3AF] text-lg leading-relaxed">
                   Stackd Studios AI is part of Hicks Virtual Solutions LLC, the portfolio company she founded to build and operate ventures, tools, and client systems firsthand. Every system Stackd ships has been pressure-tested in a live business first — usually one of her own.
