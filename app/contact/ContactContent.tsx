@@ -115,8 +115,8 @@ export default function ContactContent() {
                 </div>
 
                 <div>
-                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Location</p>
-                  <p className="text-white font-medium">Remote — United States</p>
+                  <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.1em] mb-1">Based In</p>
+                  <p className="text-white font-medium">United States</p>
                 </div>
 
                 <div>

@@ -923,7 +923,7 @@ export default function ToolkitContent({ firstName }: { firstName?: string }) {
                 </a>
               </span>
               <span>
-                <strong>Service area:</strong> Remote · United States
+                <strong>Based in:</strong> United States
               </span>
             </div>
           </section>

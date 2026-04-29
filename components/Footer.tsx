@@ -67,7 +67,7 @@ export default function Footer() {
               A Hicks Virtual Solutions company
             </p>
             <p className="text-[#4B4F55] text-xs mt-1">
-              United States
+              Based in the United States
             </p>
             <a
               href="mailto:Chanel@stackdstudiosai.com"
