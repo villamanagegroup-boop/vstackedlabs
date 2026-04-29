@@ -5,6 +5,9 @@ import { createServerClient } from '@/lib/supabase-server'
 import { sendAccessEmail } from '@/lib/emails/send-access-email'
 import { PRICE_ID_MAP } from '@/lib/products'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')
@@ -13,14 +16,18 @@ export async function POST(request: NextRequest) {
     return new Response('Missing stripe-signature header', { status: 400 })
   }
 
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+  if (!webhookSecret) {
+    console.error('Stripe webhook: STRIPE_WEBHOOK_SECRET is not configured')
+    return new Response('Server misconfigured: missing STRIPE_WEBHOOK_SECRET', {
+      status: 500,
+    })
+  }
+
   let event: ReturnType<typeof stripe.webhooks.constructEvent>
 
   try {
-    event = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
-    )
+    event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
     console.error('Stripe signature verification failed:', message)

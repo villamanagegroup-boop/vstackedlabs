@@ -14,6 +14,7 @@ interface Tool {
 interface Category {
   id: string
   name: string
+  builderNote: string
   tools: Tool[]
 }
 
@@ -82,6 +83,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'marketing',
     name: 'Marketing & Content',
+    builderNote:
+      "We've wired these into agency and DTC stacks. The unlock: 6+ hours/week back from content production.",
     tools: [
       {
         name: 'ChatGPT',
@@ -130,6 +133,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'admin',
     name: 'Admin & Operations',
+    builderNote:
+      "We've wired these for service businesses and solo operators. The unlock: client onboarding that runs without you in the loop.",
     tools: [
       {
         name: 'Notion AI',
@@ -178,6 +183,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'support',
     name: 'Customer Service',
+    builderNote:
+      "We've wired these for ecom shops and SaaS teams. The unlock: tickets resolved while you sleep, escalations that find you only when they should.",
     tools: [
       {
         name: 'Tidio',
@@ -212,6 +219,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'sales',
     name: 'Sales & Outreach',
+    builderNote:
+      "We've wired these for B2B services and consultants. The unlock: outreach that books meetings instead of bouncing.",
     tools: [
       {
         name: 'Apollo.io',
@@ -253,6 +262,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'finance',
     name: 'Finance & Reporting',
+    builderNote:
+      "We've wired these for solo operators and small teams. The unlock: P&L on demand, not at month-end.",
     tools: [
       {
         name: 'Fathom',
@@ -287,6 +298,8 @@ const CATEGORIES: Category[] = [
   {
     id: 'hr',
     name: 'Hiring & HR',
+    builderNote:
+      "We've wired these for fast-growth shops and high-volume hirers. The unlock: a candidate pipeline that doesn't stall when you're heads-down.",
     tools: [
       {
         name: 'Manatal',
@@ -459,10 +472,24 @@ export default function ToolkitContent({ firstName }: { firstName?: string }) {
                     height: 3,
                     width: 64,
                     background: '#0C0C0C',
-                    margin: '0 0 24px',
+                    margin: '0 0 14px',
                   }}
                   aria-hidden="true"
                 />
+                <p
+                  style={{
+                    margin: '0 0 22px',
+                    maxWidth: 760,
+                    fontSize: 14,
+                    lineHeight: 1.55,
+                    color: '#3F3F3F',
+                    fontStyle: 'italic',
+                    borderLeft: '2px solid #FFD84D',
+                    paddingLeft: 12,
+                  }}
+                >
+                  {cat.builderNote}
+                </p>
 
                 <div
                   style={{

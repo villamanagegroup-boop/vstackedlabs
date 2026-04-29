@@ -6,217 +6,514 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 
-
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const trackA = [
+interface PricingTier {
+  name: string
+  price: string
+  bestFor: string
+  bullets: string[]
+  cta: string
+  emphasized?: boolean
+}
+
+interface ServiceArticle {
+  slug: string
+  tierLabel: string
+  price: string
+  timing: string
+  name: string
+  outcomeHeadline: React.ReactNode
+  body: string[]
+  walkAway: string[]
+  bridge: string
+  cta: string
+  /** Optional CTA target — defaults to /contact. */
+  ctaHref?: string
+  theme: 'cream' | 'yellow' | 'white' | 'dark'
+  /** When set, renders a side-by-side pricing tier block inside the section. */
+  tiers?: PricingTier[]
+  /** Optional callout shown above the tier block — e.g. demand/supply framing. */
+  demandNote?: string
+}
+
+const services: ServiceArticle[] = [
   {
-    tier: 'T1',
+    slug: 'audit',
+    tierLabel: 'Start Here',
+    price: '$397',
+    timing: '48-hour turnaround',
+    name: 'AI Clarity Audit',
+    outcomeHeadline: (
+      <>
+        Stop guessing what AI can do.
+        <br className="hidden sm:block" /> Get a 48-hour roadmap built around your business.
+      </>
+    ),
+    body: [
+      "Most owners we talk to know AI can help. They just don't know where to start, what's worth their time, or what's hype. Three articles deep on Twitter and they're more confused than when they started.",
+      "The Clarity Audit fixes that in two days. You fill out a structured intake about your operations — how leads come in, where the bottlenecks are, what your team spends too much time on. We come back with 3–5 specific AI opportunities, each one tagged to a real tool, a real workflow, and an honest read on how much it would actually move the needle. Then we walk you through it on a 30-minute call.",
+      "When you're done, you have a written roadmap and a clear answer to 'what should we build first?' No 80-page deck. No upsell pressure. Just clarity.",
+    ],
+    walkAway: [
+      'Async business operations intake form',
+      '3–5 prioritized AI opportunities, each tagged to a tool + workflow',
+      'Written roadmap delivered within 48 hours',
+      '30-minute walkthrough call',
+    ],
+    bridge:
+      "If you decide Quick Setup makes sense, your $397 audit fee gets credited toward that build.",
+    cta: 'Book the Audit',
+    theme: 'cream',
+  },
+  {
+    slug: 'quick-setup',
+    tierLabel: 'Most Popular',
+    price: '$997',
+    timing: '5 business days',
     name: 'AI Quick Setup',
-    turnaround: '3–5 business days',
-    bestFor: 'Business owners taking their first AI step',
-    description: 'A custom Claude prompt library built around your business, one automated workflow, and an orientation call so you know exactly how to use everything.',
-    includes: [
+    outcomeHeadline: (
+      <>
+        Pick one workflow. We build it.
+        <br className="hidden sm:block" /> You&apos;re using it Monday.
+      </>
+    ),
+    body: [
+      "You don't need an AI strategy. You need one specific thing that's eating your week to stop eating your week. Email triage. CRM follow-up. New-client onboarding. Repurposing one Loom into a month of content. Whatever the thing is — we build it, test it, and hand it off.",
+      "Quick Setup is one workflow, scoped tight, shipped in five business days. We custom-build the prompts (10–15 of them), wire up the automations, and walk you through it on a one-hour orientation call. You'll have it working before the next time the bottleneck would have hit.",
+      "Most clients land here right after their Audit, with the workflow already named. Some come in cold with a clear ask. Either works.",
+    ],
+    walkAway: [
+      'One complete workflow build (your pick — email triage, CRM follow-up, onboarding, repurposing, or similar)',
       'Custom Claude prompt library (10–15 prompts)',
-      '1 workflow automation build',
-      '1-hour orientation & training call',
-      'Google Drive folder delivery',
-      'Email support for 7 days post-delivery',
+      '1-hour orientation and training call',
+      '7 days of post-delivery email support',
     ],
+    bridge:
+      "Most Quick Setup clients either book another for a second workflow, or roll into the Growth Retainer to keep the system expanding.",
     cta: 'Get Started',
+    theme: 'yellow',
   },
   {
-    tier: 'T2',
-    name: 'AI Business Build-Out',
-    turnaround: '1–2 weeks',
-    bestFor: 'Business owners ready for a full AI system',
-    description: 'A comprehensive AI system built across three workflows, with two strategy calls to align everything with how you actually run your business.',
-    includes: [
-      'Full AI system across 3 workflows',
-      '2 strategy calls included',
-      'Prompt library (20–30 prompts)',
-      'SOP documentation for each workflow',
-      'Google Drive folder delivery',
-      '14-day email support',
+    slug: 'team-training',
+    tierLabel: 'For Teams',
+    price: 'From $2,500',
+    timing: 'Scheduled within 2 weeks',
+    name: 'Claude Team Training',
+    outcomeHeadline: (
+      <>
+        Your team. Trained.
+        <br className="hidden sm:block" /> Actually using AI by Friday.
+      </>
+    ),
+    body: [
+      "Most teams have someone who's tried Claude. Maybe they're even good at it. But the rest of the team is still copy-pasting between tabs, missing what AI could do for their specific role, or quietly afraid to try.",
+      "Team Training fixes that in one half-day. We run a pre-session intake to learn your team, your tools, and your real workflows — then we run a live session built around them. Not generic AI training. Your CRM, your tone, your content, your problems. Everyone leaves with custom prompt templates they'll use the same week.",
+      "This is the offer most companies need most and book the latest. Demand is far ahead of supply right now — most providers charge $10K–$40K for the same scope, which is why we cap the number of sessions per quarter and offer two formats: Standard (from $2,500) for teams up to 10, and Enterprise (from $5,000) for larger teams or full-day deep-dives. Full breakdown lives on the pricing page.",
     ],
-    cta: 'Get Started',
+    walkAway: [
+      'Pre-session intake to customize for your team and workflows',
+      'Live virtual training session — 3 hours (Standard) or half-day (Enterprise)',
+      'Custom workflow templates and prompt library',
+      'Full session recording + resource folder delivered after',
+    ],
+    bridge:
+      "Training clients get first access to the Growth Retainer — which keeps the prompt library and workflows expanding every month.",
+    cta: 'See pricing options',
+    ctaHref: '/pricing#team-training',
+    theme: 'white',
   },
   {
-    tier: 'T3',
-    name: 'Micro Tool Build',
-    turnaround: '1 week',
-    bestFor: 'Businesses that need a specific tool built fast',
-    description: 'A single-function app or tool — built, tested, deployed, and in your hands in one week. Calculators, intake forms, dashboards, booking tools, and more.',
-    includes: [
-      'Single-function tool or app',
-      'Mobile responsive design',
-      'Built & deployed in 1 week',
-      'Full source code handoff',
-      'Documentation & how-to guide',
+    slug: 'retainer',
+    tierLabel: 'Ongoing',
+    price: '$1,500/mo',
+    timing: 'Monthly',
+    name: 'AI Growth Retainer',
+    outcomeHeadline: (
+      <>
+        Keep building.
+        <br className="hidden sm:block" /> We don&apos;t let it go stale.
+      </>
+    ),
+    body: [
+      "AI moves fast. The prompt that worked in February is mid by July. The tool you wired in is now a feature inside something newer. Your team learns one workflow and is hungry for the next.",
+      "The Growth Retainer is the answer to 'what now?' Every month: one new workflow or tool build, a fresh batch of prompts (5–10 of them), a strategy call to figure out what's next, and priority access for anything urgent. It's how the system stays sharp instead of becoming a museum exhibit.",
+      "We give Quick Setup and Team Training clients first access. If you're already in the flow, this keeps it moving.",
     ],
-    cta: 'Get Started',
-  },
-  {
-    tier: 'T4',
-    name: 'AI Retainer',
-    turnaround: 'Ongoing',
-    bestFor: 'Business owners who want AI support every month',
-    description: "Your AI system doesn't stop growing — and neither does your support. Every month includes new prompts, workflow updates, team training, and async help.",
-    includes: [
-      'Monthly workflow updates & optimization',
-      'New prompt development (5–10/month)',
-      'Team training sessions (async)',
-      'Priority async support via email',
-      'Monthly check-in call (optional)',
+    walkAway: [
+      '1 new workflow or tool build per month',
+      'Prompt library updates (5–10 new prompts)',
+      'Monthly strategy call',
+      'Priority async support',
+      'First access for Quick Setup and Training clients',
     ],
-    cta: 'Get Started',
-    popular: true,
+    bridge:
+      "Retainer clients are the ones we go deepest with. Most stay 6+ months.",
+    cta: 'Apply for Retainer',
+    theme: 'dark',
   },
 ]
 
-const trackB = [
-  {
-    tier: 'T5',
-    name: 'Strategy Session',
-    turnaround: 'Book within 48 hours',
-    bestFor: 'Founders with an idea ready to be stress-tested',
-    description: 'A 90-minute working session to architect your idea. Walk away with a clear business model, validated concept, and a product roadmap you can act on immediately.',
-    includes: [
-      '90-minute idea architecture session',
-      'Business model document (delivered after)',
-      'Concept validation framework',
-      'Competitive landscape analysis',
-      'Product roadmap (phases 1–3)',
-    ],
-    cta: 'Book a Session',
-  },
-  {
-    tier: 'T6',
-    name: 'Founder Build Sprint',
-    turnaround: '2 weeks',
-    bestFor: 'Founders ready to go from idea to working MVP',
-    description: 'Two weeks. Idea to working product. We handle the business model, brand direction, product build, and launch — you show up ready to sell.',
-    includes: [
-      'Business model & positioning',
-      'Brand direction & visual identity',
-      'Working MVP build & deployment',
-      'Launch strategy & messaging',
-      '2-week check-in calls (3x)',
-      '30-day post-launch support',
-    ],
-    cta: 'Start a Sprint',
-    popular: true,
-  },
-  {
-    tier: 'T7',
-    name: 'Venture Launch Package',
-    turnaround: '4–8 weeks',
-    bestFor: 'Business owners & founders ready to go all-in',
-    description: 'The full venture build — strategy, complete tech stack, brand, product, and launch execution. This is for clients who are serious about building something that lasts.',
-    includes: [
-      'Full strategy & business model development',
-      'Complete tech stack architecture & build',
-      'Brand identity (logo, colors, type, copy)',
-      'Product development & deployment',
-      'Launch strategy & execution',
-      'Post-launch retainer (1 month included)',
-    ],
-    cta: "Let's Talk",
-    both: true,
-  },
-]
+// ─── Theme tokens per article ────────────────────────────────────────────────
 
-const addOns = [
-  { name: 'Extra Workflow', description: 'Add an additional AI workflow to any T1 or T2 package.' },
-  { name: 'Rush Delivery', description: 'Priority build for Micro Tool builds — delivered in 3 business days.' },
-  { name: 'Team Training Session', description: 'A 60-minute live training session for your team on AI tools & workflows.' },
-  { name: 'Brand Identity Add-On', description: 'Logo, color palette, and typography system for any Founder track build.' },
-  { name: 'SEO Setup', description: 'Technical SEO, metadata, and sitemap setup for any web build.' },
-  { name: 'Monthly Analytics Report', description: 'Monthly traffic and performance report for any deployed product.' },
-]
+interface ThemeTokens {
+  bg: string
+  textPrimary: string
+  textSecondary: string
+  textMuted: string
+  eyebrow: string
+  rule: string
+  asideBg: string
+  asideBorder: string
+  bridgeBorder: string
+  ctaPrimary: string
+  ctaPrimaryHover: string
+  badge: string
+  badgeText: string
+  badgeShown: boolean
+}
 
-// ─── Service Row ──────────────────────────────────────────────────────────────
+function getTheme(theme: ServiceArticle['theme']): ThemeTokens {
+  switch (theme) {
+    case 'cream':
+      return {
+        bg: 'bg-[#F6F4EF]',
+        textPrimary: 'text-[#0C0C0C]',
+        textSecondary: 'text-[#3F3F3F]',
+        textMuted: 'text-[#888580]',
+        eyebrow: 'text-[#888580]',
+        rule: 'bg-[#0C0C0C]',
+        asideBg: 'bg-white',
+        asideBorder: 'border-[#E2DED8]',
+        bridgeBorder: 'border-[#FFD84D]',
+        ctaPrimary: 'bg-[#0C0C0C] text-white hover:bg-[#FFD84D] hover:text-[#0C0C0C]',
+        ctaPrimaryHover: '',
+        badge: 'bg-[#0C0C0C]',
+        badgeText: 'text-[#FFD84D]',
+        badgeShown: false,
+      }
+    case 'yellow':
+      return {
+        bg: 'bg-[#FFD84D]',
+        textPrimary: 'text-[#0C0C0C]',
+        textSecondary: 'text-[#0C0C0C]/85',
+        textMuted: 'text-[#0C0C0C]/55',
+        eyebrow: 'text-[#0C0C0C]/65',
+        rule: 'bg-[#0C0C0C]',
+        asideBg: 'bg-[#0C0C0C]',
+        asideBorder: 'border-[#0C0C0C]',
+        bridgeBorder: 'border-[#0C0C0C]',
+        ctaPrimary: 'bg-[#0C0C0C] text-[#FFD84D] hover:bg-white hover:text-[#0C0C0C]',
+        ctaPrimaryHover: '',
+        badge: 'bg-[#0C0C0C]',
+        badgeText: 'text-[#FFD84D]',
+        badgeShown: true,
+      }
+    case 'white':
+      return {
+        bg: 'bg-white',
+        textPrimary: 'text-[#0C0C0C]',
+        textSecondary: 'text-[#3F3F3F]',
+        textMuted: 'text-[#888580]',
+        eyebrow: 'text-[#888580]',
+        rule: 'bg-[#0C0C0C]',
+        asideBg: 'bg-[#F6F4EF]',
+        asideBorder: 'border-[#E2DED8]',
+        bridgeBorder: 'border-[#0C0C0C]',
+        ctaPrimary: 'bg-[#0C0C0C] text-white hover:bg-[#FFD84D] hover:text-[#0C0C0C]',
+        ctaPrimaryHover: '',
+        badge: 'bg-[#0C0C0C]',
+        badgeText: 'text-[#FFD84D]',
+        badgeShown: false,
+      }
+    case 'dark':
+      return {
+        bg: 'bg-[#0C0C0C]',
+        textPrimary: 'text-white',
+        textSecondary: 'text-white/80',
+        textMuted: 'text-white/55',
+        eyebrow: 'text-[#FFD84D]',
+        rule: 'bg-[#FFD84D]',
+        asideBg: 'bg-white/[0.04]',
+        asideBorder: 'border-white/10',
+        bridgeBorder: 'border-[#FFD84D]',
+        ctaPrimary: 'bg-[#FFD84D] text-[#0C0C0C] hover:bg-white hover:text-[#0C0C0C]',
+        ctaPrimaryHover: '',
+        badge: 'bg-[#FFD84D]',
+        badgeText: 'text-[#0C0C0C]',
+        badgeShown: false,
+      }
+  }
+}
 
-function ServiceRow({
-  svc,
-  accent,
-  accentLight,
-  i,
-}: {
-  svc: typeof trackA[0] & { popular?: boolean; both?: boolean }
-  accent: string
-  accentLight: string
-  i: number
-}) {
+// ─── Article Section ─────────────────────────────────────────────────────────
+
+function ArticleSection({ svc, index }: { svc: ServiceArticle; index: number }) {
+  const t = getTheme(svc.theme)
+  const isLast = index === services.length - 1
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: i * 0.08 }}
-      className="grid md:grid-cols-[100px_1fr] lg:grid-cols-[120px_1fr_220px] gap-x-8 gap-y-4 py-10 border-t border-[#E2DED8]"
+    <section
+      id={svc.slug}
+      className={`${t.bg} ${t.textPrimary} relative scroll-mt-24`}
+      aria-labelledby={`${svc.slug}-heading`}
     >
-      {/* Left: tier + badges */}
-      <div className="flex flex-col gap-3 pt-1">
-        <span
-          className="text-[11px] font-bold uppercase tracking-[0.15em]"
-          style={{ color: accent }}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6 }}
         >
-          {svc.tier}
-        </span>
-        {svc.popular && (
-          <span
-            className="text-[10px] font-bold uppercase tracking-[0.1em] px-2 py-0.5 rounded-full w-fit"
-            style={{ background: accent, color: '#fff' }}
+          {/* Article number + eyebrow */}
+          <div className="flex items-center gap-4 mb-8">
+            <span className={`text-[clamp(36px,5vw,56px)] font-[family-name:var(--font-anton)] leading-none ${t.textPrimary} opacity-25`}>
+              0{index + 1}
+            </span>
+            <div className={`flex-1 h-px ${t.rule} opacity-30`} aria-hidden="true" />
+            {t.badgeShown && (
+              <span className={`${t.badge} ${t.badgeText} text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1.5 rounded-full whitespace-nowrap`}>
+                Most Popular
+              </span>
+            )}
+          </div>
+
+          <p className={`${t.eyebrow} text-xs font-bold uppercase tracking-[0.16em] mb-5`}>
+            {svc.tierLabel} <span className="opacity-50 mx-1">·</span> {svc.price}{' '}
+            <span className="opacity-50 mx-1">·</span> {svc.timing}
+          </p>
+
+          <h2
+            id={`${svc.slug}-heading`}
+            className={`text-[clamp(34px,5.5vw,68px)] uppercase font-[family-name:var(--font-anton)] leading-[0.96] tracking-[0.005em] mb-3 ${t.textPrimary}`}
           >
-            Popular
-          </span>
-        )}
-        {svc.both && (
-          <span className="text-[10px] font-bold uppercase tracking-[0.1em] px-2 py-0.5 rounded-full w-fit bg-[#FFD84D] text-[#0C0C0C]">
-            Both Tracks
-          </span>
-        )}
-        <span className="text-[#888580] text-xs leading-snug">{svc.turnaround}</span>
-      </div>
+            {svc.outcomeHeadline}
+          </h2>
+          <p className={`${t.textMuted} text-base md:text-lg`}>{svc.name}</p>
 
-      {/* Middle: content */}
-      <div className="border-l-[3px] pl-8" style={{ borderColor: accent }}>
-        <h3 className="text-[clamp(20px,2.2vw,28px)] text-[#0C0C0C] leading-tight mb-1">
-          {svc.name}
-        </h3>
-        <p className="text-xs font-medium mb-4" style={{ color: accent }}>
-          Best for: {svc.bestFor}
-        </p>
-        <p className="text-[#888580] text-sm leading-relaxed mb-6 max-w-xl">
-          {svc.description}
-        </p>
-        <ul className="flex flex-col gap-2" role="list">
-          {svc.includes.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm text-[#0C0C0C]">
-              <span className="w-4 h-px mt-[9px] shrink-0" style={{ background: accent }} aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
+          <div className={`h-[3px] w-16 ${t.rule} my-10`} aria-hidden="true" />
 
-      {/* Right: CTA */}
-      <div className="flex flex-col justify-start items-start lg:items-end lg:col-start-3 pt-1">
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 font-semibold text-sm transition-all duration-200 hover:gap-3"
-          style={{ color: accent }}
-        >
-          {svc.cta}
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </Link>
+          {/* Body + Aside */}
+          <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-10 lg:gap-14">
+            {/* Article body */}
+            <div className="flex flex-col gap-5">
+              {svc.body.map((para, i) => (
+                <p
+                  key={i}
+                  className={`${t.textSecondary} text-[17px] md:text-[18px] leading-[1.65]`}
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+
+            {/* Aside — what you walk away with */}
+            <aside
+              className={`${t.asideBg} ${t.asideBorder} border rounded-2xl p-6 md:p-7 self-start`}
+            >
+              <p
+                className={`${
+                  svc.theme === 'yellow' ? 'text-[#FFD84D]' : svc.theme === 'dark' ? 'text-[#FFD84D]' : 'text-[#888580]'
+                } text-[10px] font-bold uppercase tracking-[0.16em] mb-4`}
+              >
+                Walk away with
+              </p>
+              <ul
+                className={`flex flex-col gap-3 ${
+                  svc.theme === 'yellow' || svc.theme === 'dark' ? 'text-white/90' : 'text-[#0C0C0C]'
+                }`}
+                role="list"
+              >
+                {svc.walkAway.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed">
+                    <span
+                      className={`w-4 h-px shrink-0 mt-[10px] ${
+                        svc.theme === 'yellow' ? 'bg-[#FFD84D]' : svc.theme === 'dark' ? 'bg-[#FFD84D]' : 'bg-[#0C0C0C]'
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+
+          {/* Pricing tiers (when present) */}
+          {svc.tiers && svc.tiers.length > 0 && (
+            <div className="mt-14">
+              <div className="flex items-baseline justify-between mb-5 flex-wrap gap-3">
+                <p className={`${t.eyebrow} text-[10px] font-bold uppercase tracking-[0.16em]`}>
+                  Pricing options
+                </p>
+                {svc.demandNote && (
+                  <p className={`${t.textMuted} text-sm italic max-w-md`}>
+                    {svc.demandNote}
+                  </p>
+                )}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-5">
+                {svc.tiers.map((tier) => {
+                  const isEmphasized = tier.emphasized === true
+                  return (
+                    <div
+                      key={tier.name}
+                      className={`relative rounded-2xl p-6 md:p-7 flex flex-col gap-4 border ${
+                        isEmphasized
+                          ? svc.theme === 'dark'
+                            ? 'bg-[#FFD84D] border-[#FFD84D]'
+                            : 'bg-[#0C0C0C] border-[#0C0C0C]'
+                          : `${t.asideBg} ${t.asideBorder}`
+                      }`}
+                    >
+                      {isEmphasized && (
+                        <div className="absolute -top-3 left-6">
+                          <span
+                            className={`text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full whitespace-nowrap ${
+                              svc.theme === 'dark'
+                                ? 'bg-[#0C0C0C] text-[#FFD84D]'
+                                : 'bg-[#FFD84D] text-[#0C0C0C]'
+                            }`}
+                          >
+                            For larger teams
+                          </span>
+                        </div>
+                      )}
+
+                      <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                        <h3
+                          className={`text-xl font-semibold ${
+                            isEmphasized
+                              ? svc.theme === 'dark'
+                                ? 'text-[#0C0C0C]'
+                                : 'text-white'
+                              : 'text-[#0C0C0C]'
+                          }`}
+                        >
+                          {tier.name}
+                        </h3>
+                        <span
+                          className={`text-2xl font-bold font-[family-name:var(--font-instrument-sans)] ${
+                            isEmphasized
+                              ? svc.theme === 'dark'
+                                ? 'text-[#0C0C0C]'
+                                : 'text-[#FFD84D]'
+                              : 'text-[#0C0C0C]'
+                          }`}
+                        >
+                          {tier.price}
+                        </span>
+                      </div>
+
+                      <p
+                        className={`text-sm leading-relaxed ${
+                          isEmphasized
+                            ? svc.theme === 'dark'
+                              ? 'text-[#0C0C0C]/75'
+                              : 'text-white/75'
+                            : 'text-[#888580]'
+                        }`}
+                      >
+                        {tier.bestFor}
+                      </p>
+
+                      <ul className="flex flex-col gap-2 flex-1" role="list">
+                        {tier.bullets.map((b) => (
+                          <li
+                            key={b}
+                            className={`flex items-start gap-2.5 text-sm leading-relaxed ${
+                              isEmphasized
+                                ? svc.theme === 'dark'
+                                  ? 'text-[#0C0C0C]'
+                                  : 'text-white/90'
+                                : 'text-[#0C0C0C]'
+                            }`}
+                          >
+                            <span
+                              className={`w-3.5 h-px shrink-0 mt-[10px] ${
+                                isEmphasized
+                                  ? svc.theme === 'dark'
+                                    ? 'bg-[#0C0C0C]'
+                                    : 'bg-[#FFD84D]'
+                                  : 'bg-[#0C0C0C]'
+                              }`}
+                              aria-hidden="true"
+                            />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Link
+                        href="/contact"
+                        className={`inline-flex items-center justify-center font-bold px-5 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-[1.02] min-h-[44px] mt-2 ${
+                          isEmphasized
+                            ? svc.theme === 'dark'
+                              ? 'bg-[#0C0C0C] text-[#FFD84D] hover:bg-white hover:text-[#0C0C0C]'
+                              : 'bg-[#FFD84D] text-[#0C0C0C] hover:bg-white hover:text-[#0C0C0C]'
+                            : 'bg-[#0C0C0C] text-white hover:bg-[#FFD84D] hover:text-[#0C0C0C]'
+                        }`}
+                      >
+                        {tier.cta} →
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Bridge */}
+          <p
+            className={`mt-12 pl-5 border-l-[3px] ${t.bridgeBorder} ${t.textSecondary} text-[15px] md:text-base italic leading-relaxed max-w-3xl`}
+          >
+            {svc.bridge}
+          </p>
+
+          {/* CTA */}
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <Link
+              href={svc.ctaHref ?? '/contact'}
+              className={`inline-flex items-center justify-center font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[48px] ${t.ctaPrimary}`}
+            >
+              {svc.cta} →
+            </Link>
+            {!isLast && (
+              <a
+                href={`#${services[index + 1].slug}`}
+                className={`${t.textMuted} text-sm font-medium hover:${t.textPrimary} inline-flex items-center gap-2 transition-colors`}
+                aria-label={`Continue to ${services[index + 1].name}`}
+              >
+                Next: {services[index + 1].name}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            )}
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
+    </section>
   )
 }
+
+// ─── Add-Ons ─────────────────────────────────────────────────────────────────
+
+const addOns = [
+  {
+    name: 'Rush Delivery',
+    description: 'Priority build, delivered in 3 business days.',
+  },
+  {
+    name: 'Extra Workflow',
+    description: 'Add a second workflow to any Quick Setup.',
+  },
+  {
+    name: 'Brand Identity Add-On',
+    description: 'Logo, color palette, and typography system.',
+  },
+]
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -225,108 +522,112 @@ export default function ServicesContent() {
     <>
       <Navbar yellowHero />
       <main>
-
-        {/* ── Hero ────────────────────────────────────────────────────────── */}
-        <section className="bg-[#FFD84D] pt-32 pb-20">
+        {/* Hero */}
+        <section className="bg-[#FFD84D] pt-32 pb-20 md:pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-16">
-              <div className="max-w-2xl">
-                <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-4">Services</p>
-                <h1 className="text-[clamp(40px,6vw,72px)] text-[#0C0C0C] leading-[1.0] mb-5">
-                  Pick your track.<br className="hidden sm:block"/> We&apos;ll build the rest.
-                </h1>
-                <p className="text-[#0C0C0C]/65 text-base sm:text-xl leading-relaxed mb-10">
-                  Two tracks. Every tier is scoped, defined, and built to deliver results — not just deliverables.
+            <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end">
+              <div className="max-w-3xl">
+                <p className="text-[#0C0C0C]/55 text-xs font-semibold uppercase tracking-[0.14em] mb-5">
+                  Services · Four moves, one path
                 </p>
+                <h1 className="text-[clamp(40px,6vw,76px)] text-[#0C0C0C] leading-[0.98] mb-6 uppercase font-[family-name:var(--font-anton)]">
+                  We build the AI layer
+                  <br className="hidden sm:block" /> your business is missing.
+                </h1>
+                <p className="text-[#0C0C0C]/75 text-base sm:text-xl leading-relaxed max-w-2xl mb-6">
+                  Four services. One clear path. No tech overwhelm. Most clients
+                  start with the Audit, ship the first workflow, train the team,
+                  and stay on retainer.
+                </p>
+                {/* Inline service jump links */}
+                <div className="flex flex-wrap gap-x-5 gap-y-3 mt-2 pt-6 border-t border-[#0C0C0C]/15">
+                  {services.map((s, i) => (
+                    <a
+                      key={s.slug}
+                      href={`#${s.slug}`}
+                      className="group inline-flex items-baseline gap-2 text-[#0C0C0C] text-sm font-semibold hover:underline underline-offset-4"
+                    >
+                      <span className="text-[#0C0C0C]/40 font-mono text-xs">0{i + 1}</span>
+                      <span>{s.name}</span>
+                      <span className="text-[#0C0C0C]/40 text-xs font-normal">— {s.price}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
 
               <div
-                className="relative w-[220px] h-[328px] lg:w-[300px] lg:h-[447px] mx-auto lg:mx-0 shrink-0 rounded-3xl overflow-hidden border-2 border-[#0C0C0C]/10 shadow-[0_20px_50px_rgba(12,12,12,0.18)]"
+                className="relative w-[220px] h-[328px] lg:w-[280px] lg:h-[418px] mx-auto lg:mx-0 shrink-0 rounded-3xl overflow-hidden border-2 border-[#0C0C0C]/10 shadow-[0_20px_50px_rgba(12,12,12,0.18)]"
                 aria-hidden="true"
               >
                 <Image
                   src="/stacka-laptop.png"
                   alt=""
                   fill
-                  sizes="(min-width: 1024px) 300px, 220px"
+                  sizes="(min-width: 1024px) 280px, 220px"
                   className="object-cover"
                   priority
                 />
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Track jump links */}
-            <div className="flex flex-wrap gap-8 border-t border-[#0C0C0C]/15 pt-8">
-              <a href="#track-a" className="group flex items-center gap-3">
-                <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1A4A7A]">Track A</span>
-                <span className="text-[#0C0C0C] font-semibold text-lg group-hover:underline underline-offset-4">Business Owners</span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="text-[#1A4A7A] group-hover:translate-x-1 transition-transform">
-                  <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-              <a href="#track-b" className="group flex items-center gap-3">
-                <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#F97316]">Track B</span>
-                <span className="text-[#0C0C0C] font-semibold text-lg group-hover:underline underline-offset-4">Founders</span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="text-[#F97316] group-hover:translate-x-1 transition-transform">
-                  <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
+        {/* Article sections */}
+        {services.map((svc, i) => (
+          <ArticleSection key={svc.slug} svc={svc} index={i} />
+        ))}
+
+        {/* Add-Ons */}
+        <section className="bg-[#F6F4EF] py-20 border-t border-[#E2DED8]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-4"
+            >
+              <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-3">
+                Add-Ons
+              </p>
+              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight mb-2 uppercase font-[family-name:var(--font-anton)]">
+                Extend any service
+              </h2>
+              <p className="text-[#888580] text-base">
+                Available with any of the four services above.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 mt-8">
+              {addOns.map((addon, i) => (
+                <motion.div
+                  key={addon.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
+                  className="flex gap-5 py-7 border-t border-[#0C0C0C]/15 sm:pr-6"
+                >
+                  <span
+                    className="w-4 h-px mt-[11px] shrink-0 bg-[#0C0C0C]/40"
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <h3 className="text-[#0C0C0C] font-normal text-base mb-1">
+                      {addon.name}
+                    </h3>
+                    <p className="text-[#888580] text-sm leading-relaxed">
+                      {addon.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── Track A ─────────────────────────────────────────────────────── */}
-        <section id="track-a" className="bg-[#F6F4EF] py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-4"
-            >
-              <p className="text-[#1A4A7A] text-[10px] font-bold uppercase tracking-[0.15em] mb-3">Track A — Business Owners</p>
-              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight mb-2">
-                AI setup, automation &amp; tools for your business
-              </h2>
-              <p className="text-[#888580] text-lg max-w-2xl">
-                You don&apos;t need to rebuild everything. You need the right layer of AI on top of what you already have.
-              </p>
-            </motion.div>
-
-            {trackA.map((svc, i) => (
-              <ServiceRow key={svc.tier} svc={svc} accent="#1A4A7A" accentLight="#EEF4FB" i={i} />
-            ))}
-          </div>
-        </section>
-
-        {/* ── Track B ─────────────────────────────────────────────────────── */}
-        <section id="track-b" className="bg-[#F6F4EF] py-24 border-t-4 border-[#E2DED8]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-4"
-            >
-              <p className="text-[#F97316] text-[10px] font-bold uppercase tracking-[0.15em] mb-3">Track B — Founders</p>
-              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight mb-2">
-                Strategy, sprints &amp; venture launches
-              </h2>
-              <p className="text-[#888580] text-lg max-w-2xl">
-                From the first idea to the first customer — we help founders build and launch the right way.
-              </p>
-            </motion.div>
-
-            {trackB.map((svc, i) => (
-              <ServiceRow key={svc.tier} svc={svc} accent="#F97316" accentLight="#FFF4ED" i={i} />
-            ))}
-          </div>
-        </section>
-
-        {/* ── Other ways to start (Self-Serve + Free Resource) ───────────── */}
-        <section className="bg-[#F6F4EF] py-20 md:py-24 border-t-4 border-[#E2DED8]">
+        {/* Other ways to start (Self-Serve + Free Resource) */}
+        <section className="bg-[#F6F4EF] py-20 md:py-24 border-t border-[#E2DED8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -338,13 +639,12 @@ export default function ServicesContent() {
               <p className="text-[#0C0C0C]/60 text-[10px] font-bold uppercase tracking-[0.15em] mb-3">
                 // Other ways to start
               </p>
-              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight">
+              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight uppercase font-[family-name:var(--font-anton)]">
                 Not ready for a custom build?
               </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-5">
-              {/* Self-Serve card */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -381,7 +681,6 @@ export default function ServicesContent() {
                 </Link>
               </motion.div>
 
-              {/* Free Resource card */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -420,45 +719,7 @@ export default function ServicesContent() {
           </div>
         </section>
 
-        {/* ── Add-Ons ─────────────────────────────────────────────────────── */}
-        <section className="bg-[#FFD84D] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-4"
-            >
-              <p className="text-[#0C0C0C]/50 text-xs font-semibold uppercase tracking-[0.12em] mb-3">Add-Ons</p>
-              <h2 className="text-[clamp(24px,3.5vw,42px)] text-[#0C0C0C] leading-tight mb-2">
-                Extend any package
-              </h2>
-              <p className="text-[#0C0C0C]/60 text-lg">Available with any Track A or Track B service.</p>
-            </motion.div>
-
-            <div className="grid sm:grid-cols-2 gap-0 mt-8">
-              {addOns.map((addon, i) => (
-                <motion.div
-                  key={addon.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: (i % 2) * 0.06 }}
-                  className="flex gap-6 py-7 border-t border-[#0C0C0C]/15"
-                >
-                  <span className="w-4 h-px mt-[11px] shrink-0 bg-[#0C0C0C]/40" aria-hidden="true" />
-                  <div>
-                    <h3 className="text-[#0C0C0C] font-normal text-base mb-1">{addon.name}</h3>
-                    <p className="text-[#0C0C0C]/55 text-sm leading-relaxed">{addon.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Bottom CTA ──────────────────────────────────────────────────── */}
+        {/* Bottom CTA */}
         <section className="py-20 bg-[#0C0C0C]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -467,22 +728,21 @@ export default function ServicesContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-[clamp(28px,4vw,52px)] text-white leading-[1.1] mb-4">
-                Not sure which tier fits?
+              <h2 className="text-[clamp(28px,4vw,52px)] text-white leading-[1.1] mb-4 uppercase font-[family-name:var(--font-anton)]">
+                Not sure where to start?
               </h2>
-              <p className="text-white/50 text-lg mb-10">
-                Book a free 20-minute call and we&apos;ll figure it out together. No pressure, no pitch.
+              <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                The Audit is always the answer. 48 hours and you&apos;ll know exactly what to build.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-[#FFD84D] hover:bg-[#E8C030] text-[#0C0C0C] font-bold px-10 py-4 rounded-xl text-base transition-all duration-200 hover:scale-[1.02] min-h-[44px]"
               >
-                Book a Free Call
+                Book the Audit — $397 →
               </Link>
             </motion.div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>

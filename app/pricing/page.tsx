@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import PricingContent from './PricingContent'
 
 export const metadata: Metadata = {
-  title: 'AI Development & Automation Pricing',
+  title: 'AI Services Pricing | Stackd Studios AI',
   description:
-    "Transparent pricing for AI automation, custom AI tool builds, and venture launch packages from Stackd Studios AI. No surprises — see exactly what's included.",
+    'Flat, transparent pricing for our four AI services — Clarity Audit, Quick Setup, Team Training, and Growth Retainer. No hidden fees, no surprises.',
   alternates: {
     canonical: 'https://www.stackdstudiosai.com/pricing',
   },
   openGraph: {
-    title: 'AI Development & Automation Pricing',
+    title: 'AI Services Pricing | Stackd Studios AI',
     description:
-      'Clear pricing for AI Quick Setup, Micro Tool Builds, AI Retainers, and Venture Launch packages.',
+      'Flat pricing for the AI Clarity Audit, Quick Setup, Team Training, and Growth Retainer. The price you see is the price we scope to.',
     url: 'https://www.stackdstudiosai.com/pricing',
   },
 }

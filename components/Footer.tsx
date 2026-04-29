@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import FooterToolkitOptIn from './FooterToolkitOptIn'
 
 const footerColumns = [
   {
@@ -16,20 +17,20 @@ const footerColumns = [
     ],
   },
   {
-    heading: 'Track A — Business',
+    heading: 'Services',
     links: [
-      { label: 'AI Quick Setup', href: '/services#track-a' },
-      { label: 'AI Business Build-Out', href: '/services#track-a' },
-      { label: 'Micro Tool Build', href: '/services#track-a' },
-      { label: 'AI Retainer', href: '/services#track-a' },
+      { label: 'AI Clarity Audit — $397', href: '/services#audit' },
+      { label: 'AI Quick Setup — $997', href: '/services#quick-setup' },
+      { label: 'Claude Team Training — From $2,500', href: '/services#team-training' },
+      { label: 'AI Growth Retainer — $1,500/mo', href: '/services#retainer' },
     ],
   },
   {
-    heading: 'Track B — Founders',
+    heading: 'Build With Us',
     links: [
-      { label: 'Strategy Session', href: '/services#track-b' },
-      { label: 'Founder Build Sprint', href: '/services#track-b' },
-      { label: 'Venture Launch Package', href: '/services#track-b' },
+      { label: 'Business Brain', href: '/business-brain' },
+      { label: 'Industries', href: '/industries' },
+      { label: 'Book a Call', href: '/contact' },
     ],
   },
   {
@@ -46,8 +47,13 @@ export default function Footer() {
   return (
     <footer className="bg-[#0C0C0C] text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Email capture */}
+        <div className="pt-12 md:pt-16">
+          <FooterToolkitOptIn />
+        </div>
+
         {/* Top section */}
-        <div className="pt-12 md:pt-16 pb-4 md:pb-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 md:gap-10">
+        <div className="pb-4 md:pb-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 md:gap-10">
           {/* Logo + tagline */}
           <div className="col-span-2 md:col-span-1">
             <Link

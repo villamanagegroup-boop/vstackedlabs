@@ -3,46 +3,57 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const tracks = [
+interface ServicePreview {
+  tierLabel: string
+  name: string
+  price: string
+  timing: string
+  pitch: string
+  popular?: boolean
+}
+
+const previews: ServicePreview[] = [
   {
-    letter: 'A',
-    label: 'Track A',
-    title: 'For Business Owners',
-    accent: '#1A4A7A',
-    description:
-      'Ready to add AI to what you already have? We set up your systems, automate your workflows, and build the tools that let you run like a team of ten.',
-    services: [
-      'AI Quick Setup',
-      'AI Business Build-Out',
-      'Micro Tool Build',
-      'AI Retainer',
-    ],
-    cta: 'See Business Owner Plans',
-    ctaHref: '/services#track-a',
+    tierLabel: 'Start Here',
+    name: 'AI Clarity Audit',
+    price: '$397',
+    timing: '48-hour turnaround',
+    pitch:
+      'The fastest way to know exactly what AI can do for your business — and what to build first.',
   },
   {
-    letter: 'B',
-    label: 'Track B',
-    title: 'For Founders',
-    accent: '#F97316',
-    description:
-      "Have an idea you're ready to build? We help you architect the model, build the product, and launch the venture — from first conversation to first customer.",
-    services: [
-      'Strategy Session',
-      'Founder Build Sprint',
-      'Venture Launch Package',
-    ],
-    cta: 'See Founder Plans',
-    ctaHref: '/services#track-b',
+    tierLabel: 'Most Popular',
+    name: 'AI Quick Setup',
+    price: '$997',
+    timing: '5 business days',
+    pitch:
+      'One AI workflow built, tested, and handed off with a training call so you can use it immediately.',
+    popular: true,
+  },
+  {
+    tierLabel: 'For Teams',
+    name: 'Claude Team Training',
+    price: 'From $2,500',
+    timing: 'Within 2 weeks',
+    pitch:
+      'Your team, trained and using AI — Standard from $2,500 for ≤10, Enterprise from $5,000 for larger teams.',
+  },
+  {
+    tierLabel: 'Ongoing',
+    name: 'AI Growth Retainer',
+    price: '$1,500/mo',
+    timing: 'Monthly',
+    pitch:
+      'A new workflow, prompt updates, a strategy call, and priority support — every month.',
   },
 ]
 
 export default function TracksHome() {
   return (
     <section
-      id="tracks"
+      id="services-preview"
       className="py-24 bg-white"
-      aria-labelledby="tracks-heading"
+      aria-labelledby="services-preview-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -51,101 +62,100 @@ export default function TracksHome() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-14 max-w-3xl"
         >
           <p className="text-[#888580] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
-            Two Ways to Work With Us
+            Services
           </p>
           <h2
-            id="tracks-heading"
-            className="text-[clamp(30px,4.5vw,52px)] text-[#0C0C0C] leading-[1.1]"
+            id="services-preview-heading"
+            className="text-[clamp(30px,4.5vw,52px)] text-[#0C0C0C] leading-[1.05] mb-4"
           >
-            Which track are you on?
+            Four services. One clear path.
           </h2>
+          <p className="text-[#888580] text-lg leading-relaxed">
+            Start with an audit. Build the first workflow. Train your team. Keep going on retainer. No tech overwhelm.
+          </p>
         </motion.div>
 
-        {/* Tracks */}
-        <div className="flex flex-col divide-y divide-[#E2DED8]">
-          {tracks.map((track, i) => (
+        {/* Service preview grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {previews.map((svc, i) => (
             <motion.div
-              key={track.label}
+              key={svc.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="grid md:grid-cols-[80px_1fr_1fr] gap-x-10 gap-y-6 py-12 group"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className={`relative bg-[#F6F4EF] rounded-2xl p-6 flex flex-col gap-4 border ${
+                svc.popular
+                  ? 'border-[#FFD84D] shadow-[0_0_0_3px_#FFD84D33]'
+                  : 'border-[#E2DED8]'
+              }`}
             >
-              {/* Large letter */}
-              <div
-                className="text-[72px] font-black leading-none select-none"
-                style={{ color: track.accent, opacity: 0.15 }}
-                aria-hidden="true"
-              >
-                {track.letter}
-              </div>
+              {svc.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#FFD84D] text-[#0C0C0C] text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full whitespace-nowrap">
+                    Most Popular
+                  </span>
+                </div>
+              )}
 
-              {/* Left: title + description */}
-              <div
-                className="flex flex-col gap-4 border-l-[3px] pl-8"
-                style={{ borderColor: track.accent }}
+              <span
+                className={`text-[10px] font-bold uppercase tracking-[0.15em] ${
+                  svc.popular ? 'text-[#0C0C0C]' : 'text-[#888580]'
+                }`}
               >
-                <span
-                  className="text-[10px] font-bold uppercase tracking-[0.15em]"
-                  style={{ color: track.accent }}
-                >
-                  {track.label}
-                </span>
-                <h3 className="text-[clamp(22px,2.5vw,32px)] text-[#0C0C0C] leading-tight">
-                  {track.title}
+                {svc.tierLabel}
+              </span>
+
+              <div>
+                <h3 className="text-xl text-[#0C0C0C] leading-tight mb-2">
+                  {svc.name}
                 </h3>
-                <p className="text-[#888580] text-base leading-relaxed max-w-md">
-                  {track.description}
-                </p>
-                <Link
-                  href={track.ctaHref}
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 transition-all duration-200 hover:gap-3 w-fit"
-                  style={{ color: track.accent }}
-                >
-                  {track.cta}
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Link>
+                <div className="flex items-baseline gap-2 flex-wrap">
+                  <span className="text-2xl font-bold text-[#0C0C0C] font-[family-name:var(--font-instrument-sans)]">
+                    {svc.price}
+                  </span>
+                  <span className="text-[#888580] text-xs">{svc.timing}</span>
+                </div>
               </div>
 
-              {/* Right: services */}
-              <ul className="flex flex-col gap-3 md:pt-10" role="list">
-                {track.services.map((svc) => (
-                  <li
-                    key={svc}
-                    className="flex items-center gap-3 text-sm text-[#0C0C0C]"
-                  >
-                    <span
-                      className="w-5 h-px shrink-0"
-                      style={{ background: track.accent }}
-                      aria-hidden="true"
-                    />
-                    {svc}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[#3F3F3F] text-sm leading-relaxed flex-1">
+                {svc.pitch}
+              </p>
+
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-[#0C0C0C] font-semibold text-sm hover:gap-3 transition-all duration-200"
+                aria-label={`Learn more about ${svc.name}`}
+              >
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Both tracks note */}
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-4 pt-8 border-t border-[#E2DED8]"
+          className="mt-12 text-center"
         >
-          <p className="text-[#888580] text-sm">
-            The{' '}
-            <span className="text-[#0C0C0C] font-semibold">Venture Launch Package</span>
-            {' '}serves both tracks — for clients ready to go all-in.
-          </p>
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 border-2 border-[#0C0C0C] text-[#0C0C0C] hover:bg-[#0C0C0C] hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02]"
+          >
+            See all services
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
         </motion.div>
       </div>
     </section>

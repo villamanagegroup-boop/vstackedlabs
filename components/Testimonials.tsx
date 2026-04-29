@@ -7,48 +7,36 @@ const testimonials = [
     quote: "Chanel took our messy manual intake process and turned it into a fully automated AI system in less than a week. We went from spending 3 hours a day on admin to about 20 minutes.",
     name: 'Marcus R.',
     role: 'Owner, Residential Services Company',
-    track: 'Track A',
-    trackColor: '#1A4A7A',
     initials: 'MR',
   },
   {
-    quote: "I came in with a rough idea for a SaaS product. After the Strategy Session, I had a full business model, a product roadmap, and actual clarity for the first time. Worth every penny.",
+    quote: "I came in with a rough idea for a SaaS product. After the audit, I had a written roadmap, validated direction, and actual clarity for the first time. Worth every penny.",
     name: 'Tanya P.',
     role: 'Founder, EdTech Startup',
-    track: 'Track B',
-    trackColor: '#F97316',
     initials: 'TP',
   },
   {
-    quote: "The Micro Tool Build changed everything for our team. We had a custom client reporting dashboard live in 6 days. Our clients think we have a full engineering team.",
+    quote: "Stackd built us a custom client reporting dashboard in 6 days. Our clients think we have a full engineering team. The Quick Setup paid for itself the first week.",
     name: 'Jordan K.',
     role: 'Agency Owner, Marketing & Brand',
-    track: 'Track A',
-    trackColor: '#1A4A7A',
     initials: 'JK',
   },
   {
     quote: "We had a broken signup flow that was losing leads every day. Stackd Studios AI rebuilt our entire onboarding in under a week. Conversions went up 40% in the first month. I wish I had done this sooner.",
     name: 'Alicia M.',
     role: 'Owner, Wellness Studio',
-    track: 'Track A',
-    trackColor: '#1A4A7A',
     initials: 'AM',
   },
   {
-    quote: "I needed a co-founder, not just a dev shop. Stackd Studios AI understood the business side as well as the tech side. My SaaS went from a voice memo to a working prototype in three weeks.",
+    quote: "I needed a partner who understood the business side as well as the tech side. Stackd got it. We trained my team on Claude in one afternoon and they're using it every day now.",
     name: 'Devon S.',
     role: 'Founder, B2B Software Startup',
-    track: 'Track B',
-    trackColor: '#F97316',
     initials: 'DS',
   },
   {
     quote: "I came to Stackd Studios AI with a spreadsheet and a prayer. They turned it into a fully automated client management system. My team went from drowning in admin to actually focused on the work that matters.",
     name: 'Priya N.',
     role: 'Owner, Creative Agency',
-    track: 'Track A',
-    trackColor: '#1A4A7A',
     initials: 'PN',
   },
 ]
@@ -100,25 +88,13 @@ export default function Testimonials() {
 
               {/* Attribution */}
               <div className="flex items-center gap-3 pt-2 border-t border-[#E2DED8]">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0"
-                  style={{ background: t.trackColor }}
-                >
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0C0C0C] text-[#FFD84D] text-[10px] font-bold shrink-0">
                   {t.initials}
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[#0C0C0C] text-xs font-semibold truncate">{t.name}</p>
                   <p className="text-[#888580] text-[11px] truncate">{t.role}</p>
                 </div>
-                <span
-                  className="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-full shrink-0"
-                  style={{
-                    background: t.trackColor === '#1A4A7A' ? '#EEF4FB' : '#FFF4ED',
-                    color: t.trackColor,
-                  }}
-                >
-                  {t.track}
-                </span>
               </div>
             </motion.div>
           ))}

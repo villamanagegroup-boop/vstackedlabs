@@ -7,11 +7,14 @@ import Footer from '@/components/Footer'
 import { submitLead } from './actions'
 import { useToast } from '@/components/ToastProvider'
 
-const trackOptions = [
+const serviceOptions = [
   { value: '', label: 'What is this regarding?' },
-  { value: 'Track A — Business Owner', label: 'Track A — Business Owner' },
-  { value: 'Track B — Founder', label: 'Track B — Founder' },
-  { value: 'Both / Not sure', label: 'Both / Not sure yet' },
+  { value: 'AI Clarity Audit ($397)', label: 'AI Clarity Audit — $397' },
+  { value: 'AI Quick Setup ($997)', label: 'AI Quick Setup — $997' },
+  { value: 'Claude Team Training — Standard ($2,500)', label: 'Claude Team Training — Standard ($2,500)' },
+  { value: 'Claude Team Training — Enterprise ($5,000+)', label: 'Claude Team Training — Enterprise ($5,000+)' },
+  { value: 'AI Growth Retainer ($1,500/mo)', label: 'AI Growth Retainer — $1,500/mo' },
+  { value: 'Not sure yet', label: "Not sure yet — help me choose" },
   { value: 'Other', label: 'Other' },
 ]
 
@@ -137,7 +140,7 @@ export default function ContactContent() {
             <div id="send-message">
               <h2 className="text-2xl text-[#0C0C0C] mb-2">Send a Message</h2>
               <p className="text-[#888580] text-sm mb-8">
-                Tell us about your project, your timeline, and which track you&apos;re on. We&apos;ll respond within 24 hours.
+                Tell us about your project, your timeline, and which service you&apos;re interested in. We&apos;ll respond within 24 hours.
               </p>
 
               <form
@@ -178,15 +181,15 @@ export default function ContactContent() {
                 </div>
 
                 <div>
-                  <label htmlFor="track" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
-                    Which track are you on?
+                  <label htmlFor="service" className="block text-sm font-semibold text-[#0C0C0C] mb-2">
+                    Which service are you interested in?
                   </label>
                   <select
-                    id="track"
+                    id="service"
                     name="track"
                     className="w-full bg-white border border-[#E2DED8] rounded-xl px-4 py-3 text-[#0C0C0C] transition-all min-h-[44px] text-sm appearance-none"
                   >
-                    {trackOptions.map((opt) => (
+                    {serviceOptions.map((opt) => (
                       <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
                         {opt.label}
                       </option>

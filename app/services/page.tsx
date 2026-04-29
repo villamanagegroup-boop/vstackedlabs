@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import ServicesContent from './ServicesContent'
 
 export const metadata: Metadata = {
-  title: 'AI Automation Services for Business Owners & Founders',
+  title: 'AI Services for Small Business | Stackd Studios AI',
   description:
-    'From AI Quick Setup to full Venture Launch — explore our AI automation services for small business owners and product founders. Custom tools, workflow automation, AI retainer.',
+    'Four focused AI services for business owners and founders — from a quick audit to full team training. Built to deliver results, not complexity.',
   alternates: {
     canonical: 'https://www.stackdstudiosai.com/services',
   },
   openGraph: {
-    title: 'AI Automation Services for Business Owners & Founders',
+    title: 'AI Services for Small Business | Stackd Studios AI',
     description:
-      'AI workflow automation, custom AI tools, retainer plans, and venture launch packages. Built for business owners and founders.',
+      'Four focused AI services for business owners and founders — from a quick audit to full team training. Built to deliver results, not complexity.',
     url: 'https://www.stackdstudiosai.com/services',
   },
 }
@@ -19,16 +19,41 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'AI Automation Services — Stackd Studios AI',
+  name: 'AI Services — Stackd Studios AI',
   url: 'https://www.stackdstudiosai.com/services',
   itemListElement: [
-    { '@type': 'Service', position: 1, name: 'AI Quick Setup',        description: 'Get AI tools and automations running in your business fast.',              provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 2, name: 'AI Business Build-Out', description: 'Full AI system design and implementation for your business.',             provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 3, name: 'Micro Tool Build',      description: 'Custom AI-powered micro tools built for your specific workflow.',          provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 4, name: 'AI Retainer',           description: 'Ongoing AI support, builds, and optimization on a monthly retainer.',      provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 5, name: 'Strategy Session',      description: 'Deep-dive session to define your AI strategy and product roadmap.',        provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 6, name: 'Founder Build Sprint',  description: 'Rapid build sprint to take your product from idea to working prototype.', provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
-    { '@type': 'Service', position: 7, name: 'Venture Launch Package',description: 'Full venture launch: strategy, build, and go-to-market in one package.',  provider: { '@type': 'Organization', name: 'Stackd Studios AI' } },
+    {
+      '@type': 'Service',
+      position: 1,
+      name: 'AI Clarity Audit',
+      description:
+        'A 48-hour written roadmap of AI opportunities for your business with a 30-minute walkthrough call.',
+      provider: { '@type': 'Organization', name: 'Stackd Studios AI' },
+    },
+    {
+      '@type': 'Service',
+      position: 2,
+      name: 'AI Quick Setup',
+      description:
+        'One specific AI workflow built, tested, and handed off in 5 business days with a training call.',
+      provider: { '@type': 'Organization', name: 'Stackd Studios AI' },
+    },
+    {
+      '@type': 'Service',
+      position: 3,
+      name: 'Claude Team Training',
+      description:
+        'Live virtual Claude training built around your team and workflows. Standard (from $2,500, teams up to 10) or Enterprise (from $5,000, teams of 10+ with role-specific prompt libraries and async coaching follow-up).',
+      provider: { '@type': 'Organization', name: 'Stackd Studios AI' },
+    },
+    {
+      '@type': 'Service',
+      position: 4,
+      name: 'AI Growth Retainer',
+      description:
+        'Monthly AI support: one new workflow, prompt updates, a strategy call, and priority async support.',
+      provider: { '@type': 'Organization', name: 'Stackd Studios AI' },
+    },
   ],
 }
 

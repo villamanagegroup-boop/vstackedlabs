@@ -117,10 +117,10 @@ export default function Hero() {
                 Book a Free Call
               </Link>
               <Link
-                href="/services"
+                href="/free/toolkit"
                 className="inline-flex items-center gap-2 border-2 border-[#0C0C0C] text-[#0C0C0C] hover:bg-[#0C0C0C] hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.02] min-h-[44px] text-base"
               >
-                View Services
+                Get the Free Toolkit
               </Link>
             </motion.div>
 

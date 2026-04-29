@@ -98,14 +98,15 @@ export default function ToolkitOptIn() {
                 </div>
 
                 <h1 className="text-[clamp(40px,6.5vw,84px)] text-[#0C0C0C] leading-[0.95] mb-5 uppercase">
-                  The small business
+                  The AI toolkit we hand
                   <br />
-                  AI toolkit.
+                  every client on day one.
                 </h1>
 
                 <p className="text-[#0C0C0C] text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-medium">
-                  30+ free and low-cost AI tools, organized by what you actually
-                  need to get done. <strong>Updated quarterly. Yours forever.</strong>
+                  30+ tools, organized by the work you actually need to get done.
+                  The same shortlist our paying clients start with — yours free,
+                  <strong> updated quarterly, yours forever.</strong>
                 </p>
 
                 {/* Trust bullets */}

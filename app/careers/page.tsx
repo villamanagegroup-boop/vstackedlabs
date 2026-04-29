@@ -67,10 +67,10 @@ const jobs: Job[] = [
     track: 'Strategy',
     summary: "Stackd Studios AI works with founders to validate, model, and launch new ventures. We're looking for a strategist who can run idea architecture sessions, produce business model documentation, and help founders stress-test their concepts before we build.",
     responsibilities: [
-      'Lead 90-minute Strategy Sessions with Track B clients',
+      'Lead AI Clarity Audits with founder and operator clients',
       'Produce business model documents, roadmaps, and positioning frameworks',
       'Facilitate concept validation — market sizing, competitive analysis, risk mapping',
-      'Collaborate with the team on Founder Build Sprint scoping',
+      'Collaborate with the team on Quick Setup and retainer scoping',
       "Contribute to Stackd Studios AI's internal venture pipeline and IP",
     ],
     requirements: [
@@ -183,7 +183,7 @@ const jobs: Job[] = [
       'Design multi-step Claude workflows for intake, communication, and operations',
       'Document prompt logic in plain language for client handoff',
       'Test and iterate on prompts based on real-world client feedback',
-      'Collaborate with the team on AI system architecture for Track A clients',
+      'Collaborate with the team on AI system architecture for Quick Setup and Retainer clients',
     ],
     requirements: [
       'Deep experience working with Claude or GPT-4 in production contexts',

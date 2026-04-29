@@ -408,9 +408,6 @@ export function MockupSports() {
 
 const homeProjects = [
   {
-    track: 'Track A — Business Owner',
-    trackColor: '#1A4A7A',
-    trackTextColor: '#93C5FD',
     tags: ['Claude API', 'Next.js', 'Automation'],
     title: 'Client Intake Agent',
     description: 'An AI-powered intake system that qualifies leads, matches them to the right service tier, auto-generates proposals, and books discovery calls — 24/7.',
@@ -419,9 +416,6 @@ const homeProjects = [
     objectPosition: 'center',
   },
   {
-    track: 'Track B — Founder',
-    trackColor: '#F97316',
-    trackTextColor: '#FDB975',
     tags: ['Claude API', 'RAG', 'Next.js'],
     title: 'Business Brain App',
     description: 'An AI-powered knowledge app that answers business questions using your own SOPs, reports, and documents — no more digging through folders.',
@@ -430,9 +424,6 @@ const homeProjects = [
     objectPosition: 'center',
   },
   {
-    track: 'Track A — Business Owner',
-    trackColor: '#1A4A7A',
-    trackTextColor: '#93C5FD',
     tags: ['Claude API', 'Next.js', 'AI Audit'],
     title: 'Client Audit Tool',
     description: 'An AI-powered client audit platform that surfaces gaps, scores business health, and generates actionable reports — giving owners clarity in minutes.',
@@ -441,9 +432,6 @@ const homeProjects = [
     objectPosition: 'center',
   },
   {
-    track: 'Track A — Business Owner',
-    trackColor: '#1A4A7A',
-    trackTextColor: '#93C5FD',
     tags: ['Booking', 'Payments', 'Supabase'],
     title: 'Salon Booking System',
     description: 'Online booking with staff scheduling, automated confirmations, rebooking reminders, and a client history dashboard — all branded to the salon.',
@@ -452,9 +440,6 @@ const homeProjects = [
     objectPosition: 'center',
   },
   {
-    track: 'Track A — Business Owner',
-    trackColor: '#1A4A7A',
-    trackTextColor: '#93C5FD',
     tags: ['LMS', 'Stripe', 'Progress Tracking'],
     title: 'Coaching Program Portal',
     description: 'A structured coaching portal with gated curriculum, session scheduling, progress milestones, and a private client dashboard for accountability.',
@@ -463,9 +448,6 @@ const homeProjects = [
     objectPosition: 'center',
   },
   {
-    track: 'Track B — Founder',
-    trackColor: '#F97316',
-    trackTextColor: '#FDB975',
     tags: ['SaaS', 'Multi-tenant', 'Next.js'],
     title: 'Operations Platform',
     description: 'A modular, multi-tenant SaaS platform built for small business owners and multi-venture entrepreneurs. Universal core with industry-specific modules.',
@@ -545,14 +527,6 @@ export default function OurWork() {
                 </div>
 
                 <div className="p-6 flex flex-col gap-4 flex-1">
-                  <div
-                    className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full self-start"
-                    style={{ background: project.trackColor + '25', color: project.trackTextColor }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.trackTextColor }} aria-hidden="true" />
-                    {project.track}
-                  </div>
-
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span key={tag} className="text-[#FFD84D] text-xs font-semibold px-2.5 py-1 rounded-md border border-[#FFD84D]/30">

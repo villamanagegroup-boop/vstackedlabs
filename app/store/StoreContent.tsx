@@ -143,6 +143,92 @@ function StoreSignup() {
   )
 }
 
+function WaitlistProductCard({ product }: { product: typeof products[0] }) {
+  const [open, setOpen] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus('loading')
+    const formData = new FormData(e.currentTarget)
+    formData.set('product', product.name)
+    const result = await submitStoreSignup(formData)
+    if (result.success) {
+      setStatus('success')
+    } else {
+      setStatus('error')
+      setErrorMsg(result.error)
+    }
+  }
+
+  return (
+    <div className="bg-white rounded-2xl border border-[#E2DED8] flex flex-col overflow-hidden">
+      <div className="bg-[#0C0C0C] h-32 flex items-center justify-center relative">
+        <div className="text-[#FFD84D]/70 text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 border border-[#FFD84D]/30 rounded-full">
+          {product.category}
+        </div>
+        <div className="absolute top-3 right-3 bg-[#FFD84D] text-[#0C0C0C] text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full">
+          Dropping soon
+        </div>
+      </div>
+      <div className="p-5 flex flex-col gap-3 flex-1">
+        <h3 className="text-base text-[#0C0C0C] leading-tight">{product.name}</h3>
+        <p className="text-[#888580] text-sm leading-relaxed flex-1">{product.description}</p>
+
+        {status === 'success' ? (
+          <div className="pt-2 border-t border-[#E2DED8]">
+            <p className="text-[#0C0C0C] text-sm font-semibold mt-3">
+              You&apos;re on the list.
+            </p>
+            <p className="text-[#888580] text-xs mt-1 leading-relaxed">
+              We&apos;ll email you the moment {product.name} drops — usually with an early-access discount.
+            </p>
+          </div>
+        ) : open ? (
+          <form
+            onSubmit={handleSubmit}
+            className="pt-2 border-t border-[#E2DED8] flex flex-col gap-2"
+            aria-label={`Get notified when ${product.name} drops`}
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@company.com"
+              className="w-full bg-[#F6F4EF] border border-[#E2DED8] rounded-lg px-3 py-2.5 text-sm text-[#0C0C0C] placeholder:text-[#888580] outline-none focus:border-[#0C0C0C] min-h-[40px]"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="bg-[#0C0C0C] hover:bg-[#FFD84D] hover:text-[#0C0C0C] disabled:opacity-60 text-white font-semibold px-4 py-2.5 rounded-lg text-sm transition-colors min-h-[40px]"
+            >
+              {status === 'loading' ? 'Saving…' : `Notify me when it drops →`}
+            </button>
+            {status === 'error' && (
+              <p role="alert" className="text-[#7A1F1F] text-xs m-0">
+                {errorMsg || 'Something went wrong. Try again.'}
+              </p>
+            )}
+          </form>
+        ) : (
+          <div className="flex items-center justify-between pt-2 border-t border-[#E2DED8]">
+            <span className="text-xl font-bold text-[#0C0C0C] font-[family-name:var(--font-instrument-sans)]">
+              ${product.price}
+            </span>
+            <button
+              onClick={() => setOpen(true)}
+              className="px-4 py-2 rounded-lg text-sm font-semibold transition-colors min-h-[44px] bg-[#FFD84D] hover:bg-[#0C0C0C] text-[#0C0C0C] hover:text-white border border-[#0C0C0C]"
+            >
+              Notify me →
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function ProductCard({ product }: { product: typeof products[0] }) {
   const { addItem, items } = useCart()
   const inCart = items.some((i) => i.priceId === product.priceId)
@@ -152,30 +238,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
   }
 
   if (!product.available) {
-    return (
-      <div className="bg-white rounded-2xl border border-[#E2DED8] flex flex-col overflow-hidden opacity-60">
-        <div className="bg-[#0C0C0C] h-32 flex items-center justify-center relative">
-          <div className="text-white/30 text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 border border-white/10 rounded-full">
-            {product.category}
-          </div>
-          <div className="absolute top-3 right-3 bg-white/10 text-white/60 text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full">
-            Coming Soon
-          </div>
-        </div>
-        <div className="p-5 flex flex-col gap-3 flex-1">
-          <h3 className="text-base text-[#0C0C0C] leading-tight">{product.name}</h3>
-          <p className="text-[#888580] text-sm leading-relaxed flex-1">{product.description}</p>
-          <div className="flex items-center justify-between pt-2 border-t border-[#E2DED8]">
-            <span className="text-xl font-bold text-[#0C0C0C] font-[family-name:var(--font-instrument-sans)]">
-              ${product.price}
-            </span>
-            <div className="px-4 py-2 rounded-lg text-sm font-semibold min-h-[44px] flex items-center bg-[#F6F4EF] text-[#888580]">
-              Coming Soon
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    return <WaitlistProductCard product={product} />
   }
 
   return (
@@ -212,9 +275,10 @@ function ProductCard({ product }: { product: typeof products[0] }) {
 export default function StoreContent() {
   const [activeCategory, setActiveCategory] = useState('All')
 
-  const filtered = activeCategory === 'All'
+  const filtered = (activeCategory === 'All'
     ? products
     : products.filter((p) => p.category === activeCategory)
+  ).slice().sort((a, b) => Number(b.available) - Number(a.available))
 
   return (
     <>
